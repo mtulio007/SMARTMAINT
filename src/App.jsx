@@ -136,7 +136,7 @@ const menuItems = [
   { label: 'Status OS', icon: '🔎', key: 'pesquisa' },
   { label: 'Registro OS', icon: '🖥️', key: 'cadastro' },
   { label: 'Hora Extra', icon: '⏱️', key: 'horaextra' },
-  { label: 'Solicitação de compras', icon: '🛒', key: 'compras' },
+  { label: 'Pedidos', icon: '🛒', key: 'compras' },
   { label: 'Catálogo Manutenção', icon: '🗂️', key: 'catalogo' }
 ]
 
@@ -952,7 +952,7 @@ function App() {
                   : selectedSection === 'pesquisa'
                     ? 'Status OS'
                     : selectedSection === 'compras'
-                      ? 'Formulário De Compras'
+                      ? 'Formulário de Pedidos'
                       : selectedSection === 'catalogo'
                         ? 'Catálogo Manutenção'
                       : 'Registro de OS - Manutenção'}
@@ -1334,7 +1334,7 @@ function App() {
               ) : selectedSection === 'compras' ? (
                 <form className="mt-6 grid gap-4" onSubmit={handlePurchaseSubmit}>
                   <div className="space-y-2 rounded-3xl border-t border-slate-200 pt-4">
-                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Solicitação de compras</p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Pedidos</p>
                   </div>
 
                   <div className="grid gap-4 sm:grid-cols-2">
