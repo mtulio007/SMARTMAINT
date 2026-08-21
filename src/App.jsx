@@ -133,12 +133,17 @@ const tecnicoOptions = [
 ]
 
 const menuItems = [
+  { label: 'Manutenção', icon: '🔧', key: 'pesquisa', heading: true },
   { label: 'Status OS', icon: '🔎', key: 'pesquisa' },
   { label: 'Registro OS', icon: '🖥️', key: 'cadastro' },
   { label: 'Hora Extra', icon: '⏱️', key: 'horaextra' },
   { label: 'Pedidos', icon: '🛒', key: 'compras' },
-  { label: 'Catálogo Manutenção', icon: '🗂️', key: 'catalogo' }
+  { label: 'Catálogo Manutenção', icon: '🗂️', key: 'catalogo' },
+  { label: 'Almoxarifado', icon: '📦', key: 'materiais', heading: true },
+  { label: 'Entrada de Materiais', icon: '📥', key: 'materiais' }
 ]
+
+const emptyMaterialEntry = { data: '', codigo: '', descricao: '', um: '', fornecedor: '', nota: '' }
 
 const emptyPurchase = {
   numero: '',
@@ -171,7 +176,7 @@ const getPurchaseItems = purchase => {
   }]
 }
 const syncEndpoint = '/api/data'
-const emptySharedData = { orders: [], extraEntries: [], purchases: [], catalogItems: [] }
+const emptySharedData = { orders: [], extraEntries: [], purchases: [], catalogItems: [], materialEntries: [] }
 const createSyncId = () => globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`
 const padDatePart = value => String(value).padStart(2, '0')
 
@@ -249,6 +254,9 @@ function App() {
       return []
     }
   })
+  const [materialEntries, setMaterialEntries] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('os_easy_material_entries') || '[]') } catch { return [] }
+  })
   const [selectedSection, setSelectedSection] = useState('pesquisa')
   const [searchTerm, setSearchTerm] = useState('')
   const [searchStatus, setSearchStatus] = useState('')
@@ -260,6 +268,9 @@ function App() {
   const [catalogDescription, setCatalogDescription] = useState('')
   const [catalogImage, setCatalogImage] = useState('')
   const [catalogError, setCatalogError] = useState('')
+  const [materialForm, setMaterialForm] = useState(emptyMaterialEntry)
+  const [editingMaterialId, setEditingMaterialId] = useState('')
+  const [expandedMenus, setExpandedMenus] = useState({ manutencao: false, almoxarifado: false })
   const [editingCatalogItemId, setEditingCatalogItemId] = useState('')
   const [editingCatalogDescription, setEditingCatalogDescription] = useState('')
   const [currentOrderIndex, setCurrentOrderIndex] = useState(-1)
@@ -273,7 +284,8 @@ function App() {
     orders,
     extraEntries: extraEntries.map(entry => ({ ...entry, _syncId: entry._syncId || createSyncId() })),
     purchases,
-    catalogItems: catalogItems.map(item => ({ ...item, _syncId: item._syncId || createSyncId() }))
+    catalogItems: catalogItems.map(item => ({ ...item, _syncId: item._syncId || createSyncId() })),
+    materialEntries: materialEntries.map(item => ({ ...item, _syncId: item._syncId || createSyncId() }))
   })
 
   const requiredFields = [
@@ -440,6 +452,7 @@ function App() {
     localStorage.setItem('os_easy_hour_extras', JSON.stringify(data.extraEntries))
     localStorage.setItem('os_easy_purchases', JSON.stringify(data.purchases))
     localStorage.setItem('os_easy_catalog_items', JSON.stringify(data.catalogItems))
+    localStorage.setItem('os_easy_material_entries', JSON.stringify(data.materialEntries))
   }
 
   const applySharedData = data => {
@@ -447,7 +460,8 @@ function App() {
       orders: Array.isArray(data.orders) ? data.orders : [],
       extraEntries: Array.isArray(data.extraEntries) ? data.extraEntries : [],
       purchases: Array.isArray(data.purchases) ? data.purchases : [],
-      catalogItems: Array.isArray(data.catalogItems) ? data.catalogItems : []
+      catalogItems: Array.isArray(data.catalogItems) ? data.catalogItems : [],
+      materialEntries: Array.isArray(data.materialEntries) ? data.materialEntries : []
     }
 
     sharedDataRef.current = normalized
@@ -455,6 +469,7 @@ function App() {
     setExtraEntries(normalized.extraEntries)
     setPurchases(normalized.purchases)
     setCatalogItems(normalized.catalogItems)
+    setMaterialEntries(normalized.materialEntries)
     saveLocalData(normalized)
   }
 
@@ -566,6 +581,43 @@ function App() {
     saveLocalData(data)
     void sendSharedData(data, getChanges('catalogItems', previousData.catalogItems, itemsWithIds))
   }
+
+  const saveMaterialEntries = nextEntries => {
+    const entriesWithIds = nextEntries.map(item => ({ ...item, _syncId: item._syncId || createSyncId() }))
+    const previousData = sharedDataRef.current
+    const data = { ...previousData, materialEntries: entriesWithIds }
+    sharedDataRef.current = data
+    setMaterialEntries(entriesWithIds)
+    saveLocalData(data)
+    void sendSharedData(data, getChanges('materialEntries', previousData.materialEntries || [], entriesWithIds))
+  }
+
+  const handleMaterialSubmit = event => {
+    event.preventDefault()
+    if (!materialForm.data || !materialForm.codigo || !materialForm.descricao) return
+    const entry = { ...materialForm, data: materialForm.data || getCurrentDate() }
+    if (editingMaterialId) {
+      saveMaterialEntries(materialEntries.map(item => item._syncId === editingMaterialId ? { ...item, ...entry } : item))
+    } else {
+      saveMaterialEntries([entry, ...materialEntries])
+    }
+    setMaterialForm(emptyMaterialEntry)
+    setEditingMaterialId('')
+  }
+
+  const handleMaterialEdit = entry => {
+    setMaterialForm({ ...emptyMaterialEntry, ...entry })
+    setEditingMaterialId(entry._syncId)
+  }
+
+  const handleMaterialDelete = () => {
+    if (!editingMaterialId) return
+    saveMaterialEntries(materialEntries.filter(item => item._syncId !== editingMaterialId))
+    setMaterialForm(emptyMaterialEntry)
+    setEditingMaterialId('')
+  }
+
+  const toggleMenu = menu => setExpandedMenus(prev => ({ ...prev, [menu]: !prev[menu] }))
 
   const handleChange = event => {
     const { name, value } = event.target
@@ -883,13 +935,18 @@ function App() {
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-800 text-xl text-white">PC</div>
               <div>
                 <p className="text-[0.65rem] uppercase tracking-[0.25em] text-slate-300">Sistema</p>
-                <h1 className="text-base font-semibold text-white">SmartMaint - PCM</h1>
+                <h1 className="text-base font-semibold text-white">GestorMan</h1>
               </div>
             </div>
           </div>
 
           <div className="grid grid-cols-3 gap-2">
-            {menuItems.map(item => (
+            {menuItems.map(item => item.heading ? (
+              <button key={`${item.key}-mobile-heading`} type="button" onClick={() => toggleMenu(item.key === 'pesquisa' ? 'manutencao' : 'almoxarifado')} className="col-span-3 flex items-center justify-between px-2 pt-2 text-left text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-slate-400">
+                <span>{item.icon} {item.label}</span><span>{expandedMenus[item.key === 'pesquisa' ? 'manutencao' : 'almoxarifado'] ? '▾' : '▸'}</span>
+              </button>
+            ) : (
+              ((item.key === 'materiais' && !expandedMenus.almoxarifado) || (item.key !== 'materiais' && !expandedMenus.manutencao)) ? null :
               <button
                 key={item.key}
                 type="button"
@@ -913,13 +970,18 @@ function App() {
             </div>
             <div>
               <p className="text-sm uppercase tracking-[0.25em] text-slate-300">Sistema</p>
-              <h1 className="text-xl font-semibold text-white">SmartMaint - PCM</h1>
+              <h1 className="text-xl font-semibold text-white">GestorMan</h1>
             </div>
           </div>
 
           <div className="space-y-1">
             <p className="text-xs uppercase tracking-[0.3em] text-slate-300">Menu</p>
-            {menuItems.map(item => (
+            {menuItems.map(item => item.heading ? (
+              <button key={`${item.key}-heading`} type="button" onClick={() => toggleMenu(item.key === 'pesquisa' ? 'manutencao' : 'almoxarifado')} className="flex w-full items-center justify-between px-4 pb-1 pt-3 text-left text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
+                <span>{item.icon} {item.label}</span><span>{expandedMenus[item.key === 'pesquisa' ? 'manutencao' : 'almoxarifado'] ? '▾' : '▸'}</span>
+              </button>
+            ) : (
+              ((item.key === 'materiais' && !expandedMenus.almoxarifado) || (item.key !== 'materiais' && !expandedMenus.manutencao)) ? null :
 
               <button
                 key={item.key}
@@ -955,6 +1017,8 @@ function App() {
                       ? 'Formulário de Pedidos'
                       : selectedSection === 'catalogo'
                         ? 'Catálogo Manutenção'
+                      : selectedSection === 'materiais'
+                        ? 'Entrada de Materiais'
                       : 'Registro de OS - Manutenção'}
 
 
@@ -1280,6 +1344,29 @@ function App() {
                   </div>
                 </div>
                 </>
+              ) : selectedSection === 'materiais' ? (
+                <div className="mt-2 grid gap-5">
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <div className="flex gap-2">
+                      <button type="button" onClick={() => handleMaterialSubmit({ preventDefault: () => {} })} className="rounded-xl bg-brand-500 px-3 py-2 text-sm font-semibold text-white transition hover:bg-brand-700">Adicionar registro</button>
+                      <button type="button" onClick={() => editingMaterialId ? handleMaterialSubmit({ preventDefault: () => {} }) : null} disabled={!editingMaterialId} className="rounded-xl border border-brand-300 bg-brand-50 px-3 py-2 text-sm font-semibold text-brand-700 transition hover:bg-brand-100 disabled:cursor-not-allowed disabled:opacity-40">Editar registro</button>
+                      <button type="button" onClick={handleMaterialDelete} disabled={!editingMaterialId} className="rounded-xl border border-red-300 bg-red-50 px-3 py-2 text-sm font-semibold text-red-700 transition hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-40">Excluir registro</button>
+                    </div>
+                    <p className="text-sm font-semibold text-slate-600">Registros cadastrados: <span className="text-slate-950">{materialEntries.length}</span></p>
+                  </div>
+                  <form onSubmit={handleMaterialSubmit} className="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
+                    <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-12">
+                      {[['data', 'Data', 'date', 'lg:col-span-2'], ['codigo', 'Código', 'text', 'lg:col-span-2'], ['descricao', 'Descrição', 'text', 'lg:col-span-4'], ['um', 'UM', 'text', 'lg:col-span-1'], ['fornecedor', 'Fornecedor', 'text', 'lg:col-span-2'], ['nota', 'Nº nota', 'text', 'lg:col-span-1']].map(([name, label, type, span]) => (
+                        <label key={name} className={`min-w-0 space-y-1 text-xs text-slate-700 ${span}`}><span className="font-medium">{label}{['data', 'codigo', 'descricao'].includes(name) ? '*' : ''}</span><input required={['data', 'codigo', 'descricao'].includes(name)} type={type} name={name} value={materialForm[name]} onChange={event => setMaterialForm(prev => ({ ...prev, [name]: event.target.value }))} className="w-full min-w-0 rounded-lg border border-slate-200 bg-white px-2 py-2 text-xs outline-none transition focus:border-brand-500" /></label>
+                      ))}
+                    </div>
+                  </form>
+                  <div className="rounded-2xl border border-slate-200 bg-white shadow-sm">
+                    <table className="w-full table-fixed border-collapse text-left text-xs"><thead className="bg-slate-100 text-slate-500"><tr>{['Data', 'Código', 'Descrição', 'UM', 'Fornecedor', 'Nº nota'].map(label => <th key={label} className="px-2 py-2 font-medium">{label}</th>)}</tr></thead>
+                      <tbody>{materialEntries.length === 0 ? <tr><td colSpan="6" className="px-3 py-5 text-center text-sm text-slate-500">Nenhuma entrada cadastrada.</td></tr> : materialEntries.map(entry => <tr key={entry._syncId} onClick={() => handleMaterialEdit(entry)} className={`cursor-pointer border-t border-slate-200/70 ${editingMaterialId === entry._syncId ? 'bg-brand-50' : 'hover:bg-slate-50'}`}><td className="px-3 py-2.5">{formatDateTime(entry.data) || '—'}</td><td className="px-3 py-2.5">{entry.codigo || '—'}</td><td className="px-3 py-2.5">{entry.descricao || '—'}</td><td className="px-3 py-2.5">{entry.um || '—'}</td><td className="px-3 py-2.5">{entry.fornecedor || '—'}</td><td className="px-3 py-2.5">{entry.nota || '—'}</td></tr>)}</tbody>
+                    </table>
+                  </div>
+                </div>
               ) : selectedSection === 'catalogo' ? (
                 <div className="mt-2 grid gap-5">
                   <form onSubmit={handleCatalogSubmit} className="grid gap-3 border-b border-slate-200 pb-5">
