@@ -143,7 +143,7 @@ const menuItems = [
   { label: 'Entrada de Materiais', icon: '📥', key: 'materiais' }
 ]
 
-const emptyMaterialEntry = { data: '', codigo: '', descricao: '', um: '', fornecedor: '', nota: '' }
+const emptyMaterialEntry = { data: '', codigo: '', descricao: '', um: '', qtd: '', fornecedor: '', nota: '' }
 
 const emptyPurchase = {
   numero: '',
@@ -197,6 +197,16 @@ const formatDateTime = value => {
   const parsed = new Date(value)
   if (Number.isNaN(parsed.getTime())) return String(value)
   return `${padDatePart(parsed.getDate())}/${padDatePart(parsed.getMonth() + 1)}/${parsed.getFullYear()} ${padDatePart(parsed.getHours())}:${padDatePart(parsed.getMinutes())}`
+}
+
+const formatShortDate = value => {
+  if (!value) return ''
+  const iso = toDateInput(value)
+  if (iso) {
+    const [year, month, day] = iso.split('-')
+    return `${day}/${month}/${year.slice(-2)}`
+  }
+  return String(value)
 }
 
 const toDateTimeLocal = value => {
@@ -255,7 +265,7 @@ function App() {
     }
   })
   const [materialEntries, setMaterialEntries] = useState(() => {
-    try { return JSON.parse(localStorage.getItem('os_easy_material_entries') || '[]') } catch { return [] }
+    try { return JSON.parse(localStorage.getItem('os_easy_material_entries') || '[]').map(entry => ({ ...entry, _syncId: entry._syncId || createSyncId(), codigo: !entry.codigo || String(entry.codigo).startsWith('MAT-') ? 'SEM CÓDIGO' : entry.codigo })) } catch { return [] }
   })
   const [selectedSection, setSelectedSection] = useState('pesquisa')
   const [searchTerm, setSearchTerm] = useState('')
@@ -461,7 +471,7 @@ function App() {
       extraEntries: Array.isArray(data.extraEntries) ? data.extraEntries : [],
       purchases: Array.isArray(data.purchases) ? data.purchases : [],
       catalogItems: Array.isArray(data.catalogItems) ? data.catalogItems : [],
-      materialEntries: Array.isArray(data.materialEntries) ? data.materialEntries : []
+      materialEntries: Array.isArray(data.materialEntries) ? data.materialEntries.map(entry => ({ ...entry, _syncId: entry._syncId || createSyncId(), codigo: !entry.codigo || String(entry.codigo).startsWith('MAT-') ? 'SEM CÓDIGO' : entry.codigo })) : []
     }
 
     sharedDataRef.current = normalized
@@ -594,10 +604,11 @@ function App() {
 
   const handleMaterialSubmit = event => {
     event.preventDefault()
-    if (!materialForm.data || !materialForm.codigo || !materialForm.descricao) return
-    const entry = { ...materialForm, data: materialForm.data || getCurrentDate() }
+    if (!materialForm.data || !materialForm.descricao) return
+    const entry = { ...materialForm, codigo: materialForm.codigo.trim() || 'SEM CÓDIGO', data: materialForm.data || getCurrentDate() }
     if (editingMaterialId) {
-      saveMaterialEntries(materialEntries.map(item => item._syncId === editingMaterialId ? { ...item, ...entry } : item))
+      const nextEntries = materialEntries.map(item => item._syncId === editingMaterialId ? { ...item, ...entry, _syncId: editingMaterialId } : item)
+      saveMaterialEntries(nextEntries)
     } else {
       saveMaterialEntries([entry, ...materialEntries])
     }
@@ -615,6 +626,74 @@ function App() {
     saveMaterialEntries(materialEntries.filter(item => item._syncId !== editingMaterialId))
     setMaterialForm(emptyMaterialEntry)
     setEditingMaterialId('')
+  }
+
+  const parseImportedMaterialDate = value => {
+    if (!value) return ''
+    if (value instanceof Date && !Number.isNaN(value.getTime())) return value.toISOString().slice(0, 10)
+    if (typeof value === 'number') {
+      if (value < 2) return ''
+      const date = new Date(Date.UTC(1899, 11, 30) + value * 86400000)
+      return date.toISOString().slice(0, 10)
+    }
+    const text = String(value).trim()
+    const br = text.match(/^(\d{1,2})[\/-](\d{1,2})[\/-](\d{4})$/)
+    return br ? `${br[3]}-${String(br[2]).padStart(2, '0')}-${String(br[1]).padStart(2, '0')}` : text
+  }
+
+  const handleMaterialExcelImport = event => {
+    const file = event.target.files?.[0]
+    if (!file) return
+    const reader = new FileReader()
+    reader.onload = async () => {
+      try {
+        const XLSX = await import('xlsx')
+        const workbook = XLSX.read(reader.result, { type: 'array', cellDates: false })
+        const sheet = workbook.Sheets[workbook.SheetNames[0]]
+        const matrix = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: '', raw: true, blankrows: false })
+        const normalizeHeader = value => String(value ?? '')
+          .replace(/^\uFEFF/, '')
+          .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+          .toLowerCase().replace(/[^a-z0-9]+/g, '')
+        const aliases = {
+          data: ['data recebimento', 'data de recebimento', 'dt recebimento', 'recebimento', 'data'],
+          codigo: ['código', 'codigo', 'cód', 'cod', 'código material', 'codigo material'],
+          descricao: ['descrição', 'descricao', 'descrição material', 'descricao material', 'material'],
+          um: ['um', 'un', 'unidade', 'unid'],
+          qtd: ['qtd', 'qtde', 'quantidade', 'qtd recebida', 'quantidade recebida'],
+          fornecedor: ['fornecedor', 'fornec'],
+          nota: ['nº nota', 'n nota', 'n° nota', 'nota fiscal', 'nf', 'numero nota', 'número nota', 'nota'],
+        }
+        const allNames = Object.values(aliases).flat().map(normalizeHeader)
+        const headerIndex = matrix.findIndex(row => row.filter(cell => allNames.includes(normalizeHeader(cell))).length >= 2)
+        const header = headerIndex >= 0 ? matrix[headerIndex] : []
+        const columnIndexes = field => {
+          const names = aliases[field].map(normalizeHeader)
+          const index = header.findIndex(cell => names.includes(normalizeHeader(cell)))
+          return index >= 0 ? index : undefined
+        }
+        const valueAt = (row, field, fallbackIndex) => {
+          const index = columnIndexes(field)
+          return row[index === undefined ? fallbackIndex : index] ?? ''
+        }
+        const dataRows = matrix.slice(headerIndex >= 0 ? headerIndex + 1 : 0)
+        const imported = dataRows.map(row => ({
+          data: parseImportedMaterialDate(valueAt(row, 'data', 0)),
+          codigo: String(valueAt(row, 'codigo', 1)).trim() || 'SEM CÓDIGO',
+          descricao: String(valueAt(row, 'descricao', 2)).trim(),
+          um: String(valueAt(row, 'um', 3)).trim(),
+          qtd: valueAt(row, 'qtd', 4),
+          fornecedor: String(valueAt(row, 'fornecedor', 5)).trim(),
+          nota: String(valueAt(row, 'nota', 6)).trim()
+        })).filter(row => row.codigo || row.descricao)
+        if (!imported.length) { window.alert('Nenhum dado válido encontrado. Use os nomes dos campos solicitados na primeira linha.'); return }
+        const eraseDatabase = window.confirm('Confirma a operação?\n\nOK = Apagar o Banco e carregar somente o Excel.\nCancelar = Apenas incluir novos dados e preservar o banco atual.')
+        saveMaterialEntries(eraseDatabase ? imported : [...imported, ...materialEntries])
+        window.alert(eraseDatabase ? `${imported.length} registro(s) carregado(s). O banco anterior foi apagado.` : `${imported.length} registro(s) incluído(s). Os dados existentes foram preservados.`)
+      } catch (error) { window.alert('Não foi possível ler o Excel. Verifique se o arquivo está no formato .xlsx, .xls ou .csv.') }
+      event.target.value = ''
+    }
+    reader.readAsArrayBuffer(file)
   }
 
   const toggleMenu = menu => setExpandedMenus(prev => ({ ...prev, [menu]: !prev[menu] }))
@@ -1349,21 +1428,23 @@ function App() {
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="flex gap-2">
                       <button type="button" onClick={() => handleMaterialSubmit({ preventDefault: () => {} })} className="rounded-xl bg-brand-500 px-3 py-2 text-sm font-semibold text-white transition hover:bg-brand-700">Adicionar registro</button>
+                      <label className="cursor-pointer rounded-xl border border-emerald-300 bg-emerald-50 px-3 py-2 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-100">Carga via Excel<input type="file" accept=".xlsx,.xls,.csv" onChange={handleMaterialExcelImport} className="sr-only" /></label>
                       <button type="button" onClick={() => editingMaterialId ? handleMaterialSubmit({ preventDefault: () => {} }) : null} disabled={!editingMaterialId} className="rounded-xl border border-brand-300 bg-brand-50 px-3 py-2 text-sm font-semibold text-brand-700 transition hover:bg-brand-100 disabled:cursor-not-allowed disabled:opacity-40">Editar registro</button>
                       <button type="button" onClick={handleMaterialDelete} disabled={!editingMaterialId} className="rounded-xl border border-red-300 bg-red-50 px-3 py-2 text-sm font-semibold text-red-700 transition hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-40">Excluir registro</button>
                     </div>
                     <p className="text-sm font-semibold text-slate-600">Registros cadastrados: <span className="text-slate-950">{materialEntries.length}</span></p>
                   </div>
                   <form onSubmit={handleMaterialSubmit} className="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
+                    <p className="mb-3 text-xs text-slate-500">Importe uma planilha com os cabeçalhos: Data recebimento, Código, Descrição, UM, QTD, Fornecedor e Nº nota. A carga adiciona novos registros e preserva o banco atual.</p>
                     <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-12">
-                      {[['data', 'Data', 'date', 'lg:col-span-2'], ['codigo', 'Código', 'text', 'lg:col-span-2'], ['descricao', 'Descrição', 'text', 'lg:col-span-4'], ['um', 'UM', 'text', 'lg:col-span-1'], ['fornecedor', 'Fornecedor', 'text', 'lg:col-span-2'], ['nota', 'Nº nota', 'text', 'lg:col-span-1']].map(([name, label, type, span]) => (
-                        <label key={name} className={`min-w-0 space-y-1 text-xs text-slate-700 ${span}`}><span className="font-medium">{label}{['data', 'codigo', 'descricao'].includes(name) ? '*' : ''}</span><input required={['data', 'codigo', 'descricao'].includes(name)} type={type} name={name} value={materialForm[name]} onChange={event => setMaterialForm(prev => ({ ...prev, [name]: event.target.value }))} className="w-full min-w-0 rounded-lg border border-slate-200 bg-white px-2 py-2 text-xs outline-none transition focus:border-brand-500" /></label>
+                      {[['data', 'Data recebimento', 'date', 'lg:col-span-2'], ['codigo', 'Código (opcional)', 'text', 'lg:col-span-2'], ['descricao', 'Descrição', 'text', 'lg:col-span-3'], ['um', 'UM', 'text', 'lg:col-span-1'], ['qtd', 'QTD', 'number', 'lg:col-span-1'], ['fornecedor', 'Fornecedor', 'text', 'lg:col-span-2'], ['nota', 'Nº nota', 'text', 'lg:col-span-1']].map(([name, label, type, span]) => (
+                        <label key={name} className={`min-w-0 space-y-1 text-xs text-slate-700 ${span}`}><span className="font-medium">{label}{['data', 'descricao'].includes(name) ? '*' : ''}</span><input required={['data', 'descricao'].includes(name)} type={type} name={name} value={materialForm[name]} onChange={event => setMaterialForm(prev => ({ ...prev, [name]: event.target.value }))} className="w-full min-w-0 rounded-lg border border-slate-200 bg-white px-2 py-2 text-xs outline-none transition focus:border-brand-500" /></label>
                       ))}
                     </div>
                   </form>
-                  <div className="rounded-2xl border border-slate-200 bg-white shadow-sm">
-                    <table className="w-full table-fixed border-collapse text-left text-xs"><thead className="bg-slate-100 text-slate-500"><tr>{['Data', 'Código', 'Descrição', 'UM', 'Fornecedor', 'Nº nota'].map(label => <th key={label} className="px-2 py-2 font-medium">{label}</th>)}</tr></thead>
-                      <tbody>{materialEntries.length === 0 ? <tr><td colSpan="6" className="px-3 py-5 text-center text-sm text-slate-500">Nenhuma entrada cadastrada.</td></tr> : materialEntries.map(entry => <tr key={entry._syncId} onClick={() => handleMaterialEdit(entry)} className={`cursor-pointer border-t border-slate-200/70 ${editingMaterialId === entry._syncId ? 'bg-brand-50' : 'hover:bg-slate-50'}`}><td className="px-3 py-2.5">{formatDateTime(entry.data) || '—'}</td><td className="px-3 py-2.5">{entry.codigo || '—'}</td><td className="px-3 py-2.5">{entry.descricao || '—'}</td><td className="px-3 py-2.5">{entry.um || '—'}</td><td className="px-3 py-2.5">{entry.fornecedor || '—'}</td><td className="px-3 py-2.5">{entry.nota || '—'}</td></tr>)}</tbody>
+                  <div className="max-h-[32rem] overflow-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+                    <table className="min-w-[950px] w-full border-collapse text-left text-xs"><thead className="sticky top-0 z-20 bg-slate-100 text-slate-500"><tr>{['Data recebimento', 'Código', 'Descrição', 'UM', 'QTD', 'Fornecedor', 'Nº nota'].map(label => <th key={label} className={`sticky top-0 px-2 py-2 font-medium ${label === 'Código' ? 'left-[120px] z-30 bg-slate-100' : 'z-20 bg-slate-100'}`}>{label}</th>)}</tr></thead>
+                      <tbody>{materialEntries.length === 0 ? <tr><td colSpan="7" className="px-3 py-5 text-center text-sm text-slate-500">Nenhuma entrada cadastrada.</td></tr> : materialEntries.map(entry => <tr key={entry._syncId} onClick={() => handleMaterialEdit(entry)} className={`cursor-pointer border-t border-slate-200/70 ${editingMaterialId === entry._syncId ? 'bg-brand-50' : 'hover:bg-slate-50'}`}><td className="px-3 py-2.5">{formatShortDate(entry.data) || '—'}</td><td className={`sticky left-[120px] z-10 px-3 py-2.5 ${editingMaterialId === entry._syncId ? 'bg-brand-50' : 'bg-white'}`}>{entry.codigo || '—'}</td><td className="px-3 py-2.5">{entry.descricao || '—'}</td><td className="px-3 py-2.5">{entry.um || '—'}</td><td className="px-3 py-2.5">{entry.qtd || '—'}</td><td className="px-3 py-2.5">{entry.fornecedor || '—'}</td><td className="px-3 py-2.5">{entry.nota || '—'}</td></tr>)}</tbody>
                     </table>
                   </div>
                 </div>

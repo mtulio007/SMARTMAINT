@@ -11,6 +11,7 @@ const emptyData = {
   extraEntries: [],
   purchases: [],
   catalogItems: []
+  ,materialEntries: []
 }
 
 function sharedDataApi() {
@@ -28,6 +29,7 @@ function sharedDataApi() {
           extraEntries: Array.isArray(saved.extraEntries) ? saved.extraEntries : [],
           purchases: Array.isArray(saved.purchases) ? saved.purchases : [],
           catalogItems: Array.isArray(saved.catalogItems) ? saved.catalogItems : []
+          ,materialEntries: Array.isArray(saved.materialEntries) ? saved.materialEntries : []
         }
       }
     } catch (error) {
@@ -100,6 +102,7 @@ function sharedDataApi() {
               extraEntries: Array.isArray(payload.extraEntries) ? payload.extraEntries : [],
               purchases: Array.isArray(payload.purchases) ? payload.purchases : [],
               catalogItems: Array.isArray(payload.catalogItems) ? payload.catalogItems : []
+              ,materialEntries: Array.isArray(payload.materialEntries) ? payload.materialEntries : []
             }))
         response.setHeader('Content-Type', 'application/json')
         response.end(JSON.stringify({ initialized: true, data }))
