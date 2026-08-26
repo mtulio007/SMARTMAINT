@@ -28,3 +28,8 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(100, 116, 139, 0.5);
 }
+
+.material-editable:empty::before {
+  content: attr(data-placeholder);
+  color: rgb(100 116 139);
+}

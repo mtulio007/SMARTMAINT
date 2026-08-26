@@ -665,21 +665,21 @@
   ],
   "materialEntries": [
     {
-      "data": "2026-08-13",
-      "codigo": "",
+      "data": "13/08/26",
+      "codigo": "SEM CÓDIGO",
       "descricao": "APAGADOR DE QUADRO BRANDO",
       "um": "",
-      "qtd": 6,
+      "qtd": "6",
       "fornecedor": "",
       "nota": "",
       "_syncId": "5753f6e3-03e1-499f-8259-1a51436552b1"
     },
     {
       "data": "2026-08-13",
-      "codigo": "",
+      "codigo": "SEM CÓDIGO",
       "descricao": "APONTADOR",
       "um": "",
-      "qtd": 5,
+      "qtd": "5",
       "fornecedor": "",
       "nota": "",
       "_syncId": "3a4c7a7b-22ac-499a-b048-b903dd4ae0d7"

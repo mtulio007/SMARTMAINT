@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import sqlite3 from 'sqlite3'
 
 const projectRoot = dirname(fileURLToPath(import.meta.url))
 
@@ -125,9 +126,67 @@ function sharedDataApi() {
   }
 }
 
+function materialExitSqliteApi() {
+  const databaseFile = resolve(projectRoot, 'data', 'material-exits.sqlite')
+  let database
+
+  const getDatabase = async () => {
+    if (database) return database
+    await mkdir(dirname(databaseFile), { recursive: true })
+    database = new sqlite3.Database(databaseFile)
+    await new Promise((resolvePromise, reject) => database.run(`CREATE TABLE IF NOT EXISTS material_exits (
+      id TEXT PRIMARY KEY, data TEXT NOT NULL, codigo TEXT, descricao TEXT NOT NULL, um TEXT, qtd REAL
+    )`, error => error ? reject(error) : resolvePromise()))
+    return database
+  }
+
+  const listEntries = async () => {
+    const db = await getDatabase()
+    return new Promise((resolvePromise, reject) => db.all('SELECT id AS _syncId, data, codigo, descricao, um, qtd FROM material_exits ORDER BY rowid DESC', (error, rows) => error ? reject(error) : resolvePromise(rows)))
+  }
+
+  const handler = async (request, response, next) => {
+    if (request.method === 'GET') {
+      try {
+        response.setHeader('Content-Type', 'application/json')
+        response.end(JSON.stringify(await listEntries()))
+      } catch {
+        response.statusCode = 500
+        response.end(JSON.stringify({ error: 'Não foi possível ler o banco SQLite.' }))
+      }
+      return
+    }
+    if (request.method !== 'POST') return next()
+    let body = ''
+    request.on('data', chunk => { body += chunk })
+    request.on('end', async () => {
+      try {
+        const payload = JSON.parse(body)
+        const entries = Array.isArray(payload.entries) ? payload.entries : []
+        const db = await getDatabase()
+        await new Promise((resolvePromise, reject) => db.serialize(() => {
+          db.run('BEGIN TRANSACTION')
+          const statement = db.prepare('INSERT OR REPLACE INTO material_exits (id, data, codigo, descricao, um, qtd) VALUES (?, ?, ?, ?, ?, ?)')
+          entries.forEach(entry => statement.run(entry._syncId || crypto.randomUUID(), entry.data, entry.codigo || 'SEM CÓDIGO', entry.descricao, entry.um || '', Number(entry.qtd) || 0))
+          statement.finalize(error => {
+            if (error) { db.run('ROLLBACK'); reject(error); return }
+            db.run('COMMIT', commitError => commitError ? reject(commitError) : resolvePromise())
+          })
+        }))
+        response.setHeader('Content-Type', 'application/json')
+        response.end(JSON.stringify(await listEntries()))
+      } catch {
+        response.statusCode = 400
+        response.end(JSON.stringify({ error: 'Não foi possível gravar os registros no SQLite.' }))
+      }
+    })
+  }
+  return { name: 'material-exit-sqlite', configureServer(server) { server.middlewares.use('/api/material-exits', handler) }, configurePreviewServer(server) { server.middlewares.use('/api/material-exits', handler) } }
+}
+
 export default defineConfig({
   root: projectRoot,
-  plugins: [react(), sharedDataApi()],
+  plugins: [react(), sharedDataApi(), materialExitSqliteApi()],
   server: {
     host: '0.0.0.0',
     port: 5174,

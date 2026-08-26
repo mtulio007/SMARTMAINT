@@ -140,7 +140,9 @@ const menuItems = [
   { label: 'Pedidos', icon: '🛒', key: 'compras' },
   { label: 'Catálogo Manutenção', icon: '🗂️', key: 'catalogo' },
   { label: 'Almoxarifado', icon: '📦', key: 'materiais', heading: true },
-  { label: 'Entrada de Materiais', icon: '📥', key: 'materiais' }
+  { label: 'Entrada de Materiais', icon: '📥', key: 'materiais' },
+  { label: 'Saída de Materiais', icon: '📤', key: 'saidasmateriais' },
+  { label: 'Resumo', icon: '📊', key: 'resumomateriais' }
 ]
 
 const emptyMaterialEntry = { data: '', codigo: '', descricao: '', um: '', qtd: '', fornecedor: '', nota: '' }
@@ -280,6 +282,22 @@ function App() {
   const [catalogError, setCatalogError] = useState('')
   const [materialForm, setMaterialForm] = useState(emptyMaterialEntry)
   const [editingMaterialId, setEditingMaterialId] = useState('')
+  const [showMaterialNewRow, setShowMaterialNewRow] = useState(false)
+  const [selectedMaterialEntryIds, setSelectedMaterialEntryIds] = useState([])
+  const [materialExits, setMaterialExits] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('os_easy_material_exits') || '[]').map(item => ({ ...item, _syncId: item._syncId || createSyncId() })) } catch { return [] }
+  })
+  const [materialExitForm, setMaterialExitForm] = useState({ data: '', codigo: '', descricao: '', um: '', qtd: '' })
+  const [showMaterialExitNewRow, setShowMaterialExitNewRow] = useState(false)
+  const [selectedMaterialExitIds, setSelectedMaterialExitIds] = useState([])
+  const [materialSummarySearch, setMaterialSummarySearch] = useState('')
+  const [materialPlanning, setMaterialPlanning] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('os_easy_material_planning') || '{}') } catch { return {} }
+  })
+  const [materialEntrySearch, setMaterialEntrySearch] = useState('')
+  const [materialExitSearch, setMaterialExitSearch] = useState('')
+  const [showMaterialEntrySearch, setShowMaterialEntrySearch] = useState(false)
+  const [showMaterialExitSearch, setShowMaterialExitSearch] = useState(false)
   const [expandedMenus, setExpandedMenus] = useState({ manutencao: false, almoxarifado: false })
   const [editingCatalogItemId, setEditingCatalogItemId] = useState('')
   const [editingCatalogDescription, setEditingCatalogDescription] = useState('')
@@ -440,6 +458,13 @@ function App() {
     if (selectedSection !== 'horaextra' || editingExtraEntryId || extraForm.ord) return
     setExtraForm(prev => ({ ...prev, ord: nextExtraOrd }))
   }, [selectedSection, editingExtraEntryId, extraForm.ord, nextExtraOrd])
+
+  useEffect(() => {
+    fetch('/api/material-exits')
+      .then(response => response.ok ? response.json() : [])
+      .then(entries => { if (Array.isArray(entries)) setMaterialExits(entries.map(entry => ({ ...entry, _syncId: entry._syncId || createSyncId() }))) })
+      .catch(() => {})
+  }, [])
 
   useEffect(() => {
     if (selectedSection !== 'compras') return
@@ -614,6 +639,7 @@ function App() {
     }
     setMaterialForm(emptyMaterialEntry)
     setEditingMaterialId('')
+    setShowMaterialNewRow(false)
   }
 
   const handleMaterialEdit = entry => {
@@ -621,11 +647,113 @@ function App() {
     setEditingMaterialId(entry._syncId)
   }
 
+  const handleMaterialCellChange = (entry, field, value) => {
+    const nextValue = value.trim()
+    if (String(entry[field] ?? '') === nextValue) return
+    saveMaterialEntries(materialEntries.map(item => item._syncId === entry._syncId ? { ...item, [field]: nextValue } : item))
+  }
+
   const handleMaterialDelete = () => {
-    if (!editingMaterialId) return
-    saveMaterialEntries(materialEntries.filter(item => item._syncId !== editingMaterialId))
+    if (selectedMaterialEntryIds.length === 0) return
+    saveMaterialEntries(materialEntries.filter(item => !selectedMaterialEntryIds.includes(item._syncId)))
     setMaterialForm(emptyMaterialEntry)
     setEditingMaterialId('')
+    setSelectedMaterialEntryIds([])
+  }
+
+  const toggleMaterialEntrySelection = entryId => {
+    setSelectedMaterialEntryIds(previous => previous.includes(entryId)
+      ? previous.filter(id => id !== entryId)
+      : [...previous, entryId])
+  }
+
+  const saveMaterialExits = nextEntries => {
+    const normalized = nextEntries.map(item => ({ ...item, _syncId: item._syncId || createSyncId() }))
+    setMaterialExits(normalized)
+    localStorage.setItem('os_easy_material_exits', JSON.stringify(normalized))
+  }
+
+  const saveMaterialExit = () => {
+    if (!materialExitForm.data || !materialExitForm.descricao) return
+    saveMaterialExits([{ ...materialExitForm, codigo: materialExitForm.codigo.trim() || 'SEM CÓDIGO' }, ...materialExits])
+    setMaterialExitForm({ data: '', codigo: '', descricao: '', um: '', qtd: '' })
+    setShowMaterialExitNewRow(false)
+  }
+
+  const updateMaterialExitCell = (entry, field, value) => {
+    const nextValue = value.trim()
+    if (String(entry[field] ?? '') === nextValue) return
+    saveMaterialExits(materialExits.map(item => item._syncId === entry._syncId ? { ...item, [field]: nextValue } : item))
+  }
+
+  const toggleMaterialExitSelection = entryId => setSelectedMaterialExitIds(previous => previous.includes(entryId) ? previous.filter(id => id !== entryId) : [...previous, entryId])
+
+  const deleteSelectedMaterialExits = () => {
+    if (selectedMaterialExitIds.length === 0) return
+    saveMaterialExits(materialExits.filter(item => !selectedMaterialExitIds.includes(item._syncId)))
+    setSelectedMaterialExitIds([])
+  }
+
+  const handleMaterialExitExcelImport = event => {
+    const file = event.target.files?.[0]
+    if (!file) return
+    const reader = new FileReader()
+    reader.onload = async () => {
+      try {
+        const XLSX = await import('xlsx')
+        const sheet = XLSX.read(reader.result, { type: 'array' }).Sheets[XLSX.read(reader.result, { type: 'array' }).SheetNames[0]]
+        const rows = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: '', raw: true })
+        const start = rows[0]?.some(cell => /data|c[oó]digo|descri/i.test(String(cell))) ? 1 : 0
+        const entries = rows.slice(start).map(row => ({ _syncId: createSyncId(), data: parseImportedMaterialDate(row[0]), codigo: String(row[1] || '').trim() || 'SEM CÓDIGO', descricao: String(row[2] || '').trim(), um: String(row[3] || '').trim(), qtd: row[4] || '' })).filter(entry => entry.descricao)
+        if (!entries.length) throw new Error('Sem dados')
+        const response = await fetch('/api/material-exits', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ entries }) })
+        if (!response.ok) throw new Error('SQLite')
+        saveMaterialExits(await response.json())
+      } catch {
+        window.alert('Não foi possível importar o Excel. Use as colunas: DATA, CÓDIGO, DESCRIÇÃO, UM e QTD.')
+      }
+      event.target.value = ''
+    }
+    reader.readAsArrayBuffer(file)
+  }
+
+  const materialSummary = useMemo(() => {
+    const totals = new Map()
+    materialEntries.forEach(item => {
+      const key = item.codigo || 'SEM CÓDIGO'
+      const current = totals.get(key) || { codigo: key, descricao: item.descricao || '', entradas: 0, saidas: 0 }
+      current.entradas += Number(item.qtd) || 0
+      if (!current.descricao) current.descricao = item.descricao || ''
+      totals.set(key, current)
+    })
+    materialExits.forEach(item => {
+      const key = item.codigo || 'SEM CÓDIGO'
+      const current = totals.get(key) || { codigo: key, descricao: item.descricao || '', entradas: 0, saidas: 0 }
+      current.saidas += Number(item.qtd) || 0
+      if (!current.descricao) current.descricao = item.descricao || ''
+      totals.set(key, current)
+    })
+    return [...totals.values()].map(item => ({ ...item, saldo: item.entradas - item.saidas })).filter(item => `${item.codigo} ${item.descricao}`.toLowerCase().includes(materialSummarySearch.toLowerCase()))
+  }, [materialEntries, materialExits, materialSummarySearch])
+
+  const filteredMaterialEntries = useMemo(() => materialEntries.filter(item => `${item.codigo} ${item.descricao}`.toLowerCase().includes(materialEntrySearch.toLowerCase())), [materialEntries, materialEntrySearch])
+  const filteredMaterialExits = useMemo(() => materialExits.filter(item => `${item.codigo} ${item.descricao}`.toLowerCase().includes(materialExitSearch.toLowerCase())), [materialExits, materialExitSearch])
+
+  const updateMaterialPlanning = (codigo, field, value) => {
+    setMaterialPlanning(previous => {
+      const next = { ...previous, [codigo]: { ...(previous[codigo] || {}), [field]: value } }
+      localStorage.setItem('os_easy_material_planning', JSON.stringify(next))
+      return next
+    })
+  }
+
+  const calculateStockDate = (saldo, consumo, leadTime = 20) => {
+    const dailyConsumption = Number(consumo)
+    if (!Number.isFinite(dailyConsumption) || dailyConsumption <= 0) return '—'
+    const date = new Date()
+    date.setHours(0, 0, 0, 0)
+    date.setDate(date.getDate() + Math.max(0, Math.ceil(Number(saldo) / dailyConsumption) - Number(leadTime || 0)))
+    return date.toLocaleDateString('pt-BR')
   }
 
   const parseImportedMaterialDate = value => {
@@ -1007,7 +1135,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900">
-      <div className="mx-auto flex min-h-screen max-w-[1440px] flex-col gap-4 px-3 py-3 sm:px-6 sm:py-6 lg:flex-row lg:gap-6 lg:px-8">
+      <div className="mx-auto flex min-h-screen w-full max-w-none flex-col gap-3 px-2 py-2 sm:px-3 sm:py-3 lg:flex-row lg:gap-3 lg:px-3">
         <aside className="flex w-full flex-col gap-3 rounded-3xl border border-slate-800 bg-slate-950 p-4 text-white shadow-soft lg:hidden">
           <div className="flex items-center justify-between gap-3">
             <div className="flex items-center gap-3">
@@ -1025,12 +1153,12 @@ function App() {
                 <span>{item.icon} {item.label}</span><span>{expandedMenus[item.key === 'pesquisa' ? 'manutencao' : 'almoxarifado'] ? '▾' : '▸'}</span>
               </button>
             ) : (
-              ((item.key === 'materiais' && !expandedMenus.almoxarifado) || (item.key !== 'materiais' && !expandedMenus.manutencao)) ? null :
+              ((['materiais', 'saidasmateriais', 'resumomateriais'].includes(item.key) && !expandedMenus.almoxarifado) || (!['materiais', 'saidasmateriais', 'resumomateriais'].includes(item.key) && !expandedMenus.manutencao)) ? null :
               <button
                 key={item.key}
                 type="button"
                 onClick={() => setSelectedSection(item.key)}
-                className={`rounded-2xl px-2 py-2 text-center text-[0.72rem] font-medium transition ${
+                className={`rounded-2xl px-2 py-2 text-center text-[8px] font-medium transition ${
                   selectedSection === item.key
                     ? 'bg-brand-500 text-white shadow-lg shadow-brand-500/15'
                     : 'bg-slate-800 text-white hover:bg-slate-700'
@@ -1042,31 +1170,31 @@ function App() {
           </div>
         </aside>
 
-        <aside className="hidden w-72 flex-col gap-4 rounded-3xl border border-slate-800 bg-slate-950 p-6 text-white shadow-soft lg:flex">
-          <div className="flex items-center gap-3">
-            <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-slate-800 text-2xl text-white">
+        <aside className="hidden w-56 flex-col gap-2 rounded-2xl border border-slate-800 bg-slate-950 p-3 text-white shadow-soft lg:flex">
+          <div className="flex items-center gap-2">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-800 text-lg text-white">
               PC
             </div>
             <div>
-              <p className="text-sm uppercase tracking-[0.25em] text-slate-300">Sistema</p>
-              <h1 className="text-xl font-semibold text-white">GestorMan</h1>
+              <p className="text-[11px] uppercase tracking-[0.2em] text-slate-300">Sistema</p>
+              <h1 className="text-base font-semibold text-white">GestorMan</h1>
             </div>
           </div>
 
           <div className="space-y-1">
-            <p className="text-xs uppercase tracking-[0.3em] text-slate-300">Menu</p>
+            <p className="text-[11px] uppercase tracking-[0.2em] text-slate-300">Menu</p>
             {menuItems.map(item => item.heading ? (
-              <button key={`${item.key}-heading`} type="button" onClick={() => toggleMenu(item.key === 'pesquisa' ? 'manutencao' : 'almoxarifado')} className="flex w-full items-center justify-between px-4 pb-1 pt-3 text-left text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
+              <button key={`${item.key}-heading`} type="button" onClick={() => toggleMenu(item.key === 'pesquisa' ? 'manutencao' : 'almoxarifado')} className="flex w-full items-center justify-between px-2 pb-1 pt-2 text-left text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">
                 <span>{item.icon} {item.label}</span><span>{expandedMenus[item.key === 'pesquisa' ? 'manutencao' : 'almoxarifado'] ? '▾' : '▸'}</span>
               </button>
             ) : (
-              ((item.key === 'materiais' && !expandedMenus.almoxarifado) || (item.key !== 'materiais' && !expandedMenus.manutencao)) ? null :
+              ((['materiais', 'saidasmateriais', 'resumomateriais'].includes(item.key) && !expandedMenus.almoxarifado) || (!['materiais', 'saidasmateriais', 'resumomateriais'].includes(item.key) && !expandedMenus.manutencao)) ? null :
 
               <button
                 key={item.key}
                 type="button"
                 onClick={() => setSelectedSection(item.key)}
-                className={`flex w-full items-center gap-3 rounded-3xl px-4 py-3 text-left text-sm font-medium transition ${
+                className={`flex w-full items-center gap-2 rounded-xl px-2 py-2 text-left text-[11px] font-medium transition ${
                   selectedSection === item.key
                     ? 'bg-brand-500 text-white shadow-lg shadow-brand-500/15'
                     : 'text-white hover:bg-slate-800'
@@ -1078,9 +1206,9 @@ function App() {
             ))}
           </div>
 
-          <div className="mt-auto rounded-3xl bg-slate-800 p-4 text-sm text-white shadow-inner">
+          <div className="mt-auto rounded-2xl bg-slate-800 p-3 text-[11px] text-white shadow-inner">
             <p className="font-semibold text-white">Cadastro rápido</p>
-            <p className="mt-2 text-xs leading-5 text-slate-200">Use o formulário para incluir PC com todos os campos essenciais e depois pesquise.</p>
+            <p className="mt-1 text-[11px] leading-4 text-slate-200">Use o formulário para incluir PC com todos os campos essenciais e depois pesquise.</p>
           </div>
         </aside>
 
@@ -1098,6 +1226,10 @@ function App() {
                         ? 'Catálogo Manutenção'
                       : selectedSection === 'materiais'
                         ? 'Entrada de Materiais'
+                      : selectedSection === 'saidasmateriais'
+                        ? 'Saída de Materiais'
+                      : selectedSection === 'resumomateriais'
+                        ? 'Resumo de Materiais'
                       : 'Registro de OS - Manutenção'}
 
 
@@ -1427,27 +1559,53 @@ function App() {
                 <div className="mt-2 grid gap-5">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="flex gap-2">
-                      <button type="button" onClick={() => handleMaterialSubmit({ preventDefault: () => {} })} className="rounded-xl bg-brand-500 px-3 py-2 text-sm font-semibold text-white transition hover:bg-brand-700">Adicionar registro</button>
+                      <button type="button" onClick={() => { setMaterialForm(emptyMaterialEntry); setEditingMaterialId(''); setShowMaterialNewRow(true) }} className="rounded-xl bg-brand-500 px-3 py-2 text-sm font-semibold text-white transition hover:bg-brand-700">Novo</button>
+                      {showMaterialNewRow ? <button type="button" onClick={() => handleMaterialSubmit({ preventDefault: () => {} })} className="rounded-xl border border-brand-300 bg-brand-50 px-3 py-2 text-sm font-semibold text-brand-700 transition hover:bg-brand-100">Salvar</button> : null}
+                      <button type="button" onClick={() => setShowMaterialEntrySearch(previous => !previous)} className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100">Pesquisar</button>
+                      <button type="button" onClick={handleMaterialDelete} disabled={selectedMaterialEntryIds.length === 0} className="rounded-xl border border-red-300 bg-red-50 px-3 py-2 text-sm font-semibold text-red-700 transition hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-40">Excluir selecionados</button>
                       <label className="cursor-pointer rounded-xl border border-emerald-300 bg-emerald-50 px-3 py-2 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-100">Carga via Excel<input type="file" accept=".xlsx,.xls,.csv" onChange={handleMaterialExcelImport} className="sr-only" /></label>
-                      <button type="button" onClick={() => editingMaterialId ? handleMaterialSubmit({ preventDefault: () => {} }) : null} disabled={!editingMaterialId} className="rounded-xl border border-brand-300 bg-brand-50 px-3 py-2 text-sm font-semibold text-brand-700 transition hover:bg-brand-100 disabled:cursor-not-allowed disabled:opacity-40">Editar registro</button>
-                      <button type="button" onClick={handleMaterialDelete} disabled={!editingMaterialId} className="rounded-xl border border-red-300 bg-red-50 px-3 py-2 text-sm font-semibold text-red-700 transition hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-40">Excluir registro</button>
                     </div>
                     <p className="text-sm font-semibold text-slate-600">Registros cadastrados: <span className="text-slate-950">{materialEntries.length}</span></p>
                   </div>
-                  <form onSubmit={handleMaterialSubmit} className="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
-                    <p className="mb-3 text-xs text-slate-500">Importe uma planilha com os cabeçalhos: Data recebimento, Código, Descrição, UM, QTD, Fornecedor e Nº nota. A carga adiciona novos registros e preserva o banco atual.</p>
-                    <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-12">
-                      {[['data', 'Data recebimento', 'date', 'lg:col-span-2'], ['codigo', 'Código (opcional)', 'text', 'lg:col-span-2'], ['descricao', 'Descrição', 'text', 'lg:col-span-3'], ['um', 'UM', 'text', 'lg:col-span-1'], ['qtd', 'QTD', 'number', 'lg:col-span-1'], ['fornecedor', 'Fornecedor', 'text', 'lg:col-span-2'], ['nota', 'Nº nota', 'text', 'lg:col-span-1']].map(([name, label, type, span]) => (
-                        <label key={name} className={`min-w-0 space-y-1 text-xs text-slate-700 ${span}`}><span className="font-medium">{label}{['data', 'descricao'].includes(name) ? '*' : ''}</span><input required={['data', 'descricao'].includes(name)} type={type} name={name} value={materialForm[name]} onChange={event => setMaterialForm(prev => ({ ...prev, [name]: event.target.value }))} className="w-full min-w-0 rounded-lg border border-slate-200 bg-white px-2 py-2 text-xs outline-none transition focus:border-brand-500" /></label>
-                      ))}
-                    </div>
-                  </form>
-                  <div className="max-h-[32rem] overflow-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
-                    <table className="min-w-[950px] w-full border-collapse text-left text-xs"><thead className="sticky top-0 z-20 bg-slate-100 text-slate-500"><tr>{['Data recebimento', 'Código', 'Descrição', 'UM', 'QTD', 'Fornecedor', 'Nº nota'].map(label => <th key={label} className={`sticky top-0 px-2 py-2 font-medium ${label === 'Código' ? 'left-[120px] z-30 bg-slate-100' : 'z-20 bg-slate-100'}`}>{label}</th>)}</tr></thead>
-                      <tbody>{materialEntries.length === 0 ? <tr><td colSpan="7" className="px-3 py-5 text-center text-sm text-slate-500">Nenhuma entrada cadastrada.</td></tr> : materialEntries.map(entry => <tr key={entry._syncId} onClick={() => handleMaterialEdit(entry)} className={`cursor-pointer border-t border-slate-200/70 ${editingMaterialId === entry._syncId ? 'bg-brand-50' : 'hover:bg-slate-50'}`}><td className="px-3 py-2.5">{formatShortDate(entry.data) || '—'}</td><td className={`sticky left-[120px] z-10 px-3 py-2.5 ${editingMaterialId === entry._syncId ? 'bg-brand-50' : 'bg-white'}`}>{entry.codigo || '—'}</td><td className="px-3 py-2.5">{entry.descricao || '—'}</td><td className="px-3 py-2.5">{entry.um || '—'}</td><td className="px-3 py-2.5">{entry.qtd || '—'}</td><td className="px-3 py-2.5">{entry.fornecedor || '—'}</td><td className="px-3 py-2.5">{entry.nota || '—'}</td></tr>)}</tbody>
+                  {showMaterialEntrySearch ? <input autoFocus value={materialEntrySearch} onChange={event => setMaterialEntrySearch(event.target.value)} placeholder="Pesquisar código ou descrição" className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-[11px] outline-none focus:border-brand-500" /> : null}
+                  <div className="max-h-[calc(100vh-160px)] overflow-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+                    <table className="min-w-[1140px] w-full border-collapse text-left text-[11px]"><thead className="sticky top-0 z-20 bg-slate-100 text-slate-500"><tr><th className="w-10 px-2 py-1 font-medium">Sel.</th>{['Data recebimento', 'Código', 'Descrição', 'UM', 'QTD', 'Fornecedor', 'Nº nota'].map(label => <th key={label} className="sticky top-0 px-2 py-1 font-medium">{label}</th>)}</tr></thead>
+                      <tbody>
+                        {showMaterialNewRow ? <tr className="border-b-2 border-brand-200 bg-brand-50/40"><td className="px-2 py-1 text-center text-slate-400">Novo</td>
+                          {[['data', 'date', 'min-w-[130px]'], ['codigo', 'text', 'min-w-[120px]'], ['descricao', 'text', 'min-w-[280px]'], ['um', 'text', 'min-w-[70px]'], ['qtd', 'number', 'min-w-[70px]'], ['fornecedor', 'text', 'min-w-[220px]'], ['nota', 'text', 'min-w-[120px]']].map(([name, type, width]) => <td key={name} className="p-1"><input type={type} name={name} value={materialForm[name]} onChange={event => setMaterialForm(previous => ({ ...previous, [name]: event.target.value }))} placeholder={name === 'descricao' ? 'Descrição*' : name === 'data' ? 'Data*' : name.toUpperCase()} className={`w-full ${width} rounded border border-slate-200 bg-white px-2 py-1 text-[11px] outline-none focus:border-brand-500`} /></td>)}
+                        </tr> : null}
+                        {materialEntries.length === 0 ? <tr><td colSpan="8" className="px-3 py-5 text-center text-sm text-slate-500">Nenhuma entrada cadastrada.</td></tr> : materialEntries.map(entry => <tr key={entry._syncId} className={`border-t border-slate-200/70 hover:bg-slate-50 ${selectedMaterialEntryIds.includes(entry._syncId) ? 'bg-brand-50' : ''}`}><td className="px-2 py-1 text-center"><input type="checkbox" checked={selectedMaterialEntryIds.includes(entry._syncId)} onChange={() => toggleMaterialEntrySelection(entry._syncId)} aria-label={`Selecionar ${entry.descricao || entry.codigo || 'registro'}`} /></td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'data', event.currentTarget.textContent)} className="min-w-[130px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{formatShortDate(entry.data) || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'codigo', event.currentTarget.textContent)} className="min-w-[120px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.codigo || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'descricao', event.currentTarget.textContent)} className="min-w-[280px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.descricao || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'um', event.currentTarget.textContent)} className="cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.um || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'qtd', event.currentTarget.textContent)} className="cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.qtd || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'fornecedor', event.currentTarget.textContent)} className="min-w-[220px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.fornecedor || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'nota', event.currentTarget.textContent)} className="min-w-[120px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.nota || '—'}</td></tr>)}
+                      </tbody>
                     </table>
                   </div>
                 </div>
+              ) : selectedSection === 'saidasmateriais' ? (
+                <div className="mt-2 grid gap-5">
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <div className="flex gap-2">
+                      <button type="button" onClick={() => { setMaterialExitForm({ data: '', codigo: '', descricao: '', um: '', qtd: '' }); setShowMaterialExitNewRow(true) }} className="rounded-xl bg-brand-500 px-3 py-2 text-sm font-semibold text-white transition hover:bg-brand-700">Novo</button>
+                      {showMaterialExitNewRow ? <button type="button" onClick={saveMaterialExit} className="rounded-xl border border-brand-300 bg-brand-50 px-3 py-2 text-sm font-semibold text-brand-700 transition hover:bg-brand-100">Salvar</button> : null}
+                      <button type="button" onClick={() => setShowMaterialExitSearch(previous => !previous)} className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100">Pesquisar</button>
+                      <button type="button" onClick={deleteSelectedMaterialExits} disabled={selectedMaterialExitIds.length === 0} className="rounded-xl border border-red-300 bg-red-50 px-3 py-2 text-sm font-semibold text-red-700 transition hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-40">Excluir selecionados</button>
+                      <label className="cursor-pointer rounded-xl border border-emerald-300 bg-emerald-50 px-3 py-2 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-100">Carga via Excel<input type="file" accept=".xlsx,.xls,.csv" onChange={handleMaterialExitExcelImport} className="sr-only" /></label>
+                    </div>
+                    <p className="text-sm font-semibold text-slate-600">Registros cadastrados: <span className="text-slate-950">{materialExits.length}</span></p>
+                  </div>
+                  {showMaterialExitSearch ? <input autoFocus value={materialExitSearch} onChange={event => setMaterialExitSearch(event.target.value)} placeholder="Pesquisar código ou descrição" className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-[11px] outline-none focus:border-brand-500" /> : null}
+                  <div className="max-h-[calc(100vh-160px)] overflow-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+                    <table className="min-w-[900px] w-full border-collapse text-left text-[11px]"><thead className="sticky top-0 z-20 bg-slate-100 text-slate-500"><tr><th className="w-10 px-2 py-1 font-medium">Sel.</th>{['Data', 'Código', 'Descrição', 'UM', 'QTD'].map(label => <th key={label} className="px-2 py-1 font-medium">{label}</th>)}</tr></thead>
+                      <tbody>
+                        {showMaterialExitNewRow ? <tr className="border-b-2 border-brand-200 bg-brand-50/40"><td className="px-2 py-1 text-center text-slate-400">Novo</td>{[['data', 'date', 'min-w-[130px]'], ['codigo', 'text', 'min-w-[140px]'], ['descricao', 'text', 'min-w-[360px]'], ['um', 'text', 'min-w-[90px]'], ['qtd', 'number', 'min-w-[90px]']].map(([name, type, width]) => <td key={name} className="p-1"><input type={type} value={materialExitForm[name]} onChange={event => setMaterialExitForm(previous => ({ ...previous, [name]: event.target.value }))} placeholder={name === 'descricao' ? 'Descrição*' : name === 'data' ? 'Data*' : name.toUpperCase()} className={`w-full ${width} rounded border border-slate-200 bg-white px-2 py-1 text-[11px] outline-none focus:border-brand-500`} /></td>)}</tr> : null}
+                        {materialExits.length === 0 ? <tr><td colSpan="6" className="px-3 py-5 text-center text-sm text-slate-500">Nenhuma saída cadastrada.</td></tr> : materialExits.map(entry => <tr key={entry._syncId} className={`border-t border-slate-200/70 hover:bg-slate-50 ${selectedMaterialExitIds.includes(entry._syncId) ? 'bg-brand-50' : ''}`}><td className="px-2 py-1 text-center"><input type="checkbox" checked={selectedMaterialExitIds.includes(entry._syncId)} onChange={() => toggleMaterialExitSelection(entry._syncId)} aria-label={`Selecionar ${entry.descricao || entry.codigo || 'registro'}`} /></td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'data', event.currentTarget.textContent)} className="min-w-[130px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{formatShortDate(entry.data) || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'codigo', event.currentTarget.textContent)} className="min-w-[140px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.codigo || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'descricao', event.currentTarget.textContent)} className="min-w-[360px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.descricao || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'um', event.currentTarget.textContent)} className="min-w-[90px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.um || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'qtd', event.currentTarget.textContent)} className="min-w-[90px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.qtd || '—'}</td></tr>)}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              ) : selectedSection === 'resumomateriais' ? (
+                <section className="mt-2 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
+                  <div className="mb-3 flex flex-wrap items-center justify-between gap-3"><label className="text-[11px] text-slate-600">Pesquisar <input value={materialSummarySearch} onChange={event => setMaterialSummarySearch(event.target.value)} className="ml-2 rounded border border-slate-300 px-2 py-1 text-[11px] outline-none focus:border-brand-500" /></label><div className="flex gap-6 text-right text-[11px]"><span>ENTRADAS<br /><b className="text-emerald-700">{materialSummary.reduce((sum, item) => sum + item.entradas, 0)}</b></span><span>SAÍDAS<br /><b className="text-red-700">{materialSummary.reduce((sum, item) => sum + item.saidas, 0)}</b></span><span>SALDO<br /><b className="text-brand-700">{materialSummary.reduce((sum, item) => sum + item.saldo, 0)}</b></span></div></div>
+                  <div className="max-h-[calc(100vh-210px)] overflow-auto rounded border border-slate-300"><table className="w-full min-w-[1440px] text-left text-[11px]"><thead className="sticky top-0 bg-slate-100 text-slate-600"><tr>{['Código', 'Descrição', 'Entradas', 'Saídas', 'Saldo', 'Lead Time', 'Consumo dia', 'Est. Segurança', 'Est. Min', 'Est. Max', 'Ressuprimento'].map(label => <th key={label} className="px-2 py-1">{label}</th>)}</tr></thead><tbody>{materialSummary.length === 0 ? <tr><td colSpan="11" className="px-2 py-4 text-center text-slate-500">Nenhum material encontrado.</td></tr> : materialSummary.map(item => { const planning = materialPlanning[item.codigo] || {}; const endOfStock = calculateStockDate(item.saldo, planning.consumoDia); const resupplyDate = calculateStockDate(item.saldo, planning.consumoDia, planning.leadTime); return <tr key={item.codigo} className="border-t"><td className="px-2 py-1">{item.codigo}</td><td className="px-2 py-1">{item.descricao}</td><td className="px-2 py-1">{item.entradas}</td><td className="px-2 py-1">{item.saidas}</td><td className="px-2 py-1 font-semibold text-brand-700">{item.saldo >= 0 ? '+' : ''}{item.saldo}</td>{[['leadTime', 'Lead Time'], ['consumoDia', 'Consumo dia'], ['estSeguranca', 'Est. Segurança'], ['estMin', 'Est. Min'], ['estMax', 'Est. Max']].map(([field, label]) => <td key={field} className="px-1 py-1"><input aria-label={`${label} - ${item.codigo}`} type="number" min="0" value={planning[field] || ''} onChange={event => updateMaterialPlanning(item.codigo, field, event.target.value)} className="w-20 rounded border border-slate-200 px-1 py-0.5 text-[11px] outline-none focus:border-brand-500" /></td>)}<td className="px-2 py-1"><span className="block text-brand-700">{resupplyDate}</span><span className="text-[9px] text-slate-500">Fim: {endOfStock}</span></td></tr>})}</tbody></table></div>
+                </section>
               ) : selectedSection === 'catalogo' ? (
                 <div className="mt-2 grid gap-5">
                   <form onSubmit={handleCatalogSubmit} className="grid gap-3 border-b border-slate-200 pb-5">
