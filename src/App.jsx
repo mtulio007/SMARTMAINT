@@ -138,11 +138,11 @@ const menuItems = [
   { label: 'Registro OS', icon: '🖥️', key: 'cadastro' },
   { label: 'Hora Extra', icon: '⏱️', key: 'horaextra' },
   { label: 'Pedidos', icon: '🛒', key: 'compras' },
-  { label: 'Catálogo Manutenção', icon: '🗂️', key: 'catalogo' },
   { label: 'Almoxarifado', icon: '📦', key: 'materiais', heading: true },
   { label: 'Entrada de Materiais', icon: '📥', key: 'materiais' },
   { label: 'Saída de Materiais', icon: '📤', key: 'saidasmateriais' },
-  { label: 'Resumo', icon: '📊', key: 'resumomateriais' }
+  { label: 'Resumo', icon: '📊', key: 'resumomateriais' },
+  { label: 'Catálogo de Peças', icon: '🗂️', key: 'catalogo' }
 ]
 
 const emptyMaterialEntry = { data: '', codigo: '', descricao: '', um: '', qtd: '', fornecedor: '', nota: '' }
