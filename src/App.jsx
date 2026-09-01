@@ -136,7 +136,6 @@ const menuItems = [
   { label: 'Manutenção', icon: '🔧', key: 'pesquisa', heading: true },
   { label: 'Status OS', icon: '🔎', key: 'pesquisa' },
   { label: 'Registro OS', icon: '🖥️', key: 'cadastro' },
-  { label: 'Hora Extra', icon: '⏱️', key: 'horaextra' },
   { label: 'Pedidos', icon: '🛒', key: 'compras' },
   { label: 'Almoxarifado', icon: '📦', key: 'materiais', heading: true },
   { label: 'Entrada de Materiais', icon: '📥', key: 'materiais' },
@@ -144,6 +143,8 @@ const menuItems = [
   { label: 'Resumo', icon: '📊', key: 'resumomateriais' },
   { label: 'Catálogo de Peças', icon: '🗂️', key: 'catalogo' }
 ]
+
+const almoxarifadoKeys = ['materiais', 'saidasmateriais', 'resumomateriais', 'catalogo']
 
 const emptyMaterialEntry = { data: '', codigo: '', descricao: '', um: '', qtd: '', fornecedor: '', nota: '' }
 
@@ -269,7 +270,7 @@ function App() {
   const [materialEntries, setMaterialEntries] = useState(() => {
     try { return JSON.parse(localStorage.getItem('os_easy_material_entries') || '[]').map(entry => ({ ...entry, _syncId: entry._syncId || createSyncId(), codigo: !entry.codigo || String(entry.codigo).startsWith('MAT-') ? 'SEM CÓDIGO' : entry.codigo })) } catch { return [] }
   })
-  const [selectedSection, setSelectedSection] = useState('pesquisa')
+  const [selectedSection, setSelectedSection] = useState('catalogo')
   const [searchTerm, setSearchTerm] = useState('')
   const [searchStatus, setSearchStatus] = useState('')
   const [form, setForm] = useState(emptyOrder)
@@ -298,7 +299,7 @@ function App() {
   const [materialExitSearch, setMaterialExitSearch] = useState('')
   const [showMaterialEntrySearch, setShowMaterialEntrySearch] = useState(false)
   const [showMaterialExitSearch, setShowMaterialExitSearch] = useState(false)
-  const [expandedMenus, setExpandedMenus] = useState({ manutencao: false, almoxarifado: false })
+  const [expandedMenus, setExpandedMenus] = useState({ manutencao: true, almoxarifado: true })
   const [editingCatalogItemId, setEditingCatalogItemId] = useState('')
   const [editingCatalogDescription, setEditingCatalogDescription] = useState('')
   const [currentOrderIndex, setCurrentOrderIndex] = useState(-1)
@@ -739,6 +740,23 @@ function App() {
   const filteredMaterialEntries = useMemo(() => materialEntries.filter(item => `${item.codigo} ${item.descricao}`.toLowerCase().includes(materialEntrySearch.toLowerCase())), [materialEntries, materialEntrySearch])
   const filteredMaterialExits = useMemo(() => materialExits.filter(item => `${item.codigo} ${item.descricao}`.toLowerCase().includes(materialExitSearch.toLowerCase())), [materialExits, materialExitSearch])
 
+  const materialDashboard = useMemo(() => {
+    const totalMateriais = new Set(materialEntries.map(item => item.codigo || 'SEM CÓDIGO')).size
+    const pedidosPendentes = purchases.filter(item => String(item.status || '').toLowerCase() === 'pendente').length
+    const itensBaixoEstoque = materialSummary.filter(item => {
+      const plan = materialPlanning[item.codigo] || {}
+      const estMin = Number(plan.estMin)
+      const threshold = Number.isFinite(estMin) && estMin >= 0 ? estMin : 5
+      return item.saldo <= threshold
+    }).length
+
+    return {
+      totalMateriais,
+      pedidosPendentes,
+      itensBaixoEstoque
+    }
+  }, [materialEntries, materialSummary, materialPlanning, purchases])
+
   const updateMaterialPlanning = (codigo, field, value) => {
     setMaterialPlanning(previous => {
       const next = { ...previous, [codigo]: { ...(previous[codigo] || {}), [field]: value } }
@@ -1153,7 +1171,7 @@ function App() {
                 <span>{item.icon} {item.label}</span><span>{expandedMenus[item.key === 'pesquisa' ? 'manutencao' : 'almoxarifado'] ? '▾' : '▸'}</span>
               </button>
             ) : (
-              ((['materiais', 'saidasmateriais', 'resumomateriais'].includes(item.key) && !expandedMenus.almoxarifado) || (!['materiais', 'saidasmateriais', 'resumomateriais'].includes(item.key) && !expandedMenus.manutencao)) ? null :
+              ((almoxarifadoKeys.includes(item.key) && !expandedMenus.almoxarifado) || (!almoxarifadoKeys.includes(item.key) && !expandedMenus.manutencao)) ? null :
               <button
                 key={item.key}
                 type="button"
@@ -1188,7 +1206,7 @@ function App() {
                 <span>{item.icon} {item.label}</span><span>{expandedMenus[item.key === 'pesquisa' ? 'manutencao' : 'almoxarifado'] ? '▾' : '▸'}</span>
               </button>
             ) : (
-              ((['materiais', 'saidasmateriais', 'resumomateriais'].includes(item.key) && !expandedMenus.almoxarifado) || (!['materiais', 'saidasmateriais', 'resumomateriais'].includes(item.key) && !expandedMenus.manutencao)) ? null :
+              ((almoxarifadoKeys.includes(item.key) && !expandedMenus.almoxarifado) || (!almoxarifadoKeys.includes(item.key) && !expandedMenus.manutencao)) ? null :
 
               <button
                 key={item.key}
@@ -1557,6 +1575,20 @@ function App() {
                 </>
               ) : selectedSection === 'materiais' ? (
                 <div className="mt-2 grid gap-5">
+                  <div className="grid gap-3 md:grid-cols-3">
+                    <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">Total de Materiais</p>
+                      <p className="mt-3 text-3xl font-semibold text-slate-900">{materialDashboard.totalMateriais}</p>
+                    </div>
+                    <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4 shadow-sm">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-700">Pedidos Pendentes</p>
+                      <p className="mt-3 text-3xl font-semibold text-amber-800">{materialDashboard.pedidosPendentes}</p>
+                    </div>
+                    <div className="rounded-2xl border border-rose-200 bg-rose-50 p-4 shadow-sm">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-rose-700">Itens de Baixo Estoque</p>
+                      <p className="mt-3 text-3xl font-semibold text-rose-800">{materialDashboard.itensBaixoEstoque}</p>
+                    </div>
+                  </div>
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="flex gap-2">
                       <button type="button" onClick={() => { setMaterialForm(emptyMaterialEntry); setEditingMaterialId(''); setShowMaterialNewRow(true) }} className="rounded-xl bg-brand-500 px-3 py-2 text-sm font-semibold text-white transition hover:bg-brand-700">Novo</button>
@@ -1608,6 +1640,20 @@ function App() {
                 </section>
               ) : selectedSection === 'catalogo' ? (
                 <div className="mt-2 grid gap-5">
+                  <div className="grid gap-3 md:grid-cols-3">
+                    <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">Total de Materiais</p>
+                      <p className="mt-3 text-3xl font-semibold text-slate-900">{materialDashboard.totalMateriais}</p>
+                    </div>
+                    <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4 shadow-sm">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-700">Pedidos Pendentes</p>
+                      <p className="mt-3 text-3xl font-semibold text-amber-800">{materialDashboard.pedidosPendentes}</p>
+                    </div>
+                    <div className="rounded-2xl border border-rose-200 bg-rose-50 p-4 shadow-sm">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-rose-700">Itens de Baixo Estoque</p>
+                      <p className="mt-3 text-3xl font-semibold text-rose-800">{materialDashboard.itensBaixoEstoque}</p>
+                    </div>
+                  </div>
                   <form onSubmit={handleCatalogSubmit} className="grid gap-3 border-b border-slate-200 pb-5">
                     <div className="grid gap-3 md:grid-cols-[180px_minmax(0,1fr)]">
                       <label className="flex min-h-32 cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-slate-300 bg-white p-3 text-center transition hover:border-brand-500 hover:bg-brand-50/40">
