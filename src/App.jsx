@@ -138,13 +138,14 @@ const menuItems = [
   { label: 'Registro OS', icon: '🖥️', key: 'cadastro' },
   { label: 'Pedidos', icon: '🛒', key: 'compras' },
   { label: 'Almoxarifado', icon: '📦', key: 'materiais', heading: true },
+  { label: 'Dashboard', icon: '📊', key: 'dashboardmateriais' },
   { label: 'Entrada de Materiais', icon: '📥', key: 'materiais' },
   { label: 'Saída de Materiais', icon: '📤', key: 'saidasmateriais' },
   { label: 'Resumo', icon: '📊', key: 'resumomateriais' },
   { label: 'Catálogo de Peças', icon: '🗂️', key: 'catalogo' }
 ]
 
-const almoxarifadoKeys = ['materiais', 'saidasmateriais', 'resumomateriais', 'catalogo']
+const almoxarifadoKeys = ['dashboardmateriais', 'materiais', 'saidasmateriais', 'resumomateriais', 'catalogo']
 
 const emptyMaterialEntry = { data: '', codigo: '', descricao: '', um: '', qtd: '', fornecedor: '', nota: '' }
 
@@ -270,7 +271,7 @@ function App() {
   const [materialEntries, setMaterialEntries] = useState(() => {
     try { return JSON.parse(localStorage.getItem('os_easy_material_entries') || '[]').map(entry => ({ ...entry, _syncId: entry._syncId || createSyncId(), codigo: !entry.codigo || String(entry.codigo).startsWith('MAT-') ? 'SEM CÓDIGO' : entry.codigo })) } catch { return [] }
   })
-  const [selectedSection, setSelectedSection] = useState('catalogo')
+  const [selectedSection, setSelectedSection] = useState('dashboardmateriais')
   const [searchTerm, setSearchTerm] = useState('')
   const [searchStatus, setSearchStatus] = useState('')
   const [form, setForm] = useState(emptyOrder)
@@ -279,6 +280,7 @@ function App() {
   const [purchaseForm, setPurchaseForm] = useState(emptyPurchase)
   const [purchaseSearchTerm, setPurchaseSearchTerm] = useState('')
   const [catalogDescription, setCatalogDescription] = useState('')
+  const [catalogSearch, setCatalogSearch] = useState('')
   const [catalogImage, setCatalogImage] = useState('')
   const [catalogError, setCatalogError] = useState('')
   const [materialForm, setMaterialForm] = useState(emptyMaterialEntry)
@@ -299,7 +301,7 @@ function App() {
   const [materialExitSearch, setMaterialExitSearch] = useState('')
   const [showMaterialEntrySearch, setShowMaterialEntrySearch] = useState(false)
   const [showMaterialExitSearch, setShowMaterialExitSearch] = useState(false)
-  const [expandedMenus, setExpandedMenus] = useState({ manutencao: true, almoxarifado: true })
+  const [expandedMenus, setExpandedMenus] = useState({ manutencao: false, almoxarifado: false })
   const [editingCatalogItemId, setEditingCatalogItemId] = useState('')
   const [editingCatalogDescription, setEditingCatalogDescription] = useState('')
   const [currentOrderIndex, setCurrentOrderIndex] = useState(-1)
@@ -364,6 +366,13 @@ function App() {
       getPurchaseItems(purchase).map((item, itemIndex) => ({ purchase, item, itemIndex }))
     )
   }, [filteredPurchases])
+
+  const filteredCatalogItems = useMemo(() => {
+    const term = catalogSearch.trim().toLowerCase()
+    return [...catalogItems]
+      .filter(item => !term || String(item.description || '').toLowerCase().includes(term))
+      .sort((a, b) => new Date(a.createdAt || 0) - new Date(b.createdAt || 0))
+  }, [catalogItems, catalogSearch])
 
   const equipamentoMap = useMemo(() => {
     return Object.fromEntries(equipamentoOptions.map(item => [item.code, item.label]))
@@ -1242,6 +1251,8 @@ function App() {
                       ? 'Formulário de Pedidos'
                       : selectedSection === 'catalogo'
                         ? 'Catálogo Manutenção'
+                      : selectedSection === 'dashboardmateriais'
+                        ? 'Dashboard do Almoxarifado'
                       : selectedSection === 'materiais'
                         ? 'Entrada de Materiais'
                       : selectedSection === 'saidasmateriais'
@@ -1573,12 +1584,13 @@ function App() {
                   </div>
                 </div>
                 </>
-              ) : selectedSection === 'materiais' ? (
+              ) : selectedSection === 'dashboardmateriais' ? (
                 <div className="mt-2 grid gap-5">
                   <div className="grid gap-3 md:grid-cols-3">
                     <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">Total de Materiais</p>
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">Materiais únicos</p>
                       <p className="mt-3 text-3xl font-semibold text-slate-900">{materialDashboard.totalMateriais}</p>
+                      <p className="mt-1 text-xs text-slate-500">Códigos distintos em estoque</p>
                     </div>
                     <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4 shadow-sm">
                       <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-700">Pedidos Pendentes</p>
@@ -1589,6 +1601,12 @@ function App() {
                       <p className="mt-3 text-3xl font-semibold text-rose-800">{materialDashboard.itensBaixoEstoque}</p>
                     </div>
                   </div>
+                  <div className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-600 shadow-sm">
+                    A Entrada de Materiais possui <span className="font-semibold text-slate-950">{materialEntries.length}</span> registros de entrada. O total acima conta apenas códigos de materiais distintos, por isso pode ser menor.
+                  </div>
+                </div>
+              ) : selectedSection === 'materiais' ? (
+                <div className="mt-2 grid gap-5">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="flex gap-2">
                       <button type="button" onClick={() => { setMaterialForm(emptyMaterialEntry); setEditingMaterialId(''); setShowMaterialNewRow(true) }} className="rounded-xl bg-brand-500 px-3 py-2 text-sm font-semibold text-white transition hover:bg-brand-700">Novo</button>
@@ -1597,7 +1615,7 @@ function App() {
                       <button type="button" onClick={handleMaterialDelete} disabled={selectedMaterialEntryIds.length === 0} className="rounded-xl border border-red-300 bg-red-50 px-3 py-2 text-sm font-semibold text-red-700 transition hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-40">Excluir selecionados</button>
                       <label className="cursor-pointer rounded-xl border border-emerald-300 bg-emerald-50 px-3 py-2 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-100">Carga via Excel<input type="file" accept=".xlsx,.xls,.csv" onChange={handleMaterialExcelImport} className="sr-only" /></label>
                     </div>
-                    <p className="text-sm font-semibold text-slate-600">Registros cadastrados: <span className="text-slate-950">{materialEntries.length}</span></p>
+                    <p className="text-sm font-semibold text-slate-600">Registros de entrada: <span className="text-slate-950">{materialEntries.length}</span></p>
                   </div>
                   {showMaterialEntrySearch ? <input autoFocus value={materialEntrySearch} onChange={event => setMaterialEntrySearch(event.target.value)} placeholder="Pesquisar código ou descrição" className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-[11px] outline-none focus:border-brand-500" /> : null}
                   <div className="max-h-[calc(100vh-160px)] overflow-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
@@ -1640,20 +1658,6 @@ function App() {
                 </section>
               ) : selectedSection === 'catalogo' ? (
                 <div className="mt-2 grid gap-5">
-                  <div className="grid gap-3 md:grid-cols-3">
-                    <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">Total de Materiais</p>
-                      <p className="mt-3 text-3xl font-semibold text-slate-900">{materialDashboard.totalMateriais}</p>
-                    </div>
-                    <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4 shadow-sm">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-700">Pedidos Pendentes</p>
-                      <p className="mt-3 text-3xl font-semibold text-amber-800">{materialDashboard.pedidosPendentes}</p>
-                    </div>
-                    <div className="rounded-2xl border border-rose-200 bg-rose-50 p-4 shadow-sm">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-rose-700">Itens de Baixo Estoque</p>
-                      <p className="mt-3 text-3xl font-semibold text-rose-800">{materialDashboard.itensBaixoEstoque}</p>
-                    </div>
-                  </div>
                   <form onSubmit={handleCatalogSubmit} className="grid gap-3 border-b border-slate-200 pb-5">
                     <div className="grid gap-3 md:grid-cols-[180px_minmax(0,1fr)]">
                       <label className="flex min-h-32 cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-slate-300 bg-white p-3 text-center transition hover:border-brand-500 hover:bg-brand-50/40">
@@ -1669,11 +1673,19 @@ function App() {
                     <div className="flex justify-end"><button type="submit" className="rounded-2xl bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700">Adicionar ao catálogo</button></div>
                   </form>
 
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <label className="flex min-w-64 flex-1 items-center gap-2 text-sm font-medium text-slate-700">
+                      <span className="sr-only">Pesquisar imagem cadastrada</span>
+                      <input value={catalogSearch} onChange={event => setCatalogSearch(event.target.value)} placeholder="Pesquisar imagem cadastrada..." className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-normal outline-none transition focus:border-brand-500" />
+                    </label>
+                    <p className="text-sm font-semibold text-slate-600">Imagens: <span className="text-slate-950">{filteredCatalogItems.length}</span></p>
+                  </div>
+
                   <div className="flex flex-wrap justify-end gap-3">
-                    {catalogItems.length === 0 ? (
-                      <p className="text-sm text-slate-500">Nenhum item cadastrado no catálogo.</p>
+                    {filteredCatalogItems.length === 0 ? (
+                      <p className="w-full text-sm text-slate-500">{catalogSearch ? 'Nenhuma imagem encontrada para a pesquisa.' : 'Nenhum item cadastrado no catálogo.'}</p>
                     ) : (
-                      [...catalogItems].sort((a, b) => new Date(a.createdAt || 0) - new Date(b.createdAt || 0)).map(item => {
+                      filteredCatalogItems.map(item => {
                         const isEditing = editingCatalogItemId === item._syncId
                         return (
                           <article key={item._syncId} className="w-[calc((100%-0.75rem)/2)] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm md:w-[calc((100%-1.5rem)/3)] lg:w-[calc((100%-2.25rem)/4)] xl:w-[calc((100%-3rem)/5)]">
