@@ -158,7 +158,7 @@ const emptyPurchase = {
   descricao: '',
   quantidade: '',
   unidade: 'UN',
-  items: [{ tipoComponente: '', descricao: '', quantidade: '', unidade: 'UN' }],
+  items: [{ tipoComponente: '', codigo: '', descricao: '', referencia: '', quantidade: '', unidade: 'UN' }],
   prioridade: 'Média',
   solicitante: '',
   dataSolicitacao: '',
@@ -170,12 +170,14 @@ const purchaseSetorOptions = ['Manutenção', 'Almoxarifado', 'Produção', 'ADM
 const purchaseSolicitacaoOptions = ['Compra', 'Reposição', 'Emergencial', 'Ordem de serviço']
 const purchaseTipoComponenteOptions = ['Eletrônico', 'Mecânico', 'Hidráulico', 'Elétrico', 'Consumível', 'Outro']
 const purchaseStatusOptions = ['Pendente', 'Aprovada', 'Comprada', 'Cancelada']
-const emptyPurchaseItem = { tipoComponente: '', descricao: '', quantidade: '', unidade: 'UN' }
+const emptyPurchaseItem = { tipoComponente: '', codigo: '', descricao: '', referencia: '', quantidade: '', unidade: 'UN' }
 const getPurchaseItems = purchase => {
   if (Array.isArray(purchase?.items) && purchase.items.length > 0) return purchase.items
   return [{
     tipoComponente: purchase?.tipoComponente || '',
+    codigo: purchase?.codigo || '',
     descricao: purchase?.descricao || '',
+    referencia: purchase?.referencia || '',
     quantidade: purchase?.quantidade ?? '',
     unidade: purchase?.unidade || 'UN'
   }]
@@ -991,7 +993,9 @@ function App() {
       numero: purchaseForm.numero || nextPurchaseNumber,
       items,
       tipoComponente: items[0].tipoComponente,
+      codigo: items[0].codigo,
       descricao: items[0].descricao,
+      referencia: items[0].referencia,
       quantidade: items[0].quantidade,
       unidade: items[0].unidade,
       dataSolicitacao: purchaseForm.dataSolicitacao || getCurrentDate(),
@@ -1806,11 +1810,14 @@ function App() {
                       <button type="button" onClick={handleAddPurchaseItem} className="rounded-xl border border-brand-500 bg-brand-50 px-3 py-2 text-sm font-semibold text-brand-700 transition hover:bg-brand-100">Adicionar item</button>
                     </div>
                     <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white">
-                      <table className="min-w-[700px] w-full border-collapse text-left text-sm">
+                      <table className="min-w-[960px] w-full border-collapse text-left text-sm">
                         <thead className="bg-slate-100 text-slate-500">
                           <tr>
+                            <th className="w-14 px-3 py-2 font-medium">Nº</th>
                             <th className="px-3 py-2 font-medium">Componente</th>
+                            <th className="w-32 px-3 py-2 font-medium">Código</th>
                             <th className="px-3 py-2 font-medium">Descrição</th>
+                            <th className="w-36 px-3 py-2 font-medium">Referência</th>
                             <th className="w-28 px-3 py-2 font-medium">Qtd.</th>
                             <th className="w-28 px-3 py-2 font-medium">Unidade</th>
                             <th className="w-20 px-3 py-2 font-medium"></th>
@@ -1819,6 +1826,7 @@ function App() {
                         <tbody>
                           {purchaseForm.items.map((item, index) => (
                             <tr key={index} className="border-t border-slate-200">
+                              <td className="px-3 py-2 text-center text-sm font-medium text-slate-500">{index + 1}</td>
                               <td className="p-2">
                                 <select ref={el => (purchaseFormRefs.current[`item-${index}-tipoComponente`] = el)} name="tipoComponente" value={item.tipoComponente} onChange={event => handlePurchaseItemChange(index, event)} className={`w-full rounded-xl border bg-white px-3 py-2 text-sm outline-none transition focus:border-brand-500 ${purchaseInvalidFields.includes(`item-${index}-tipoComponente`) ? 'border-red-400' : 'border-slate-200'}`}>
                                   <option value="">Selecione</option>
@@ -1826,7 +1834,13 @@ function App() {
                                 </select>
                               </td>
                               <td className="p-2">
+                                <input type="text" name="codigo" value={item.codigo || ''} onChange={event => handlePurchaseItemChange(index, event)} placeholder="Código" className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm outline-none transition focus:border-brand-500" />
+                              </td>
+                              <td className="p-2">
                                 <input ref={el => (purchaseFormRefs.current[`item-${index}-descricao`] = el)} type="text" name="descricao" value={item.descricao} onChange={event => handlePurchaseItemChange(index, event)} placeholder="Descreva o produto" className={`w-full rounded-xl border bg-white px-3 py-2 text-sm outline-none transition focus:border-brand-500 ${purchaseInvalidFields.includes(`item-${index}-descricao`) ? 'border-red-400' : 'border-slate-200'}`} />
+                              </td>
+                              <td className="p-2">
+                                <input type="text" name="referencia" value={item.referencia || ''} onChange={event => handlePurchaseItemChange(index, event)} placeholder="Referência" className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm outline-none transition focus:border-brand-500" />
                               </td>
                               <td className="p-2">
                                 <input ref={el => (purchaseFormRefs.current[`item-${index}-quantidade`] = el)} type="number" min="1" name="quantidade" value={item.quantidade} onChange={event => handlePurchaseItemChange(index, event)} className={`w-full rounded-xl border bg-white px-3 py-2 text-sm outline-none transition focus:border-brand-500 ${purchaseInvalidFields.includes(`item-${index}-quantidade`) ? 'border-red-400' : 'border-slate-200'}`} />

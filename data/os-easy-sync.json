@@ -117,6 +117,126 @@
   ],
   "purchases": [
     {
+      "numero": "M046",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "PERFIL U AÇO  50mm x 4\" x 3/16",
+      "quantidade": 6,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "descricao": "PERFIL U AÇO  50mm x 4\" x 3/16",
+          "quantidade": 6,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "descricao": "BARRA REDONDA 6m x 7/8 ",
+          "quantidade": 14,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "descricao": "BARRA ROSCAVEL 1m x 1\"",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "descricao": "PORCA PARA BARRA ROSCÁVEL 1\"",
+          "quantidade": 28,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "descricao": "ARRUELA COM FURO 1\"",
+          "quantidade": 28,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "descricao": "ELETRODO 6013 3,25 MARCA ESAB",
+          "quantidade": 100,
+          "unidade": "KG"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "descricao": "PERFIL U AÇO chapa 12 35mm x 4\"",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "descricao": "DISCO DE CORTE 14\" MARCA NORTON",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "descricao": "DISCO DE CORTE 7\" MARCA NORTON",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "descricao": "DISCO DE CORTE 4\" MARCA NORTON",
+          "quantidade": 100,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-08-20",
+      "observacoes": "Material necessário para serviço de obra civil no galpão 2.",
+      "status": "Comprada"
+    },
+    {
+      "numero": "M045",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Emergencial",
+      "tipoComponente": "Mecânico",
+      "descricao": "PARAFUSO ALLEN M8X50 COM PORCA E ARRUELA",
+      "quantidade": 400,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "descricao": "PARAFUSO ALLEN M8X50 COM PORCA E ARRUELA",
+          "quantidade": 400,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-08-19",
+      "observacoes": "Material necessário para utilização nas alavancas dos teares leves.",
+      "status": "Comprada"
+    },
+    {
+      "numero": "M043",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Emergencial",
+      "tipoComponente": "Mecânico",
+      "descricao": "CORREIA DENTADA",
+      "quantidade": 12,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "descricao": "CORREIA DENTADA",
+          "quantidade": 12,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-08-19",
+      "observacoes": "CORREIA PARA USO NOS TEARES DE ALÇA, ONDE AS ATUAIS APRESENTAM DESGASTE E IMINÊNCIA DE PARADA EM DUAS MÁQUINAS. REPOSIÇÃO DE FERRAMENTAS PARA MANUTENÇÃO",
+      "status": "Comprada"
+    },
+    {
       "numero": "M024",
       "setor": "Manutenção",
       "tipoSolicitacao": "Emergencial",
