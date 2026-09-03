@@ -117,74 +117,26 @@
   ],
   "purchases": [
     {
-      "numero": "M004",
+      "numero": "M024",
       "setor": "Manutenção",
       "tipoSolicitacao": "Emergencial",
-      "tipoComponente": "Hidráulico",
-      "descricao": "SIRENE",
-      "quantidade": 1,
+      "tipoComponente": "Mecânico",
+      "descricao": "CORREIA DENTADA",
+      "quantidade": 12,
       "unidade": "UN",
       "items": [
         {
-          "tipoComponente": "Hidráulico",
-          "descricao": "SIRENE",
-          "quantidade": 1,
-          "unidade": "UN"
-        },
-        {
-          "tipoComponente": "Hidráulico",
-          "descricao": "GIROFLEX",
-          "quantidade": 1,
+          "tipoComponente": "Mecânico",
+          "descricao": "CORREIA DENTADA",
+          "quantidade": 12,
           "unidade": "UN"
         }
       ],
       "prioridade": "Média",
-      "solicitante": "TÚLIO",
-      "dataSolicitacao": "2026-07-21",
-      "observacoes": "AVISAR OS BIZONHOS QUE TÁ SAINDO CARRETA",
-      "status": "Pendente"
-    },
-    {
-      "numero": "M003",
-      "setor": "Manutenção",
-      "tipoSolicitacao": "Compra",
-      "tipoComponente": "Hidráulico",
-      "descricao": "Telha galvanizada.\n",
-      "quantidade": 100,
-      "unidade": "UN",
-      "prioridade": "Média",
-      "solicitante": "TÚLIO",
-      "dataSolicitacao": "2026-07-17",
-      "observacoes": "Bomba de óleo",
-      "status": "Pendente"
-    },
-    {
-      "numero": "M002",
-      "setor": "Manutenção",
-      "tipoSolicitacao": "Emergencial",
-      "tipoComponente": "Mecânico",
-      "descricao": "Penico",
-      "quantidade": 2,
-      "unidade": "UN",
-      "prioridade": "Média",
-      "solicitante": "TÚLIO",
-      "dataSolicitacao": "2026-07-17",
-      "observacoes": "5 litros",
-      "status": "Pendente"
-    },
-    {
-      "numero": "M001",
-      "setor": "ADM",
-      "tipoSolicitacao": "Compra",
-      "tipoComponente": "Hidráulico",
-      "descricao": "VEDA ROSCA",
-      "quantidade": 100,
-      "unidade": "UN",
-      "prioridade": "Média",
-      "solicitante": "TÚLIO",
-      "dataSolicitacao": "2026-07-17",
-      "observacoes": "serviço para manutenção dos telhados.",
-      "status": "Pendente"
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-08-18",
+      "observacoes": "CORREIA PARA USO NOS TEARES DE ALÇA, ONDE AS ATUAIS APRESENTAM DESGASTE E IMINÊNCIA DE PARADA EM DUAS MÁQUINAS, REPOSIÇÃO DE FERRAMENTAS PARA MANUTENÇÃO",
+      "status": "Comprada"
     }
   ],
   "catalogItems": [
@@ -31034,5 +30986,5056 @@
       "nota": "",
       "_syncId": "f98c10ef-c287-4c07-8e2d-dffb8269b3f9"
     }
-  ]
+  ],
+  "materialExits": [
+    {
+      "_syncId": "0c953ca6-813a-4caa-b265-9a2c4b750417",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TUBETE 110X5,75X280 - 28CM",
+      "um": "",
+      "qtd": 1120
+    },
+    {
+      "_syncId": "3aca03be-1c66-488d-8c39-4355c7262583",
+      "data": "2026-08-13",
+      "codigo": "5003385",
+      "descricao": "TUBETE 101,6X12X920 - 92 CM",
+      "um": "",
+      "qtd": 42
+    },
+    {
+      "_syncId": "4af56cea-0ac4-416e-aa29-0c677c793077",
+      "data": "2026-08-13",
+      "codigo": "5003384",
+      "descricao": "TUBETE 101,6X12X720 - 72 CM",
+      "um": "",
+      "qtd": 85
+    },
+    {
+      "_syncId": "3ff4692c-6f8e-42c2-9ff6-8348085c862a",
+      "data": "2026-08-13",
+      "codigo": "5003538",
+      "descricao": "TUBETE 101,6X12X670 - 67 CM",
+      "um": "",
+      "qtd": 116
+    },
+    {
+      "_syncId": "11e188dc-5347-44d0-8ed7-2dde3ebfc999",
+      "data": "2026-08-13",
+      "codigo": "5003537",
+      "descricao": "TUBETE 101,6X12X620 - 62 CM",
+      "um": "",
+      "qtd": 120
+    },
+    {
+      "_syncId": "0ef4a206-42bf-4f4e-90a6-d1d3ed637adb",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TUBETE 101,6X12X1070 - 107 CM",
+      "um": "",
+      "qtd": 43
+    },
+    {
+      "_syncId": "c6a9289c-351d-4b23-b9ff-e7e4d692c074",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TUBETE 101,6X12X1010 - 101 CM",
+      "um": "",
+      "qtd": 41
+    },
+    {
+      "_syncId": "ee2e9c42-0255-4012-ab9b-59da7fb8b40a",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TUBETE 101,6X12X1000 - 100 CM",
+      "um": "",
+      "qtd": 139
+    },
+    {
+      "_syncId": "0284fa8d-e9f6-4edb-977c-0d8701a52636",
+      "data": "2026-08-13",
+      "codigo": "1000294",
+      "descricao": "STRECH",
+      "um": "",
+      "qtd": 86
+    },
+    {
+      "_syncId": "19d6c4f0-843b-4b3a-a95b-cdfe2fa997da",
+      "data": "2026-08-13",
+      "codigo": "46",
+      "descricao": "SACO PLAST. 40X60X0,03",
+      "um": "",
+      "qtd": 3200
+    },
+    {
+      "_syncId": "1e613d84-7b30-431c-a240-42281145d294",
+      "data": "2026-08-13",
+      "codigo": "13.815.04.0.00",
+      "descricao": "TUBO GUIA DE FIO INOX DIAM. 4 MM",
+      "um": "",
+      "qtd": 103
+    },
+    {
+      "_syncId": "1a425335-9179-4171-ace6-f77ee7767750",
+      "data": "2026-08-13",
+      "codigo": "13.815.02.0.00",
+      "descricao": "TUBO GUIA DE FIO INOX DIAM. 2 MM",
+      "um": "",
+      "qtd": 39
+    },
+    {
+      "_syncId": "8bd24337-6902-413f-ac7f-5664d9d832be",
+      "data": "2026-08-13",
+      "codigo": "30.0078.0010.00",
+      "descricao": "SUPORTE LEVE P/TUBOS E PIQUETES P/BARRAS REDONDAS",
+      "um": "",
+      "qtd": 32
+    },
+    {
+      "_syncId": "aca878bd-6174-4ae9-9d1e-816743d7dc26",
+      "data": "2026-08-13",
+      "codigo": "04.0380.02.220",
+      "descricao": "RELE' 220 VOLT AC 2 CONTATOS 5 AMPER",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "777c9701-81f2-41ce-b161-2cc9865b9847",
+      "data": "2026-08-13",
+      "codigo": "03.0410.02.255",
+      "descricao": "CORREIA DENTADA 255L075",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "fe45638f-aa9b-4071-919c-d5adc153defb",
+      "data": "2026-08-13",
+      "codigo": "13.091.01.000",
+      "descricao": "AGULHA FALSA DE FORMA LONGO GG10",
+      "um": "",
+      "qtd": 70
+    },
+    {
+      "_syncId": "7eae0ca4-a250-4de4-97fc-918185382049",
+      "data": "2026-08-13",
+      "codigo": "13.083.01.000",
+      "descricao": "AGULHA FALSA DE FORMA CURTA",
+      "um": "",
+      "qtd": 60
+    },
+    {
+      "_syncId": "e150c901-8320-45c9-af7f-78b5c7b277e1",
+      "data": "2026-08-13",
+      "codigo": "13.135.80.120",
+      "descricao": "AGULHA BARBUDA MEDIDOR 10",
+      "um": "",
+      "qtd": 470
+    },
+    {
+      "_syncId": "e97570bb-8594-4c49-b09c-039c39d78fb5",
+      "data": "2026-08-13",
+      "codigo": "11130417520",
+      "descricao": "SPROCKET 13T",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "f0e738d6-8f3b-4469-911c-21b1913c1e94",
+      "data": "2026-08-13",
+      "codigo": "11401650000",
+      "descricao": "RODA CONICA",
+      "um": "",
+      "qtd": 21
+    },
+    {
+      "_syncId": "085e539d-6574-4076-8a9d-347fabf8fffb",
+      "data": "2026-08-13",
+      "codigo": "11412940010",
+      "descricao": "RODA BATENTE",
+      "um": "",
+      "qtd": 12
+    },
+    {
+      "_syncId": "b430b615-9907-43e2-b758-76dd96060fd8",
+      "data": "2026-08-13",
+      "codigo": "11131652420",
+      "descricao": "MOLA DO COMPENSADOR",
+      "um": "",
+      "qtd": 50
+    },
+    {
+      "_syncId": "d5534263-eaea-4e4e-b569-d4fc89e25059",
+      "data": "2026-08-13",
+      "codigo": "11158964800",
+      "descricao": "STOPPER ROLLER NEW ASSY",
+      "um": "",
+      "qtd": 10
+    },
+    {
+      "_syncId": "9ef55e5e-6232-473f-8823-08a3e5f1c6c5",
+      "data": "2026-08-13",
+      "codigo": "11158392420",
+      "descricao": "RODA DE CAME",
+      "um": "",
+      "qtd": 221
+    },
+    {
+      "_syncId": "691ceea4-b961-4e20-8cb9-ef49e11defbc",
+      "data": "2026-08-13",
+      "codigo": "11412936000",
+      "descricao": "RODA DE BLOQUEIO P-M",
+      "um": "",
+      "qtd": 28
+    },
+    {
+      "_syncId": "74c848a4-d836-4c44-bd1a-7a288cf6c558",
+      "data": "2026-08-13",
+      "codigo": "11401650000",
+      "descricao": "RODA CONICA",
+      "um": "",
+      "qtd": 21
+    },
+    {
+      "_syncId": "a3e34264-d88c-411c-96d9-4ae9c53062f6",
+      "data": "2026-08-13",
+      "codigo": "11412940010",
+      "descricao": "RODA BATENTE",
+      "um": "",
+      "qtd": 12
+    },
+    {
+      "_syncId": "a1778485-667a-4529-a0a7-856435df8989",
+      "data": "2026-08-13",
+      "codigo": "12330702014",
+      "descricao": "PINO CAVILHA H&G M6 DIA2X14 PRETO",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "41a27ab5-2328-45c8-836a-212f0d015a46",
+      "data": "2026-08-13",
+      "codigo": "11401679000",
+      "descricao": "LANÇADEIRA COMPLETA 35X218 WSF",
+      "um": "",
+      "qtd": 50
+    },
+    {
+      "_syncId": "7944dee7-02ff-4087-9008-71a174906834",
+      "data": "2026-08-13",
+      "codigo": "11158965900",
+      "descricao": "INSERTION FINGER WITH CERAMIC-M2",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "8b0b0d65-1490-4462-aa76-264206912374",
+      "data": "2026-08-13",
+      "codigo": "11158965800",
+      "descricao": "INSERTION FINGER WITH CERAMIC-M1",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "4e1fcd58-da40-4f9e-8cc8-e7742d5726af",
+      "data": "2026-08-13",
+      "codigo": "11158934000",
+      "descricao": "INSERTION FINGER WITH CERAMIC - S",
+      "um": "",
+      "qtd": 17
+    },
+    {
+      "_syncId": "99d19d9e-8fd8-4730-aec9-e242c2c75cb2",
+      "data": "2026-08-13",
+      "codigo": "11401039000",
+      "descricao": "CONJUNTO MAGNÉTICO DE LANÇA",
+      "um": "",
+      "qtd": 17
+    },
+    {
+      "_syncId": "b6b072cd-d0dc-4257-9855-9463ea75694d",
+      "data": "2026-08-13",
+      "codigo": "11158964600",
+      "descricao": "CONJUNTO DE RODA DE TRANSPORTE",
+      "um": "",
+      "qtd": 169
+    },
+    {
+      "_syncId": "328ce5fa-330b-4cd9-bc47-9c5498c84413",
+      "data": "2026-08-13",
+      "codigo": "11401651000",
+      "descricao": "CONJUNTO DE RODA DA BATENTE R-6",
+      "um": "",
+      "qtd": 79
+    },
+    {
+      "_syncId": "a2e7afc6-9c48-49fd-90c1-88eec23f2aed",
+      "data": "2026-08-13",
+      "codigo": "11401649000",
+      "descricao": "CONJUNTO DE RODA CHONCHOID R-6",
+      "um": "",
+      "qtd": 84
+    },
+    {
+      "_syncId": "0269515c-501c-40d6-ae65-bcf250052403",
+      "data": "2026-08-13",
+      "codigo": "11150190300",
+      "descricao": "COMPENSATION SPRING",
+      "um": "",
+      "qtd": 50
+    },
+    {
+      "_syncId": "4eea78d0-9ca2-43a6-9ea0-2c259adfb75a",
+      "data": "2026-08-13",
+      "codigo": "11408392000",
+      "descricao": "COBERTURA CONTRA POEIRA",
+      "um": "",
+      "qtd": 20
+    },
+    {
+      "_syncId": "396d17dd-ab87-4eae-81ee-a05dabdfecd3",
+      "data": "2026-08-13",
+      "codigo": "11412983000",
+      "descricao": "CHONCHOID WHEEL NAYL",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "ae5a7f3b-1bc3-4fcd-858e-94e4e8dd25fb",
+      "data": "2026-08-13",
+      "codigo": "11158254400",
+      "descricao": "ARAME DE LIÇO",
+      "um": "",
+      "qtd": 32
+    },
+    {
+      "_syncId": "092a463b-4ad1-4f93-a4d3-85b860787459",
+      "data": "2026-08-13",
+      "codigo": "11401767000",
+      "descricao": "FIO DE DESCIDA C/ESFERA (DIAMETRO 4MM)",
+      "um": "",
+      "qtd": 394
+    },
+    {
+      "_syncId": "5f762b23-73dc-48f8-a81b-6023efac9825",
+      "data": "2026-08-13",
+      "codigo": "11401870000",
+      "descricao": "CONJUNTO DE FLANGE DE BOBINA",
+      "um": "",
+      "qtd": 90
+    },
+    {
+      "_syncId": "cb18f883-87e6-48fa-8229-145764de8d73",
+      "data": "2026-08-13",
+      "codigo": "11147250095",
+      "descricao": "CÉLULA DE CARGA",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "2c34c5e7-0dde-43ae-a660-0feee7f23bd9",
+      "data": "2026-08-13",
+      "codigo": "14281100422",
+      "descricao": "ANA I/P TEMP MOD NON ISO CH PT 100 4CH (X20AT4222)",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "d899875f-aa5e-4611-9193-1dd45bf1ff1d",
+      "data": "2026-08-13",
+      "codigo": "14253300420",
+      "descricao": "ANG. O/P MOD O-10VDC/4(0)-20mA 12BIT 4CH",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "3926bbc8-3509-4c10-8279-c82df9a88976",
+      "data": "2026-08-13",
+      "codigo": "11406644020",
+      "descricao": "WEFT COMPENSATION LEVER MAGNET (R-6)",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "f9269929-a0c7-4b65-81d8-d9bcf8914ecf",
+      "data": "2026-08-13",
+      "codigo": "11406443000",
+      "descricao": "MOLA DE TENSÃO D0,7/D10,5",
+      "um": "",
+      "qtd": 40
+    },
+    {
+      "_syncId": "0a70147b-521c-4a81-a2d4-299418727127",
+      "data": "2026-08-13",
+      "codigo": "11401391010",
+      "descricao": "CONJ. DE ALAVANCA OSCILANTE",
+      "um": "",
+      "qtd": 9
+    },
+    {
+      "_syncId": "f43d2ac4-8c49-4caa-b07a-cfa634387e5c",
+      "data": "2026-08-13",
+      "codigo": "11131550720",
+      "descricao": "TIRA DE CONEXÃO",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "0f08d1d9-ce21-48b0-82b1-4f79edaef87b",
+      "data": "2026-08-13",
+      "codigo": "11408807000",
+      "descricao": "TAMPA DO PIVÔ",
+      "um": "",
+      "qtd": 22
+    },
+    {
+      "_syncId": "da2e56e0-e73e-4185-8be7-6723fb585e37",
+      "data": "2026-08-13",
+      "codigo": "11402950000",
+      "descricao": "SEPARADOR DO COMPENSADOR SUPERIOR",
+      "um": "",
+      "qtd": 550
+    },
+    {
+      "_syncId": "527335d4-0aeb-4d7a-8d6f-b20b6d47a230",
+      "data": "2026-08-13",
+      "codigo": "11158073000",
+      "descricao": "PIVOT PIN",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "b0b7a87c-f410-495a-8d30-48490c913abd",
+      "data": "2026-08-13",
+      "codigo": "12330702008",
+      "descricao": "PINO PASSADOR H&G M6 DIA 2X8 PRETO",
+      "um": "",
+      "qtd": 8
+    },
+    {
+      "_syncId": "3a24b2ae-35c9-442b-ad3c-8407196ae65a",
+      "data": "2026-08-13",
+      "codigo": "11158055410",
+      "descricao": "PINO DE ARTICULAÇÃO",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "cb4248c4-279a-4a0d-b74d-2499072251c5",
+      "data": "2026-08-13",
+      "codigo": "11130824310",
+      "descricao": "NILOS RING (ZAV) SPL.",
+      "um": "",
+      "qtd": 11
+    },
+    {
+      "_syncId": "4c7525ab-f81f-4ce2-ac98-ff410afd3e4a",
+      "data": "2026-08-13",
+      "codigo": "11407030010",
+      "descricao": "MOLA WCL NOVA - M",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "1cd50452-8300-4c75-b86a-d1ce75dcdd7e",
+      "data": "2026-08-13",
+      "codigo": "12470100005",
+      "descricao": "LAMINA CERAMICA PENTAGONAL",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "4f8541f7-5064-4291-ba72-df348a8afffd",
+      "data": "2026-08-13",
+      "codigo": "11158953100",
+      "descricao": "INSERTO DE PARADA",
+      "um": "",
+      "qtd": 19
+    },
+    {
+      "_syncId": "f2afe9e1-c0d8-4a17-a430-e6e7fc6297dc",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "GRAXA LUBRIFICANTE CASTANHA (ROLAMENTO)",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "d5ffd656-42b0-4282-aac9-63b009ea50ec",
+      "data": "2026-08-13",
+      "codigo": "11406089010",
+      "descricao": "EIXO FRONTAL",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "3b7254e7-b592-40f9-8d38-3495e680f885",
+      "data": "2026-08-13",
+      "codigo": "11406360010",
+      "descricao": "CONTRA PESO",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "6233392c-b878-4c8f-b235-94a64414a04a",
+      "data": "2026-08-13",
+      "codigo": "11164018500",
+      "descricao": "CONJUNTO DE FLANGE DE BOBINA",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "0802b0f6-0bec-42d5-b61c-2b9988c35e61",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONEXÃO NIPLE P/MANG DE ALTA PRESSÃO 3/4X1/2",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "02893258-bdf2-4d8e-9ae4-3afc15fcc344",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONEXÃO NIPLE P/MANG DE ALTA PRESSÃO 1/2",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "0c1d6bd9-2db6-492a-82cc-d6cfe7b63ed0",
+      "data": "2026-08-13",
+      "codigo": "11403958000",
+      "descricao": "COMPENSADOR VERDE DO BAG",
+      "um": "",
+      "qtd": 1152
+    },
+    {
+      "_syncId": "2adee972-eecd-4a87-b860-bcf91121fc43",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "COMPENSADOR PRETO DO BAG",
+      "um": "",
+      "qtd": 660
+    },
+    {
+      "_syncId": "e25603b5-f1aa-4b7d-adef-a291a4d03066",
+      "data": "2026-08-13",
+      "codigo": "11158550500",
+      "descricao": "CINTA DE SEGURANÇA (LIÇO) SUPERIOR 21",
+      "um": "",
+      "qtd": 8
+    },
+    {
+      "_syncId": "91038ead-4b7f-421d-a444-90da418a24b2",
+      "data": "2026-08-13",
+      "codigo": "11401747000",
+      "descricao": "CARTUCHO DE MEDIÇÃO",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "beb10eb4-eea6-44c1-b5be-708abddb91fd",
+      "data": "2026-08-13",
+      "codigo": "11404895000",
+      "descricao": "ALAVANCA DE COMPENSAÇÃO DE TRAMA",
+      "um": "",
+      "qtd": 7
+    },
+    {
+      "_syncId": "6f2da754-eb85-4b50-8cba-5ddb2c25fb30",
+      "data": "2026-08-13",
+      "codigo": "11130226030",
+      "descricao": "ADAPTADOR-62",
+      "um": "",
+      "qtd": 120
+    },
+    {
+      "_syncId": "0b4e0a4b-2847-4669-942a-545417f89291",
+      "data": "2026-08-13",
+      "codigo": "14409991000",
+      "descricao": "SENSOR SHIELDED CABLE 9MT",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "bea7e891-952c-4d87-b5a0-eeffeb308254",
+      "data": "2026-08-13",
+      "codigo": "11400900259",
+      "descricao": "ELEO BOM FOR COLOR SENSOR CONECTOR",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "91e52494-4f01-4a43-abe3-dbfe155aaab5",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "REFIL IGATU 569",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "d23949a3-82e5-405d-993f-5d4fadd85604",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "REFIL DE FILTRO AP230",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "fd27cc16-8f72-47be-aaca-9f5b350dcc10",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "MASCARA DESCARTAVEL",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "733e3219-bd66-43b5-8ce9-2f352585bd4a",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "MASCARA DE SOLDA AUTOMATICA",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "02fe89a9-30f7-4816-a620-b3435677ada3",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA VAQUETA",
+      "um": "",
+      "qtd": 14
+    },
+    {
+      "_syncId": "8ee7ff7b-3f35-41d1-807f-3d7c789b68dd",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA PU \"XP\"",
+      "um": "",
+      "qtd": 24
+    },
+    {
+      "_syncId": "84d2467d-78c4-4ad3-b33b-839c0b4c839e",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA NYLON PU \"P\"",
+      "um": "",
+      "qtd": 210
+    },
+    {
+      "_syncId": "9a1b9dee-4b6d-4ffe-b96e-396373762444",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA NYLON PU \"M\"",
+      "um": "",
+      "qtd": 109
+    },
+    {
+      "_syncId": "49d69904-448e-4cbd-a277-c77e5d53cfbd",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA NYLON PU \"G\"",
+      "um": "",
+      "qtd": 12
+    },
+    {
+      "_syncId": "2cd6edd6-4c54-40a9-8c7e-1dd11d5d5ae7",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA NYLON PU \"EP\"",
+      "um": "",
+      "qtd": 36
+    },
+    {
+      "_syncId": "c0f86f75-b295-4d89-824b-27e4afa67d58",
+      "data": "2026-08-13",
+      "codigo": "5001233",
+      "descricao": "LUVA NITRILI-KA VERDE",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "b649ed4e-ff7d-450f-af39-4f83e16fabfd",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA DE VINIL TRANSPARENTE TAM P",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "a9483407-98ec-4842-9ab6-acfa70c5cddd",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA DE VINIL TRANSPARENTE TAM M",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "1eca4297-ddc2-4ccc-b6bb-05da8cf7ec4b",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA DE VINIL TAM P",
+      "um": "",
+      "qtd": 100
+    },
+    {
+      "_syncId": "2cea61cf-b769-4dd6-867c-74113175c26d",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA DE VINIL TAM M",
+      "um": "",
+      "qtd": 100
+    },
+    {
+      "_syncId": "4f1e74b7-65bd-4fe0-92b4-9477286dd8f3",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA DE VINIL TAM G",
+      "um": "",
+      "qtd": 100
+    },
+    {
+      "_syncId": "2bd7f54b-98fb-49a6-86df-6684c8efdc34",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA ANTICORTE TAM \"P\"",
+      "um": "",
+      "qtd": 24
+    },
+    {
+      "_syncId": "64d11d23-c217-4ea1-a2bc-9dfe86ea8bdd",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA ANTICORTE TAM \"M\"",
+      "um": "",
+      "qtd": 14
+    },
+    {
+      "_syncId": "ee21aba9-766b-487d-be18-d5a972773e20",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA ANTICORTE TAM \"G\"",
+      "um": "",
+      "qtd": 20
+    },
+    {
+      "_syncId": "7ff441ce-80a7-4100-b1ad-ce728aca3e8b",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LENTE MASCARA SOLDA RET. INC ESCURA",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "60560da8-4aa2-489e-b13d-8db2899effec",
+      "data": "2026-08-13",
+      "codigo": "5003642",
+      "descricao": "LENTE MASCARA SOLDA RET. INC 51X108MM",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "7a76324f-ee22-4cd7-b2a2-27cf69bf1def",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CAPACETE DE PROTEÇÃO VERDE",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "727a59d4-3ac5-49b7-99c9-5697d1ad2d4a",
+      "data": "2026-08-13",
+      "codigo": "5004063",
+      "descricao": "BOTA DE ELÁSTICO LATERAL №44",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "62293e9e-37f5-4208-ab1c-33726c6d7d54",
+      "data": "2026-08-13",
+      "codigo": "5004062",
+      "descricao": "BOTA DE ELÁSTICO LATERAL №43",
+      "um": "",
+      "qtd": 8
+    },
+    {
+      "_syncId": "dbc38266-94af-4cce-9745-6b86a2046f5a",
+      "data": "2026-08-13",
+      "codigo": "5004061",
+      "descricao": "BOTA DE ELÁSTICO LATERAL №42",
+      "um": "",
+      "qtd": 11
+    },
+    {
+      "_syncId": "91909437-2efb-4925-8884-523ef4b61452",
+      "data": "2026-08-13",
+      "codigo": "5004060",
+      "descricao": "BOTA DE ELÁSTICO LATERAL №41",
+      "um": "",
+      "qtd": 10
+    },
+    {
+      "_syncId": "9bb68290-7de0-41ea-a12d-538161286188",
+      "data": "2026-08-13",
+      "codigo": "5004059",
+      "descricao": "BOTA DE ELÁSTICO LATERAL №40",
+      "um": "",
+      "qtd": 11
+    },
+    {
+      "_syncId": "43eded91-8238-490a-b253-1dbe97015f15",
+      "data": "2026-08-13",
+      "codigo": "5003592",
+      "descricao": "BOTA DE ELÁSTICO LATERAL №39",
+      "um": "",
+      "qtd": 11
+    },
+    {
+      "_syncId": "c8e42e74-2af5-4fb7-ae33-cb791b87a895",
+      "data": "2026-08-13",
+      "codigo": "5004057",
+      "descricao": "BOTA DE ELÁSTICO LATERAL №38",
+      "um": "",
+      "qtd": 14
+    },
+    {
+      "_syncId": "6e20af84-0cec-439f-8e56-c83ae7115477",
+      "data": "2026-08-13",
+      "codigo": "5004056",
+      "descricao": "BOTA DE ELÁSTICO LATERAL №37",
+      "um": "",
+      "qtd": 13
+    },
+    {
+      "_syncId": "6f834855-96af-4da9-9dce-3a5e3ff8ae5e",
+      "data": "2026-08-13",
+      "codigo": "5004055",
+      "descricao": "BOTA DE ELÁSTICO LATERAL №36",
+      "um": "",
+      "qtd": 18
+    },
+    {
+      "_syncId": "f6488b1e-eee8-4fc1-9543-dc3485e858bb",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BOTA DE ELÁSTICO LATERAL №35",
+      "um": "",
+      "qtd": 17
+    },
+    {
+      "_syncId": "fa4365f9-2b7b-4e63-90f0-dbbffb2c1342",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "RETENTOR 10X22X7",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "4ddeaf90-1200-491a-abdd-936166e24485",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLAMENTO 16100 ZZ",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "458849eb-1bb0-482d-80ed-800edcb23e0a",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ANEL ELASTICO INTERNO 32MM",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "d2a79013-62ba-4310-bb39-6335d34c7a27",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ANEL ELASTICO EXTERNO 28MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "3d285874-43ee-496c-8433-2e367b1de891",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ANEL ELASTICO EXTERNO 18MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "7063890e-73c0-4245-bdcd-7cae968e0535",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ANEL ELASTICO EXTERNO 10MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "bae78f55-8b56-4dd2-8f87-07407649e13a",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ANEL ELASTICO INTERNO 10MM",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "035d1f0a-439f-4ea7-ac90-f71c9bc5fd8b",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ANEL ELASTICO INTERNO 29MM",
+      "um": "",
+      "qtd": 70
+    },
+    {
+      "_syncId": "040743df-f12c-4481-8367-34bbd89e085f",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "RETENTOR 35X47X7",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "b7692a8f-bcf1-4216-beb0-5adaa8ffea2b",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "RETENTOR 40X62X7",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "7f6912c5-1d28-49f7-909e-c4e705f8bfb5",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "RETENTOR 30X47X7",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "f46c8d94-767b-4e49-a0f5-bcd1f79a907e",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "RETENTOR 35X72X10/8",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "e75d8699-74f9-42eb-b129-7bd28692b448",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "RETENTOR 25X35X7",
+      "um": "",
+      "qtd": 8
+    },
+    {
+      "_syncId": "f222af6c-896d-4b27-8b2e-f09ae87e949f",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "RETENTOR 20X30X7",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "a73d32b9-7628-4164-a858-fb69fec7d968",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "RETENTOR 45X65X8",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "3ecf7f63-4831-4e86-8244-3aab8ca18252",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "MANCAL P - 208",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "b87c79f5-2f2a-4bb2-8777-d77c5acd952f",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "MANCAL P - 205",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "7bafdb32-a836-4b16-bdce-a027080e4b2d",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "MANCAL P - 204",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "84bc55ac-2ba4-4d6d-8c60-dc60f27915d8",
+      "data": "2026-08-13",
+      "codigo": "5003546",
+      "descricao": "ROLAMENTO P/ MANCAL UC 208",
+      "um": "",
+      "qtd": 12
+    },
+    {
+      "_syncId": "3a8aac58-e3fb-4d03-acb9-5e44e1a228cc",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLAMENTO P/ MANCAL UC 205",
+      "um": "",
+      "qtd": 18
+    },
+    {
+      "_syncId": "fbd47aae-ef8c-49d8-9469-bfcad2eb60db",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLAMENTO P/ MANCAL UC 204",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "c60ef185-6716-4f4d-849b-6a486e444df3",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLAMENTO 6306 ZZ",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "41d4fbe1-6077-4faf-975f-65f91afe3ecb",
+      "data": "2026-08-13",
+      "codigo": "5003335",
+      "descricao": "ROLAMENTO 6305 ZZ",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "4180e2db-0624-4bb8-98fe-a13dac6e8edf",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLAMENTO 6210 ZZ",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "dd807ee2-656b-4306-92c9-8238df4cf036",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLAMENTO 6207 ZZ",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "24f5926d-9f71-4138-afeb-33b39ea95fe2",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLAMENTO 6206 ZZ",
+      "um": "",
+      "qtd": 7
+    },
+    {
+      "_syncId": "c5953949-7adb-4f81-b42b-431cf5859db2",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLAMENTO 6205 ZZ",
+      "um": "",
+      "qtd": 7
+    },
+    {
+      "_syncId": "e2d29519-c0d5-4fa9-86ce-a0017e0433dc",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLAMENTO 6204 ZZ",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "8f8fb57e-12e7-4b0a-8a8d-8472b03e0a56",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLAMENTO 6203 ZZ",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "e8dae9cc-c5f5-4a13-8f74-36d428577b3f",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLAMENTO 6202 ZZ",
+      "um": "",
+      "qtd": 15
+    },
+    {
+      "_syncId": "8ca154cb-4a82-4c24-a02a-1dccda61ef33",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLAMENTO 6201 ZZ",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "2d401b11-319e-4a0d-8596-59d1b8a65c4d",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLAMENTO 6200 ZZ",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "f63acedd-e8da-47ba-bb7a-753eac760e8d",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLAMENTO 6005 ZZ",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "3748c022-5426-4bca-88dd-1e006c18d429",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLAMENTO 6004 ZZ",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "1c079a51-881f-412e-b3d2-d35343e44f9f",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLAMENTO 6002 ZZ",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "365cc834-ef4f-4795-8455-9e666dcf2247",
+      "data": "2026-08-13",
+      "codigo": "5003776",
+      "descricao": "ROLAMENTO INDUSTRIAL 6001 ZZ",
+      "um": "",
+      "qtd": 103
+    },
+    {
+      "_syncId": "e0c2d35e-4096-4cec-950c-e2dfd5999965",
+      "data": "2026-08-13",
+      "codigo": ",",
+      "descricao": "ROLAMENTO 609 ZZ C3",
+      "um": "",
+      "qtd": 450
+    },
+    {
+      "_syncId": "ea9f3f43-3bea-489d-89de-7283591a06b0",
+      "data": "2026-08-13",
+      "codigo": "5001214",
+      "descricao": "SABONETE LIQUIDO BB  5LT",
+      "um": "",
+      "qtd": 37
+    },
+    {
+      "_syncId": "8aa46b74-ca2b-44eb-a7a8-9e686600bf91",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BOM AR",
+      "um": "",
+      "qtd": 26
+    },
+    {
+      "_syncId": "4fbdaaf7-1f5a-4e89-98eb-9c0fe1438682",
+      "data": "2026-08-13",
+      "codigo": "5003658",
+      "descricao": "VEJA MULTIUSO 500ML",
+      "um": "",
+      "qtd": 19
+    },
+    {
+      "_syncId": "95e7dfb4-5a57-4009-91c2-fee95b02fca4",
+      "data": "2026-08-13",
+      "codigo": "5003342",
+      "descricao": "SACO DE LIXO 50LT PCT C/10",
+      "um": "",
+      "qtd": 54
+    },
+    {
+      "_syncId": "f70b688f-ecc4-44d2-a2c2-5d2038bb6828",
+      "data": "2026-08-13",
+      "codigo": "8",
+      "descricao": "SACO DE LIXO 300LT PCT C/10",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "0af14949-bfb2-4713-9039-0f4d982d3855",
+      "data": "2026-08-13",
+      "codigo": "5003581",
+      "descricao": "SACO DE LIXO 200LT PCT C/5",
+      "um": "",
+      "qtd": 15
+    },
+    {
+      "_syncId": "30c49aad-c00f-4e6d-a2d8-6116f97f02e1",
+      "data": "2026-08-13",
+      "codigo": "5003343",
+      "descricao": "SACO DE LIXO 100LT PCT C/5",
+      "um": "",
+      "qtd": 18
+    },
+    {
+      "_syncId": "d09af9f0-5109-4f85-a3c9-95dd8880d4a5",
+      "data": "2026-08-13",
+      "codigo": "5001214",
+      "descricao": "SABONETE LIQUIDO BB 5LT",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "07fcd231-ca1e-431a-8227-1c9275ab7a0d",
+      "data": "2026-08-13",
+      "codigo": "5003580",
+      "descricao": "SABÃO EM PÓ 500GR",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "105ddce9-23ae-4af6-9f56-84233262d2dc",
+      "data": "2026-08-13",
+      "codigo": "5001210",
+      "descricao": "RODO 40 CM PLASTICO",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "187ee0a7-98a6-4bf3-9d0c-8097e3fdb221",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "REGADOR DE PLANTAS 10 LT AZUL",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "0f77751c-a6b8-4c19-9462-53510a105ece",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PULVERIZADOR 500ML",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "a286cde7-810e-4146-ac01-58f62fba4741",
+      "data": "2026-08-13",
+      "codigo": "5001439",
+      "descricao": "PAPEL TOALHAS INTERFOLHADO",
+      "um": "",
+      "qtd": 9
+    },
+    {
+      "_syncId": "c3ae968b-5d81-4c58-83c8-d6689afe095d",
+      "data": "2026-08-13",
+      "codigo": "5001265",
+      "descricao": "PAPEL TOALHAS FD C/8",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "fe895c8a-a627-4b85-948e-73063bdf30f2",
+      "data": "2026-08-13",
+      "codigo": "5001123",
+      "descricao": "PAPEL HIGIENICO FD C/8",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "120ebbca-8b1d-46f3-aad2-082ab2020c19",
+      "data": "2026-08-13",
+      "codigo": "5003582",
+      "descricao": "PANO DE CHÃO",
+      "um": "",
+      "qtd": 36
+    },
+    {
+      "_syncId": "b386705e-b177-4593-8709-e9ff28fad93f",
+      "data": "2026-08-13",
+      "codigo": "5003378",
+      "descricao": "PALHA DE AÇO Nº2",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "dba3a1a9-1e9b-4740-a516-c5310a9dfb25",
+      "data": "2026-08-13",
+      "codigo": "5001612",
+      "descricao": "PÁ DE LIXO COM CABO 40CM",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "94a61e29-280c-4321-abd7-4598b7c81cf7",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LIXEIRA C/PEDAL 60L VERDE",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "6c7e1c7d-b12d-446b-b5ce-342a8644e4c1",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LIXEIRA C/PEDAL 25L CINZA",
+      "um": "",
+      "qtd": 15
+    },
+    {
+      "_syncId": "2f0eef4a-6219-44ba-b0e9-8f400170363f",
+      "data": "2026-08-13",
+      "codigo": "5003659",
+      "descricao": "ESPONJA FIBRA VERDE",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "ddc71b02-3326-4564-a52c-d7fbadbc5d91",
+      "data": "2026-08-13",
+      "codigo": "6",
+      "descricao": "ESCOVA SANITARIA",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "06c0f0ce-308f-4cec-a544-77d698cb353d",
+      "data": "2026-08-13",
+      "codigo": "5003698",
+      "descricao": "DESINFETANTE 500ML",
+      "um": "",
+      "qtd": 17
+    },
+    {
+      "_syncId": "1cf416e9-2396-4897-b656-bcf76879472c",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "COPO PLAST DESCARTAVEL 180ML",
+      "um": "",
+      "qtd": 9
+    },
+    {
+      "_syncId": "3c4fd18b-00c0-4fbe-a7b7-cd9aaeb4422c",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BOM AR",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "ab8a3dbe-99de-4d99-8e16-4c2e25240d5a",
+      "data": "2026-08-13",
+      "codigo": "5",
+      "descricao": "BALDE 20LT",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "bf8ae4f8-db3b-4205-b62f-02fa5f01a878",
+      "data": "2026-08-13",
+      "codigo": "5001437",
+      "descricao": "ÁGUA SANITÁRIA 5LT",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "75e08797-ae0a-498b-85f5-f649848325f1",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TECLADO 4 TECLAS OVAL COMPLETA",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "8db86eb0-000c-4207-bbe1-3af4c59bb549",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TERMOPAR PT100 8X17 CAB0 C/6MT",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "65a843bc-e64e-47e2-8adf-7ec2a3e3ceca",
+      "data": "2026-08-13",
+      "codigo": "12603262021",
+      "descricao": "3/2SGLSOLPITSPRRETNOV-G1/4-24VDC-JN",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "1e1e6324-1060-4467-a743-51f8d94666b9",
+      "data": "2026-08-13",
+      "codigo": "11176104610",
+      "descricao": "PACOTE DE TELA CILINDRICA DE 3 CAMADAS",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "e872317b-01b1-443d-b862-cc618e074271",
+      "data": "2026-08-13",
+      "codigo": "12350410060",
+      "descricao": "FREIO",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "a646b503-1180-427d-ad7a-04eb48185efd",
+      "data": "2026-08-13",
+      "codigo": "12470040008",
+      "descricao": "SEPARATOR ROLL DIA 50X150",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "c9f2a47d-0595-4024-af05-8225294e3c06",
+      "data": "2026-08-13",
+      "codigo": "14907000011",
+      "descricao": "SENSOR DE TEMPERATURA PT100 127",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "484e3cab-652f-4d59-a417-456aa08b293a",
+      "data": "2026-08-13",
+      "codigo": "11176901500",
+      "descricao": "ROLO DE PRESSÃO S/CONJUNTO",
+      "um": "",
+      "qtd": 10
+    },
+    {
+      "_syncId": "1c7b4dbc-ade0-4ffe-b159-41120125085d",
+      "data": "2026-08-13",
+      "codigo": "11301351020",
+      "descricao": "ROLO DE PRESSÃO COMPLETO",
+      "um": "",
+      "qtd": 13
+    },
+    {
+      "_syncId": "3bf6736d-4698-46c6-b64d-0c6173e0df64",
+      "data": "2026-08-13",
+      "codigo": "12606001020",
+      "descricao": "REGULADOR DE AR G1/4 - 4BR-JN",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "d865606c-9157-48c5-87ce-29015423a190",
+      "data": "2026-08-13",
+      "codigo": "11124030430",
+      "descricao": "MOLA D 0,5",
+      "um": "",
+      "qtd": 611
+    },
+    {
+      "_syncId": "ba10b1c4-ab54-42c3-93e2-a70feac332ad",
+      "data": "2026-08-13",
+      "codigo": "14450108000",
+      "descricao": "ENCODER OTICO 2 CANAIS 100PPR",
+      "um": "",
+      "qtd": 26
+    },
+    {
+      "_syncId": "32cdde1c-b2a8-4881-ae8f-b24cc785390f",
+      "data": "2026-08-13",
+      "codigo": "12350410080",
+      "descricao": "CIRCLIP E8",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "87ea024a-c72b-4039-894d-ddf93b491e03",
+      "data": "2026-08-13",
+      "codigo": "11147250329",
+      "descricao": "CBM CARD FOR AW",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "d2bd91d8-8d8a-417a-8f7d-e17fd626f720",
+      "data": "2026-08-13",
+      "codigo": "14103025000",
+      "descricao": "AC VAR.FREQ.DRIVE IN1X200 OP3X200 2.5A",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "2d7906ef-d8dc-4485-9173-9390556aa488",
+      "data": "2026-08-13",
+      "codigo": "12603022020",
+      "descricao": "5/2 SINGLE SOLENOID VALVE G1/4 24VDC",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "f54ba680-e0e9-41a0-9b92-7da9f56fa6f4",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "FITA TEFLON 0,25 S/ADESIVO",
+      "um": "",
+      "qtd": 7
+    },
+    {
+      "_syncId": "23ef0d19-e2a5-4d9e-9861-a3ceed16e9ee",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "FITA TEFLON 0,15 S/ADESIVO",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "e4d3ca2d-a507-4058-8626-3f6d0b094072",
+      "data": "2026-08-13",
+      "codigo": "43",
+      "descricao": "FITA TEFLON 0,15 C/ADESIVO",
+      "um": "",
+      "qtd": 28
+    },
+    {
+      "_syncId": "560342d0-cede-4d0d-871f-88142f3b2aa5",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ÓLEO STANTEX S 3181",
+      "um": "",
+      "qtd": 350
+    },
+    {
+      "_syncId": "5007a7f6-2d93-488f-bc5a-fdd60fb54339",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ÓLEO P/ EMPILHADEIRA HIDRA 68",
+      "um": "",
+      "qtd": 10
+    },
+    {
+      "_syncId": "d5890f8f-246a-4087-b605-9258aa5be70b",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ÓLEO MINERAL STANTEX LA 350",
+      "um": "",
+      "qtd": 350
+    },
+    {
+      "_syncId": "72f94d72-6ab0-4d53-a437-5e999fc5f8a2",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ÓLEO HIDRAULICO AW 32",
+      "um": "",
+      "qtd": 350
+    },
+    {
+      "_syncId": "9e7af7e9-d60a-4e2c-8970-822fa1d3fec9",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUBRAX HYDRA XP 150 BL 20L",
+      "um": "",
+      "qtd": 10
+    },
+    {
+      "_syncId": "ea54db0d-0755-4f19-bcb9-09cafa253200",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "GAS R410A REFRIGERANTE EOS",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "f9afdc2b-f443-4e33-9b56-0abeaddfa3b6",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "GAS R22 13,6KG EOS",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "b29e3f51-b2e1-4737-a587-c57093056b50",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "GÁS MAP",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "3b0beaf1-534d-4ffa-922e-1183250cc545",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "UNIÃO (INST) \"L\" 3/8X8",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "a9f9f809-45f3-4121-8c7a-81207a8c60f6",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TINTA KIT EPOXI CINZA CLARO 18L",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "7db03cd1-724e-47c8-a923-441dbdd310fc",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TINTA ACRILICA FOSCO 15LT BRANCO",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "4d58de8b-e1c5-4582-85c3-1f0b1cf588d1",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TINTA SPRAY VERMELHO 350ML",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "2f85ce22-b82e-4ed0-b362-8a46febfc00d",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TINTA SPRAY VERDE 400ML",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "135095f1-24f0-41fd-8f4e-22e34c2d61fd",
+      "data": "2026-08-13",
+      "codigo": "5004014",
+      "descricao": "TINTA SPRAY CINZA MEDIO 400ML",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "70394a91-6440-4048-a51f-f47bdde0e0b8",
+      "data": "2026-08-13",
+      "codigo": "5003423",
+      "descricao": "THINNER 5LT",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "0b9cd3e1-9d7d-487f-bb15-a55746361497",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TERMINAL TIPO PINO TUBULAR 16MM AZUL",
+      "um": "",
+      "qtd": 11
+    },
+    {
+      "_syncId": "04b21db4-ba78-4abd-9f1f-b39ebcb5698e",
+      "data": "2026-08-13",
+      "codigo": "5003913",
+      "descricao": "TERMINAL TIPO OLHAL PRÉ-ISOLADO  1,5 - 2,5MM",
+      "um": "",
+      "qtd": 36
+    },
+    {
+      "_syncId": "9e10ad7b-c81a-42ad-814d-66df5db52ea2",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TE 90 SOLDAVEL 32MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "ffd31778-9862-4bf2-8c64-39b8f4d5a2c1",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "SERRA MANUAL 12\"",
+      "um": "",
+      "qtd": 11
+    },
+    {
+      "_syncId": "ba05bc1b-85c3-4c08-9b4b-2c19eb9293a3",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PREGO C/CABEÇA 2.1/2X10  18X27 1KG",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "fd5d4ffd-6e33-483f-82d8-3ccf7788f640",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PORCA SEXTAVADA M6",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "d37fbfe2-915b-4646-841d-bc4ed31562f7",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO S/CABEÇA 8X8",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "2ae1c72a-dd84-4566-887b-9787719b29b1",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO ALLEN 6X60",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "9b6ff6f7-90f9-41cd-ab2c-c6093e1b6ba7",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO ALLEN 6X50",
+      "um": "",
+      "qtd": 21
+    },
+    {
+      "_syncId": "b24df879-9f9b-43e6-a54e-ed8cd11d5bc0",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO ALLEN 5X20",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "77b6b9c9-f108-4de7-873e-f41860ad2293",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO ALLEN 4X25",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "84f594b1-2b9e-4bfc-833b-123b079be447",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO ALLEN 4X12",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "5c036857-fe82-464e-b9a7-4581f5c4fc38",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO ALLEN 4X8",
+      "um": "",
+      "qtd": 10
+    },
+    {
+      "_syncId": "a9477d7d-5fe2-4d88-9b02-0ef46db5d358",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "MASCARA  DE ESCURECIMENTO AUTOMATICO",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "c730d4ed-03c0-45ba-8d41-8bf36bdfc03c",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "MANGUEIRA  PU-12",
+      "um": "",
+      "qtd": 27
+    },
+    {
+      "_syncId": "d438872a-9c5d-4519-aca0-84db78028a0c",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "MANGUEIRA  PU-10",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "52377a7b-4aeb-44fc-998d-d3eb0019b70d",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "MANGUEIRA  PU-8",
+      "um": "",
+      "qtd": 13.5
+    },
+    {
+      "_syncId": "22a8ea87-8c12-4495-8548-c1eed0d05e3e",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "MANGUEIRA  PU-6",
+      "um": "",
+      "qtd": 9
+    },
+    {
+      "_syncId": "d2199893-11ba-44b6-ab83-f06e3f28f828",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "MANGUEIRA P/JARDIM SUPERFLEX 30M",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "b077bc35-4325-4b17-b5c5-5d71074a1cf0",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LINHA DE PESCA",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "52efd5a2-ed83-42da-9718-3e3619822237",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "JOELHO AZUL  SD C/ROSCA 25X3/4",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "078cbe84-5193-488f-9da9-c6d0c340bb75",
+      "data": "2026-08-13",
+      "codigo": "5002212",
+      "descricao": "FITA ISOLANTE VERMELHA 18MMX20M",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "2e69a0c8-b6a0-418d-a5a7-45ee05bbf719",
+      "data": "2026-08-13",
+      "codigo": "5002217",
+      "descricao": "FITA ISOLANTE PRETA 18MMX20M",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "d1b2dce2-2837-4aa0-bdf3-c707fcc4c72b",
+      "data": "2026-08-13",
+      "codigo": "5003562",
+      "descricao": "ELETRODO OK WELD 3,25 6013 5KG",
+      "um": "",
+      "qtd": 25
+    },
+    {
+      "_syncId": "6eff4ca7-9317-41ba-9757-25a051fdeb0f",
+      "data": "2026-08-13",
+      "codigo": "5002856",
+      "descricao": "ELETRODO OK WELD 2,5MMX350 6013 5KG",
+      "um": "",
+      "qtd": 40
+    },
+    {
+      "_syncId": "e3b16a45-3ab7-4685-9dcd-706bd9961c91",
+      "data": "2026-08-13",
+      "codigo": "5002156",
+      "descricao": "DISCO DE DESBASTE 7\"",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "8000ae75-fab5-4b31-b2fc-14b1abcd7701",
+      "data": "2026-08-13",
+      "codigo": "5002854",
+      "descricao": "DISCO DE CORTE 4 1/2 X 3/64 X 7/8",
+      "um": "",
+      "qtd": 47
+    },
+    {
+      "_syncId": "4e6666e7-adf1-4b1b-90d7-42d9ad28b703",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CORREIA CORRUGADA EM PV",
+      "um": "",
+      "qtd": 400
+    },
+    {
+      "_syncId": "bdfeb9e6-b401-477f-8a67-9a3389155cab",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONECTOR BARRA SINDAL  6,00MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "cb322d31-703f-4669-8d3f-3ebf8cec0126",
+      "data": "2026-08-13",
+      "codigo": "5003948",
+      "descricao": "CONECTOR BARRA SINDAL  4,00MM",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "0b247071-6a8e-4366-953d-7b89676b98b7",
+      "data": "2026-08-13",
+      "codigo": "5003953",
+      "descricao": "CONECTOR BARRA SINDAL  2,5MM",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "55b8f27d-a52e-488d-89fd-d669f5a9cf83",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONECTOR BARRA SINDAL  16,00MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "169e4eda-5541-4352-900a-3ff960448166",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONDULETE MULTIPLO 3/4\" SEM TAMPA",
+      "um": "",
+      "qtd": 26
+    },
+    {
+      "_syncId": "12a6f030-6029-4838-9d35-276bb543efa9",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ASSENTO SANITÁRIO",
+      "um": "",
+      "qtd": 16
+    },
+    {
+      "_syncId": "abe066b1-a1f8-4730-8ad9-556565fa2a55",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ABRAÇADEIRA NYLON  5,0X200MM",
+      "um": "",
+      "qtd": 44
+    },
+    {
+      "_syncId": "1a57edf5-dc7e-485c-ad5a-528884069195",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ABRAÇADEIRA DE PRESSÃO 13-23MM",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "ff8543fd-5995-4a95-b9fe-754c4c289167",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "VIRA MACHO M12X1,75",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "514e7b96-35b3-47f1-b6c3-043fb8b5d8ea",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "VEDA CALHA 400G",
+      "um": "",
+      "qtd": 41
+    },
+    {
+      "_syncId": "3cdbaa84-8bd3-4649-ac5d-8e0d17a0e98e",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "VALVULA DO CHILE",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "2da1cef9-0473-4ed9-8451-71eb688acaef",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "UNIÃO RETA REDUÇÃO 8X10",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "35ccd4ce-efdb-43da-8853-6cdc42c00a39",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "UNIÃO RETA REDUÇÃO 6X8",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "91a23cda-d710-4270-afb3-9fb5effa7777",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "UNIÃO RETA REDUÇÃO 4X6",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "2114d017-ca92-4658-b215-83ad2e90243e",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "UNIÃO RETA 8",
+      "um": "",
+      "qtd": 10
+    },
+    {
+      "_syncId": "5e03f277-e690-4444-beca-e349c7fb40a4",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "UNIÃO RETA 4",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "00ec9455-8250-4225-aa71-ce0790f4d09d",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "UNIÃO RETA 12",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "f7ee676c-2839-4271-acc6-88235858e359",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "UNIÃO RETA 10",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "04624af4-2c79-470f-8ced-606e37a5c653",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "UNIÃO GALV. 3\"",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "fa63cea6-1716-452a-bc4e-40e074459fca",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "UNIÃO COTOVELO 12",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "779cc826-d7be-4984-9aaa-c84a7323d7b0",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TRINCHA 700 3\"",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "a2fb40db-09e4-4bfc-a081-50f3017c25dd",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TRINCHA 700 2\"",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "588099f7-7b1b-4a07-823f-f7d1be53b2c7",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TRINCHA 700 1\"",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "9481c548-11e3-403b-a3a0-041787e0d7df",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TRENA DE FIBRA LONGA 50MT",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "1f3ff361-7a7b-405d-aa6b-36feba70d44e",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TORNEIRA TANQUE ALAVANCA CROMADA",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "a651f3b6-4d09-4520-b4c7-db1c4ded0ed2",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TORNEIRA PLASTICA JARDIM1/2\" E 3/4\"",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "67094caf-f573-429b-b690-9b5a3aa43361",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TORNEIRA PLASTICA 1/4 DE VOLTA",
+      "um": "",
+      "qtd": 7
+    },
+    {
+      "_syncId": "f1ff3275-c6b4-4951-9318-f5abef3fbe91",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TORNEIRA CROMADA",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "b8bc5bf9-4fd1-4ca8-9a22-374a56e471a0",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TOMADAS 2P+T 20A - 250V",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "4ac2f342-38ec-4ef5-bf65-56b1f7e9adf5",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TOMADA RED. H. LONGA PRETA 10A 250V",
+      "um": "",
+      "qtd": 10
+    },
+    {
+      "_syncId": "ae16100b-04b9-4e22-8d22-92b187861a81",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TINTA WEQ EPOXI MULTIUSO AMARELO 2,88LT",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "a82dc812-a00f-4da4-a23a-33bccec2743b",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TINTA SPRAY PRETO BRILHANTE",
+      "um": "",
+      "qtd": 16
+    },
+    {
+      "_syncId": "732ba1b1-2c76-4040-abad-d39717438af5",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TINTA SPRAY BRANCO",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "06b3df72-21e4-4ad4-9214-76b75e93efe9",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TINTA SPRAY AZUL BRILHANTE",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "be1c29e7-257a-4655-a4b0-ce58ec5deab9",
+      "data": "2026-08-13",
+      "codigo": "5003277",
+      "descricao": "TINTA SPRAY AMARELA",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "1f2f8751-c6a9-4ada-98b3-753a71953579",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TINTA ESMALTE SINTETICO VERDE FOLHA 3,6LT",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "d9859599-bbf9-440b-852a-f8936a8338a1",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TINTA ESMALTE SINTETICO AMARELO OURO 3,6LT",
+      "um": "",
+      "qtd": 18
+    },
+    {
+      "_syncId": "581ac683-7f26-4f16-ae90-92f3488818db",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TINTA DIAPISO VERDE FOLHA C/18LT",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "8fee3354-045b-481c-a899-eb8f38d5a5cf",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TERMINAL TIPO PINO TUBULAR SIMPLES 4MM",
+      "um": "",
+      "qtd": 51
+    },
+    {
+      "_syncId": "e465fce8-0f79-47b6-acab-164ba0c35256",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TERMINAL TIPO PINO TUBULAR SIMPLES 1MM",
+      "um": "",
+      "qtd": 41
+    },
+    {
+      "_syncId": "b2517211-493c-4194-bb34-6e49199c690d",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TERMINAL TIPO PINO TUBULAR SIMPLES 1,5MM",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "015995be-ab4a-4540-b05a-7a4dcf4e1387",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TERMINAL TIPO PINO TUBULAR SIMPLES 0,75MM",
+      "um": "",
+      "qtd": 70
+    },
+    {
+      "_syncId": "cedb2fa1-6337-47a9-a048-5200174b0e97",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TERMINAL TIPO PINO TUBULAR SIMPLES 0,5MM",
+      "um": "",
+      "qtd": 30
+    },
+    {
+      "_syncId": "b3155d6e-eb4c-45fa-ad57-487309ac3f19",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TERMINAL TIPO PINO TUBULAR FERRO 16MM",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "15e51223-fd0e-4775-a5c3-25dc7d9963b6",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TERMINAL TIPO OLHAL PRE-ISOLADO 4,5 - 5,5 MM",
+      "um": "",
+      "qtd": 35
+    },
+    {
+      "_syncId": "4011956a-ebe7-406e-9cfa-0b68d9952274",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TERMINAL TIPO GARFO 4 - 6,00MM",
+      "um": "",
+      "qtd": 21
+    },
+    {
+      "_syncId": "c8148819-4ff3-42e4-a9cd-a61db4038e58",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TERMINAL PRE-ISOLADO PINO 16MM",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "c92c5dc2-4847-486c-91e3-facc8fecfcca",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TERMINAL PRE-ISOL. GARFO 1,5-2,5MM",
+      "um": "",
+      "qtd": 50
+    },
+    {
+      "_syncId": "bfe9d8bb-7fc8-4054-bc39-e414364a42f8",
+      "data": "2026-08-13",
+      "codigo": "5002223",
+      "descricao": "TERMINAL DE COMPRESSÃO 95MM",
+      "um": "",
+      "qtd": 7
+    },
+    {
+      "_syncId": "deb79f15-f672-4920-8af2-fbbfceb57c8f",
+      "data": "2026-08-13",
+      "codigo": "5001747",
+      "descricao": "TERMINAL DE COMPRESSÃO 70MM",
+      "um": "",
+      "qtd": 34
+    },
+    {
+      "_syncId": "70f6479b-f6f1-4a7c-b84d-bf1b49b49888",
+      "data": "2026-08-13",
+      "codigo": "5002220",
+      "descricao": "TERMINAL DE COMPRESSÃO 35MM",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "0eaeb836-cf23-44a6-90e3-a5ffe2a14205",
+      "data": "2026-08-13",
+      "codigo": "5002214",
+      "descricao": "TERMINAL DE COMPRESSÃO 185MM",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "ab8186ab-46c8-40f2-85af-714f4309d6d7",
+      "data": "2026-08-13",
+      "codigo": "5003952",
+      "descricao": "TERMINAL DE COMPRESSÃO 16MM",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "7f5a1706-0003-4356-9c06-0202620ed284",
+      "data": "2026-08-13",
+      "codigo": "5002213",
+      "descricao": "TERMINAL DE COMPRESSÃO 120MM",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "bf4971d9-19b8-48a8-93ea-0a674152cb2e",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TE UNIÃO PU 8",
+      "um": "",
+      "qtd": 17
+    },
+    {
+      "_syncId": "c139a47f-20a7-4936-a570-e4770c498bae",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TE UNIÃO PU 6",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "dfba9e39-3859-4f1b-aecf-e46457fa58b7",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TE UNIÃO PU 4",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "6bbcda43-e562-479d-ba5f-b806d648a9e3",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TE UNIÃO PU 10",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "43dd228d-7b96-49f8-aa02-58f0fbda40eb",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TE SD 25MM",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "b6a1b637-dc94-42cf-9540-47cc283f4fb2",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TE PVC SD 32MM",
+      "um": "",
+      "qtd": 15
+    },
+    {
+      "_syncId": "8602ceeb-db3f-4446-8212-1e7648e02d41",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TE PVC SD 20MM",
+      "um": "",
+      "qtd": 20
+    },
+    {
+      "_syncId": "63d2dd50-17e1-45cc-bf4d-bd33e8f8de1e",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TE PVC ESG. DN 100",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "26b61c09-a08b-4227-9fdb-481e2ab38224",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TE AZUL SD C/ROSCA 25X1/2",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "8e84afdf-689f-4f2c-bbae-14474f854685",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TE 90Aº SD 20MMX1/2",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "62ad2b3f-8d5e-423f-a4cd-74a906404c5c",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TAMPA 2 POSTOS JUNTOS CINZA ESCURO",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "590a4948-a670-4074-b419-7feda7a8a8e9",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "TAMPA 1 POSTO REDONDO 3/4\" S/PINTURA",
+      "um": "",
+      "qtd": 16
+    },
+    {
+      "_syncId": "614340ea-e5a9-475d-9d92-96d01ef960b1",
+      "data": "2026-08-13",
+      "codigo": "5003346",
+      "descricao": "SUPORTE DE EXTINTOR",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "a0ecf33e-2b06-4656-bc3a-029570933031",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "SOQUETE HEX ENC 1/2X6MM TR LONG",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "d61f968c-9806-4419-920d-19841feb61cb",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "SOQUETE BIT ALLEN LONGO 1/2 - 6MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "96dbeb48-d041-4bcb-8388-7d5342e4474c",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "SILICONE ACTETICO",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "29fb2d23-ec51-4765-ae72-f4c0dea94082",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "SIFÃO TUBO 70CM",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "659de8f7-4303-4fd3-94f8-6e67b18b04bc",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "SABONETEIRA",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "5c873aa8-3fc1-403d-bc1c-321d07a84937",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLO P/PINTURA 23CM",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "805305c9-069c-46ef-b2ec-4e9b3e8ed1b5",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLO LÃ DE CARNEIRO 9CM",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "1377b676-814b-4c97-a8af-536a82a656ab",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLO DE LÃ 5CM",
+      "um": "",
+      "qtd": 8
+    },
+    {
+      "_syncId": "01a454b7-2ffb-40e6-b967-1f758f3c688c",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ROLO ACRILICO PVC",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "94336c2b-0a86-4e3b-a9e5-47d913a24afc",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "RODIZIO GIRATORIO 50MM",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "db161554-a3e4-4a76-99af-57079dd5018e",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "RELE PORT TERM 24V",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "7dd06f75-f2f9-49b6-b4e4-e8ebe64e81e9",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "REJUNTE EXTRA FINO BRANCO 1KG",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "a4e64794-b663-4d3f-a7f4-8a6989585ed5",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "REGISTRO SD 25MM",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "f63423ad-b3b1-4745-876d-3792285dc6fa",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "REGISTRO MONOBLOCO SD 32MM",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "798ead73-82ab-4c8f-af5d-423eefe54052",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "REGISTRO GALV 2\"",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "c6b8372f-d237-4bf3-86a6-18c3ab076165",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "REGISTRO ESFERA MONOBLOCO SOLD 20MM",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "4936aa16-7bda-48f5-a574-ec2adc826259",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "REGISTRO ESFERA 1/2",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "0423fede-5e83-4e0f-abac-890d81dd6ef8",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "REGISTRO DE ESFERA 3\"",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "d1c44b8d-1d85-4a58-8d97-146661d27493",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "REFIL AQUALAR AP230 ECONOMICO-3M",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "a4f0c03b-ceb2-4add-b7a9-e2cf962431f5",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "REDUÇÃO EXCENTRICA ESG. 150X100MM",
+      "um": "",
+      "qtd": 28
+    },
+    {
+      "_syncId": "543f7717-9cb7-46be-b159-2bf57fb65827",
+      "data": "2026-08-13",
+      "codigo": "5003797",
+      "descricao": "REBITE ALUMINIO 4X16",
+      "um": "",
+      "qtd": 80
+    },
+    {
+      "_syncId": "f3b3da7c-11c7-45ac-b3d5-f51cdf360410",
+      "data": "2026-08-13",
+      "codigo": "5003796",
+      "descricao": "REBITE ALUMINIO 3,2X12",
+      "um": "",
+      "qtd": 10
+    },
+    {
+      "_syncId": "3c4d7e17-7467-41ec-820a-a9b6f05c8cc3",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PREGO C/CABEÇA 2X10 18X21 1KG",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "152e5577-5812-481b-943d-f6fbc86b2225",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PORTA PAPEL HIGIENICO ROLO MAZZO BRANCO",
+      "um": "",
+      "qtd": 13
+    },
+    {
+      "_syncId": "efdb6f2b-ecb7-44cc-b7e8-bbb7c9cce5f1",
+      "data": "2026-08-13",
+      "codigo": "5002369",
+      "descricao": "PLUG MACHO 20A",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "c6def146-7000-4c05-b5c4-c4451d563c02",
+      "data": "2026-08-13",
+      "codigo": "5002368",
+      "descricao": "PLUG FEMEA 20A",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "7e005361-63ec-44f4-8e17-028578def57f",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PLUG FEMEA 10A",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "d05ad6bf-1fad-4c29-a22b-15b017202c14",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PLAFON PLASTICO 1XE27 C/BOCAL PORCEL 100W",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "2379af67-7400-4aa6-8421-38dbcedf9460",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PISTOLA P/PINTURA CH PP-14",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "c16cf038-264d-4ca5-8da5-f201d53893e7",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PISTOLA DE GRAXA",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "259da11b-b2fd-4ac7-9d0e-56540a8e2f41",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PASTA DESENGRAXANTES BALDE 2,5KG",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "4402b2e0-c2e5-46ab-86a6-0d09626891d8",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO SEXTAVADO ROSCA 5/16X60MM S-12",
+      "um": "",
+      "qtd": 16
+    },
+    {
+      "_syncId": "ff737f67-374c-4bc1-a23e-680707a3a8b5",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO SEXTAVADO ROSCA 3/16X45MM S-8",
+      "um": "",
+      "qtd": 18
+    },
+    {
+      "_syncId": "527a8b52-2e23-4d99-879a-7d7314299ca0",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO SEXTAVADO ROSCA 1/4X55MM S-10",
+      "um": "",
+      "qtd": 17
+    },
+    {
+      "_syncId": "5088a1b0-518c-4042-91da-52e9382715dc",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO AUTO BROCANTE 14-14X1",
+      "um": "",
+      "qtd": 1600
+    },
+    {
+      "_syncId": "15021791-a4da-4048-8913-f5921280eb2c",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO AUTO BROCANTE 12-14X2,1/2",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "0320c0a1-3c88-4b10-bcd3-e05f0d516183",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO ALLEN 6MM",
+      "um": "",
+      "qtd": 10
+    },
+    {
+      "_syncId": "03354f01-3ab2-4c0b-89db-278cdfc81643",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO ALLEN 5MM",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "781c956e-7017-4864-8f07-55a3a7e7e8f0",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO ALLEN 4MM",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "91c55d0c-d0bb-48c5-b873-6c5f68de81eb",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO ALLEN 3MM",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "83f0108e-c903-44e5-97b1-191e2fc89264",
+      "data": "2026-08-13",
+      "codigo": "5003399",
+      "descricao": "PARAFINA EM BARRA 5KG",
+      "um": "",
+      "qtd": 22
+    },
+    {
+      "_syncId": "9d0a3213-8aea-41cd-b10a-9708e6a65bfd",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PA SX M 14-1,50X40",
+      "um": "",
+      "qtd": 10
+    },
+    {
+      "_syncId": "336b5062-5e5e-4788-9345-1ef0f693ebab",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PA CL SI MA ET 8X50",
+      "um": "",
+      "qtd": 20
+    },
+    {
+      "_syncId": "53d2aa7d-b6a9-4213-9972-6df53eaf0718",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PA CL SI MA ET 6X55",
+      "um": "",
+      "qtd": 11
+    },
+    {
+      "_syncId": "3c85517b-c321-4024-aa7c-90b89c92acd9",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PA CL SI INOX 304 6X60",
+      "um": "",
+      "qtd": 26
+    },
+    {
+      "_syncId": "5721cf11-7413-49b0-93a4-2764fdc0ab9f",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PA CH SI MA INOX 304 8X25",
+      "um": "",
+      "qtd": 18
+    },
+    {
+      "_syncId": "251ec99a-3f7c-4dc6-835b-058049d14fd5",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PA CH SI MA INOX 304 6X20",
+      "um": "",
+      "qtd": 46
+    },
+    {
+      "_syncId": "4a1926be-b006-42f0-9cce-bf5e17e5951b",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PA CH SI MA INOX 304 5X25",
+      "um": "",
+      "qtd": 23
+    },
+    {
+      "_syncId": "1c0e1d23-d1f2-4554-b7be-0284af5f2e9e",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PA CH SI MA INOX 304 4X20",
+      "um": "",
+      "qtd": 16
+    },
+    {
+      "_syncId": "556e79be-8550-49af-b0c1-29c97a1e4772",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PA C/C SI 5X60",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "f70b654a-6d2d-4b89-ad0f-b6d8a37ba421",
+      "data": "2026-08-13",
+      "codigo": "5001361",
+      "descricao": "ORBIFIX 4 (LOCTITE)",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "38196a35-1a4d-4fd9-b58b-2477eefd8146",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "NIPLE ROSC. PVC 1/2",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "221ac9bb-3e68-4110-97c2-83d60e5b82e1",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "NIPLE GALV. 3\"",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "ac7390ff-fa46-4145-98bd-ca20dac4aa7e",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "MANTA ASFALTICA MULTISEAL 10MX300MM",
+      "um": "",
+      "qtd": 10
+    },
+    {
+      "_syncId": "ad194c73-94dc-4350-a209-331cf81a60ee",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "MANGUEIRA INDUSTRIAL 100R6 1/2\"X2,05MT C/CONEXÃO",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "da0df75b-a9f9-41ef-9ac6-f020433eb9d3",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "MANGUEIRA ÁGUA/AR 1/2 X 2,75 300PSI",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "5783593c-669c-45ad-b276-cc87cb686c85",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "MADRIL C/CHAVE 16L B18",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "589910b9-595b-443a-9d25-6ac45abc6b0d",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "MACHO AÇO LIGA HTOM MA 12-1,75 JG 2",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "3d18f623-5faf-4b19-b141-2ffc7cc28f6a",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA RED PVC SD 32X25MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "f18c0091-0eb9-49da-8349-1a5b36f529c4",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA PVC SD 32MM",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "93c92af3-1de4-4d07-ab56-178272d4f6a2",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA PVC SD 20MM",
+      "um": "",
+      "qtd": 10
+    },
+    {
+      "_syncId": "4808fb04-d26c-4630-8e9e-6d189dda37a9",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA PVC ESG. DN 100",
+      "um": "",
+      "qtd": 36
+    },
+    {
+      "_syncId": "a43ce1cf-1286-4d19-8897-500561a3e2bf",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA GALV. 3",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "2f4afd93-9a6b-43a3-a2c3-3a06c6049bcb",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA GALV. 1\"",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "57bbc639-343a-46fb-b64f-2e23d8d3b4cc",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA GALV 3/4",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "49ce2473-5ad0-4a5c-bab5-cd2984497e43",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA GALV 1/2",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "94bcd5bb-c0c6-4c4a-8dcf-c2545847610e",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA 35X3/4",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "8b3ceb4e-1794-4e6a-a330-58338cd29a86",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUVA 100 PVC",
+      "um": "",
+      "qtd": 11
+    },
+    {
+      "_syncId": "e04acbad-1e07-4eda-a02b-664ba8e2a1c0",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LUMINARIA LED SLIM SOBREPOR 18W 60CM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "32f16da8-e9c1-4657-8666-21039023aa11",
+      "data": "2026-08-13",
+      "codigo": "5003890",
+      "descricao": "LIXA PRA FERRO Nº120",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "121a2ba4-8c91-43be-bb41-e6b1d83dd8d3",
+      "data": "2026-08-13",
+      "codigo": "5002505",
+      "descricao": "LIXA D'ÁGUA Nº600",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "3d10634e-15eb-4ba3-9b15-5c0e6bea9a60",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LIMPA CONTATO",
+      "um": "",
+      "qtd": 20
+    },
+    {
+      "_syncId": "43c89f6d-882c-48e5-8443-0af40b88995a",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LIMPA AR CONDICIONADO 5LT",
+      "um": "",
+      "qtd": 35
+    },
+    {
+      "_syncId": "3834c202-875f-4c15-93c3-365f9b08063a",
+      "data": "2026-08-13",
+      "codigo": "5002428",
+      "descricao": "LAMPADA LED BULBO 50W E27",
+      "um": "",
+      "qtd": 71
+    },
+    {
+      "_syncId": "fb350cbe-15dc-40f1-b5d1-f283fd94d34f",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LAMPADA LED BULBO 20W E27",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "dfab9be2-1dc2-40e1-a557-91189bdfe03d",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "KIT COMPLETO P/CX ACOPLADAS",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "d035e4a3-9925-460a-ac2c-82f0b8e4079d",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "JOGO DE CHAVE CANHÃO TWISTER 3 A 14MM",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "1af25c2b-1a4c-453c-ac21-6de99081511b",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "JOELHO PVC SD/ROSC 20X1/2",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "17f92db7-3360-443b-a545-e351fa317a41",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "JOELHO PVC SD 32MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "feabbfe3-f9af-4ced-ba43-d4ae7e927c33",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "JOELHO PVC 40",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "4b2f2f46-7beb-469c-b288-9ca9961d8d4e",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "JOELHO 90º X100MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "8a12fdd4-0870-4dc3-8605-086db75b13f0",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "JOELHO 90º SD 25MM",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "37349540-0021-4a0c-98a7-a81a8182e4a9",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "JOELHO 45 ESG. DN100",
+      "um": "",
+      "qtd": 50
+    },
+    {
+      "_syncId": "bb6ac5ac-9ed4-43d3-96db-7a3a0a7adc86",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "JG DE MACHO M8X1,25",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "2f1b7e6b-c958-4592-ad1e-bbdd38d681b5",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "JG DE MACHO M10X1,50",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "682a5512-f30f-4196-8c77-af2e6ba9ef14",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "JG CHAVE HEXAG 9PÇC",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "4533f54b-80ed-4024-a8c2-61649b3303c9",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "IPITUR ISSO 68",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "45d84649-3212-44b9-8934-912b2e5a4a98",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "GRAXEIRA RETA M8X1",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "4998003c-8cd2-41f4-abb5-118cd8b52ac5",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "GRAXEIRA RETA M10X1",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "a3d2156f-c0af-43d0-b05a-1e0424e0fe5d",
+      "data": "2026-08-13",
+      "codigo": "5002748",
+      "descricao": "GONZO 5/8 (TEADIT)",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "d8e87ff3-ac86-4622-bdd3-085358773e9a",
+      "data": "2026-08-13",
+      "codigo": "5002749",
+      "descricao": "GONZO 3/8 (GABITEC)",
+      "um": "",
+      "qtd": 7
+    },
+    {
+      "_syncId": "7437f728-19b4-4eac-ab2a-4cb764108d4c",
+      "data": "2026-08-13",
+      "codigo": "5003208",
+      "descricao": "FITILHO RECLICADO 750GRS",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "074799cf-aa36-4931-b05f-8d0521456db6",
+      "data": "2026-08-13",
+      "codigo": "5002413",
+      "descricao": "FITA VEDA ROSCA 18X50",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "82c6bdae-2633-427e-a049-021b81ad41df",
+      "data": "2026-08-13",
+      "codigo": "5002208",
+      "descricao": "FITA ISOLANTE AMARELA 18MMX20M",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "31076bb4-9def-4dcb-81aa-ea1c7f39a67a",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "FERROLHO GALVANIZADO TARJETA 3",
+      "um": "",
+      "qtd": 19
+    },
+    {
+      "_syncId": "a33fb329-4318-464e-bc2a-653dd68ce448",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "FERROLHO GALVANIZADO TARJETA 2",
+      "um": "",
+      "qtd": 9
+    },
+    {
+      "_syncId": "246aca6d-c5d6-4c52-a3f4-2043d6335e68",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ESPATULA DE AÇO 10CM",
+      "um": "",
+      "qtd": 7
+    },
+    {
+      "_syncId": "9bfbcc53-a1a7-4134-ba0e-718554265e39",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ESCOVA DE AÇO",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "7cb8ac91-c096-4da8-8c21-6775750d7059",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ESCOVA CABO MADEIRA 3X15 LATÃO",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "e8ae98a6-8f53-45aa-8e79-86ac11ab2870",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "EMENDA RETA 1/2X1/2 LATÃO",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "bff847eb-e494-45ba-86e4-05270b470d50",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "EMENDA CORRENTE SIMPLES 08B1",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "34656b20-c8d7-4884-bd1a-7a045600d0b1",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "EMENDA CORRENTE 08B2",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "4f09a4a5-b595-4ad4-b4e1-11922396d4c2",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ELETRODO OK WELD 2,5MMX300 6330 KG INOX",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "baffbc96-8b98-4cbe-b063-ea93467a611c",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "DUREPOXI 50GR LOCTITE HENKEL",
+      "um": "",
+      "qtd": 14
+    },
+    {
+      "_syncId": "692f3de7-76be-47ab-9103-3345dbdeafe3",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "DOB.P/PORTA FG 11/2 C .",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "117d39f4-c544-46ac-8ee7-a072fe8718bb",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "DISPENSER P/SABONETE/ALCOOL 800ML",
+      "um": "",
+      "qtd": 9
+    },
+    {
+      "_syncId": "a64b29b1-0203-4803-86f0-611e89952abd",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "DISJUNTOR C63A TRIFÁSICO",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "b2f74d27-0cfe-4d0c-bb65-c4eadd8f80bb",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "DISJUNTOR C63A BIPOLAR",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "5a61597e-b94c-4907-a394-87648db6198f",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "DISJUNTOR C25A TRIFASICO",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "57177e0b-03e5-4d3b-a193-f8f65c4edd62",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "DISJUNTOR C20A TRIFASICO",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "dfa942ad-22f9-46d8-887d-8d24cfcf2167",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "DISJUNTOR BIFASE 20A",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "26629fad-876d-4e7e-aa3a-36126cb5133a",
+      "data": "2026-08-13",
+      "codigo": "5002391",
+      "descricao": "DISCO DE LIXA FLAP 7\" (180MM)",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "34c85500-3154-4750-9567-33e7c34db275",
+      "data": "2026-08-13",
+      "codigo": "5002390",
+      "descricao": "DISCO DE LIXA FLAP 4.1/2 (115MM) 5.001.285",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "2137f366-c813-431e-9023-3056324b16ad",
+      "data": "2026-08-13",
+      "codigo": "5002435",
+      "descricao": "DISCO DE DESBASTE 4\"",
+      "um": "",
+      "qtd": 17
+    },
+    {
+      "_syncId": "816db637-8f9a-4ecc-a25b-1a21d60ff25d",
+      "data": "2026-08-13",
+      "codigo": "5003716",
+      "descricao": "DISCO DE CORTE 7 X 1/16 X 7/8",
+      "um": "",
+      "qtd": 75
+    },
+    {
+      "_syncId": "35554a5c-1a2e-4756-ba37-e6b84c71234e",
+      "data": "2026-08-13",
+      "codigo": "5002854",
+      "descricao": "DISCO DE CORTE 4 1/2 X 3/64 X 7/8",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "c93a426a-f2f1-45c8-a807-7b6c6c7f14a7",
+      "data": "2026-08-13",
+      "codigo": "5003597",
+      "descricao": "DISCO DE CORTE 14X3,2X25,4",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "0ee62647-f3f1-4cfa-b500-3dc4d314079f",
+      "data": "2026-08-13",
+      "codigo": "5002415",
+      "descricao": "DESENGRIPANTE WD-40",
+      "um": "",
+      "qtd": 90
+    },
+    {
+      "_syncId": "a022ae0b-f294-4dca-80ac-f1ce92b77eb3",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "DESENGRAXANTE SPRAY CARBO",
+      "um": "",
+      "qtd": 18
+    },
+    {
+      "_syncId": "3ace1b46-2fcd-4aa4-8286-06cb16619967",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "DESEMPENADEIRA METALICA",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "72991d40-df07-433b-820d-8230ddae87df",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CORRENTE TRANSMISSÃO DIN 08 B/2",
+      "um": "",
+      "qtd": 10
+    },
+    {
+      "_syncId": "2dcb8022-5869-4f88-aed8-71a0489715d0",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CORRENTE TRANSMISSÃO DIN 08 B/1",
+      "um": "",
+      "qtd": 15
+    },
+    {
+      "_syncId": "e4d4a3c1-19c4-43e1-b057-30e4fcbad8a9",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CORREIA MOTOR 540 L",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "7616d603-35a0-41bd-a414-145e6b799216",
+      "data": "2026-08-13",
+      "codigo": "12490102007",
+      "descricao": "CORREIA DE DISTRIBUIÇÃO 240H 075",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "7d5f4978-03e4-4d21-9917-1ed9ce7d8023",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CORREIA 3L 380",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "c5d4f5ed-498a-446f-9e46-17303e2a94a1",
+      "data": "2026-08-13",
+      "codigo": "12490100005",
+      "descricao": "CORREIA 140 XL050",
+      "um": "",
+      "qtd": 10
+    },
+    {
+      "_syncId": "69b60008-1ffe-4a73-968f-dcff8aad9cff",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONTACTORA CWM 25A",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "08b2707c-85ba-4cbc-8724-729701e53636",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONTACTORA 80A 220V 30CV",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "bd79fbf0-b5db-4459-8dd0-bbcbb7a9b857",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONTACTORA 25A 220V",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "f33b91ff-2b63-455c-9fc9-0c3bf5b2913f",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONTACTOR TRIPOLAR 12A INA+INF",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "fb5b508d-8a6e-4cd6-b7a8-568bb61bb617",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONEXÃO RETA MACHO R 1/4X12",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "862f778d-aa77-466f-9d45-2977eb3847b1",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONEXÃO RETA MACHO R 1/2X8",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "e8735a45-bcb8-4ca7-b820-bddbbd38fe12",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONEXÃO RETA G.1/8X8",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "1bc2ef43-71c1-4bb2-9752-a9dc1ac9ee3d",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONEXÃO RETA G.1/8X4",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "c22c40b2-4163-422a-8166-097c11814178",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONEXÃO RETA G.1/8X12",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "34a19de6-66ef-47a3-a948-fd8b46e67d34",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONEXÃO RETA G.1/4X8",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "44ef1228-9cf1-4adb-b9d9-f04f6807ce9b",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONEXÃO RETA G.1/2X12",
+      "um": "",
+      "qtd": 7
+    },
+    {
+      "_syncId": "70b36208-c19a-4f0c-93d9-89e152919423",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONEXÃO COTOVELO M5X4",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "ddb5baa8-ddad-4996-822b-e3afd4723728",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONEXÃO COTOVELO G.1/4X8",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "5d274c42-3686-4eb1-91c3-cda48d406c92",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONEXÃO COTOVELO G.1/2X12",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "7bcfa6eb-b42e-47aa-9f22-d7bd9a3fbb7f",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONECTOR PORCELANA BIPOLAR 10MM",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "9b08873a-92a2-4fa5-a7c6-4cafd903577f",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONECTOR DE PORCELANA BIPOLAR 10MM",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "5a84f67e-5e8e-4479-acda-a7a1e29373ae",
+      "data": "2026-08-13",
+      "codigo": "5003822",
+      "descricao": "COLA DE CONTATO 2,8KG",
+      "um": "",
+      "qtd": 7
+    },
+    {
+      "_syncId": "92ea4bfd-9feb-4c6c-bf30-724ba98be6dd",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CJ TOMADAS 2P+T 10A 250V ARIA BRANCA",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "4d35d585-9370-41f8-a796-0e1fa797d61d",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CHUMBADOR PBA 5/8X4.1/2\" C/PORA E ARRUELA",
+      "um": "",
+      "qtd": 26
+    },
+    {
+      "_syncId": "4f266e63-e574-4ad4-b3c6-f974e6cb54e0",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CHUMBADOR 3/4",
+      "um": "",
+      "qtd": 18
+    },
+    {
+      "_syncId": "63fc3d87-58a4-48f8-8bbe-b98fab2bf761",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CHUMBADOR 1/2X4.1/2\" C/PF ZINCADO",
+      "um": "",
+      "qtd": 20
+    },
+    {
+      "_syncId": "c7f01e78-3a62-47a9-9fa8-57c60497b4ac",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CHAVE HEXAGONAL ALLEN T - 5MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "502c4ef2-8d62-4f36-a709-fabf4d8958e1",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CHAVE DE FENDA C/5PÇ",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "73fd82a9-66e4-4857-af9f-35d2f6e4902e",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CATALIZADOR EPOXI 900ML",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "f1128cea-d9d2-4c97-a847-6cb0023006d6",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CAP PVC SD 25MM",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "8c82bcef-5aac-4237-a928-be5b9665a1f5",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BUCHA PVC SD RED LG 32X20MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "433907f1-90bb-41e4-81b8-f7ac741c3bfc",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BUCHA PVC SD RED CT 25X20MM",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "46640b03-81b0-471e-9ebd-a37e1194b863",
+      "data": "2026-08-13",
+      "codigo": "5002635",
+      "descricao": "BUCHA NYLON S-8",
+      "um": "",
+      "qtd": 36
+    },
+    {
+      "_syncId": "8631eaeb-df8a-4895-847d-97953b025332",
+      "data": "2026-08-13",
+      "codigo": "5002439",
+      "descricao": "BUCHA NYLON S-6",
+      "um": "",
+      "qtd": 105
+    },
+    {
+      "_syncId": "5a4b6fbc-eb14-4692-a584-2327b6d2582e",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BUCHA NYLON S-12",
+      "um": "",
+      "qtd": 35
+    },
+    {
+      "_syncId": "1718e245-c1a8-47da-a3c2-b398c2cbf7be",
+      "data": "2026-08-13",
+      "codigo": "5002863",
+      "descricao": "BUCHA NYLON S-10",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "4913a7fb-cf78-4738-86c4-14da22db2ae6",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BROCA P/MARTELETES 6MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "04dd491a-44b4-4c16-a087-ba0d0804566a",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BROCA P/MARTELETES 25MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "9415fa67-9163-41d1-aaf5-01ca6244aef5",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BROCA P/MARTELETES 20MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "11c63f84-0fed-4309-be45-0784c716d5f9",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BROCA P/MARTELETES 18MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "f14386a5-9145-4068-844e-771f80c7ce6e",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BROCA P/MARTELETES 10MM",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "638f1d03-014d-41cd-aa98-d6cb2ba3fc8a",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BROCA AÇO RAPIDO 8MM",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "5a76ca12-4ec4-4194-8408-28099c45e934",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BROCA AÇO RAPIDO 6MM",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "6964608f-8a7a-4a56-adf5-67cade8c9620",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BROCA AÇO RAPIDO 5MM",
+      "um": "",
+      "qtd": 7
+    },
+    {
+      "_syncId": "9872a2fd-5f0d-4118-9a81-6ad1bb37c0fb",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BROCA AÇO RAPIDO 4MM",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "de693e22-52dc-48c6-91b8-390e860b5596",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BROCA AÇO RAPIDO 3MM",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "5561904c-f0d9-4796-b212-8365c619722d",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BROCA AÇO RAPIDO 16MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "d72753bb-a3c9-4e9e-9d9d-c9d224e02b10",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BROCA AÇO RAPIDO 12MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "a7f4e6ed-59d9-456c-9969-beb887bfd1cd",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BROCA AÇO RAPAIDO 3,5MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "85d1cfea-f263-4419-be7b-e5e6bfa25217",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BOCAL E-27 PORCELANA",
+      "um": "",
+      "qtd": 49
+    },
+    {
+      "_syncId": "3c3656ec-1525-4335-a877-0811c27003b6",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BICO INFLADOR C/PRESILHA C/RETENÇÃO R9030 - 113A",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "84408c18-ed04-494c-880c-9a9373b4b8cd",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BICO GRAXEIRA P/ENGR. MANUAL 1/8",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "c9af5cfb-15cf-4568-99ab-9d1428722311",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ARCO DE SERRA C/LAMINA BS 140STARRETT",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "f53defea-cd36-4286-8cba-d36791a8efbd",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ARAME RECOZIDO BWG18 1,25MM 1KG",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "457b1959-85e7-4d07-a437-58231a2017a4",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ANTICORRESIVO FUNDO E ACABAMENTO CINZA 18LT",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "3b1421f2-1be1-4404-9323-6afd636cbbd2",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ANEL DE VEDAÇÃO C/GUIA P/VASO SANITARIO",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "874187c2-a39e-4528-9986-817fc476ce33",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ALICATE TIPO TELEFONE MEIA CANA RETO 8/200MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "241fe38d-af98-4c0d-9a9f-0629da01d008",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ALICATE AUT AJUST DESENC CRIMPADOR DE FIO",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "cf701ff2-fb69-46fb-bc52-816805701138",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "AGUARRAZ 5LT",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "e7b2184b-5bda-49cd-938a-26f818437773",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ADESIVO PLASTICO PVC 850G",
+      "um": "",
+      "qtd": 9
+    },
+    {
+      "_syncId": "2a1d9363-b0af-4c3c-b7a4-286a321b7757",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ADAPTADOR SD CX D'ÁGUA 75MMX2.1/2",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "4178ff11-4e4b-4dbe-b2e5-26d430e9da44",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ADAPTADOR PVC SD ROSCA CURTA 20X1/2",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "4b1ab11c-fdb1-47a2-ada9-3eb211cea331",
+      "data": "2026-08-13",
+      "codigo": "5003813",
+      "descricao": "ABRAÇADEIRA TIPO U 3/4",
+      "um": "",
+      "qtd": 25
+    },
+    {
+      "_syncId": "f3156070-f104-47a2-bc14-8704bf1ca1ee",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ABRAÇADEIRA TIPO U 1/2",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "63df30b0-7db1-4356-9c35-bf1c312eec04",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ABRAÇADEIRA TIPO 'D' 3/4",
+      "um": "",
+      "qtd": 16
+    },
+    {
+      "_syncId": "fc17cdd8-483a-4bb6-bde7-5cfb5d3f9c24",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ABRAÇADEIRA NYLON 5,0X300MM",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "c51d7609-06b4-4a6b-a23d-53e560fbf587",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ABRAÇADEIRA NYLON 4,7X300MM",
+      "um": "",
+      "qtd": 127
+    },
+    {
+      "_syncId": "2aef1cda-6424-4913-9a02-38f836e84f36",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ABRAÇADEIRA NYLON 3X100MM",
+      "um": "",
+      "qtd": 12
+    },
+    {
+      "_syncId": "c64f4122-1598-4f66-a798-b6475440d3ce",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ABRAÇADEIRA NYLON 3,6X150MM",
+      "um": "",
+      "qtd": 33
+    },
+    {
+      "_syncId": "fbf0882b-a90c-44a9-a607-988937137270",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ABRAÇADEIRA NYLON 10X450MM",
+      "um": "",
+      "qtd": 290
+    },
+    {
+      "_syncId": "4423fe5d-ab41-4671-8955-6361bb71b069",
+      "data": "2026-08-13",
+      "codigo": "5002717",
+      "descricao": "ABRAÇADEIRA INCA 1/2",
+      "um": "",
+      "qtd": 26
+    },
+    {
+      "_syncId": "e736a3ce-584b-4d57-a21d-eb7320155dd7",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ABRAÇADEIRA DE PRESSÃO 64X83",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "9c723d11-23b8-4acf-a8f7-a9e8dbfe6471",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ABRAÇADEIRA DE PRESSÃO 57X70",
+      "um": "",
+      "qtd": 7
+    },
+    {
+      "_syncId": "8544ba66-0f1a-4efa-b3eb-ca03dc809e5d",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ABRAÇADEIRA DE PRESSÃO 20-32",
+      "um": "",
+      "qtd": 8
+    },
+    {
+      "_syncId": "4802db0f-b4fa-4dfb-bf03-05f01e9e21d8",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ABRAÇADEIRA DE PRESSÃO 16-27MM",
+      "um": "",
+      "qtd": 17
+    },
+    {
+      "_syncId": "94128933-c820-498b-8901-4af95fb4e388",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ABRAÇADEIRA DE PRESSÃO 14-22",
+      "um": "",
+      "qtd": 9
+    },
+    {
+      "_syncId": "08bf3875-29f9-4fff-b7fe-e088a7700ae8",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ABRAÇADEIRA DE PRESSÃO 13-19MM",
+      "um": "",
+      "qtd": 17
+    },
+    {
+      "_syncId": "df0ff4e7-15e3-4026-836a-aafc1e931f45",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ABRAÇADEIRA D\" C/CUNHA 2.1/2\"",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "a81b3e24-e4b0-49cb-82e7-39153240b64f",
+      "data": "2026-08-13",
+      "codigo": "11209933000",
+      "descricao": "STALTIONARY KNIFE",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "b5c0af97-2880-4ace-a6d5-848db23e3e3f",
+      "data": "2026-08-13",
+      "codigo": "12601180805",
+      "descricao": "SQUAR NMAG CYL WITH FRONT-TRAUNNION 80X50",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "e12d11ed-1cbe-4e21-8962-e94dab5ed7ba",
+      "data": "2026-08-13",
+      "codigo": "15410120100",
+      "descricao": "SMPS 230VAC 24V 150W DIN-FAIL",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "1003d0fb-705b-4c4b-a363-1717377e5186",
+      "data": "2026-08-13",
+      "codigo": "11155277502",
+      "descricao": "SERVOSTAR BKE - 115 - 45",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "2468fea7-ab38-42e0-a23f-a0b897953b49",
+      "data": "2026-08-13",
+      "codigo": "11305292000",
+      "descricao": "SELF PICKING TG D7 2 - CR",
+      "um": "",
+      "qtd": 25
+    },
+    {
+      "_syncId": "360a9c49-8402-4fb5-92f5-339a12794de5",
+      "data": "2026-08-13",
+      "codigo": "15300000108",
+      "descricao": "FUSE 356 SERIES 3.15A 440V SLOW-BLOW",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "743f7836-e836-430f-bd0c-dc343745fb4a",
+      "data": "2026-08-13",
+      "codigo": "14073140000",
+      "descricao": "COOLING FAN 220-240VAC 50HZ 150X55MM",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "27f3d451-0eef-4a97-a2f4-64ff83507bae",
+      "data": "2026-08-13",
+      "codigo": "12470070006",
+      "descricao": "CERAMIC HOOK GUIDE",
+      "um": "",
+      "qtd": 13
+    },
+    {
+      "_syncId": "062eedb9-9cc8-4007-92da-1912a19a2521",
+      "data": "2026-08-13",
+      "codigo": "14123080000",
+      "descricao": "AC VAR DRIVE IN3X400 OP3X400 8A",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "6b7f9e65-6a79-467c-8b30-80308b83a760",
+      "data": "2026-08-13",
+      "codigo": "14123230000",
+      "descricao": "AC VAR DRIVE IN3X400 OP3X400 23A",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "612a186b-4123-44bf-885a-b0219e1a87a1",
+      "data": "2026-08-13",
+      "codigo": "14103025000",
+      "descricao": "AC VAR DRIVE IN1X200 OP3X200 2,5A",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "644b1719-2cd0-433d-98bc-9d0010221275",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "UNIDADE DE AQUECIMENTO",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "ef9d0d88-3d69-4224-b40c-7aff9b70e529",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "FACAS DE CORTE",
+      "um": "",
+      "qtd": 13
+    },
+    {
+      "_syncId": "546803e7-86e4-409a-825b-eb273f254b55",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "FILTRO DE SUCÇÃO ROSCA",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "4c9161cf-145c-43bc-9482-acebddee0443",
+      "data": "2026-08-13",
+      "codigo": "EFP 0006",
+      "descricao": "ELEMENTO FILTRANTE PP 9.3/4 - 56 MICRAS",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "3f6c50d3-4d63-40b6-bcad-7e03d68bb1e2",
+      "data": "2026-08-13",
+      "codigo": "17010271",
+      "descricao": "ANEL DE VEDAÇÃO",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "f65778f7-4b8f-43d7-920e-2d53c898248c",
+      "data": "2026-08-13",
+      "codigo": "17010274",
+      "descricao": "ACOPLADOR FLEXIVEL",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "40adb2e0-668f-4345-9a97-a3ee50e6c91c",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "RETENTOR CUBO RODA DIANTEIRA INTERNO",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "4cf0cc58-8b94-40c6-b04c-82ab03d87614",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "RETENTOR CUBO RODA DIANTEIRA EXTERNO",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "a1351a5f-e458-47c3-966c-61630675081d",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "LONAS",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "f4415804-efef-426e-ba73-c6bb3a876825",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PNEU 295/80R22.5 LISO",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "220d7b71-ec6f-4f49-b70e-0fa316fbda3e",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "REPARO VALVULA AISAN",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "3c1f1a01-5574-42b4-b232-0cf51dcc9a61",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "MANOPLA VOLANTE",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "43cb6f0a-97b4-441b-aeb1-0b0a4393a05a",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PRESILHA",
+      "um": "",
+      "qtd": 12
+    },
+    {
+      "_syncId": "ea18c7e2-cacf-4168-880f-ecc729141383",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "FLUIDO FREIO DOT4",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "7c0924bd-c9a7-427d-a932-8e0b614f8bb0",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ÓLEO MOTOR 20W50",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "3b14057d-05a0-4b47-9720-7b75e2e4fd59",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ÓLEO TRANSMISSÃO",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "e7f786b7-2676-48d2-9727-49cd81c0b654",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "MINI ALAVANCA",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "2dbc378b-590a-4b99-ba5a-564dbf39a56e",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "D.RETENTOR DO CUBO PEQUENO",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "8fd235c0-2b0b-4019-af1c-1d6ddcb4b193",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "D.RETENTOR DO CUBO GRANDE",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "544f3a28-2efc-4900-ae21-335d1194addb",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CILINDRO DE RODA",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "0d36c23d-ceb8-4623-86f8-85f00543a3bc",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "REPARO DO GÁS",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "85e02968-6a1d-4e35-a3b6-24de438e31b8",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BOMBA DAGUA MOTOR MAZDA F2 2.2L",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "db95aacc-dfc1-48de-a668-70e13167ece2",
+      "data": "2026-08-13",
+      "codigo": "11157906800",
+      "descricao": "LAMINA INDUSTRIAL",
+      "um": "",
+      "qtd": 175
+    },
+    {
+      "_syncId": "82598425-7b61-46a6-bfa1-670e32d2d9a5",
+      "data": "2026-08-13",
+      "codigo": "11157108900",
+      "descricao": "TUBO MÉDIO",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "94bf67ff-d524-4059-9312-7a6d1dc5fd62",
+      "data": "2026-08-13",
+      "codigo": "11304635000",
+      "descricao": "TRENÓ",
+      "um": "",
+      "qtd": 98
+    },
+    {
+      "_syncId": "91ffad93-a2e0-4054-b9c8-8241bb464ec9",
+      "data": "2026-08-13",
+      "codigo": "11157906800",
+      "descricao": "TG WITH CERAMIC 4.5MM - C/CE",
+      "um": "",
+      "qtd": 175
+    },
+    {
+      "_syncId": "2b05ea2b-701e-4d98-ba4b-cddb2064a560",
+      "data": "2026-08-13",
+      "codigo": "11305755000",
+      "descricao": "TENSION ARM FOR DIA 2.5 WIRE SPRING",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "69f8d3ee-9624-441f-bf8b-9403f9861f44",
+      "data": "2026-08-13",
+      "codigo": "11130814620",
+      "descricao": "SLEEVE BACK",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "b0c8258b-0c73-4a16-9af1-ad928323b57a",
+      "data": "2026-08-13",
+      "codigo": "11127099310",
+      "descricao": "SENSOR ANALOGICO COM MOLEX CONN",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "59c4045e-036a-4e0f-9928-a873a99f1fe4",
+      "data": "2026-08-13",
+      "codigo": "11303541000",
+      "descricao": "SEGUIDOR DE CÂMERA",
+      "um": "",
+      "qtd": 116
+    },
+    {
+      "_syncId": "e74d6989-342b-49f4-bc78-3325e920dff1",
+      "data": "2026-08-13",
+      "codigo": "11157926400",
+      "descricao": "ROLO GUIA S/CONJ.",
+      "um": "",
+      "qtd": 10
+    },
+    {
+      "_syncId": "b25b5be5-bd3a-43a6-aee8-4a7556fb10fe",
+      "data": "2026-08-13",
+      "codigo": "11305611000",
+      "descricao": "MOLA DO SINTONIZADOR",
+      "um": "",
+      "qtd": 15
+    },
+    {
+      "_syncId": "171f130d-14f3-4695-b07d-d068f5378808",
+      "data": "2026-08-13",
+      "codigo": "11305268000",
+      "descricao": "FREIO",
+      "um": "",
+      "qtd": 9
+    },
+    {
+      "_syncId": "0af1dcc3-126d-4a74-b189-0f607d2beb71",
+      "data": "2026-08-13",
+      "codigo": "15410120100",
+      "descricao": "FONTE CHAVEADA 230 VAC / 24 VCC 150 W PARA TRILHO DIN",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "a821b164-1b9d-4e9c-a174-9affb024aafc",
+      "data": "2026-08-13",
+      "codigo": "11147254830",
+      "descricao": "CARTÃO CBM ISOLADO EG",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "0c297aab-43db-4762-88bc-97e2ef62c7f3",
+      "data": "2026-08-13",
+      "codigo": "14501942002",
+      "descricao": "3P ISO TRAN P380/440Y S230D 60H 2KVA",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "37b2e2c9-c91e-4dd0-b11a-1b8b1b7dd943",
+      "data": "2026-08-13",
+      "codigo": "14501941000",
+      "descricao": "3P ISO TRAN P380/440Y S230D 60H 1KVA",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "1467562e-baf2-46d4-8458-7fee627dbca8",
+      "data": "2026-08-13",
+      "codigo": "11169903100",
+      "descricao": "CLIPPER BLOCK ASSEMBLY",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "f2ca9886-2c80-4f75-8da0-eefa43e93cb1",
+      "data": "2026-08-13",
+      "codigo": "11422478030",
+      "descricao": "CUTTING BASE / 20-04-70X3",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "37f57b50-9e40-44a3-bd40-32dd9bed83ca",
+      "data": "2026-08-13",
+      "codigo": "11952008010",
+      "descricao": "HD CART HEATER 260V 2.75KW D1 HL890",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "27e479c1-4d26-4aee-8b6e-0125a47dc0ec",
+      "data": "2026-08-13",
+      "codigo": "12470311287",
+      "descricao": "PNEU CYL DSBC-40-80-PPVA-N3, FS#1376659",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "ad73a7e5-f746-4ec7-9e64-d62eeafa86df",
+      "data": "2026-08-13",
+      "codigo": "12609500796",
+      "descricao": "PILOTED CHECK VALVE",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "c6d55d8f-8b60-47b5-92aa-08f0d260bbd7",
+      "data": "2026-08-13",
+      "codigo": "14470400009",
+      "descricao": "TEMP SENSOR W CAB \"J\" TYPE, 2 WIRE",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "9a112e89-97bc-491f-8ec0-bac5f9b15b2e",
+      "data": "2026-08-13",
+      "codigo": "12470150194",
+      "descricao": "SCREW 87U",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "36e56487-1c23-493a-a6e1-6921586c96dc",
+      "data": "2026-08-13",
+      "codigo": "12470150107",
+      "descricao": "SCREW 86X",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "09030f6a-22f5-4bc0-b8da-0f65e448564a",
+      "data": "2026-08-13",
+      "codigo": "12470150254",
+      "descricao": "SCREW 402",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "e33ad7e2-734a-4e3a-b69e-3bbf01fe7422",
+      "data": "2026-08-13",
+      "codigo": "12470150118",
+      "descricao": "SCREW 22839",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "ee543fdb-a691-466f-80c2-79486c70b732",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PORCA ALWARÁ A4",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "2e0bf5a8-9f3d-4080-aab3-0d33268f3646",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PORCA 10-13-6-2",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "4043fbeb-0417-4a31-90ab-3f90ed6d334f",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PORCA 10-13-6-1",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "6b33dc7a-184b-4753-8e70-9ba2ba67df54",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PINO DA BIELA - 3-7",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "ad2d53ee-9673-475e-8cc1-2263660c4789",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO - 10-2-5",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "902d007e-ad6d-4cb1-9384-ecfd7f04ad55",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO 10-2-3",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "204229b4-320f-43f7-add9-5444ab8d1e4b",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO 10-1-9",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "8e46f335-1a5a-4cf5-8bcd-5693be9f909b",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO CALÇADOR 10-8-3",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "7a8b4b1d-0e37-4857-a59d-d2045b677d30",
+      "data": "2026-08-13",
+      "codigo": "2655",
+      "descricao": "PARAFUSO 10-1-5",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "a7f5dfd5-ddac-4d68-9af7-fba6fe13d24a",
+      "data": "2026-08-13",
+      "codigo": "2011",
+      "descricao": "PARAFUSO 10-1-3",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "3959da88-8308-49ca-9285-b5bf5c2bc9a5",
+      "data": "2026-08-13",
+      "codigo": "12470310013",
+      "descricao": "LAMINA",
+      "um": "",
+      "qtd": 15
+    },
+    {
+      "_syncId": "fc4c449b-d283-44b8-8f82-d991231ed69d",
+      "data": "2026-08-13",
+      "codigo": "12470150029",
+      "descricao": "LAÇO 773091",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "4d5c1c7f-bc1e-4253-81db-bbfc97a27742",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "GRAXA LUBRIFICANTE CASTANHO",
+      "um": "",
+      "qtd": 6
+    },
+    {
+      "_syncId": "013e64a9-5314-4c37-b4c6-7310637c296a",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "FELTRO GK8 - 4-10",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "aa1d155f-d603-4700-ba14-681b951e61b6",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONECTOR BARRA GK8 - 3-5",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "56cf3bd0-b117-4800-a824-5e916726d022",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CONECTOR 3-18",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "663f934c-0979-4d46-b7b5-83daf1d92271",
+      "data": "2026-08-13",
+      "codigo": "12470310269",
+      "descricao": "CINTO REDONDO",
+      "um": "",
+      "qtd": 13
+    },
+    {
+      "_syncId": "474eea15-62b9-4838-b8f3-a2d6adcc7764",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BIELA GK8 - 3-6",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "e3317eb7-8520-4fb8-8984-dc317e0dfc52",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BIELA 3-17",
+      "um": "",
+      "qtd": 7
+    },
+    {
+      "_syncId": "a435fe5a-b7e0-4ee6-bcf4-57bee36a38a7",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "BARRA DE AGULHA GK8 - 3-2",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "5a1a87cd-04d5-4161-a081-975a7b9d0869",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ALAVANCA GK8 - 3-8",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "f86b7878-387a-4a91-a724-4f45b2fddf73",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "AGULHA GB-UY143GS-27/250 R (ORI) PONTA NORMAL",
+      "um": "",
+      "qtd": 13
+    },
+    {
+      "_syncId": "092ad03e-3a1a-4c0f-9181-d80b0e74dcc8",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "AGULHA DRX2-28 ORGAN (JAP)",
+      "um": "",
+      "qtd": 37
+    },
+    {
+      "_syncId": "1c7fbd00-666c-4667-9d81-a81b100eb6ce",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "AGULHA 80800C 80 -29/300",
+      "um": "",
+      "qtd": 18
+    },
+    {
+      "_syncId": "1cbdaaa9-261b-42f4-8082-deafadbbeaea",
+      "data": "2026-08-13",
+      "codigo": "JYS-0723",
+      "descricao": "ENGRENAGEM BATIDA 23 Z",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "2556bc93-ccb3-4da3-8f22-b39a9ddc98db",
+      "data": "2026-08-13",
+      "codigo": "JYF-E30-14",
+      "descricao": "TRAVA DA MESA",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "65cb8ccf-7406-48af-93c4-2aca138a792e",
+      "data": "2026-08-13",
+      "codigo": "JYF - 26",
+      "descricao": "TRAMADOR 4X80",
+      "um": "",
+      "qtd": 71
+    },
+    {
+      "_syncId": "440031b7-d541-4b48-8e06-4f547e71cb28",
+      "data": "2026-08-13",
+      "codigo": "11130870950",
+      "descricao": "TENSOR M5 PRATO ALUMINIO",
+      "um": "",
+      "qtd": 200
+    },
+    {
+      "_syncId": "5a9b0879-aa2f-45a6-ad27-4473c02ecc80",
+      "data": "2026-08-13",
+      "codigo": "JYF-E110-06",
+      "descricao": "SUPORTE DO TRAMADOR",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "17a72862-5381-42bc-94b3-fc69c4c0344f",
+      "data": "2026-08-13",
+      "codigo": "11407103000",
+      "descricao": "SPROCKET 41T",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "c222a9d7-ad71-4b1b-8af1-dd3236fdcbdf",
+      "data": "2026-08-13",
+      "codigo": "11130474420",
+      "descricao": "SPROCKET 20T",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "25c245c4-dfdf-4219-887e-72b6b00ceb86",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "SPROCKET 15T",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "5fc31d6e-8a9f-4469-a00d-ec89af6a339d",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PENTE ESTANHO CARBONO CURVADO",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "3a6253fa-3f77-4ea3-8c56-1e2a9667423c",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO S/C 5MM",
+      "um": "",
+      "qtd": 9
+    },
+    {
+      "_syncId": "e537255a-05d9-4caf-9245-e5000638a9f6",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO M5X25",
+      "um": "",
+      "qtd": 5
+    },
+    {
+      "_syncId": "286d65f9-4d61-4b2e-960a-ef8d55ac0d11",
+      "data": "2026-08-13",
+      "codigo": "GB-70-76 Z",
+      "descricao": "PARAFUSO M4X4",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "74ba30f6-027c-4480-bffd-914726efdaa9",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "PARAFUSO M4X20",
+      "um": "",
+      "qtd": 24
+    },
+    {
+      "_syncId": "75b5510a-9bcb-4d50-a0b9-fe15fecf5eb5",
+      "data": "2026-08-13",
+      "codigo": "12190304008",
+      "descricao": "PARAFUSO ALLEN SEXT INOX 4X8MM",
+      "um": "",
+      "qtd": 385
+    },
+    {
+      "_syncId": "dbb4fbb5-6261-403f-89c2-5db9fc2276c3",
+      "data": "2026-08-13",
+      "codigo": "JYF-J30-90",
+      "descricao": "MOLA DE TENSÃO DA TRAMA",
+      "um": "",
+      "qtd": 23
+    },
+    {
+      "_syncId": "b324fdb0-2dae-4c8f-940c-532ddcb2c2c1",
+      "data": "2026-08-13",
+      "codigo": "JYF-D30-07",
+      "descricao": "MOLA DE TENSÃO ( CADARÇO )",
+      "um": "",
+      "qtd": 9
+    },
+    {
+      "_syncId": "58660247-755a-45f6-9318-099f519b2fdc",
+      "data": "2026-08-13",
+      "codigo": "JYF-C30-16",
+      "descricao": "MOLA DE PARADA DE TRAMA ESQUERDO 0,80",
+      "um": "",
+      "qtd": 80
+    },
+    {
+      "_syncId": "6ee90287-bce9-49a4-8c7e-b6fe23189026",
+      "data": "2026-08-13",
+      "codigo": "JYF-J30-09-B",
+      "descricao": "MOLA DE PARADA DE TRAMA DIREITA 0,80",
+      "um": "",
+      "qtd": 40
+    },
+    {
+      "_syncId": "0b4ecb9e-3023-409d-9cf7-aacfeb1d8a5b",
+      "data": "2026-08-13",
+      "codigo": "JYF-J30-50",
+      "descricao": "GUIA FIO COM PORCELANA",
+      "um": "",
+      "qtd": 10
+    },
+    {
+      "_syncId": "a080ab6d-24d8-4728-b40b-06edabfc120d",
+      "data": "2026-08-13",
+      "codigo": "JYF-G30-41",
+      "descricao": "ENGRENAGEM DUPLA 14-25 DENT",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "479b2087-4e01-4372-93de-1376f6678def",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ENGRENAGEM BATIDA 40 DENT",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "7909759b-cb32-4770-bc6d-55b78ac4a03e",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ENGRENAGEM 22 DENT",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "f1203320-592b-4cf1-b514-2b0a74ec8c01",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "ENGRENAGEM 20 DENT",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "cd2657b8-a6c9-4a3c-a77e-13d67e8c2964",
+      "data": "2026-08-13",
+      "codigo": "JYF-F30-03",
+      "descricao": "DISCO DE ESCALA",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "c557b54a-2cd5-4041-9b94-2d450199d77c",
+      "data": "2026-08-13",
+      "codigo": "J - 0029",
+      "descricao": "CONJUNTO DE TENSOR",
+      "um": "",
+      "qtd": 33
+    },
+    {
+      "_syncId": "3fb0c123-cba6-4dc9-aa20-ff548fc98b90",
+      "data": "2026-08-13",
+      "codigo": "JYF-E30-16",
+      "descricao": "CHAPINHA 5C",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "254c41f6-7ba1-40b6-ae15-ff89e10de57a",
+      "data": "2026-08-13",
+      "codigo": "JYF-E30-15",
+      "descricao": "CHAPINHA 4X80",
+      "um": "",
+      "qtd": 21
+    },
+    {
+      "_syncId": "5d36fb80-4842-4099-9e90-1744017d87d3",
+      "data": "2026-08-13",
+      "codigo": "JYF-J30-07",
+      "descricao": "CALÇO DO SUPORTE DA MESA",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "4cd09220-1b35-425c-91ac-607ba9d515e7",
+      "data": "2026-08-13",
+      "codigo": "JYF-F30-07",
+      "descricao": "BUCHA DO EIXO DO BRAÇO DA AGULHA",
+      "um": "",
+      "qtd": 30
+    },
+    {
+      "_syncId": "75eca2b7-ef63-48b2-8468-5ff63970e984",
+      "data": "2026-08-13",
+      "codigo": "JYF-G30-30-17-1",
+      "descricao": "BUCHA DA CATRACA",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "d8fe9050-2284-471f-81f2-9b8f8e4fac5c",
+      "data": "2026-08-13",
+      "codigo": "JYF-E110-05",
+      "descricao": "ALAVANCA DO TRAMADOR (JYF-10-4X80)",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "770bd6ee-1e0c-4d19-8878-92b91a26dc38",
+      "data": "2026-08-13",
+      "codigo": "JYF-G30-30-17-1",
+      "descricao": "ALAVANCA DA AGULHA DA TRAMA",
+      "um": "",
+      "qtd": 3
+    },
+    {
+      "_syncId": "d1069eae-72cc-4f31-a322-cafb7cf5b884",
+      "data": "2026-08-13",
+      "codigo": "79119",
+      "descricao": "AGULHA DE LINGUETA",
+      "um": "",
+      "qtd": 929
+    },
+    {
+      "_syncId": "64eaf239-7860-49ee-8805-38f3de5269af",
+      "data": "2026-08-13",
+      "codigo": "5003332",
+      "descricao": "TESOURA ESCOLAR 13 CM",
+      "um": "",
+      "qtd": 4
+    },
+    {
+      "_syncId": "cfbba3f7-b6bb-4725-8c73-fc10b5b25360",
+      "data": "2026-08-13",
+      "codigo": "5001412",
+      "descricao": "TESOURA DE ESCRITORIO 21 CM",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "6050c79b-fd1d-46fc-affa-3e7a124ac686",
+      "data": "2026-08-13",
+      "codigo": "27",
+      "descricao": "TACHA DE QUADRO DOURADA CX C/100",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "561ca6c2-c1ca-439b-94ac-221838338d3a",
+      "data": "2026-08-13",
+      "codigo": "5003674",
+      "descricao": "QUADRO DE AVISO",
+      "um": "",
+      "qtd": 21
+    },
+    {
+      "_syncId": "a0cd1082-c14a-45d2-a773-198ddca94dcb",
+      "data": "2026-08-13",
+      "codigo": "5001319",
+      "descricao": "PINCEL ATOMICO PILOTO AZUL",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "b5b710d2-10f0-4f37-8f54-5b5d50c08a7a",
+      "data": "2026-08-13",
+      "codigo": "5000393",
+      "descricao": "PAPEL A4",
+      "um": "",
+      "qtd": 26
+    },
+    {
+      "_syncId": "9c71097a-7e61-4aa3-a2d4-ea26814ca457",
+      "data": "2026-08-13",
+      "codigo": "5003375",
+      "descricao": "LAPIS DE CERA ESTACA PRETO",
+      "um": "",
+      "qtd": 12
+    },
+    {
+      "_syncId": "75db9f14-f39b-4a35-b4eb-8c4a5e4d371c",
+      "data": "2026-08-13",
+      "codigo": "5001442",
+      "descricao": "LAMINA P/ESTILETE LARGO",
+      "um": "",
+      "qtd": 13
+    },
+    {
+      "_syncId": "7f851dba-677d-44aa-b057-5202e15a1fbe",
+      "data": "2026-08-13",
+      "codigo": "5003209",
+      "descricao": "LAMINA CORTANTE EM AÇO",
+      "um": "",
+      "qtd": 1260
+    },
+    {
+      "_syncId": "d985a8e8-c325-438b-b564-0c7347156caa",
+      "data": "2026-08-13",
+      "codigo": "45",
+      "descricao": "FITA DUPLA FACE 750MMX30M",
+      "um": "",
+      "qtd": 15
+    },
+    {
+      "_syncId": "d483026f-8cab-4154-9ddf-036ad7d93b02",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "FITA ADESIVA TRANSPARENTE 72X100",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "776af224-52ad-4608-a69f-633f5a598de5",
+      "data": "2026-08-13",
+      "codigo": "5003325",
+      "descricao": "FITA ADESIVA TRANSPARENTE 48X50",
+      "um": "",
+      "qtd": 107
+    },
+    {
+      "_syncId": "af40437c-89e0-4566-9ca0-0134f63243fe",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "FITA ADESIVA POLIETILENO PRETA",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "c85dcfd7-e6c9-4d38-9c8b-485f09f8a839",
+      "data": "2026-08-13",
+      "codigo": "5003333",
+      "descricao": "FITA ADESIVA (VERMELHA) 48X30",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "9123fbac-4c6b-4b38-8baf-81b312a232f5",
+      "data": "2026-08-13",
+      "codigo": "5003265",
+      "descricao": "ETIQUETA BRANCA P/IMPRESSÃO",
+      "um": "",
+      "qtd": 45
+    },
+    {
+      "_syncId": "884105fb-485d-44dc-8240-f8a5ee94a47b",
+      "data": "2026-08-13",
+      "codigo": "5003661",
+      "descricao": "ESTILETE LAMINA SIMPLES",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "4fdc6b4f-fbd7-44a7-aea6-9d17b01e6d8a",
+      "data": "2026-08-13",
+      "codigo": "5001295",
+      "descricao": "COLA BOND",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "b3c7cace-c630-4c85-982b-8333e19099c5",
+      "data": "2026-08-13",
+      "codigo": "5000531",
+      "descricao": "CANETA ESFEROGRAFICA AZUL",
+      "um": "",
+      "qtd": 2
+    },
+    {
+      "_syncId": "4b0562bb-2072-4dd1-90c5-f7e0833d8733",
+      "data": "2026-08-13",
+      "codigo": "SEM CÓDIGO",
+      "descricao": "CADEADO 50MM ST PAPAIZ",
+      "um": "",
+      "qtd": 1
+    },
+    {
+      "_syncId": "b0c9e0f2-c263-4bc5-8700-227ac48cb40f",
+      "data": "2026-08-13",
+      "codigo": "5001897",
+      "descricao": "BATERIA 9V",
+      "um": "",
+      "qtd": 1
+    }
+  ],
+  "materialPlanning": {}
 }

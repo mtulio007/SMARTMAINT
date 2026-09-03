@@ -137,6 +137,7 @@ const menuItems = [
   { label: 'Status OS', icon: '🔎', key: 'pesquisa' },
   { label: 'Registro OS', icon: '🖥️', key: 'cadastro' },
   { label: 'Pedidos', icon: '🛒', key: 'compras' },
+  { label: 'Status de pedidos', icon: '↳', key: 'statuspedidos', submenu: true, menuGroup: 'manutencao' },
   { label: 'Almoxarifado', icon: '📦', key: 'materiais', heading: true },
   { label: 'Dashboard', icon: '📊', key: 'dashboardmateriais' },
   { label: 'Entrada de Materiais', icon: '📥', key: 'materiais' },
@@ -355,11 +356,14 @@ function App() {
   }, [purchases])
 
   const filteredPurchases = useMemo(() => {
-    const term = purchaseSearchTerm.toLowerCase()
+    const term = purchaseSearchTerm.trim().toLowerCase()
     return purchases.filter(purchase => {
       if (!term) return true
-      const itemText = getPurchaseItems(purchase).flatMap(item => Object.values(item)).join(' ')
-      return `${Object.values(purchase).join(' ')} ${itemText}`.toLowerCase().includes(term)
+      const itemText = getPurchaseItems(purchase)
+        .map(item => `${item.tipoComponente || ''} ${item.descricao || ''} ${item.quantidade || ''} ${item.unidade || ''}`)
+        .join(' ')
+      const purchaseText = `${purchase.numero || ''} ${purchase.setor || ''} ${purchase.tipoSolicitacao || ''} ${purchase.solicitante || ''} ${purchase.observacoes || ''} ${purchase.status || ''}`
+      return `${purchaseText} ${purchase.descricao || ''} ${itemText}`.toLowerCase().includes(term)
     })
   }, [purchases, purchaseSearchTerm])
 
@@ -1029,6 +1033,17 @@ function App() {
     handlePurchaseClear()
   }
 
+  const handlePurchaseStatusChange = (purchaseNumber, status) => {
+    savePurchases(purchases.map(purchase => purchase.numero === purchaseNumber ? { ...purchase, status } : purchase))
+  }
+
+  const navigateToPurchase = direction => {
+    if (purchases.length === 0) return
+
+    const targetIndex = direction > 0 ? 0 : purchases.length - 1
+    setCurrentPurchaseIndex(targetIndex)
+  }
+
   const handleCatalogImageChange = event => {
     const file = event.target.files?.[0]
     if (!file) return
@@ -1194,7 +1209,7 @@ function App() {
                 key={item.key}
                 type="button"
                 onClick={() => setSelectedSection(item.key)}
-                className={`rounded-2xl px-2 py-2 text-center text-[8px] font-medium transition ${
+                className={`rounded-2xl px-2 py-2 text-center text-[8px] font-medium transition ${item.submenu ? 'ml-2 border border-slate-700' : ''} ${
                   selectedSection === item.key
                     ? 'bg-brand-500 text-white shadow-lg shadow-brand-500/15'
                     : 'bg-slate-800 text-white hover:bg-slate-700'
@@ -1230,7 +1245,7 @@ function App() {
                 key={item.key}
                 type="button"
                 onClick={() => setSelectedSection(item.key)}
-                className={`flex w-full items-center gap-2 rounded-xl px-2 py-2 text-left text-[11px] font-medium transition ${
+                className={`flex w-full items-center gap-2 rounded-xl px-2 py-2 text-left text-[11px] font-medium transition ${item.submenu ? 'ml-2 w-[calc(100%-0.5rem)] border-l border-slate-700 pl-3' : ''} ${
                   selectedSection === item.key
                     ? 'bg-brand-500 text-white shadow-lg shadow-brand-500/15'
                     : 'text-white hover:bg-slate-800'
@@ -1258,6 +1273,8 @@ function App() {
                     ? 'Status OS'
                     : selectedSection === 'compras'
                       ? 'Formulário de Pedidos'
+                      : selectedSection === 'statuspedidos'
+                        ? 'Status de pedidos'
                       : selectedSection === 'catalogo'
                         ? 'Catálogo Manutenção'
                       : selectedSection === 'dashboardmateriais'
@@ -1278,7 +1295,7 @@ function App() {
 
 
           <div className="grid gap-6 lg:grid-cols-1">
-            <section className={`rounded-3xl border border-slate-200 bg-slate-50 p-4 shadow-sm sm:p-6 ${selectedSection === 'cadastro' ? 'lg:min-h-[700px] lg:p-3' : selectedSection === 'horaextra' ? 'lg:min-h-[700px] lg:p-8' : ''}`}>
+            <section className={`${selectedSection === 'statuspedidos' ? 'hidden' : ''} rounded-3xl border border-slate-200 bg-slate-50 p-4 shadow-sm sm:p-6 ${selectedSection === 'cadastro' ? 'lg:min-h-[700px] lg:p-3' : selectedSection === 'horaextra' ? 'lg:min-h-[700px] lg:p-8' : ''}`}>
               {selectedSection !== 'cadastro' ? (
                 <div className="flex items-center justify-between gap-3">
                   <div>
@@ -1726,14 +1743,35 @@ function App() {
                 </div>
               ) : selectedSection === 'compras' ? (
                 <form className="mt-6 grid gap-4" onSubmit={handlePurchaseSubmit}>
-                  <div className="space-y-2 rounded-3xl border-t border-slate-200 pt-4">
+                  <div className="flex flex-col gap-3 rounded-3xl border border-slate-200 bg-white/80 p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
                     <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Pedidos</p>
+                    <div className="flex flex-wrap items-center gap-2 text-sm">
+                      <button
+                        type="button"
+                        onClick={() => navigateToPurchase(-1)}
+                        disabled={purchases.length === 0 || currentPurchaseIndex === purchases.length - 1}
+                        className={`rounded-full px-3 py-2 font-medium transition ${purchases.length === 0 || currentPurchaseIndex === purchases.length - 1 ? 'bg-slate-100 text-slate-400 cursor-not-allowed' : 'bg-brand-500 text-white hover:bg-brand-600'}`}
+                      >
+                        Anterior
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => navigateToPurchase(1)}
+                        disabled={purchases.length === 0 || currentPurchaseIndex === 0}
+                        className={`rounded-full px-3 py-2 font-medium transition ${purchases.length === 0 || currentPurchaseIndex === 0 ? 'bg-slate-100 text-slate-400 cursor-not-allowed' : 'bg-brand-500 text-white hover:bg-brand-600'}`}
+                      >
+                        Próximo
+                      </button>
+                      <span className="text-xs text-slate-500">
+                        {currentPurchaseIndex < 0 ? 'Novo pedido' : `Pedido ${currentPurchaseIndex + 1}/${purchases.length}`}
+                      </span>
+                    </div>
                   </div>
 
                   <div className="grid gap-4 sm:grid-cols-2">
                     <label className="space-y-2 text-sm text-slate-700">
                       <span>Número</span>
-                      <input name="numero" value={purchaseForm.numero} disabled className="w-full rounded-2xl border border-slate-200 bg-slate-100 px-3 py-2.5 text-sm text-slate-600 outline-none" />
+                      <input name="numero" value={purchaseForm.numero} onChange={handlePurchaseChange} placeholder={nextPurchaseNumber} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-700 outline-none transition focus:border-brand-500" />
                     </label>
                     <label className="space-y-2 text-sm">
                       <span className={`block font-medium ${purchaseInvalidFields.includes('dataSolicitacao') ? 'text-red-600' : 'text-slate-700'}`}>Data da solicitação*</span>
@@ -1848,7 +1886,7 @@ function App() {
                     </div>
                   </div>
                 </form>
-              ) : (
+              ) : selectedSection === 'pesquisa' ? (
                 <div className="mt-2 space-y-3">
                   <div className="flex flex-col items-center gap-3 rounded-2xl border border-slate-200 bg-white/80 px-4 py-2.5 shadow-sm sm:flex-row sm:justify-center sm:gap-4">
                     <p className="text-sm font-medium text-slate-500">Filtrar por status:</p>
@@ -1947,16 +1985,16 @@ function App() {
                     </table>
                   </div>
                 </div>
-              )}
+              ) : null}
 
             </section>
 
-            {selectedSection === 'compras' ? (
+            {selectedSection === 'statuspedidos' ? (
               <section className="rounded-3xl border border-slate-200 bg-slate-50 p-4 shadow-sm sm:p-6">
                 <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <div>
-                    <h3 className="text-xl font-semibold text-slate-950">Solicitações cadastradas</h3>
-                    <p className="mt-2 text-sm text-slate-500">Edite ou consulte as compras já registradas.</p>
+                    <h3 className="text-xl font-semibold text-slate-950"></h3>
+                    <p className="mt-2 text-sm text-slate-500"></p>
                   </div>
                   <label className="w-full max-w-sm text-sm text-slate-700 sm:w-auto">
                     <input value={purchaseSearchTerm} onChange={e => setPurchaseSearchTerm(e.target.value)} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500" placeholder="Buscar por número, setor, descrição..." />
@@ -2002,7 +2040,19 @@ function App() {
                             <td className="px-2.5 py-2 max-w-[220px] truncate text-slate-700">{item.descricao}</td>
                             <td className="px-2.5 py-2 whitespace-nowrap text-slate-700">{item.quantidade}</td>
                             <td className="px-2.5 py-2 whitespace-nowrap text-slate-700">{purchase.solicitante}</td>
-                            <td className="px-2.5 py-2 whitespace-nowrap text-slate-700">{purchase.status}</td>
+                            <td className="px-2.5 py-2 whitespace-nowrap text-slate-700">
+                              <select
+                                value={purchase.status || 'Pendente'}
+                                onChange={event => handlePurchaseStatusChange(purchase.numero, event.target.value)}
+                                onClick={event => event.stopPropagation()}
+                                className="rounded-lg border border-slate-200 bg-white px-2 py-1 text-xs outline-none transition focus:border-brand-500"
+                                aria-label={`Status do pedido ${purchase.numero}`}
+                              >
+                                {purchaseStatusOptions.map(option => (
+                                  <option key={option} value={option}>{option}</option>
+                                ))}
+                              </select>
+                            </td>
                           </tr>
                         ))
                       )}
