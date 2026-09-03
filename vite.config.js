@@ -12,12 +12,27 @@ const emptyData = {
   extraEntries: [],
   purchases: [],
   catalogItems: []
-  ,materialEntries: []
+  ,materialEntries: [],
+  materialExits: [],
+  materialPlanning: {}
 }
 
 function sharedDataApi() {
   const dataFile = resolve(projectRoot, 'data', 'os-easy-sync.json')
+  const legacyDatabaseFile = resolve(projectRoot, 'data', 'material-exits.sqlite')
   let writeQueue = Promise.resolve()
+
+  const readLegacyMaterialExits = async () => {
+    if (!(await import('node:fs')).existsSync(legacyDatabaseFile)) return []
+    const database = new sqlite3.Database(legacyDatabaseFile)
+    return new Promise(resolvePromise => database.all(
+      'SELECT id AS _syncId, data, codigo, descricao, um, qtd FROM material_exits ORDER BY rowid DESC',
+      (error, rows) => {
+        database.close()
+        resolvePromise(error ? [] : rows)
+      }
+    ))
+  }
 
   const readData = async () => {
     try {
@@ -30,7 +45,9 @@ function sharedDataApi() {
           extraEntries: Array.isArray(saved.extraEntries) ? saved.extraEntries : [],
           purchases: Array.isArray(saved.purchases) ? saved.purchases : [],
           catalogItems: Array.isArray(saved.catalogItems) ? saved.catalogItems : []
-          ,materialEntries: Array.isArray(saved.materialEntries) ? saved.materialEntries : []
+          ,materialEntries: Array.isArray(saved.materialEntries) ? saved.materialEntries : [],
+          materialExits: Array.isArray(saved.materialExits) ? saved.materialExits : await readLegacyMaterialExits(),
+          materialPlanning: saved.materialPlanning && typeof saved.materialPlanning === 'object' ? saved.materialPlanning : {}
         }
       }
     } catch (error) {
@@ -103,7 +120,9 @@ function sharedDataApi() {
               extraEntries: Array.isArray(payload.extraEntries) ? payload.extraEntries : [],
               purchases: Array.isArray(payload.purchases) ? payload.purchases : [],
               catalogItems: Array.isArray(payload.catalogItems) ? payload.catalogItems : []
-              ,materialEntries: Array.isArray(payload.materialEntries) ? payload.materialEntries : []
+              ,materialEntries: Array.isArray(payload.materialEntries) ? payload.materialEntries : [],
+              materialExits: Array.isArray(payload.materialExits) ? payload.materialExits : [],
+              materialPlanning: payload.materialPlanning && typeof payload.materialPlanning === 'object' ? payload.materialPlanning : {}
             }))
         response.setHeader('Content-Type', 'application/json')
         response.end(JSON.stringify({ initialized: true, data }))

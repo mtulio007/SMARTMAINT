@@ -180,7 +180,7 @@ const getPurchaseItems = purchase => {
   }]
 }
 const syncEndpoint = '/api/data'
-const emptySharedData = { orders: [], extraEntries: [], purchases: [], catalogItems: [], materialEntries: [] }
+const emptySharedData = { orders: [], extraEntries: [], purchases: [], catalogItems: [], materialEntries: [], materialExits: [], materialPlanning: {} }
 const createSyncId = () => globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`
 const padDatePart = value => String(value).padStart(2, '0')
 
@@ -316,7 +316,9 @@ function App() {
     extraEntries: extraEntries.map(entry => ({ ...entry, _syncId: entry._syncId || createSyncId() })),
     purchases,
     catalogItems: catalogItems.map(item => ({ ...item, _syncId: item._syncId || createSyncId() })),
-    materialEntries: materialEntries.map(item => ({ ...item, _syncId: item._syncId || createSyncId() }))
+    materialEntries: materialEntries.map(item => ({ ...item, _syncId: item._syncId || createSyncId() })),
+    materialExits: materialExits.map(item => ({ ...item, _syncId: item._syncId || createSyncId() })),
+    materialPlanning
   })
 
   const requiredFields = [
@@ -470,13 +472,6 @@ function App() {
   }, [selectedSection, editingExtraEntryId, extraForm.ord, nextExtraOrd])
 
   useEffect(() => {
-    fetch('/api/material-exits')
-      .then(response => response.ok ? response.json() : [])
-      .then(entries => { if (Array.isArray(entries)) setMaterialExits(entries.map(entry => ({ ...entry, _syncId: entry._syncId || createSyncId() }))) })
-      .catch(() => {})
-  }, [])
-
-  useEffect(() => {
     if (selectedSection !== 'compras') return
 
     if (currentPurchaseIndex >= 0 && purchases[currentPurchaseIndex]) {
@@ -498,6 +493,8 @@ function App() {
     localStorage.setItem('os_easy_purchases', JSON.stringify(data.purchases))
     localStorage.setItem('os_easy_catalog_items', JSON.stringify(data.catalogItems))
     localStorage.setItem('os_easy_material_entries', JSON.stringify(data.materialEntries))
+    localStorage.setItem('os_easy_material_exits', JSON.stringify(data.materialExits))
+    localStorage.setItem('os_easy_material_planning', JSON.stringify(data.materialPlanning))
   }
 
   const applySharedData = data => {
@@ -506,7 +503,9 @@ function App() {
       extraEntries: Array.isArray(data.extraEntries) ? data.extraEntries : [],
       purchases: Array.isArray(data.purchases) ? data.purchases : [],
       catalogItems: Array.isArray(data.catalogItems) ? data.catalogItems : [],
-      materialEntries: Array.isArray(data.materialEntries) ? data.materialEntries.map(entry => ({ ...entry, _syncId: entry._syncId || createSyncId(), codigo: !entry.codigo || String(entry.codigo).startsWith('MAT-') ? 'SEM CÓDIGO' : entry.codigo })) : []
+      materialEntries: Array.isArray(data.materialEntries) ? data.materialEntries.map(entry => ({ ...entry, _syncId: entry._syncId || createSyncId(), codigo: !entry.codigo || String(entry.codigo).startsWith('MAT-') ? 'SEM CÓDIGO' : entry.codigo })) : [],
+      materialExits: Array.isArray(data.materialExits) ? data.materialExits.map(entry => ({ ...entry, _syncId: entry._syncId || createSyncId() })) : [],
+      materialPlanning: data.materialPlanning && typeof data.materialPlanning === 'object' ? data.materialPlanning : {}
     }
 
     sharedDataRef.current = normalized
@@ -515,6 +514,8 @@ function App() {
     setPurchases(normalized.purchases)
     setCatalogItems(normalized.catalogItems)
     setMaterialEntries(normalized.materialEntries)
+    setMaterialExits(normalized.materialExits)
+    setMaterialPlanning(normalized.materialPlanning)
     saveLocalData(normalized)
   }
 
@@ -679,8 +680,12 @@ function App() {
 
   const saveMaterialExits = nextEntries => {
     const normalized = nextEntries.map(item => ({ ...item, _syncId: item._syncId || createSyncId() }))
+    const previousData = sharedDataRef.current
+    const data = { ...previousData, materialExits: normalized }
+    sharedDataRef.current = data
     setMaterialExits(normalized)
-    localStorage.setItem('os_easy_material_exits', JSON.stringify(normalized))
+    saveLocalData(data)
+    void sendSharedData(data, getChanges('materialExits', previousData.materialExits || [], normalized))
   }
 
   const saveMaterialExit = () => {
@@ -769,7 +774,11 @@ function App() {
   const updateMaterialPlanning = (codigo, field, value) => {
     setMaterialPlanning(previous => {
       const next = { ...previous, [codigo]: { ...(previous[codigo] || {}), [field]: value } }
-      localStorage.setItem('os_easy_material_planning', JSON.stringify(next))
+      const previousData = sharedDataRef.current
+      const data = { ...previousData, materialPlanning: next }
+      sharedDataRef.current = data
+      saveLocalData(data)
+      void sendSharedData(data)
       return next
     })
   }
