@@ -1044,7 +1044,10 @@ function App() {
   const navigateToPurchase = direction => {
     if (purchases.length === 0) return
 
-    const targetIndex = direction > 0 ? 0 : purchases.length - 1
+    const currentIndex = currentPurchaseIndex < 0
+      ? direction > 0 ? -1 : purchases.length
+      : currentPurchaseIndex
+    const targetIndex = Math.max(0, Math.min(purchases.length - 1, currentIndex + direction))
     setCurrentPurchaseIndex(targetIndex)
   }
 

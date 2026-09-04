@@ -117,6 +117,2978 @@
   ],
   "purchases": [
     {
+      "numero": "M076",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "FELTRO DE LÃ",
+      "quantidade": 100,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158186800",
+          "descricao": "FELTRO DE LÃ",
+          "referencia": "WOOLEN FALT",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14402021021",
+          "descricao": "IND CYL PROXY W OON PNP NO M8 FUSH",
+          "referencia": "IND CYL PROXY W OON PNP NO M8 FUSH",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406377020",
+          "descricao": "GUIA DE LANÇADEIRA",
+          "referencia": "SHUTTLE GUIDE R-6",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406371010",
+          "descricao": "GUIA DE URDIDURA  ",
+          "referencia": "WARP GUIDE R-6",
+          "quantidade": 150,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406359010",
+          "descricao": "HASTE DE GUIA DE TRAMA ",
+          "referencia": "WEFT GUIDE ROD",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11147250095",
+          "descricao": "CÉLULA DE CARGA",
+          "referencia": "LOAD CELL 40KG WITH CONNECTOR R01",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406442000",
+          "descricao": "MOLA PARA TENSOR",
+          "referencia": "SPRING FOR STRETCHER",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158027210",
+          "descricao": "SEPARADOR DE COMPENSAÇÃO",
+          "referencia": "COMPENSATIO SEPARATOR",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131416300",
+          "descricao": "EIXO",
+          "referencia": "AXLE",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131467400",
+          "descricao": "ROLO DE ESPUMA DE POLIURETANO",
+          "referencia": "POLYURETHENE FOAM ROLLER",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11405578010",
+          "descricao": "BLOCO ESPAÇADOR DE ISOLAMENTO",
+          "referencia": "ISOLATION SPACER BLOCK ",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11408093000",
+          "descricao": "GUIA FRONTAL",
+          "referencia": "GUIDE NOSE - X",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12470310025",
+          "descricao": "LUBRIFICADOR DE GOTA",
+          "referencia": "DROP OILER NO.6 R1/8\"",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11401308010",
+          "descricao": "CONJUNTO DE COMPENSADOR DIA 2.1",
+          "referencia": "COMPENSATOR ASSY DIA 2.1",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158193400",
+          "descricao": "BLOCO ESPAÇADOR BATENTE",
+          "referencia": "SPACER-STOPPER BLOCK",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130442230",
+          "descricao": "ADAPTADOR CONCÓIDE",
+          "referencia": "CHONCHOID ADAPTER",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11408807000",
+          "descricao": "TAMPA DO PIVÔ",
+          "referencia": "PIVOT CAP-28",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406354010",
+          "descricao": "ANGULO DA MOLA",
+          "referencia": "SPRING ANGLE",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12491300600",
+          "descricao": "BUCHA LISA",
+          "referencia": "PLAIN BUSH DIA6X DIA12X12",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406381000",
+          "descricao": "ROLAMENTO DE FREIO R-6",
+          "referencia": "BRAKE BEARING R-6",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131322800",
+          "descricao": "PINHÃO DE EIXO",
+          "referencia": "SHAFT PINION-1OT",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12330705032",
+          "descricao": "PINO DE ENCAIXE H&G M6 DIA 5X32 BLK",
+          "referencia": "PRECISION DOWEL PIN DIA5X32",
+          "quantidade": 11,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131011310",
+          "descricao": "PARAFUSO DE TENSÃO",
+          "referencia": "TENSION BOLT DULY ZN PLATED",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11409464000",
+          "descricao": "ESPAÇADOR OD18XID8X8",
+          "referencia": "SPACER OD18XID8X8",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130226700",
+          "descricao": "RETENTOR FIXO",
+          "referencia": "FIXED RETAINER - WOW",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11407740000",
+          "descricao": "ESPAÇADOR OD14XID8,1 1X2",
+          "referencia": "SPACER OD14XID8,1 1X2",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131459600",
+          "descricao": "ESPAÇADOR",
+          "referencia": "SPACER",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BASE DO SENSOR DO COMPENSADOR",
+          "referencia": "COMPENSATOR SENSOR BASE",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406382000",
+          "descricao": "PINO PARA BLOCO DE ROLAMENTO",
+          "referencia": "PIN FOR  BEARING BLOCK",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406385010",
+          "descricao": "BASE DO PORTA-BOBINA TRASEIRO",
+          "referencia": "REAR BOBBIN HOLDER BASE",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406361000",
+          "descricao": "ARRUELA DE EIXO EXCENTRICO",
+          "referencia": "WASHER ECCENTRIC AXLE",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158087400",
+          "descricao": "ESPAÇADOR",
+          "referencia": "SPACER",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130451630",
+          "descricao": "ADAPTADOR EXCENTRICO",
+          "referencia": "ECCENTRIC ADAPTER",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158398800",
+          "descricao": "ESPAÇADOR",
+          "referencia": "SPACER",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158289000",
+          "descricao": "ESPAÇADOR",
+          "referencia": "SPACER",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158027100",
+          "descricao": "ESPAÇADORES (PRETO)",
+          "referencia": "POSITIONING SEPRATOR",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11164019300",
+          "descricao": "RETENTOR MOVEL",
+          "referencia": "MOVABLE RETAINER - WITHOUT WHEEL",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14006373000",
+          "descricao": "BLOCO DE ROLAMENTO DO PINO DA ARRUELA",
+          "referencia": "WASHER PIN BEARING BLOCK ",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158510800",
+          "descricao": "TAMPA DE ROLAMENTO SHUTTLE - SN",
+          "referencia": "SHUTTLE ROLLER CAP - SN",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158116630",
+          "descricao": "ESPAÇADOR DE ROLOS - N",
+          "referencia": "ROLLER SPACER - N",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11408046000",
+          "descricao": "PARAFUSO ESPECIAL",
+          "referencia": "SPECIAL BOLT",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130515220",
+          "descricao": "TAMPA DO ROLO",
+          "referencia": "ROLLER CAP",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131715500",
+          "descricao": "BLOCO DE ROLAMENTO SUPERIOR",
+          "referencia": "UPPER BEARING BLOCK",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158199900",
+          "descricao": "LUBRIFICADOR DE GOTA",
+          "referencia": "LOWER PULLEY BLOCK-N",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406360010",
+          "descricao": "CONTRA PESO",
+          "referencia": "COUNTER WLEGHT",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11408100010",
+          "descricao": "BLOCO DE ROLAMENTO TRASEIRO",
+          "referencia": "REAR BEARIG BLOCK-X",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11640635500",
+          "descricao": "PORTA BOBINA FRONTAL",
+          "referencia": "BOBBIN HOLDER FRONT",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11407700030",
+          "descricao": "EIXO EXCÊNTRICO ",
+          "referencia": "ECCENTRIC AXLE-R6(61)",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406384020",
+          "descricao": "BLOCO DE ROLAMENTO DE FONTE DE PINO",
+          "referencia": "PIN FONT BEARING BLOCK",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406355000",
+          "descricao": "PORTA-BOBINA FRENTE",
+          "referencia": "BOBBIN HOLDER FRONT",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "DISCO DE ESPUMA EM, GEL",
+          "referencia": "GEL FOAM DISC",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11405071020",
+          "descricao": "SUPORTE PARA VARA DE CREEL",
+          "referencia": "CREEL ROD HOLDER",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406356000",
+          "descricao": "SUPORTE DE BOBINA TRASEIRO",
+          "referencia": "BOBBIN HOLDER REAR",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11408090000",
+          "descricao": "GUIA DE DEFORMAÇÃO DE BRAÇADEIRA - XR",
+          "referencia": "CLAMP WARP GUIDE - XR",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14401021002",
+          "descricao": "IND PROXY FLUSH PNP NO M8 W SH CABO 3KHZ",
+          "referencia": "IND PROXY FLUSH PNP NO M8 W SH CABLE 3KHZ",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11147251681",
+          "descricao": "CONTROLADOR CWM LC 16",
+          "referencia": "CWM CONTROLLER LC 16",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11408092000",
+          "descricao": "GUIA DE LANÇAMENTO DE BRAÇADEIRA-X",
+          "referencia": "CLAMP SHUTTLE GUIDE-X",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11155348500",
+          "descricao": "ESPAÇADOR",
+          "referencia": "SPACER",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14421011003",
+          "descricao": "SENSOR MAGNÉTICO NPN NO M12",
+          "referencia": "MAGNETIC SENSOR NPN NO M12",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158378600",
+          "descricao": "LAVADORA ESPECIAL - M6",
+          "referencia": "SPECIAL WASHER - M6",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "INVERSOR DE FREQUENCIA FR-D740-050-NA",
+          "referencia": "FREQUENCY INVERTER FR-D740-050-NA",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "15410110000",
+          "descricao": "SMPS 230 VCA 24 VCC 72 W TRILHO DIN",
+          "referencia": "SMPS 230VAC 24VDC 72W DIN RAIL",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12460030079",
+          "descricao": "FITA DUPLA ADESIVA 37,5MM DE LARGURA",
+          "referencia": "DOUBLE SIDE ADHESIVE TAPE 37.5MM WIDE",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11147250091",
+          "descricao": "CÉLULA DE CARGA",
+          "referencia": "LOAD CELL 150KG WITH CONNECTOR",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130854590",
+          "descricao": "PLACA DE FREIO",
+          "referencia": "BRAKE PLATE",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11411026000",
+          "descricao": "ALMOFADA DE TENSÃO COM BUSH-P",
+          "referencia": "TENSION PAD WITH BUSH-P",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14028600002",
+          "descricao": "BASE DE FUSIVEL DE VIDRO 24VDC",
+          "referencia": "GLASS FUSE BASE 24VDC",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406386000",
+          "descricao": "MACA DA MOLA",
+          "referencia": "SPRING STRETCHER",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130431400",
+          "descricao": "PINO PIVÔ",
+          "referencia": "PIVOT PIN-62",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406089010",
+          "descricao": "EIXO FRONTAL",
+          "referencia": "AXLE (FRONT)",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14066718400",
+          "descricao": "LÂMPADA IND LED",
+          "referencia": "IND LAMP LED NO24VAC/DC RED",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11404895000",
+          "descricao": "ALAVANCA DE COMPENSAÇÃO DE TRAMA",
+          "referencia": "WEFT COMPENSATION LEVER (MAGNET) R2",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11932002000",
+          "descricao": "CARTÃO DE SENSOR MAGNETICO DE DUPLA COR",
+          "referencia": "DOUBLE CLOR & FOUR MAGNETIC SENSOR",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130464100",
+          "descricao": "ROLO ESPAÇADOR E EMPURRADOR",
+          "referencia": "SPACER PUSHER ROLLER",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158073000",
+          "descricao": "PINO PIVÔ",
+          "referencia": "PIVOT PIN",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130211830",
+          "descricao": "BLOCO DE ROLAMENTO INFERIOR",
+          "referencia": "BEARING BLOCK (REAR)",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12330702008",
+          "descricao": "PINO PASSADOR H&G M6 DIA 2X8 PRETO",
+          "referencia": "DOWEL PIN H&G M6 DIA 2X8 BLK",
+          "quantidade": 101,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12470200002",
+          "descricao": "MAILLONS 160C 2,25 P.HA",
+          "referencia": "MAILLONS 160C 2.25 P.HA",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11164878610",
+          "descricao": "ESPAÇADOR ",
+          "referencia": "SPACER",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130836400",
+          "descricao": "TAMPA (DIAMETRO 30X230 COM FLANGE LATERAL",
+          "referencia": "COVER (DIA 30X230 WITH SIDE FLANGE)",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11972152000",
+          "descricao": "CAPÔ DE VIDRO",
+          "referencia": "MS HOOD WITH GLASS",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130450710",
+          "descricao": "ESPAÇADOR",
+          "referencia": "SPACER",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12491506120",
+          "descricao": "INSERÇÃO HELICOIL M6X12",
+          "referencia": "HELICOIL INSERT M6X12",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158055410",
+          "descricao": "PINO DE ARTICULAÇÃO",
+          "referencia": "PIVOT PIN",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130806500",
+          "descricao": "ESPAÇADOR",
+          "referencia": "SPACER",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130463100",
+          "descricao": "PORTA BOBINA DIANTEIRO",
+          "referencia": "BOBBIN HOLDER DIA35",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131535620",
+          "descricao": "BUCHA DA MOLA ALAVANCA",
+          "referencia": "LEVER SPRING BUSHING",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131512210",
+          "descricao": "BUCHA P/ MOLA",
+          "referencia": "BUSH FOR SPRING",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130211750",
+          "descricao": "BLOCO DE ROLAMENTO DIANTEIRO",
+          "referencia": "BEARING BLOCK (FRONT)",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130836410",
+          "descricao": "TAMPA DIA 30X230 COM FLANG LATERAL",
+          "referencia": "COVER DIA 30X230 WITH SIDE FLANG",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130452300",
+          "descricao": "PORTA BOBINA (FIXA FINAL)",
+          "referencia": "BOBBIN HOLDER (FIXED END)",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158026900",
+          "descricao": "SEGMENTO DE ESPAÇAMENTO",
+          "referencia": "SPACING SEGMENT",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11407030010",
+          "descricao": "MOLA WCL NOVA - M",
+          "referencia": "WCL SPRING NEW - M",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11407032010",
+          "descricao": "MOLA WCL NOVA - L",
+          "referencia": "WCL SPRING NEW - L",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11407033010",
+          "descricao": "MOLA WCL NOVA - H",
+          "referencia": "WCL SPRING NEW - H",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12330706030",
+          "descricao": "PINO CAVILHA DIA 6X30",
+          "referencia": "DOWEL PIN DIA 6X30",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130461910",
+          "descricao": "ESPAÇADOR",
+          "referencia": "SPACER",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131312400",
+          "descricao": "REI ADJUNTO",
+          "referencia": "ADJUNTING KING",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11400900259",
+          "descricao": "ELEO BOM PARA CONECTOR DE SENSOR DE COR",
+          "referencia": "ELEO BOM FOR COLOR SENSOR CONECTOR",
+          "quantidade": 80,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158427210",
+          "descricao": "CORPO DE VAI-VEM",
+          "referencia": "SHUTTLE BODY (S)-D",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131715740",
+          "descricao": "GUIA DE TRAMA",
+          "referencia": "WEFT GUIDE -820",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130557900",
+          "descricao": "SUPORTE DE  ALAVANCA",
+          "referencia": "LEVER HOLDER",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14060009300",
+          "descricao": "BOTÃO VERDE MOMENTANEO",
+          "referencia": "PUSH BUTTON MOMENTARY GREEN",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14060009000",
+          "descricao": "BOTÃO PRETO MOMENTANEO",
+          "referencia": "PUSH BUTTON MOMENTARY BLACK",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14061129400",
+          "descricao": "BOTÃO DE PARADA VERMELHO",
+          "referencia": "EM STOP MUCH HD TURN TO REL NC RED",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11401767000",
+          "descricao": "ARAME DRUP FIO DE CONTAS 4",
+          "referencia": "DRUP WIRE BEAD WIRE 4",
+          "quantidade": 2000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131517320",
+          "descricao": "ESPAÇADOR ",
+          "referencia": "SPACER",
+          "quantidade": 1000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11403958000",
+          "descricao": "COMPENSADOR VERDE DO BAG",
+          "referencia": "BLACK BAG COMPENSATOR",
+          "quantidade": 1000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "COMPENSADOR PRETO DO BAG",
+          "referencia": "BLACK BAG COMPENSATOR",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11402950000",
+          "descricao": "SEPARADOR DO COMPENSADOR SUPERIOR",
+          "referencia": "COMPENSATOR SEPARATOR UPPER - D",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11404936010",
+          "descricao": "SUPORTE DE LANÇA ",
+          "referencia": "BOOM HOLDER ",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "15410110100",
+          "descricao": "SMPS 230VAC 15VDC 100W PAINEL TRILHO DIN",
+          "referencia": "SMPS 230VAC 15VDC 100W PANEL DIN-RAIL",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11408807000",
+          "descricao": "TAMPA DO PIVÔ",
+          "referencia": "PIVOT CAP-28",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11147252530",
+          "descricao": "SENSOR PROXY INDUTIVO",
+          "referencia": "INDUCTIVE PROXY SENSOR",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14421011001",
+          "descricao": "SENSOR MAGNÉTICO PNP NO M12",
+          "referencia": "MAGNETIC SENSOR PNP NO M12",
+          "quantidade": 50,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-09-27",
+      "observacoes": "MATERIAL PARA REALIZAÇÃO DE PREVENTIVAS E CORRETIVAS NAS MÁQUINAS LOHIA.",
+      "status": "Cancelada",
+      "codigo": "11158186800",
+      "referencia": "WOOLEN FALT"
+    },
+    {
+      "numero": "M075",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "ALAVANCA DE ACIONAMENTO LOOPER CRANCK ASS'Y",
+      "quantidade": 8,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ALAVANCA DE ACIONAMENTO LOOPER CRANCK ASS'Y",
+          "referencia": "29105AK",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "LOOPER ROCKER ASS'Y",
+          "referencia": "29192V",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "LOOPER EVITAR ASS'Y EXCÊNTRICO",
+          "referencia": " 29476NM-096",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ELEVADOR DE ALIMENTAÇÃO ASS'Y EXCÊNTRICO",
+          "referencia": "29476NM-140",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CALCADOR INFERIOR",
+          "referencia": "43130",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ALAVANCA DO ELEVADOR DO CALCADOR",
+          "referencia": "51183B",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CONEXÃO DA BARRA DA AGULHA",
+          "referencia": "51254K",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CONEXÃO E GUIA DA BARRA DE PRESSÃO",
+          "referencia": "51257",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "MOLA DE TENSÃO, ROSCA LAÇADA",
+          "referencia": "51292F-2",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO PRISIONEIRO LOOPER",
+          "referencia": "51745",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "EIXO DA ALAVANCA DE ACIONAMENTO DO LOOPER",
+          "referencia": "52942AA",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PLACA DE SUPORTE PARA GARGANTA",
+          "referencia": "56180B",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BIELA DE ALAVANCA DE AGULHA",
+          "referencia": "56316",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "GUIA DE BIELA",
+          "referencia": "56316C",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "COLAR DO EIXO DO BALANCIN DA ALIMENTAÇÃO",
+          "referencia": " 56335D",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ALAVANCA DE ACIONAMENTO DO LAÇADOR",
+          "referencia": "56342E",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "RÓTULA, ESQUERDA",
+          "referencia": "57841",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BIELA LOOPER",
+          "referencia": "753111",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "80",
+          "quantidade": 24,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "86x",
+          "quantidade": 24,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "87",
+          "quantidade": 24,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "87U",
+          "quantidade": 24,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "88",
+          "quantidade": 24,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "89",
+          "quantidade": 24,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "9-64S40005",
+          "quantidade": 24,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": " 9-64S40011",
+          "quantidade": 24,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": " 9/64S40052",
+          "quantidade": 24,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "90",
+          "quantidade": 24,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "24061902",
+          "quantidade": 24,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "911D",
+          "quantidade": 24,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "19032152",
+          "quantidade": 24,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "93UMA",
+          "quantidade": 24,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "95",
+          "quantidade": 24,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": " 97UMA",
+          "quantidade": 24,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "98",
+          "quantidade": 24,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": " 98UMA",
+          "quantidade": 24,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": " AS22D",
+          "quantidade": 24,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CILINDRO PNEUMÁTICO",
+          "referencia": "CLAMP, RODLESS CYLINDER",
+          "quantidade": 8,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-09-26",
+      "observacoes": "MATERIAL EMERGENCIAL PARA A MONTAGEM DOS CABEÇOTES DAS MÁQUINAS DE COSTURA BCS850.",
+      "status": "Cancelada",
+      "codigo": "",
+      "referencia": "29105AK"
+    },
+    {
+      "numero": "M066",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "SOLDA FOSCOPER ",
+      "quantidade": 30,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SOLDA FOSCOPER ",
+          "referencia": "1,50 mm",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PASTA FLUXO 50G",
+          "referencia": " ARON-200",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-09-22",
+      "observacoes": "MATERIAL PARA SOLDAGEM DE UMA SERPENTINA DE ÁGUA UTILIZADA NA LAMINADORA. A MESMA APRESENTOU FURO, MISTURANDO A ÁGUA COM ÓLEO TÉRMICO, RESULTANDO NO BAIXO DESEMPENHO DA MÁQUINA, CHILLER PIOVAM, E TRANSBORDO DE ÓELO COM ÁGUA.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "1,50 mm"
+    },
+    {
+      "numero": "M070",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "BUCHA SUPERIOR DA BARRA DE AGULHA",
+      "quantidade": 4,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BUCHA SUPERIOR DA BARRA DE AGULHA",
+          "referencia": "10-20-2-1",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BUCHA SUPERIOR DA BARRA DO CALCADOR",
+          "referencia": "10-20-4-1",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "10-1-3",
+          "quantidade": 16,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "TAMPA PARA BARRA DE AGULHA",
+          "referencia": "03-10",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BUCHA PARA BARRA DE AGULHA",
+          "referencia": "10-20-7-1",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "10-6-2",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "2-1",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BASE DO DISCO DE TENSÃO",
+          "referencia": "9-8S",
+          "quantidade": 12,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CHAPA 2",
+          "referencia": "9-8",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "TAMPA SUPERIOR",
+          "referencia": "9-4",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "9-5",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "10-1-4-1",
+          "quantidade": 12,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CHAPA",
+          "referencia": "9-3",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "10-6-10",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "GUIA FIO",
+          "referencia": "9-7",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "TUBO GUIA FIO",
+          "referencia": "9-7S",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CHAPA DE AJUSTE",
+          "referencia": "9-6",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CHAPA DE AJUSTE",
+          "referencia": "9-6S",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "10-8-6",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "10-1-5",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "10-6-3",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BUCHA DA BARRA DE AGULHA",
+          "referencia": "10-20-2-2",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BUCHA DA BARRA DE PRESSÃO",
+          "referencia": "10-20-5",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BUCHA DO EIXO DE SUPORTE DO DENTE",
+          "referencia": "10-20-3",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BUCHA DO EIXO PRINCIPAL FRONTAL",
+          "referencia": "10-20-6",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BUCHA DO EIXO PRINCIPAL DO MEIO",
+          "referencia": "10-20-7-2",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BUCHA DO EIXO DA MANIVELA DO LOOPER",
+          "referencia": "10-20-8",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "FILTRO DE ÓLEO",
+          "referencia": "10-23-5",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "FILTRO DE ÓLEO",
+          "referencia": "10-25",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "10-1-5",
+          "quantidade": 12,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ANEL DE ÓLEO",
+          "referencia": "10-22",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ROLAMENTO",
+          "referencia": "10-21",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "POLIA",
+          "referencia": "9-1",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "10-6-9",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BUCHA, TRASEIRA",
+          "referencia": "10-20-9",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BASE DA BUCHA, TRASEIRA",
+          "referencia": "9-2",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BUCHA DO LOOPER, FRONTAL",
+          "referencia": "10-20-4-2",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BUCHA DO LOOPER, TRASEIRA",
+          "referencia": "10-20-4-3",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "10-5-3",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ARRUELA 8MM",
+          "referencia": "10-17-10",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PINO DA TAMPA ARTICULADA",
+          "referencia": "10-18-2",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO",
+          "referencia": "10-6-6",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO DA MOLA DA TAMPA DA CHAPA",
+          "referencia": "10-1-4",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "MOLA DE COBERTURA ARTICULADA",
+          "referencia": "8-5",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "MOLA DE COBERTURA ARTICULADA",
+          "referencia": "8-3",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO PROTETOR DA CHAPA",
+          "referencia": "10-1-8",
+          "quantidade": 12,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CHAPA PROTETORA",
+          "referencia": "8-1",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SUPORTE DA TAMPA",
+          "referencia": "9-11",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PROTETOR ARTICULAVEL FRONTAL",
+          "referencia": "8-2",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "OLEO",
+          "referencia": "9-9",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ARRUELA",
+          "referencia": "10-17-9",
+          "quantidade": 12,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PINO DA BASE DO CABEÇOTE",
+          "referencia": "10-12",
+          "quantidade": 9,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PINO DA BASE DO CABEÇOTE",
+          "referencia": "11-15-5",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ARRUELA DO DISCO DE TENSÃO",
+          "referencia": "3-13-1S",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SUPORTE",
+          "referencia": "9-7-1S",
+          "quantidade": 4,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-09-25",
+      "observacoes": "MATERIAL EMERGENCIAL PARA AS MÁQUINAS DE CORTE E COSTURA.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "10-20-2-1"
+    },
+    {
+      "numero": "M069",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "BARRA REDONDA VERGALHÃO",
+      "quantidade": 15,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BARRA REDONDA VERGALHÃO",
+          "referencia": "6m x 7/8 ",
+          "quantidade": 15,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-09-24",
+      "observacoes": "MATERIAL NECESSÁRIO PARA SERVIÇO DE OBRA CIVIL NO GALPÃO 2.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "6m x 7/8 "
+    },
+    {
+      "numero": "M068",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "FAST CLEAN ULTRASSONIC CLEANER ",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "FAST CLEAN ULTRASSONIC CLEANER ",
+          "referencia": "CUBA DE LAVAGEM ULTRASSONICA",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-09-29",
+      "observacoes": "CUBA UTILIZADA PARA LIMPEZA DAS MATRIZES DA LOFIL (REMOVE IMPUREZAS RESULTANTES DA QUEIMA NA ESTUFA).",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "CUBA DE LAVAGEM ULTRASSONICA"
+    },
+    {
+      "numero": "M067",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "LUVA DE PVC ROSCAVEL TIGRE",
+      "quantidade": 8,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "LUVA DE PVC ROSCAVEL TIGRE",
+          "referencia": "1.1/4",
+          "quantidade": 8,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-09-22",
+      "observacoes": "MATERIAL UTILIZADO NA TUBULAÇÃO DE ÁGUA DO POÇO ARTESIANO.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "1.1/4"
+    },
+    {
+      "numero": "M065",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Emergencial",
+      "tipoComponente": "Mecânico",
+      "descricao": "SUPORTE DE LANÇA ",
+      "quantidade": 300,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11412737000",
+          "descricao": "SUPORTE DE LANÇA ",
+          "referencia": "BOOM HOLDER",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11401870000",
+          "descricao": "CONJUNTO DE FLANGE DE BOBINA 110",
+          "referencia": "BOBBIN FLANGE ASSY.DIA 35(F110)",
+          "quantidade": 1000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11408088000",
+          "descricao": "SUPORTE DE GUIA DE TRAMA TRASEIRO",
+          "referencia": "WEFT GUIDE HOLDER REAR-XR",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131550720",
+          "descricao": "TIRA DE CONEXÃO",
+          "referencia": "CONNENTING STRIP",
+          "quantidade": 400,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12470310025",
+          "descricao": "CONJ. DE ALAVANCA OSCILANTE",
+          "referencia": "SWINGING LEVER ASSEMBLY (NEW)",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130837600",
+          "descricao": "CAPA PROTETORA",
+          "referencia": "CAP",
+          "quantidade": 400,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11401391010",
+          "descricao": "CONJ. DE ALAVANCA OSCILANTE (10)",
+          "referencia": "SWINGING LEVER ASSEMBLY (NEW)",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130602700",
+          "descricao": "ALMOFADA DE COURO",
+          "referencia": "LEATHER PAD",
+          "quantidade": 2000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406043000",
+          "descricao": "MOLA DE TENSÃO DE TRAMA",
+          "referencia": "TENSION SPRING WEFT GUIDE",
+          "quantidade": 1000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11401747000",
+          "descricao": "CARTUCHO DE MEDIÇÃO",
+          "referencia": "METERING CARTRINDGE WITH FITTING",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130850700",
+          "descricao": "TAMPA ROLO EMPURRADOR",
+          "referencia": "COVER - PUSHER ROLLER",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130824310",
+          "descricao": "NILOS RING (ZAV) SPL.",
+          "referencia": "NILOS RING (ZAV) SPL.",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158550600",
+          "descricao": "CINTA DE SEGURANÇA (LIÇO) INFERIOR   21",
+          "referencia": "LOWER HEDDLE BELT (42W)",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130226030",
+          "descricao": "ADAPTADOR-62",
+          "referencia": "ADAPTER-62",
+          "quantidade": 310,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406622030",
+          "descricao": "CONJUNTO DE FLANGE DE BOBINA 218",
+          "referencia": "BOBBIN FLANGE S FOR 35X218",
+          "quantidade": 400,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11407724000",
+          "descricao": "GRAMPO FRONTAL-D",
+          "referencia": "FRONT CLAMP-D",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158953100",
+          "descricao": "INSERTO DE PARADA",
+          "referencia": "INSERTION FINGER STOP DEVICE (CERAMIC)",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11408171020",
+          "descricao": "SUPORTE DE LANÇA WR-S",
+          "referencia": "BOOM HOLDER WR-S",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11401039000",
+          "descricao": "CONJUNTO MAGNÉTICO DE LANÇA",
+          "referencia": "BOOM MAGNET ASSY",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158450700",
+          "descricao": "CINTA DE SEGURANÇA (LIÇO) INFERIOR 20",
+          "referencia": "LOWER HEDDLE BELT (40W) - C",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158956600",
+          "descricao": "CONJUNTO DE RODA DE BATENTE (VAIVEM)",
+          "referencia": "STOPPER WHEEL ASSY (SHUTTLE)",
+          "quantidade": 400,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158964600",
+          "descricao": "CONJUNTO DE RODA DE TRANSPORTE",
+          "referencia": "SHUTTLE WHEEL ASSY ",
+          "quantidade": 400,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11401651000",
+          "descricao": "CONJUNTO DE RODA DA BATENTE R-6",
+          "referencia": "STOPPER WHEEL ASSY R-6",
+          "quantidade": 400,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11412940010",
+          "descricao": "RODA BATENTE",
+          "referencia": "STOPPER WHEEL R-6",
+          "quantidade": 400,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11401649000",
+          "descricao": "CONJUNTO DE RODA CHONCHOID R-6",
+          "referencia": "CHONCHOID WHEEL ASSEMBLY R-6",
+          "quantidade": 400,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11412936000",
+          "descricao": "RODA DE BLOQUEIO P-M",
+          "referencia": "STOPPER WHEEL P-M",
+          "quantidade": 400,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11408150000",
+          "descricao": "RODA DA LANÇADEIRA 52",
+          "referencia": "SHUTTLE ROLLER 52-S",
+          "quantidade": 400,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158954300",
+          "descricao": "POLIA DEFLETORA INFERIOR",
+          "referencia": "LOWER DEFLECTING PULLEY",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11408091010",
+          "descricao": "SUPORTE DE GUIA DE TRAMA FRONTAL",
+          "referencia": "WEFT GUIDE HOLDER FRONT-XR",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11422663000",
+          "descricao": "CAPA DE PU (ROLO DE DEGRAU)",
+          "referencia": "PU COVER (STEP ROLLER)",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11422665000",
+          "descricao": "CAPA DE PU (ROLO SIMPLES)",
+          "referencia": "PU COVER (PLAIN ROLLER)",
+          "quantidade": 96,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11423869000",
+          "descricao": "ROLO DE CORPO (ROLO ABRIDOR DE SACO)/ 20P-11-26",
+          "referencia": "ROLL BODY (BAG OPENER ROLL)/ 20P-11-26",
+          "quantidade": 40,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11135452320",
+          "descricao": "STEP ROLLER - MEIO",
+          "referencia": "STEP ROLLER - HALF",
+          "quantidade": 40,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11169903100",
+          "descricao": "MONTAGEM DO BLOCO DE CLIPPER",
+          "referencia": "CLIPPER BLOCK ASSEMBLY",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11129544010",
+          "descricao": "ALMOFADA DE BORRACHA",
+          "referencia": "RUBBER PAD",
+          "quantidade": 64,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12470310269",
+          "descricao": "CORREIA REDONDA SR (CINTO OPTI), DIA 8X1220 L",
+          "referencia": "ROUND BELT SR ( OPTI BELT), DIA 8X1220 L",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11150284600",
+          "descricao": "CARRINHO HD, AQUECEDOR 260V 2,75KW D14 HI890",
+          "referencia": "HD CART, HEATER 260V 2.75KW D14 HI890",
+          "quantidade": 40,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11422478030",
+          "descricao": "BASE DE CORTE 20-04-70X3",
+          "referencia": "CUTTING BASE 20-04-70X3",
+          "quantidade": 28,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12603200200",
+          "descricao": "VÁLVULA DE FECHAMENTO Ø6",
+          "referencia": "SHUT OFF VALVE Ø6",
+          "quantidade": 12,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12602202000",
+          "descricao": "CAMISETA UNIÃO - DIA 6",
+          "referencia": "UNION TEE - DIA 6",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12490151002",
+          "descricao": "CINTO 50x4365X2",
+          "referencia": "BELT 50x4365X2",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11421134010",
+          "descricao": "CORTADOR ZIG-ZAG QUENTE (2 PEÇAS)",
+          "referencia": "ZIG-ZAG HOT CUTTER (2PIECES)",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12470310013",
+          "descricao": "LÂMINA 72x17x0,6",
+          "referencia": "BLADE 72x17x0.6",
+          "quantidade": 80,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11422353010",
+          "descricao": "LÂMINA MÓVEL",
+          "referencia": "MOVING BLADE",
+          "quantidade": 16,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11422352010",
+          "descricao": "LÂMINA FIXA",
+          "referencia": "FIXED BLADE",
+          "quantidade": 16,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11169021200",
+          "descricao": "PARADOR DE CLIPPER",
+          "referencia": "CLIPPER STOPPER",
+          "quantidade": 16,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11422362020",
+          "descricao": "PIN (ELEVADOR DE ABRIDOR DE BOCA)",
+          "referencia": "PIN (MOUTH OPENER LIFT)",
+          "quantidade": 12,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12490151001",
+          "descricao": "CINTO 50x2980",
+          "referencia": "BELT 50x2980",
+          "quantidade": 28,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12490151003",
+          "descricao": "CINTO 50x2805",
+          "referencia": "BELT 50x2805",
+          "quantidade": 28,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11169149900",
+          "descricao": "STUD (CORTADOR A QUENTE)",
+          "referencia": "STUD (HOT CUTTER)",
+          "quantidade": 32,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11135458810",
+          "descricao": "PINO PORTA-ROLO ABRIDOR DE BOCA",
+          "referencia": "MOUTH OPENER ROLL HOLDER PIN",
+          "quantidade": 16,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11169064710",
+          "descricao": "POLIA DE DISTRIBUIÇÃO T22 (CORTE ACIONADA POR WEB)",
+          "referencia": "TIMING PULLEY T22 (CUT WEB DRIVEN)",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12096100002",
+          "descricao": "BORRACHA ESPONJA DE SILICONE PARA PERFURAÇÃO 10X10",
+          "referencia": "BEADING SILICONE SPONGE RUBBER 10X10",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11169003510",
+          "descricao": "POLIA PLANA",
+          "referencia": "FLAT PULLEY",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SERVODRIVE MITSUBISHI POYH1D032 MR-JE-200A (200V CA)",
+          "referencia": "SERVO DRIVE MITSUBISHI POYH1D032 MR-JE-200A (200V AC)",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14470400009",
+          "descricao": "SENSOR DE TEMPERATURA COM CABINE TIPO \"J\", 2 FIOS",
+          "referencia": "TEMP SENSOR W CAB \"J\" TYPE, 2 WIRE",
+          "quantidade": 6,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14460000020",
+          "descricao": "FOTOSSENSOR DIFUSO PNP NO M18 FLUSH",
+          "referencia": "DIFFUSE PHOTOSENSOR PNP NO M18 FLUSH",
+          "quantidade": 6,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14521713500",
+          "descricao": "DYN.BRK.RES. 130HM 500W PARA SERVO ACIONAMENTO",
+          "referencia": "DYN.BRK.RES. 130HM 500W FOR SERVO DRIVE",
+          "quantidade": 6,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11169909500",
+          "descricao": "CONJUNTO DE BLOCO DE CLIPPER",
+          "referencia": "CLIPPER BLOCK ASSY",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12490151002",
+          "descricao": "CINTO 50x4365X2",
+          "referencia": "BELT 50x4365X2",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12490151002",
+          "descricao": "CINTO 50x4365X2",
+          "referencia": "BELT 50x4365X2",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12490151002",
+          "descricao": "CINTO 50x4365X2",
+          "referencia": "BELT 50x4365X2",
+          "quantidade": 50,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "RONÉLIO",
+      "dataSolicitacao": "2025-09-22",
+      "observacoes": "MATERIAL EMERGENCIAL PARA AS MÁQUINAS TEAR NOVA 6, 10, 82, BCS850 1205, 1206 , 1207 E 1208.",
+      "status": "Cancelada",
+      "codigo": "11412737000",
+      "referencia": "BOOM HOLDER"
+    },
+    {
+      "numero": "M063",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "ACOPLAMENTO ",
+      "quantidade": 6,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ACOPLAMENTO ",
+          "referencia": "GR82\t\t\t\t\t\t\t\t",
+          "quantidade": 6,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-09-15",
+      "observacoes": "MATERIAL UTILIZADO PARA SUBSTITUIÇÃO DOS CONTATORES E DJUNTORES UTILIZADOS NOS CHILLERS PIOVAN E MECALOR.",
+      "status": "Cancelada",
+      "codigo": "",
+      "referencia": "GR82\t\t\t\t\t\t\t\t"
+    },
+    {
+      "numero": "M062",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "CONTATOR TRIPOLAR SCHNEIDER",
+      "quantidade": 2,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CONTATOR TRIPOLAR SCHNEIDER",
+          "referencia": "LC1K12 10M7 220/230 50/60Hz\t\t\t\t\t\t\t\t",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CONTATOR TRIPOLAR SCHNEIDER \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "LC1D12 \t\t\t\t\t\t\t\t",
+          "quantidade": 9,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "DISJUNTOR MOTOR TRIPOLAR \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "GV2ME16\t\t\t\t\t\t\t\t",
+          "quantidade": 9,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CONTATOR TRIPOLAR SCHNEIDER",
+      "dataSolicitacao": "2026-09-15",
+      "observacoes": "MATERIAL UTILIZADO PARA SUBSTITUIÇÃO DOS CONTATORES E DJUNTORES UTILIZADOS NOS CHILLERS PIOVAN E MECALOR.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "LC1K12 10M7 220/230 50/60Hz\t\t\t\t\t\t\t\t"
+    },
+    {
+      "numero": "M061",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "RELÉ PARA PRENSA\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+      "quantidade": 10,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "RELÉ PARA PRENSA\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "MY4N-GS 24 CDV\t\t\t\t\t\t\t\t",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "RELÉ PARA PRENSA\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "MY4N-GS 220/240 VAC\t\t\t\t\t\t\t\t",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BASE PARA RELÉ\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "BASE COM  14 PINOS\t\t\t\t\t\t\t\t",
+          "quantidade": 10,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-09-15",
+      "observacoes": "PEÇAS PARA MANUTENÇÃO CORRETIVA NAS PRENSAS DA FÁBRICA.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "MY4N-GS 24 CDV\t\t\t\t\t\t\t\t"
+    },
+    {
+      "numero": "M059",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "MICRORRETÍFICA COM 26 ACESSÓRIOS 127V",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "MICRORRETÍFICA COM 26 ACESSÓRIOS 127V",
+          "referencia": "DREMEL 4000 ",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "LANTERNA DE CABEÇA COM AJUSTE DE FOCO \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "RECARREGÁVEL\t\t\t\t\t\t\t\t",
+          "quantidade": 12,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-09-15",
+      "observacoes": "MATERIAL NECESSÁRIO PARA USO DIÁRIO DA MANUTENÇÃO EM SERVIÇOS VARIADOS E IDENTIFICAÇÃO/RECUPERAÇÃO DE LANÇADEIRAS.",
+      "status": "Pendente",
+      "codigo": "",
+      "referencia": "DREMEL 4000 "
+    },
+    {
+      "numero": "M058",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "Choncoid Cap-P\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+      "quantidade": 1080,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130522000",
+          "descricao": "Choncoid Cap-P\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "",
+          "quantidade": 1080,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11401651000",
+          "descricao": "Stopper wheel Assy. R-6",
+          "referencia": "Conjunto da roda de parada R-6",
+          "quantidade": 540,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12112206025",
+          "descricao": "Hex Socket Head Cap Screw M6x25",
+          "referencia": "Parafuso de Cabeça Cilíndrica com Soquete Hexagonal M6x25",
+          "quantidade": 540,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11401649000",
+          "descricao": "Chonchoid wheel Assembly  R-6",
+          "referencia": "Conjunto da roda Chonchoid R-6",
+          "quantidade": 540,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12112206040",
+          "descricao": "Hex Socket Head Cap Screw M6x40",
+          "referencia": "Parafuso de Cabeça Cilíndrica com Soquete Hexagonal M6x40",
+          "quantidade": 1620,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11401679000",
+          "descricao": "Shuttle Wheel Assy",
+          "referencia": "Conjunto da Roda \t\t\t\t\t\t\t\t",
+          "quantidade": 180,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158116630",
+          "descricao": "Roller Spacer - N",
+          "referencia": "Espaçador de rolo",
+          "quantidade": 1080,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11403460000",
+          "descricao": "Large Washer M6",
+          "referencia": "Arruela Grande M6",
+          "quantidade": 1080,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "Washer, Eccentric Axle\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "",
+          "quantidade": 2160,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-09-09",
+      "observacoes": "PEÇAS PARA FUNCIONAMENTO BCS.",
+      "status": "Cancelada",
+      "codigo": "11130522000",
+      "referencia": ""
+    },
+    {
+      "numero": "M057",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "O-RIGN VITON 400MMX6MM",
+      "quantidade": 5,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "O-RIGN VITON 400MMX6MM",
+          "referencia": "VITON 400MMX6MM\t\t\t\t\t\t\t\t",
+          "quantidade": 5,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-09-09",
+      "observacoes": "MATERIAL NECESSÁRIO PARA VEDAÇÃO NA SAÍDA DO CANHÃO DA MÁQUINA EXTRUSORA DE POLÍMERO.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "VITON 400MMX6MM\t\t\t\t\t\t\t\t"
+    },
+    {
+      "numero": "M056",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "MATERIAL NECESSÁRIO PARA TROCA NAS LANÇADEIRAS DOS TEARES BAGS E LEVES",
+      "quantidade": 5,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "MATERIAL NECESSÁRIO PARA TROCA NAS LANÇADEIRAS DOS TEARES BAGS E LEVES",
+          "referencia": "ROOP ULTRASONIX 36S2207-261\t\t\t\t\t\t\t\t",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CONVERSOR ULTRASSONIC RTUL\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "921 275 011, UC 3336 HF, G22GT0031-0040\t\t\t\t\t\t\t\t",
+          "quantidade": 5,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-09-09",
+      "observacoes": "MATERIAL NECESSÁRIO PARA TROCA NO TEAR 20150 NOVA 06, POIS O MESMO ENCONTRA-SE PARADO.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "ROOP ULTRASONIX 36S2207-261\t\t\t\t\t\t\t\t"
+    },
+    {
+      "numero": "M055",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "PARAFUSO SEXTAVADO INTERNO 6X16",
+      "quantidade": 200,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO SEXTAVADO INTERNO 6X16",
+          "referencia": "6X16",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO SEXTAVADO INTERNO 6X12",
+          "referencia": "6X12\t\t\t\t\t\t\t\t",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO SEXTAVADO INTERNO 5X12\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "5X12\t\t\t\t\t\t\t\t",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO SEXTAVADO INTERNO 4X16\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "4X16\t\t\t\t\t\t\t\t",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO ALLEN CABEÇA CHATA 6X10\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "6X10\t\t\t\t\t\t\t\t",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO ALLEN CABEÇA CHATA 5X12\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "5X12\t\t\t\t\t\t\t\t",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO PRISIONEIRO ENCAIXE ALLEN M12X12\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "M12X12\t\t\t\t\t\t\t\t",
+          "quantidade": 40,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ROLAMENTO AGULHA NA4902\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "NA4902",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SENSOR IND CYL. PROXY N CAB PNP  NO M12 NON. FLUSH\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "M12 NON. FLUSH\t\t\t\t\t\t\t\t",
+          "quantidade": 10,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "RONÉLIO",
+      "dataSolicitacao": "2025-09-04",
+      "observacoes": "MATERIAL NECESSÁRIO PARA TROCA NAS LANÇADEIRAS DOS TEARES BAGS E LEVES.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "6X16"
+    },
+    {
+      "numero": "M052",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "CONJUNTO DE ACOPLAMENTO ",
+      "quantidade": 2,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CONJUNTO DE ACOPLAMENTO ",
+          "referencia": "mandíbula tipo L flexível de 3 peças L095 de 1/5.1 cm a 3/10.2 cm e aranha de borracha Buna-N NBR",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CHAVETA PARA ACOPLAMENTO L095",
+          "referencia": " medidas aproximadas: 8.10 mm x 24.82mm X 4.40mm",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CABO ELÉTRICO (1MM)",
+          "referencia": "VERMELHO",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CABO ELÉTRICO (1MM)",
+          "referencia": "AZUL",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CABO ELÉTRICO (1MM)",
+          "referencia": "VERDE",
+          "quantidade": 100,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-09-03",
+      "observacoes": "MATERIAL NECESSÁRIO PARA MANUTENÇÃO CORRETIVA GERAL, SENDO O RECONDICIONAMENTO DE SENSORES DE PARADA E SUBSTITUIÇÃO DE ACOPLAMENTO.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "mandíbula tipo L flexível de 3 peças L095 de 1/5.1 cm a 3/10.2 cm e aranha de borracha Buna-N NBR"
+    },
+    {
+      "numero": "M051",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "ROLAMENTO 16100 Z (BLINDADO DE UM LADO)",
+      "quantidade": 30,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ROLAMENTO 16100 Z (BLINDADO DE UM LADO)",
+          "referencia": "16100 2Z",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ROLAMENTO 6201 2Z",
+          "referencia": "6201 2Z",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "RETENTOR 10x22x7",
+          "referencia": "10x22x7",
+          "quantidade": 302,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-08-26",
+      "observacoes": "MATERIAL NECESSÁRIO PARA MANUTENÇÃO CORRETIVA NA TEAR TRAVA 56.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "16100 2Z"
+    },
+    {
+      "numero": "M050",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "FOLHA DE ACRÍLICO",
+      "quantidade": 3,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "FOLHA DE ACRÍLICO",
+          "referencia": " espessura 5mm",
+          "quantidade": 3,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-08-25",
+      "observacoes": "MATERIAL PARA CONFECÇÃO DE VISOR E PROTEÇÃO DOS SENSORES IHM E COMANDOS DE ACIONAMENTO DAS ALÇAS.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": " espessura 5mm"
+    },
+    {
+      "numero": "M049",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "PARAFUSO ALLEN M5X60MM",
+      "quantidade": 150,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO ALLEN M5X60MM",
+          "referencia": "M5X60MM",
+          "quantidade": 150,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-08-22",
+      "observacoes": "MATERIAL NECESSÁRIO PARA AS ROLDANAS DAS ALAVANCAS NOS TEARES NOVA 6 E BAG.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "M5X60MM"
+    },
+    {
+      "numero": "M048",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "NEEDLE (AGULHA) JYF-G30-30",
+      "quantidade": 1000,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "NEEDLE (AGULHA) JYF-G30-30",
+          "referencia": "JYF-G30-30",
+          "quantidade": 1000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "WEFT NEEDLE (AGULHA DE TRAMA)",
+          "referencia": "JYF-E55-07/2 \t\t\t\t\t\t\t\t",
+          "quantidade": 210,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "OSCILLATING BEARING D 15 (ROLAMENTO OSCILANTE)  JV10 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": " JV10 \t\t\t\t\t\t\t\t",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "TENSION SPRING  (MOLA DE TENSÃO) JYF-H30-19\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "JYF-H30-19",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "REED (LAMINA DE AÇO) ",
+          "referencia": "",
+          "quantidade": 50,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "RONÉLIO",
+      "dataSolicitacao": "2025-08-21",
+      "observacoes": "MATERIAL NECESSÁRIO PARA RESSUPRIMENTO DE ESTOQUE PARA AS LINHAS DE ALÇA.",
+      "status": "Cancelada",
+      "codigo": "",
+      "referencia": "JYF-G30-30"
+    },
+    {
+      "numero": "M047",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "ROLAMENTO 6201 ZZ",
+      "quantidade": 50,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ROLAMENTO 6201 ZZ",
+          "referencia": "6201ZZ",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ROLAMENTO 6202 ZZ",
+          "referencia": "6202ZZ",
+          "quantidade": 50,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-08-21",
+      "observacoes": "MATERIAL NECESSÁRIO PARA RESSUPRIMENTO DE ESTOQUE.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "6201ZZ"
+    },
+    {
       "numero": "M046",
       "setor": "Manutenção",
       "tipoSolicitacao": "Reposição",
