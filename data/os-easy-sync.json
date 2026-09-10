@@ -117,6 +117,304 @@
   ],
   "purchases": [
     {
+      "numero": "M078",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Compra",
+      "tipoComponente": "Outro",
+      "descricao": "PERFIL ",
+      "quantidade": 6,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "PERFIL ",
+          "referencia": "20X20X6M",
+          "quantidade": 6,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO DE FORRO PONTA BROCA DRYWALL",
+          "referencia": "PHILLIPS 4.2 X 13mm",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "RODAFORRO DE PVC ",
+          "referencia": "8mm x 1OO cm ACABAMENTO TIPO V",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "CIMENTO",
+          "referencia": "",
+          "quantidade": 15,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CERÂMICA",
+          "referencia": "18mt²",
+          "quantidade": 46,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "ARGAMASSA",
+          "referencia": "",
+          "quantidade": 25,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "REJUNTE BRANCO",
+          "referencia": "",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "FOLHA DE PVC",
+          "referencia": "3mt x 6mt",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "DISJUNTOR ",
+          "referencia": "25A BIFASICO DIN",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "CABO ",
+          "referencia": "4mm² VERMELHO",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "CABO ",
+          "referencia": "4mm² AZUL",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "CABO ",
+          "referencia": "2,5mm² VERDE",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "CABO ",
+          "referencia": "6mm² VERMELHO",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "CABO ",
+          "referencia": "6mm² AZUL",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "CABO ",
+          "referencia": "6mm² VERDE",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "CANALETA PVC",
+          "referencia": "50 x 20mm x 2m",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "CANALETA PVC BRANCA SEM DIVISÓRIA",
+          "referencia": "20mm x 10mm ",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "PLANFON ",
+          "referencia": "2 LAMPADAS",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "INTERRUPTOR",
+          "referencia": "1 SEÇÃO",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "TOMADA COR BRANCA",
+          "referencia": "2P++ 10a SISTEMA X PIAL LEGRAND 675060 ",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "QGBT 8 DISJUNTORES DIN",
+          "referencia": "SOBREPOR COM BARRAMENTOS",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "LINHA DE PEDREIRO",
+          "referencia": "",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "DISJUNTOR ",
+          "referencia": "20A MONO DIN",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "DISJUNTOR",
+          "referencia": "16A MONO DIN",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "PORTA",
+          "referencia": " 80CM COM ADUELA 12X15cm",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "FECHADURA PARA PORTA DE MADEIRA",
+          "referencia": "",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "BALDE DE MASSA CORRIDA",
+          "referencia": "",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "PREGO",
+          "referencia": " 2.1/2 X 10",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "CANALETA PVC",
+          "referencia": "10X20X6MT",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "TOMADA COR BRANCA",
+          "referencia": "10A",
+          "quantidade": 6,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "TOMADA DE AR CONDICIONADO ",
+          "referencia": "20A ",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "DISJUNTOR ",
+          "referencia": "25A BIFASE ",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "CANALETA ",
+          "referencia": "10X20X6MT",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "TOMADA COR BRANCA",
+          "referencia": "10A",
+          "quantidade": 6,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "TOMADA DE AR CONDICIONADO ",
+          "referencia": "20A ",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-09-26",
+      "observacoes": "MATERIAL PARA REFORMA DAS SALAS DO GERENTE, E ADMINISTRATIVO.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "20X20X6M"
+    },
+    {
       "numero": "M076",
       "setor": "Manutenção",
       "tipoSolicitacao": "Reposição",
@@ -1451,6 +1749,1814 @@
           "descricao": "SMPS 230VAC 24VDC 77W PAINEL TDK LAMBDA",
           "referencia": "SMPS 230VAC 24VDC 77W PANEL TDK LAMBDA ",
           "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11147250392",
+          "descricao": "CABO DE ALIMENTAÇÃO SW PARA CBM",
+          "referencia": "POWER CABLE SW TO CBM ",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11147250436",
+          "descricao": "SPLINDER INVERSOR LS20 PROGRAMADO",
+          "referencia": "POWER CABLE SW TO CBM ",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11147250436",
+          "descricao": "CAM INVERSOR LS20 PROGRAMADA",
+          "referencia": "PROGRAMED LS20 INVERTER CAM",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14082301001",
+          "descricao": "VALVULA TRAB BUCHÃO NEUTRO CL \"C\" FMS 12ST",
+          "referencia": "VALVE TRAB PLUG NEUTRAL CL ''C'' FMS12ST ",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "15322031102",
+          "descricao": "INTERRUPTOR BALANCIN DPST 16A 250VAC",
+          "referencia": "SWITCH ROCKER DPST 16A 250VAC",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11127044040",
+          "descricao": "ENGRENAGEM ELETRONICA DO CABO IDT",
+          "referencia": "IDT CABLE ELETRONIC GEARING",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11176102700",
+          "descricao": "ARRUELA DE VEDAÇÃO D52",
+          "referencia": "SEALING WASHER D52",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12331204032",
+          "descricao": "PINO DE PASSAGEM DA MOLA PRETO",
+          "referencia": "BLACK SPRING PASS PIN",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "GABARITO DA BOBINADEIRA",
+          "referencia": "WINDING MACHINE TEMPLATE",
+          "quantidade": 6,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11147250395",
+          "descricao": "CABO DE CONEXÃO SW LTW200CE ",
+          "referencia": "CONNECTION CABLE SW LTW200CE",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11147250391",
+          "descricao": "CABO ENCODER LTW200CE BLIDAGEM EXT",
+          "referencia": "ENCONDER CABLE LTW200CE EXT SHIELDING",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130812110",
+          "descricao": "ARRUELA QUADRADA",
+          "referencia": "SQUARE WASHER",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12362104100",
+          "descricao": "ANEL NBR ID41X2 (90°+5)A",
+          "referencia": "O RING NBR ID41X2 (90°+5)A",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12362105000",
+          "descricao": "ANEL NBR ID41X2.5 (90°+5)A",
+          "referencia": "O RING NBR ID50X2.5 (90°+5)A",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130865010",
+          "descricao": "ANEL",
+          "referencia": "O RING",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11195060600",
+          "descricao": "CORREIA DE FILTRO 152/24 REVRS ATÉ 150MMX10M",
+          "referencia": "FILTER BELT 152/24 REVRS THILLD 150MMX10M",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11195060700",
+          "descricao": "CORREIA DE FILTRO 72/15 REVRS ATÉ 150MMX10M",
+          "referencia": "FILTER BELT 72/15 REVRS THILLD 150MMX10M",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11195200200",
+          "descricao": "CINTO FILTRO (MASH 100) W 150MMX10M",
+          "referencia": "FILTER BELT (MASH 100) W 150MMX10M",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14501942002",
+          "descricao": "3P ISO TRAN P380/440Y S230D 60H 2KVA",
+          "referencia": "3P ISO TRAN P380/440Y S230D 60H 2KVA",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14501941000",
+          "descricao": "3P ISO TRAN P380/440Y S230D 60H 1KVA",
+          "referencia": "3P ISO TRAN P380/440Y S230D 60H 1KVA",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11147250424",
+          "descricao": "320VDC POWER SUPPLY ASSY",
+          "referencia": "320VDC POWER SUPPLY ASSY",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11991000100",
+          "descricao": "REPETIDOR DE LATA MODIFICADO",
+          "referencia": "CAN REPEATER MODIFIED",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11305755000",
+          "descricao": "BRAÇO DE TENSÃO PARA MOLA DE ARAME DE DIA 2,5",
+          "referencia": "TENSION ARM FOR DIA 2.5 WIRE SPRING ",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130869830",
+          "descricao": "POLIA DISTRIBUIDORA 35T",
+          "referencia": "TIMING PULLEY 35T",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11157094300",
+          "descricao": "SUPORTE DE ALAVANCA ",
+          "referencia": "LEVER HOLDER ",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130814610",
+          "descricao": "MANGA FRONTAL",
+          "referencia": "FRONT SLEEVE",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11157050920",
+          "descricao": "MOLA DO SINTONIZADOR",
+          "referencia": "TUNER SPRING",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130865900",
+          "descricao": "ADOPTADOR DE POLIA",
+          "referencia": "PULLEY ADOPTER ",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130869810",
+          "descricao": "POLIA DISTRIBUIDORA 24T",
+          "referencia": "TIMING PULLEY 24T",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130857020",
+          "descricao": "AJUSTADOR DE PRESSÃO",
+          "referencia": "PRESSURE ADJUSTOR ",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130814620",
+          "descricao": "SLEEVE BACK",
+          "referencia": "SLEEVE BACK",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11157906800",
+          "descricao": "TG COM CERÂMICA 4,5MM - C/CE",
+          "referencia": "TG WITH CERAMIC 4.5MM - C/CE",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130874840",
+          "descricao": "ADOPTADOR DE POLIA D15",
+          "referencia": "PULLEY ADOPTER D15",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11157903400",
+          "descricao": "TG COM CERÂMICA 3MM - C/CE",
+          "referencia": "TG WITH CERAMIC 3MM - C/CE",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11157918300",
+          "descricao": "TG COM CERÂMICA 6MM - C/CE",
+          "referencia": "TG WITH CERAMIC 6MM - C/CE",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14500225000",
+          "descricao": "ISO TR P380/400/415/440 S230 50/60HZ500VA",
+          "referencia": "ISO TR P380/400/415/440 S230 50/60HZ500VA",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14210100070",
+          "descricao": "HMI COLORIDO WLCD COM FUN KEY 3,5",
+          "referencia": "HMI COLOR 256COLOR SIZE 3.5'' RENU PRIZM-710",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14451019002",
+          "descricao": "ENCONDER DE EIXO OCO 3CH 1024PPR D19MM",
+          "referencia": "3CH HOLLOW SHAFT ENCONDER 1024PPR D19MM",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14081104500",
+          "descricao": "RELÉ MONO DE TENSÃO 3P 2CO 7UG818-1CA20",
+          "referencia": "3P VOLTAGE MON. RELAY 2CO 7UG818-1CA20",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12606051040",
+          "descricao": "REGULADOR DE AR ​​COM NRV-G1/4 - 10BR-JN",
+          "referencia": "AIR REGULATOR W/NRV-G1/4 - 10BR-JN",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14003505003",
+          "descricao": "SSR LIGADO/DESLIGADO 1P l/P;10-32VDC 50A ZEROCROSS",
+          "referencia": "SSR ON/OFF 1P l/P;10-32VDC 50A ZEROCROSS",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14721010161",
+          "descricao": "TOMADA FÊMEA REDONDA 3P/PIN 16A",
+          "referencia": "SOCKET FEMALE ROUND 3P/PIN 16A",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11209933000",
+          "descricao": "FACA DE ESTABELECIMENTO",
+          "referencia": "STALTIONARY KNIFE",
+          "quantidade": 15,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14480220101",
+          "descricao": "TRANSDUTOR DE PRASSA DERRETIDA 200BAR 4-20MA",
+          "referencia": "MELT PRASS TRANSDUCER 200BAR 4-20MA",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11163080560",
+          "descricao": "AQUECEDOR DE CARRINHO 220V 450W OD3/4'' \"L6\"",
+          "referencia": "CARTRIDGE HEATER 220V 450W DIA3/4\" LEN6\" LS/T/2857",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14903000020",
+          "descricao": "ATUADOR DANFOSS AME 435",
+          "referencia": "ACTUATOR DANFOSS AME 435",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14067870400",
+          "descricao": "LUZ GIRATÓRIA COM SINAL SONORO 24VAC/DC VERMELHO",
+          "referencia": "REVOLVING LIGHT WITH BUZZER 24VAC/DC RED",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11952204000",
+          "descricao": "AQUECEDOR DE CARRINHO 230V 2KW D5/8'' L9-1/4",
+          "referencia": "CART HEATER 230V 2KW D5/8'' L9-1/4",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11952128000",
+          "descricao": "AQUECEDOR DE CARRINHO 220V 500W OD3/4\" L7''",
+          "referencia": "CART HEATER 220V 500W OD3/4\" L7''",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "FITA TEX-PRINT M - K 231",
+          "referencia": "FITA TEX-PRINT M - K 231",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12601050400",
+          "descricao": "CILINDRO NMAG QUADRADO DIA 40X200 JN",
+          "referencia": "SQUARE NMAG CYL DIA 40X200 JN ",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11155277502",
+          "descricao": "SERVOSTAR BKE - 115 - 45",
+          "referencia": "SERVOSTAR BKE - 115 - 45",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11147400640",
+          "descricao": "AQUECEDOR DE TIRAS 240V 250W L285 W40,5",
+          "referencia": "STRIP HEATER 240V 250W L285 W40,5",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14720000200",
+          "descricao": "PLUGUE MACHO REDONDO 2P/PIN 20A",
+          "referencia": "PLUG-MALE ROUND 2P/PIN 20A ",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14721000200",
+          "descricao": "TOMADA REDONDA 2 PÓLOS 20A",
+          "referencia": "SOCKET ROUND 2 POLE 20A",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12603274050",
+          "descricao": "VÁLVULA SOL 1/2 - 5/3 24VAC",
+          "referencia": "5/3 DOUBLE SOLENOID VALVE",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PONTEIRA INTERNA",
+          "referencia": "INTERNAL TIP",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CONTACTOR AUXILIAR CA2KN22M7",
+          "referencia": "CONTROL RELEY CA2KN22M7",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "REGULADOR DE TEMPERATURA PARA GABINETE",
+          "referencia": "TEMPERATURE REGULATOR FOR ENCLOSURE",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "DEFINIR PRESSÃO 0,05 - 0,85 MPA BFR 4000",
+          "referencia": "SET PRESS 0,05 - 0,85 MPA BFR 4000",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14041580000",
+          "descricao": "FUSÍVEL HRC AC 500/415V NH3 800A DIN LÂMINA",
+          "referencia": "HRC FUSE AC 500/415V NH3 800A DIN BLADE ",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14009910021",
+          "descricao": "FUSÍVEL FF CA 660V 180A l2t 16320 TIPO 120",
+          "referencia": "FF FUSE AC 660V 180A l2t 16320 TYPE 120",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14046204000",
+          "descricao": "FUSÍVEL FF CA 1000V NH00 40A",
+          "referencia": "FF FUSE AC 1000V NH00 40A ",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11500176085",
+          "descricao": "NH- SIHER RUNG-3 SENSAT 250A/1000V",
+          "referencia": "NH- SIHER RUNG-3 SENSAT 250A/1000V",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14046210000",
+          "descricao": "FUSÍVEL FF CA 1000V NH0 100A",
+          "referencia": "FF FUSE AC 1000V NH0 100A",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14041325000",
+          "descricao": "FUSÍVEL HRC CA 500/660/690V NH1 250A",
+          "referencia": "HRC FUSE AC 500/660/690V NH1 250A",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14041320000",
+          "descricao": "FUSÍVEL HRC AC500/660/700V NH1 200A",
+          "referencia": "HRC FUSE AC500/660/700V NH1 200A",
+          "quantidade": 6,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14981000003",
+          "descricao": "CD EXTRATOR DE FUSÍVEL",
+          "referencia": "FUSE PULLER CD",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14044020000",
+          "descricao": "FUSÍVEL FF CA 660V NH00 BS 200A",
+          "referencia": "FF FUSE AC 660V NH00 BS 200A",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14044040000",
+          "descricao": "FUSÍVEL FF CA 660V NH00 BS 400A",
+          "referencia": "FF FUSE AC 660V NH00 BS 400A",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14270080420",
+          "descricao": "DIG. E/S MIX MOD SI/SO 0,5A 8l 40 CH (X20-AO-4622)",
+          "referencia": "DIG. I/O MIX MOD SI/SO 0,5A 8l 40 CH (X20-AO-4622)",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14260100020",
+          "descricao": "RECEPTOR DE MÓDULO DE INTERFACE DE COMUNICAÇÃO DE E/S (X20-BR-9300)",
+          "referencia": "I/O COMM INTERFACE MODULE RECEIVER (X20-BR-9300)",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14243300420",
+          "descricao": "ANG. MODO I/P O-10VDC/4(0)-20mA 12BIT 4CH (X20-AI-4622)",
+          "referencia": "ANG. I/P MOD O-10VDC/4(0)-20mA 12BIT 4CH (X20-AI-4622)",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14260300020",
+          "descricao": "MÓDULO DE INTERFACE DE COMUNICAÇÃO DE E/S MODBUS (X20-CS-1030)",
+          "referencia": "I/O COMM INTERFACE MODULE MODBUS  (X20-CS-1030)",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14263600020",
+          "descricao": "MODO DE ÔNIBUS X2X ESQUERDO ISOLADO W NÓ Nº (X20-BM-11/15)",
+          "referencia": "BUS MOD X2X LEFT ISOLATED W NODE No.(X20-BM-11/15)",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14275900020",
+          "descricao": "MODO DE E/S LIVRE DE ENERGIA X20 (X20-PS-3300)",
+          "referencia": "POWER FREED I/O MOD X20 (X20-PS-3300)",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14260000021",
+          "descricao": "PLACA DE INT. DA CPU (X20-IF-1030)",
+          "referencia": "CPU INT CARD (X20-IF-1030)",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14230301220",
+          "descricao": "DIG. I/P MOD 24 VCC 0,5 A SI 1 W 12 CANAIS (X20-DO-9322)",
+          "referencia": "DIG. I/P MOD 24VDC 0.5A SI 1W 12CH (X20-DO-9322)",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14253300420",
+          "descricao": "ANG. O/P MOD O-10VDC/4(0)-20mA 12BIT 4CH (X20-DI-9371)",
+          "referencia": "ANG. O/P MOD O-10VDC/4(0)-20mA 12BIT 4CH (X20-DI-9371)",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14224200220",
+          "descricao": "ESCAVAÇÃO. MODO DE ENTRADA/CONTAGEM 20-50KHZ SI 3W 02CH (X20-DI-2377)",
+          "referencia": "DIG. IN/COUN MOD 20-50KHZ SI 3W 02CH (X20-DI-2377)",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PRESSÃO MÁXIMA 0,7MP",
+          "referencia": "MAX PRESS 0,7MP",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "FUSIVEL NH-00 35A RETARDADO",
+          "referencia": "NH-00 35A DELAYED FUSE",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "FUSIVEL NH-00 50A RETARDADO",
+          "referencia": "NH-00 50A DELAYED FUSE",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14722110050",
+          "descricao": "CONECTOR MACHO-FÊMEA RETO 3 PÓLOS/PINO 5A",
+          "referencia": "MALE-FEMALE CONNECTOR RECT 3POLE/PIN 5A",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14067864900",
+          "descricao": "CONTATO BLOCH 1 NÃO",
+          "referencia": "CONTACT BLOCH 1 NO ",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14716269200",
+          "descricao": "CONECTOR POLI 269A AZUL 1 PÓLO/VIA",
+          "referencia": "POLY CONNERCTOR 269A BLUE 1POLE/WAY ",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14716269100",
+          "descricao": "CONECTOR POLI 269A AMARELO 1 PÓLO/VIA",
+          "referencia": "POLY CONNECTOR 269A YELLOW 1POLE /WAY ",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14054210002",
+          "descricao": "FUSÍVEL FF CA 660/690/700V CILINDRO 22X58 100A",
+          "referencia": "FF FUSE AC 660/690/700V CYL 22X58 100A",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14051208000",
+          "descricao": "FUSÍVEL HRC CA 500/690V CILINDRO 22X58 80A",
+          "referencia": "HRC FUSE AC 500/690V CYL 22X58 80A",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14054205002",
+          "descricao": "FUSÍVEL FF CA 660/690/700V CILINDRO 22X58 50A",
+          "referencia": "FF FUSE AC 660/690/700V CYL 22X58 50A",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14054102500",
+          "descricao": "FUSÍVEL FF CA 660/690/700V CILINDRO 14X51 25A",
+          "referencia": "FF FUSE AC 660/690/700V CYL 14X51 25A",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14054102002",
+          "descricao": "FUSÍVEL FF CA 660/690/700V CILINDRO 14X51 20A",
+          "referencia": "FF FUSE AC 660/690/700V CYL 14X51 20A",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "FUSIVEL 63A",
+          "referencia": "FUSE 63A",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14050105001",
+          "descricao": "FUSÍVEL HRC CA 400V CILINDRO 14X51 50A 120KA BRK",
+          "referencia": "HRC FUSE AC 400V CYL 14X51 50A 120KA BRK",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11176104410",
+          "descricao": "SEM DESCRIÇÃO",
+          "referencia": "",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14054001001",
+          "descricao": "FF FUSE AC 660/690/700V CYL 10X38 10A",
+          "referencia": "FF fuse AC 660/690/700V cyl 10X38 10A",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14054000601",
+          "descricao": "FUSÍVEL FF CA 660/690/700V CILINDRO 10X38 6A",
+          "referencia": "FF FUSE AC 660/690/700V CYL 10X38 6A",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14050000200",
+          "descricao": "FUSÍVEL HRC CA 440/500V CILINDRO 10X38 2A",
+          "referencia": "HRC FUSE AC 440/500V CYL 10X38 2A",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14054001601",
+          "descricao": "FUSÍVEL FF CA 660/690/700V CILINDRO 10X38 16A",
+          "referencia": "FF FUSE AC 660/690/700V CYL 10X38 16A",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14051000400",
+          "descricao": "FUSÍVEL HRC CA 660/690/700V CILINDRO 10X38 4A",
+          "referencia": "HRC FUSE AC 660/690/700V CYL 10X38 4A",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14054000101",
+          "descricao": "FUSÍVEL FF CA 660/690/700V CILINDRO 10X38 1A",
+          "referencia": "FF FUSE AC 660/690/700V CYL 10X38 1A",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "15300000100",
+          "descricao": "FUSÍVEL 2A 440V LENTO",
+          "referencia": "FUSE 2A 440V SLOW",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "15300000108",
+          "descricao": "FUSÍVEL SÉRIE 356 3,15A 440V DE QUEIMA LENTA",
+          "referencia": "FUSE 356 SERIES 3.15A 440V SLOW-BLOW ",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14027016000",
+          "descricao": "FUSIVEL DE VIDRO CERAMICA 16A",
+          "referencia": "GLASS/CERAMIC FUSE FF 5X20 16A",
+          "quantidade": 15,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14184000010",
+          "descricao": "PLACA CODIFICADORA DE INTERFACE VFD COMPATÍVEL COM A840",
+          "referencia": "VFD INTERF. ENCODER CARD COMPATIBLE A840",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12470070006",
+          "descricao": "GUIA DE GANCHOS DE CERÂMICA",
+          "referencia": "CERAMIC HOOK GUIDE",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14444325400",
+          "descricao": "SENSOR DE REFLEXO ULTRA SÔNICO",
+          "referencia": "ULTRA SONIC REFLE SENSOR",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "FUSIVEL 200A 500V",
+          "referencia": "200A 500V FUSE",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CONECTOR BORNE",
+          "referencia": "CONECTOR BORNE",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14082301001",
+          "descricao": "VÁLVULA TRAB PLUG NEUTRO CL ''C'' FMS 12ST",
+          "referencia": "VALVE TRAB PLUG NEUTRAL CL ''C'' FMS 12ST ",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14082300000",
+          "descricao": "VÁLVULA TRAB CL ''C'' 230 VCA",
+          "referencia": "VALVE TRAB CL ''C'' 230 VAC ",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14070050900",
+          "descricao": "INTERRUPTOR DE FIM DE CURSO 1 SEM CABEÇA DE ÊMBOLO",
+          "referencia": "LIMIT SWITCH 1NO PLUNGER HEAD ",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CELULA DE CARGA DOSADOR PRASAD",
+          "referencia": "PRASAD LOAD CELL DOSER",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11952034000",
+          "descricao": "AQUECEDOR DE BANDA CER. 240V 1,6KW ID118 W110",
+          "referencia": "CER. BAND HEATER 240V 1,6KW ID118 W110",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11155335400",
+          "descricao": "AQUECEDOR DE BANDA CER. 240V 2KW ID200 W85",
+          "referencia": "CER. BAND HEATER 240V 2KW ID200 W85",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11156808810",
+          "descricao": "AQUECEDOR DE BANDA CER. 240V 1,5KW ID128 W65",
+          "referencia": "CER. BAND HEATER 240V 1,5KW ID128 W65",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11952035000",
+          "descricao": "AQUECEDOR DE BANDA CER. 240V 900W ID225 W35",
+          "referencia": "CER. BAND HEATER 240V 900W ID225 W35",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12601180805",
+          "descricao": "CILINDRO NMAG QUADRADO COM TRAÇÃO FRONTAL 80X50",
+          "referencia": "SQUAR NMAG CYL WITH FRONT-TRAUNNION 80X50",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14073190000",
+          "descricao": "VENTOINHA DE REFRIGERAÇÃO 220-240VAC 50HZ 250MM",
+          "referencia": "COOLING FAN 220-240VAC 50HZ 250MM",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12606083440",
+          "descricao": "REGULADOR DE FILTRO",
+          "referencia": "FILTER REGULATOR -G1/2 -40Μ 0.5-10 BAR",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "1155597300",
+          "descricao": "CORREIA PLANA",
+          "referencia": "FLAT BELT",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CORREIA PLANA 4460X120",
+          "referencia": "HEATER OF DRAW ROLL SHELL DIA 127X150",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12495100060",
+          "descricao": "CORREIA PLANA SEM FIM GG 54A 190X9550MM",
+          "referencia": "ENDLESS FLAT BELT GG 54A 190X9550MM",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "1249510062",
+          "descricao": "CORREIA PLANA SEM FIM GG 54A 150X4600MM",
+          "referencia": "ENDLESS FLAT BELT GG 54A 150X4600MM",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11305292000",
+          "descricao": "AUTO-SELEÇÃO TG D7 2 - CR",
+          "referencia": "SELF PICKING TG D7 2 - CR",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11155071600",
+          "descricao": "ESBAND TIPO DE CORREIA PLANA SEM FIM - PU12",
+          "referencia": "ESBAND ENDLESS FLAT BELT TYPE - PU12",
+          "quantidade": 6,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11982567000",
+          "descricao": "PT 100 SENSOR DE TEMPERATURA WSS PROT TUBE MIDIA 10",
+          "referencia": "PT 100 TEMP SENSOR WSS PROT TUBE MIDIA 10",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14281100422",
+          "descricao": "ANA I/P TEMP MOD NÃO ISO CH PT 100 4CH",
+          "referencia": "ANA I/P TEMP MOD NON ISO CH PT 100 4CH",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14123230000",
+          "descricao": "AC VAR DRIVE IN3X400 OP3X400 23A",
+          "referencia": "AC VAR DRIVE IN3X400 OP3X400 23A",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14123080000",
+          "descricao": "AC VAR DRIVE IN3X400 OP3X400 8A",
+          "referencia": "AC VAR DRIVE IN3X400 OP3X400 8A",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14103025000",
+          "descricao": "AC VAR DRIVE IN1X200 OP3X200 2,5A",
+          "referencia": "AC VAR DRIVE IN1X200 OP3X200 2,5A",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14027003000",
+          "descricao": "FUSIVEL DE VIDRO 5X20 3A",
+          "referencia": "GLASS FUSE 5X20 3A",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14480235101",
+          "descricao": "TRANSDUTOR DE PRENSA DE FUSÃO 350BAR 4-20MA",
+          "referencia": "MELT PRESS TRANSDUCER 350BAR  4-20MA ",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14073140000",
+          "descricao": "VENTOINHA DE REFRIGERAÇÃO 220-240VAC 50HZ 150X55MM",
+          "referencia": "COOLING FAN 220-240VAC 50HZ 150X55MM",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "FUSIVEL DE VIDRO 6A",
+          "referencia": "6A GLASS FUSE",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "COMUTADOR KNOB CURTO 2F/FIXA PT 1NA+1NF PVC XA2ED25",
+          "referencia": "KNOB SWITCH SHORT 2PH/FIXED PT 1NO+1NC PVC XA2ED25",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "COMUTADOR KNOB CURTO 3F/FIXA PT 2NA PVC XA2ED33",
+          "referencia": "KNOB SWITCH SHORT 3PH/FIXED PT 2NA PVC XA2ED33",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131511010",
+          "descricao": "POLIA DEFLETORA",
+          "referencia": "LOWER DEFLECTING PULLEY",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11408089000",
+          "descricao": "ALMOFADA DE TENSÃO",
+          "referencia": "TENSION PAD-XR",
+          "quantidade": 1000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11405099000",
+          "descricao": "FELTRO DE TENSÃO-N",
+          "referencia": "TENSION PAD FELT - N",
+          "quantidade": 2000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158465600",
+          "descricao": "LAVADORA ESPECIAL - A",
+          "referencia": "SPECIAL WASHER - A",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131512210",
+          "descricao": "BUCHA PARA MOLA",
+          "referencia": "BUSH FOR SPRING",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131323020",
+          "descricao": "ENGRENAGEM",
+          "referencia": "GEAR 53 TEETH ",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131652420",
+          "descricao": "MOLA DO COMPENSADOR ",
+          "referencia": "COMPENSATION SPRING",
+          "quantidade": 1000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11401684000",
+          "descricao": "TRAMA CERAMICA COM PORTA-DEDO",
+          "referencia": "WEFT CERAMIC WITH FINGER HOLDER HS",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406441000",
+          "descricao": "MOLA DE COMPRESSÃO",
+          "referencia": "COMPRESSION SPRING",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11408095000",
+          "descricao": "SUPORTE DE ALAVANCA",
+          "referencia": "LEVER HOLDER - XR",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12470310030",
+          "descricao": "TECIDO EMBURRACHADO ",
+          "referencia": "SYNTHETIC RUBBERISED FABRIC K-11/2.0 50MM",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130551810",
+          "descricao": "CINTO DE SEGURANÇA (LIÇO)",
+          "referencia": "HEDDLE BELT-EX",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158330930",
+          "descricao": "ALAVANCA JOCKEY",
+          "referencia": "JOCKEY LEVER",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11401685020",
+          "descricao": "SUPORTE MAGNETICO COMPLETO",
+          "referencia": "MAGNET HOLDER ASSY R-6",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12470310052",
+          "descricao": "CORREIA CORRUGADA EM PV",
+          "referencia": "RUBBERISED EMERY CIOTH 50WIDE",
+          "quantidade": 600,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ROLO DE LIXA 50X45 MM FERRO 45 MTS ",
+          "referencia": "SANDING ROLL 50X45 MM IRON 45 MTS",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130606610",
+          "descricao": "MOLA DE TENSÃO DE TRAMA",
+          "referencia": "WEFT TENSION SPRING",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14401021003",
+          "descricao": "IND PROXY FLUSH PNP NO M8 EM 30 CABO 2M",
+          "referencia": "IND PROXY FLUSH PNP NO M8 IN 30 CABLE 2M",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406644020",
+          "descricao": "ALAVANCA DE COMPENSAÇÃO DE TRAMA ÍMÃ (R-6)",
+          "referencia": "WEFT COMPENSATION LEVER MAGNET (R-6)",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14401011003",
+          "descricao": "IND PROXY FLUSH PNP NO CABO M12 SH",
+          "referencia": "IND PROXY FLUSH PNP NO M12 SH CABLE",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14409991000",
+          "descricao": "CABO SENSOR BLINDADO 9MT",
+          "referencia": "SENSOR SHIELDED CABLE 9MT",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12470100005",
+          "descricao": "LAMINA CERAMICA PENTAGONAL",
+          "referencia": "PENTAGONAL CERAMIC BLADE 07US030",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11157053700",
+          "descricao": "ARRUELA DE POLIA",
+          "referencia": "PULLEY WASHER",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158254400",
+          "descricao": "ARAME DE LIÇO",
+          "referencia": "HEILD WIRE (8040R)",
+          "quantidade": 1000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158550500",
+          "descricao": "CINTA DE SEGURANÇA (LIÇO) SUPERIOR 21",
+          "referencia": "UPPER HEDDLE BELT-D (42W)",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158055310",
+          "descricao": "RODA DE BATENTE",
+          "referencia": "STOPPER WHEEL",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158330930",
+          "descricao": "ALAVANCA DE JÓQUEI",
+          "referencia": "JOCKEY LEVER",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14421011002",
+          "descricao": "SENSOR MAGNETICO",
+          "referencia": "MAGNETIC SENSOR NPN NO M12",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11411125000",
+          "descricao": "CONJUNTO DE ALAVANCA",
+          "referencia": "SWINGING LEVER ASSY",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158217500",
+          "descricao": "FITAS ESPAÇADORAS INTERMEDIÁRIAS 720",
+          "referencia": "INTERMEDIATE SPACER 720 TAPES",
+          "quantidade": 1000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11214249000",
+          "descricao": "TAMPA DE ROLAMENTO DIANTEIRO",
+          "referencia": "BEARING COVER (FRONT)",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11405310000",
+          "descricao": "PENTE DO ANEL DO BAG",
+          "referencia": "READ STNP (IMM)",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131652420",
+          "descricao": "MOLA DO COMPENSADOR ",
+          "referencia": "COMPENSATION SPRING",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131604310",
+          "descricao": "MOLA DIST. DO BAG",
+          "referencia": "SPRING",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131601810",
+          "descricao": "MOLA",
+          "referencia": "SPRING",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158218020",
+          "descricao": "GUIA DE TRAMA-LSL 8R",
+          "referencia": "WEFT GUIDE -LSL8",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158450600",
+          "descricao": "CINTO DE SEGURANÇA(LIÇO) SUPERIOR 20",
+          "referencia": "UPPER HEDLLE BELT (40W)-C",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11412932000",
+          "descricao": "RODA LANÇADEIRA",
+          "referencia": "SHUTTLE WHEEL NS ",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11412935000",
+          "descricao": "RODA DE TRANSPORTE",
+          "referencia": "SHUTTLE WHEEL ",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11401650000",
+          "descricao": "RODA CONICA ",
+          "referencia": "CHONCHOID WHEEL R-6",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11401679000",
+          "descricao": "CONJUNTO DE  RODA DE TRANSPORTE",
+          "referencia": "SHUTTLE WHEEL ASSY ",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158955600",
+          "descricao": "CONJUNTO DE ROLO CAM - FT",
+          "referencia": "CAM ROLLER ASSY - FT",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11412961000",
+          "descricao": "RODA DE PRESSÃO M-65",
+          "referencia": "PUSHER WHEEL M-65",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11150190300",
+          "descricao": "MOLA DE COMPENSAÇÃO",
+          "referencia": "COMPENSATION SPRING",
+          "quantidade": 1000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158933710",
+          "descricao": "DEDO DE INSERÇÃO COM CERAMIS - M",
+          "referencia": "INSERTION FINGER WITH CERAMIS - M",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158934000",
+          "descricao": "DEDO DE INSERÇÃO COM CERAMIS - S",
+          "referencia": "INSERTION FINGER WITH CERAMIC - S",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158965800",
+          "descricao": "DEDO DE INSERÇÃO COM CERAMIS - M1",
+          "referencia": "INSERTION FINGER WITH CERAMIC-M1",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158965900",
+          "descricao": "DEDO DE INSERÇÃO COM CERAMIS - M2",
+          "referencia": "INSERTION FINGER WITH CERAMIC-M2",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "INSERTION FLINGER WITH CERAMIC 31CM",
+          "referencia": "INSERTION FLINGER WITH CERAMIC 31CM",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11400900185",
+          "descricao": "KIT PARA EIXO HOLL ENC 360 PPR",
+          "referencia": "KIT FOR HOLL SHAFT ENC 360 PPR",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11412983000",
+          "descricao": "UNHA DE RODA CONCÓIDE",
+          "referencia": "CHONCHOID WHEEL NAYL",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11408089000",
+          "descricao": "ALMOFADA DE TENSÃO",
+          "referencia": "TENSION PAD-XR",
+          "quantidade": 1000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406021000",
+          "descricao": "STUD-140",
+          "referencia": "STUD-140",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14907000011",
+          "descricao": "SENSOR DE TEMPERATURA PT100 127",
+          "referencia": "PT 100 TEMP. SENSOR FOR GODET DIA 127",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14470200005",
+          "descricao": "SENSOR DE TEMP. COM BABINE 3W ARRUELA",
+          "referencia": "TEMP SENSOR W CAB PT100 3W WASHER 25/16",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14470200002",
+          "descricao": "SENSOR DE TEMPERATURA CABO 3MM 3FIOS",
+          "referencia": "TEMP SENSOR W 3M CABLE PT100 3WIRE",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14012006000",
+          "descricao": "RELÉ INTERNO 6A",
+          "referencia": "PLC INT RELAY 24VDC 1PTD 6A PHOENIX ",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11157082300",
+          "descricao": "MOLA DE FREIO ELETROMAG. DE CONTRA GOLPE",
+          "referencia": "ELECTROMAGNETIC BACK STROKE BRAKE SPRING",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12350410060",
+          "descricao": "ANEL DE SEGURANÇA E6",
+          "referencia": "CIRCLIP 6",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12350410080",
+          "descricao": "ANEL DE SEGURANÇA E8",
+          "referencia": "CIRCLIP 8",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11176110300",
+          "descricao": "ARRUELA DE VEDAÇÃO",
+          "referencia": "SEALING WASHER D42",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12191405030",
+          "descricao": "PARAFUSO M5X30MM",
+          "referencia": "SOKET HEAD SHOULDER SCREW M5X30 12.9 BLK ",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130870630",
+          "descricao": "BUCHA FLANGEADA (PINO LONGO)",
+          "referencia": "FLANGED BUSH (LONG PIN)",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11157078510",
+          "descricao": "TRENÓ DE COSTAS-E/M ",
+          "referencia": "BACK STROKE SLEDGE-E/M",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11157098900",
+          "descricao": "PINO DE ROLO ",
+          "referencia": "ROLLER PIN",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12470070004",
+          "descricao": "4 ROLETAS DE CERAMICA ",
+          "referencia": "4 GROOVE ROLLER CERAMIC ",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11176901500",
+          "descricao": "ROLO DE PRESSÃO S/CONJUNTO ",
+          "referencia": "PRESSURE ROLLER S/ASSY -250FB",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12470040008",
+          "descricao": "ROLO SEPARADOR DIA 50X150",
+          "referencia": "SEPARATOR ROLLER DIA50XL150",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11151432100",
+          "descricao": "MALHA DE FILTRO",
+          "referencia": "FILTER MESH ",
+          "quantidade": 1000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11176099300",
+          "descricao": "ARRUELA DE VEDAÇÃO",
+          "referencia": "SEALING WASHER D25MM",
+          "quantidade": 1000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11176103500",
+          "descricao": "FILTRO DE TELA",
+          "referencia": "SCREEN FILTER",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11124030430",
+          "descricao": "MOLA D 0,5",
+          "referencia": "SPRING D 0,5",
+          "quantidade": 1000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11301351020",
+          "descricao": "ROLO DE PRESSÃO COMPLETO ",
+          "referencia": "PRESSURE ROLLER SUB ASSY",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130873970",
+          "descricao": "MOLA DE LAÇO D 1,5",
+          "referencia": "LOOP SPRING D1,5",
+          "quantidade": 1000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "TERMOPAR PT100 8X17 CAB0 C/6MT",
+          "referencia": "THERMOCOUPLE PT100 8X17 CAB0 W/6MT",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11157048500",
+          "descricao": "BLOCO DE ALAVANCA",
+          "referencia": "LEVER BLOCK",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11321078000",
+          "descricao": "CONJUNTO DE ROLO GUIA EM V COM FLANGE",
+          "referencia": "V GUIDE ROLLER S ASSY WITH FLANGE",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11157926400",
+          "descricao": "ROLO GUIA S/CONJ.",
+          "referencia": "GUIDE ROLLER S/ASSY",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11157926300",
+          "descricao": "ROLO GUIA V S/CONJ.",
+          "referencia": "V GUIDE ROLLER S/ASSY",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11305268000",
+          "descricao": "FREIO",
+          "referencia": "BRAKE",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12470310004",
+          "descricao": "LAMINA INDUSTRIAL",
+          "referencia": "INDUSTRIAL BLADE 0,2MM THK",
+          "quantidade": 10000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11304635000",
+          "descricao": "TRENÓ",
+          "referencia": "SLEDGE",
+          "quantidade": 2000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11303541000",
+          "descricao": "SEGUIDOR DE CÂMERA ",
+          "referencia": "CAM FOLLOWER ",
+          "quantidade": 2000,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11157007100",
+          "descricao": "J HOOK CERÂMICA 7MM",
+          "referencia": "J HOOK CERAMIC 7MM",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130860580",
+          "descricao": "GUIA FIO REVESTIDO DE CERAMICA",
+          "referencia": "TAPE GUIDE WITH BEADING CERAMIC",
+          "quantidade": 600,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131601310",
+          "descricao": "MOLA PARA BOTÃO DE TENSÃO",
+          "referencia": "SPRING FOR TENSION KNOB",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11322639000",
+          "descricao": "FLANGE DO ROLO GUIA TRASEIRO",
+          "referencia": "BACK GUIDE ROLLER FLANGE",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11322650000",
+          "descricao": "FLANGE DE ROLO GUIA",
+          "referencia": "GUIDE ROLLER FLANGE",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11176104410",
+          "descricao": "DISJUNTOR",
+          "referencia": "BREAKER",
+          "quantidade": 50,
           "unidade": "UN"
         }
       ],
