@@ -1403,10 +1403,10 @@ function App() {
           </div>
         </aside>
 
-        <main className="flex-1 rounded-3xl border border-slate-200 bg-white p-3 shadow-soft sm:p-4">
-          <div className="mb-2 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+        <main className={`flex-1 rounded-3xl border border-slate-200 bg-white shadow-soft ${selectedSection === 'compras' ? 'p-2 sm:p-2' : 'p-3 sm:p-4'}`}>
+          <div className={`${selectedSection === 'compras' ? 'mb-1 gap-0.5' : 'mb-2 gap-1'} flex flex-col sm:flex-row sm:items-center sm:justify-between`}>
             <div>
-              <h2 className="text-xl font-semibold text-slate-950 sm:text-2xl">
+              <h2 className={`${selectedSection === 'compras' ? 'text-base sm:text-lg' : 'text-xl sm:text-2xl'} font-semibold text-slate-950`} style={selectedSection === 'compras' ? { display: 'none' } : undefined}>
                 {selectedSection === 'horaextra'
                   ? 'Formulário de HE Manut.'
                   : selectedSection === 'pesquisa'
@@ -1429,13 +1429,13 @@ function App() {
 
 
             </h2>
-            <p className="mt-1 text-xs text-slate-500" aria-live="polite">{syncStatus}</p>
+            <p className={`${selectedSection === 'compras' ? 'mt-0 hidden' : 'mt-1'} text-xs text-slate-500`} aria-live="polite">{syncStatus}</p>
             </div>
           </div>
 
 
-          <div className="grid gap-6 lg:grid-cols-1">
-            <section className={`${selectedSection === 'statuspedidos' ? 'hidden' : ''} rounded-3xl border border-slate-200 bg-slate-50 p-4 shadow-sm sm:p-6 ${selectedSection === 'cadastro' ? 'lg:min-h-[700px] lg:p-3' : selectedSection === 'horaextra' ? 'lg:min-h-[700px] lg:p-8' : ''}`}>
+          <div className={`${selectedSection === 'compras' ? 'gap-2' : 'gap-6'} grid lg:grid-cols-1`}>
+            <section className={`${selectedSection === 'statuspedidos' ? 'hidden' : ''} rounded-3xl border border-slate-200 bg-slate-50 shadow-sm ${selectedSection === 'compras' ? 'p-2 sm:p-2' : 'p-4 sm:p-6'} ${selectedSection === 'cadastro' ? 'lg:min-h-[700px] lg:p-3' : selectedSection === 'horaextra' ? 'lg:min-h-[700px] lg:p-8' : ''}`}>
               {selectedSection !== 'cadastro' ? (
                 <div className="flex items-center justify-between gap-3">
                   <div>
@@ -1884,8 +1884,8 @@ function App() {
                   </div>
                 </div>
               ) : selectedSection === 'compras' ? (
-                <form className="mt-6 grid gap-4" onSubmit={handlePurchaseSubmit}>
-                  <div className="flex flex-col gap-3 rounded-3xl border border-slate-200 bg-white/80 p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+                <form className="mt-0 grid gap-2" onSubmit={handlePurchaseSubmit}>
+                  <div className="flex flex-col gap-1.5 rounded-2xl border border-slate-200 bg-white/80 px-3 py-2 shadow-sm sm:flex-row sm:items-center sm:justify-between">
                     <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Pedidos</p>
                     <div className="flex flex-wrap items-center gap-2 text-sm">
                       <button
@@ -1910,30 +1910,30 @@ function App() {
                     </div>
                   </div>
 
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <label className="space-y-2 text-sm text-slate-700">
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <label className="space-y-1 text-xs text-slate-700">
                       <span>Número</span>
-                      <input name="numero" value={purchaseForm.numero} onChange={handlePurchaseChange} placeholder={nextPurchaseNumber} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-700 outline-none transition focus:border-brand-500" />
+                      <input name="numero" value={purchaseForm.numero} onChange={handlePurchaseChange} placeholder={nextPurchaseNumber} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs text-slate-700 outline-none transition focus:border-brand-500" />
                     </label>
-                    <label className="space-y-2 text-sm">
+                    <label className="space-y-1 text-xs">
                       <span className={`block font-medium ${purchaseInvalidFields.includes('dataSolicitacao') ? 'text-red-600' : 'text-slate-700'}`}>Data da solicitação*</span>
-                      <input ref={el => (purchaseFormRefs.current.dataSolicitacao = el)} type="date" name="dataSolicitacao" value={toDateInput(purchaseForm.dataSolicitacao)} onChange={handlePurchaseChange} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500" />
+                      <input ref={el => (purchaseFormRefs.current.dataSolicitacao = el)} type="date" name="dataSolicitacao" value={toDateInput(purchaseForm.dataSolicitacao)} onChange={handlePurchaseChange} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs outline-none transition focus:border-brand-500" />
                     </label>
                   </div>
 
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <label className="space-y-2 text-sm">
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <label className="space-y-1 text-xs">
                       <span className={`block font-medium ${purchaseInvalidFields.includes('setor') ? 'text-red-600' : 'text-slate-700'}`}>Setor*</span>
-                      <select ref={el => (purchaseFormRefs.current.setor = el)} name="setor" value={purchaseForm.setor} onChange={handlePurchaseChange} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500">
+                      <select ref={el => (purchaseFormRefs.current.setor = el)} name="setor" value={purchaseForm.setor} onChange={handlePurchaseChange} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs outline-none transition focus:border-brand-500">
                         <option value="">Selecione o setor</option>
                         {purchaseSetorOptions.map(option => (
                           <option key={option} value={option}>{option}</option>
                         ))}
                       </select>
                     </label>
-                    <label className="space-y-2 text-sm">
+                    <label className="space-y-1 text-xs">
                       <span className={`block font-medium ${purchaseInvalidFields.includes('tipoSolicitacao') ? 'text-red-600' : 'text-slate-700'}`}>Tipo de solicitação*</span>
-                      <select ref={el => (purchaseFormRefs.current.tipoSolicitacao = el)} name="tipoSolicitacao" value={purchaseForm.tipoSolicitacao} onChange={handlePurchaseChange} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500">
+                      <select ref={el => (purchaseFormRefs.current.tipoSolicitacao = el)} name="tipoSolicitacao" value={purchaseForm.tipoSolicitacao} onChange={handlePurchaseChange} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs outline-none transition focus:border-brand-500">
                         <option value="">Selecione</option>
                         {purchaseSolicitacaoOptions.map(option => (
                           <option key={option} value={option}>{option}</option>
@@ -1942,57 +1942,57 @@ function App() {
                     </label>
                   </div>
 
-                  <div className="border-t border-slate-200 pt-4">
-                    <div className="mb-3 flex items-center justify-between gap-3">
-                      <p className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">Itens do pedido</p>
+                  <div className="border-t border-slate-200 pt-3">
+                    <div className="mb-2 flex items-center justify-between gap-3">
+                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Itens do pedido</p>
                     </div>
                     <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white">
-                      <table className="min-w-[960px] w-full border-collapse text-left text-sm">
-                        <thead className="bg-slate-100 text-slate-500">
+                      <table className="min-w-[960px] w-full border-collapse text-left text-xs">
+                        <thead className="bg-slate-100 text-[11px] text-slate-500">
                           <tr>
-                            <th className="w-14 px-3 py-2 font-medium">Nº</th>
-                            <th className="px-3 py-2 font-medium">Componente</th>
-                            <th className="w-32 px-3 py-2 font-medium">Código</th>
-                            <th className="px-3 py-2 font-medium">Descrição</th>
-                            <th className="w-36 px-3 py-2 font-medium">Referência</th>
-                            <th className="w-28 px-3 py-2 font-medium">Qtd.</th>
-                            <th className="w-28 px-3 py-2 font-medium">Unidade</th>
-                            <th className="w-14 px-3 py-2 text-center font-medium">+</th>
-                            <th className="w-14 px-3 py-2 text-center font-medium">×</th>
+                            <th className="w-12 px-2 py-1.5 font-medium">Nº</th>
+                            <th className="px-2 py-1.5 font-medium">Componente</th>
+                            <th className="w-32 px-2 py-1.5 font-medium">Código</th>
+                            <th className="px-2 py-1.5 font-medium">Descrição</th>
+                            <th className="w-36 px-2 py-1.5 font-medium">Referência</th>
+                            <th className="w-28 px-2 py-1.5 font-medium">Qtd.</th>
+                            <th className="w-28 px-2 py-1.5 font-medium">Unidade</th>
+                            <th className="w-12 px-2 py-1.5 text-center font-medium">+</th>
+                            <th className="w-12 px-2 py-1.5 text-center font-medium">×</th>
                           </tr>
                         </thead>
                         <tbody>
                           {purchaseForm.items.map((item, index) => (
                             <tr key={index} className="border-t border-slate-200">
-                              <td className="px-3 py-2 text-center text-sm font-medium text-slate-500">{index + 1}</td>
-                              <td className="p-2">
-                                <select ref={el => (purchaseFormRefs.current[`item-${index}-tipoComponente`] = el)} name="tipoComponente" value={item.tipoComponente} onChange={event => handlePurchaseItemChange(index, event)} className={`w-full rounded-xl border bg-white px-3 py-2 text-sm font-medium text-slate-800 outline-none transition focus:border-brand-500 ${purchaseInvalidFields.includes(`item-${index}-tipoComponente`) ? 'border-red-400' : 'border-slate-200'}`}>
+                              <td className="px-2 py-1.5 text-center text-xs font-medium text-slate-500">{index + 1}</td>
+                              <td className="p-1">
+                                <select ref={el => (purchaseFormRefs.current[`item-${index}-tipoComponente`] = el)} name="tipoComponente" value={item.tipoComponente} onChange={event => handlePurchaseItemChange(index, event)} className={`w-full rounded-lg border bg-white px-2 py-1.5 text-xs font-medium text-slate-800 outline-none transition focus:border-brand-500 ${purchaseInvalidFields.includes(`item-${index}-tipoComponente`) ? 'border-red-400' : 'border-slate-200'}`}>
                                   <option value="">Selecione</option>
                                   {purchaseTipoComponenteOptions.map(option => <option key={option} value={option}>{option}</option>)}
                                 </select>
                               </td>
-                              <td className="p-2">
-                                <input type="text" name="codigo" value={item.codigo || ''} onChange={event => handlePurchaseItemChange(index, event)} placeholder="Código" className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-800 outline-none transition focus:border-brand-500" />
+                              <td className="p-1">
+                                <input type="text" name="codigo" value={item.codigo || ''} onChange={event => handlePurchaseItemChange(index, event)} placeholder="Código" className="w-full rounded-lg border border-slate-200 bg-white px-2 py-1.5 text-xs font-medium text-slate-800 outline-none transition focus:border-brand-500" />
                               </td>
-                              <td className="p-2">
-                                <input ref={el => (purchaseFormRefs.current[`item-${index}-descricao`] = el)} type="text" name="descricao" value={item.descricao} onChange={event => handlePurchaseItemChange(index, event)} placeholder="Descreva o produto" className={`w-full rounded-xl border bg-white px-3 py-2 text-sm font-medium text-slate-800 outline-none transition focus:border-brand-500 ${purchaseInvalidFields.includes(`item-${index}-descricao`) ? 'border-red-400' : 'border-slate-200'}`} />
+                              <td className="p-1">
+                                <input ref={el => (purchaseFormRefs.current[`item-${index}-descricao`] = el)} type="text" name="descricao" value={item.descricao} onChange={event => handlePurchaseItemChange(index, event)} placeholder="Descreva o produto" className={`w-full rounded-lg border bg-white px-2 py-1.5 text-xs font-medium text-slate-800 outline-none transition focus:border-brand-500 ${purchaseInvalidFields.includes(`item-${index}-descricao`) ? 'border-red-400' : 'border-slate-200'}`} />
                               </td>
-                              <td className="p-2">
-                                <input type="text" name="referencia" value={item.referencia || ''} onChange={event => handlePurchaseItemChange(index, event)} placeholder="Referência" className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-800 outline-none transition focus:border-brand-500" />
+                              <td className="p-1">
+                                <input type="text" name="referencia" value={item.referencia || ''} onChange={event => handlePurchaseItemChange(index, event)} placeholder="Referência" className="w-full rounded-lg border border-slate-200 bg-white px-2 py-1.5 text-xs font-medium text-slate-800 outline-none transition focus:border-brand-500" />
                               </td>
-                              <td className="p-2">
-                                <input ref={el => (purchaseFormRefs.current[`item-${index}-quantidade`] = el)} type="number" min="1" name="quantidade" value={item.quantidade} onChange={event => handlePurchaseItemChange(index, event)} className={`w-full rounded-xl border bg-white px-3 py-2 text-sm font-medium text-slate-800 outline-none transition focus:border-brand-500 ${purchaseInvalidFields.includes(`item-${index}-quantidade`) ? 'border-red-400' : 'border-slate-200'}`} />
+                              <td className="p-1">
+                                <input ref={el => (purchaseFormRefs.current[`item-${index}-quantidade`] = el)} type="number" min="1" name="quantidade" value={item.quantidade} onChange={event => handlePurchaseItemChange(index, event)} className={`w-full rounded-lg border bg-white px-2 py-1.5 text-xs font-medium text-slate-800 outline-none transition focus:border-brand-500 ${purchaseInvalidFields.includes(`item-${index}-quantidade`) ? 'border-red-400' : 'border-slate-200'}`} />
                               </td>
-                              <td className="p-2">
-                                <select name="unidade" value={item.unidade} onChange={event => handlePurchaseItemChange(index, event)} className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-800 outline-none transition focus:border-brand-500">
+                              <td className="p-1">
+                                <select name="unidade" value={item.unidade} onChange={event => handlePurchaseItemChange(index, event)} className="w-full rounded-lg border border-slate-200 bg-white px-2 py-1.5 text-xs font-medium text-slate-800 outline-none transition focus:border-brand-500">
                                   <option value="UN">UN</option><option value="CX">CX</option><option value="KG">KG</option><option value="M">M</option><option value="L">L</option>
                                 </select>
                               </td>
-                              <td className="p-2 text-center">
-                                <button type="button" onClick={() => handleAddPurchaseItem(index)} title={`Incluir novo item após o item ${index + 1}`} aria-label={`Incluir novo item após o item ${index + 1}`} className="h-9 w-9 rounded-xl text-lg font-bold text-brand-600 transition hover:bg-brand-50">+</button>
+                              <td className="p-1 text-center">
+                                <button type="button" onClick={() => handleAddPurchaseItem(index)} title={`Incluir novo item após o item ${index + 1}`} aria-label={`Incluir novo item após o item ${index + 1}`} className="h-7 w-7 rounded-lg text-base font-bold text-brand-600 transition hover:bg-brand-50">+</button>
                               </td>
-                              <td className="p-2 text-center">
-                                <button type="button" onClick={() => handleRemovePurchaseItem(index)} disabled={purchaseForm.items.length === 1} className={`h-9 w-9 rounded-xl text-lg transition ${purchaseForm.items.length === 1 ? 'cursor-not-allowed text-slate-300' : 'text-red-600 hover:bg-red-50'}`} aria-label="Remover item">×</button>
+                              <td className="p-1 text-center">
+                                <button type="button" onClick={() => handleRemovePurchaseItem(index)} disabled={purchaseForm.items.length === 1} className={`h-7 w-7 rounded-lg text-base transition ${purchaseForm.items.length === 1 ? 'cursor-not-allowed text-slate-300' : 'text-red-600 hover:bg-red-50'}`} aria-label="Remover item">×</button>
                               </td>
                             </tr>
                           ))}
@@ -2001,10 +2001,10 @@ function App() {
                     </div>
                   </div>
 
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <label className="space-y-2 text-sm text-slate-700">
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <label className="space-y-1 text-xs text-slate-700">
                       <span>Prioridade</span>
-                      <select name="prioridade" value={purchaseForm.prioridade} onChange={handlePurchaseChange} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500">
+                      <select name="prioridade" value={purchaseForm.prioridade} onChange={handlePurchaseChange} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs outline-none transition focus:border-brand-500">
                         <option value="Baixa">Baixa</option>
                         <option value="Média">Média</option>
                         <option value="Alta">Alta</option>
@@ -2013,14 +2013,14 @@ function App() {
                     </label>
                   </div>
 
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <label className="space-y-2 text-sm">
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <label className="space-y-1 text-xs">
                       <span className={`block font-medium ${purchaseInvalidFields.includes('solicitante') ? 'text-red-600' : 'text-slate-700'}`}>Solicitante*</span>
-                      <input ref={el => (purchaseFormRefs.current.solicitante = el)} type="text" name="solicitante" value={purchaseForm.solicitante} onChange={handlePurchaseChange} placeholder="Informe o solicitante" className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500" />
+                      <input ref={el => (purchaseFormRefs.current.solicitante = el)} type="text" name="solicitante" value={purchaseForm.solicitante} onChange={handlePurchaseChange} placeholder="Informe o solicitante" className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs outline-none transition focus:border-brand-500" />
                     </label>
-                    <label className="space-y-2 text-sm text-slate-700">
+                    <label className="space-y-1 text-xs text-slate-700">
                       <span>Status</span>
-                      <select name="status" value={purchaseForm.status} onChange={handlePurchaseChange} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500">
+                      <select name="status" value={purchaseForm.status} onChange={handlePurchaseChange} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs outline-none transition focus:border-brand-500">
                         {purchaseStatusOptions.map(option => (
                           <option key={option} value={option}>{option}</option>
                         ))}
@@ -2028,9 +2028,9 @@ function App() {
                     </label>
                   </div>
 
-                  <label className="space-y-2 text-sm text-slate-700">
+                  <label className="space-y-1 text-xs text-slate-700">
                     <span>Justificativas</span>
-                    <textarea name="observacoes" value={purchaseForm.observacoes} onChange={handlePurchaseChange} rows="3" placeholder="Informe as justificativas" className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500"></textarea>
+                    <textarea name="observacoes" value={purchaseForm.observacoes} onChange={handlePurchaseChange} rows="2" placeholder="Informe as justificativas" className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs outline-none transition focus:border-brand-500"></textarea>
                   </label>
 
                   <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-end">
