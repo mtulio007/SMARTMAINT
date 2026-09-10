@@ -1044,6 +1044,214 @@
           "referencia": "MAGNETIC SENSOR PNP NO M12",
           "quantidade": 50,
           "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "COMPENSADOR PRETO DO BAG",
+          "referencia": "BLACK BAG COMPENSATOR",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11402950000",
+          "descricao": "SEPARADOR DO COMPENSADOR SUPERIOR",
+          "referencia": "COMPENSATOR SEPARATOR UPPER - D",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11404936010",
+          "descricao": "SUPORTE DE LANÇA ",
+          "referencia": "BOOM HOLDER ",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "15410110100",
+          "descricao": "SMPS 230VAC 15VDC 100W PAINEL TRILHO DIN",
+          "referencia": "SMPS 230VAC 15VDC 100W PANEL DIN-RAIL",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11408807000",
+          "descricao": "TAMPA DO PIVÔ",
+          "referencia": "PIVOT CAP-28",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11147252530",
+          "descricao": "SENSOR PROXY INDUTIVO",
+          "referencia": "INDUCTIVE PROXY SENSOR",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14421011001",
+          "descricao": "SENSOR MAGNÉTICO PNP NO M12",
+          "referencia": "MAGNETIC SENSOR PNP NO M12",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11981028000",
+          "descricao": "IND CYL PROXY W COM PNP NO M8 FLUSH+CABO",
+          "referencia": "IND CYL PROXY W COM PNP NO M8 FLUSH+CABLE",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12491304000",
+          "descricao": "BUCHA PLANA ",
+          "referencia": "PLAIN BUSH DIA40X44X50",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11406320000",
+          "descricao": "MOLA COMPENSADORA",
+          "referencia": "COMPENSATOR SPRING",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11401348000",
+          "descricao": "DESLIZAMENTO DE TRANSPORTE",
+          "referencia": "SHUTTLE SKID - D (L+R)",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131538120",
+          "descricao": "ANEL DE AJUSTE",
+          "referencia": "AJUSTING RING",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11206696010",
+          "descricao": "CAPA DE PROTEÇÃO PP",
+          "referencia": "PP PROTECTIVE SHEEL ",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12330702014",
+          "descricao": "PINO CAVILHA H&G M6 DIA2X14 PRETO",
+          "referencia": "DOWEL PIN H&G M6 DIA2X14 BLK",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11408392000",
+          "descricao": "COBERTURA CONTRA POEIRA",
+          "referencia": "DUST COVER-X",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130812160",
+          "descricao": "CARGA DE MOLA DE DISCO 16 KG",
+          "referencia": "DISK SPRING LOAD 16 KG",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158056400",
+          "descricao": "SUPORTE DE MOLA",
+          "referencia": "SPRING HOLDER",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131604310",
+          "descricao": "MOLA   ",
+          "referencia": "SPRING",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11158056500",
+          "descricao": "SUPORTE DE MOLA",
+          "referencia": "SPRING HOLDER",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130823310",
+          "descricao": "BLOCO DE POLIA INFERIOR",
+          "referencia": "LOWER PULLEY BLOCK",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11147252550",
+          "descricao": "PLACA ADAPTADORA RJ45 4 FIOS COOM",
+          "referencia": "RJ 45 ADAPTER CARD 4 WIRE COMM",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11131603310",
+          "descricao": "SUPORTE DE MOLA",
+          "referencia": "SPRING HOLDER ",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130516800",
+          "descricao": "TAMPA DE PIVÔ 62",
+          "referencia": "PIVOT CAP-62",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11147250081",
+          "descricao": "PLACA AMPLIFICADORA PARA CÉLULA DE CARGA",
+          "referencia": "AMPLIFIER CARD FOR LOAD CELL",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130211900",
+          "descricao": "GUIA DO  TRANSPORTADOR  DE GRAMPO",
+          "referencia": "CLAMP (SHUTTLE GUIDE)",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130508010",
+          "descricao": "PLACA DE CONEXÃO",
+          "referencia": "CONNECTING PLATE",
+          "quantidade": 50,
+          "unidade": "UN"
         }
       ],
       "prioridade": "Média",
