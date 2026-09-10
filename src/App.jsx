@@ -206,6 +206,11 @@ const formatDateTime = value => {
   return `${padDatePart(parsed.getDate())}/${padDatePart(parsed.getMonth() + 1)}/${parsed.getFullYear()} ${padDatePart(parsed.getHours())}:${padDatePart(parsed.getMinutes())}`
 }
 
+const formatIntegerThousands = value => {
+  const rounded = Math.round(Number(value) || 0)
+  return rounded.toLocaleString('pt-BR', { maximumFractionDigits: 0 })
+}
+
 const formatShortDate = value => {
   if (!value) return ''
   const iso = toDateInput(value)
@@ -230,6 +235,19 @@ const toDateTimeLocal = value => {
 
 const toDateInput = value => toDateTimeLocal(value).slice(0, 10)
 const getCurrentDate = () => new Date().toISOString().slice(0, 10)
+
+const parseImportedMaterialDate = value => {
+  if (!value) return ''
+  if (value instanceof Date && !Number.isNaN(value.getTime())) return value.toISOString().slice(0, 10)
+  if (typeof value === 'number') {
+    if (value < 2) return ''
+    const date = new Date(Date.UTC(1899, 11, 30) + value * 86400000)
+    return date.toISOString().slice(0, 10)
+  }
+  const text = String(value).trim()
+  const br = text.match(/^(\d{1,2})[\/-](\d{1,2})[\/-](\d{4})$/)
+  return br ? `${br[3]}-${String(br[2]).padStart(2, '0')}-${String(br[1]).padStart(2, '0')}` : text
+}
 
 const getDateTimestamp = value => {
   const formatted = formatDateTime(value)
@@ -291,9 +309,9 @@ function App() {
   const [showMaterialNewRow, setShowMaterialNewRow] = useState(false)
   const [selectedMaterialEntryIds, setSelectedMaterialEntryIds] = useState([])
   const [materialExits, setMaterialExits] = useState(() => {
-    try { return JSON.parse(localStorage.getItem('os_easy_material_exits') || '[]').map(item => ({ ...item, _syncId: item._syncId || createSyncId() })) } catch { return [] }
+    try { return JSON.parse(localStorage.getItem('os_easy_material_exits') || '[]').map(item => ({ turno: '', destino: '', solicitante: '', ...item, _syncId: item._syncId || createSyncId() })) } catch { return [] }
   })
-  const [materialExitForm, setMaterialExitForm] = useState({ data: '', codigo: '', descricao: '', um: '', qtd: '' })
+  const [materialExitForm, setMaterialExitForm] = useState({ data: '', codigo: '', descricao: '', um: '', qtd: '', turno: '', destino: '', solicitante: '' })
   const [showMaterialExitNewRow, setShowMaterialExitNewRow] = useState(false)
   const [selectedMaterialExitIds, setSelectedMaterialExitIds] = useState([])
   const [materialSummarySearch, setMaterialSummarySearch] = useState('')
@@ -579,6 +597,11 @@ function App() {
         }
 
         const remoteData = store.data || emptySharedData
+        const hasMeaningfulRemoteData = Object.values(remoteData).some(value => Array.isArray(value) ? value.length > 0 : value && typeof value === 'object' ? Object.keys(value).length > 0 : false)
+        const hasMeaningfulLocalData = Object.values(sharedDataRef.current).some(value => Array.isArray(value) ? value.length > 0 : value && typeof value === 'object' ? Object.keys(value).length > 0 : false)
+        if (initial && !hasMeaningfulRemoteData && hasMeaningfulLocalData) {
+          return
+        }
         if (JSON.stringify(remoteData) !== JSON.stringify(sharedDataRef.current)) {
           applySharedData(remoteData)
         }
@@ -685,7 +708,7 @@ function App() {
   }
 
   const saveMaterialExits = nextEntries => {
-    const normalized = nextEntries.map(item => ({ ...item, _syncId: item._syncId || createSyncId() }))
+    const normalized = nextEntries.map(item => ({ turno: '', destino: '', solicitante: '', ...item, _syncId: item._syncId || createSyncId() }))
     const previousData = sharedDataRef.current
     const data = { ...previousData, materialExits: normalized }
     sharedDataRef.current = data
@@ -697,7 +720,7 @@ function App() {
   const saveMaterialExit = () => {
     if (!materialExitForm.data || !materialExitForm.descricao) return
     saveMaterialExits([{ ...materialExitForm, codigo: materialExitForm.codigo.trim() || 'SEM CÓDIGO' }, ...materialExits])
-    setMaterialExitForm({ data: '', codigo: '', descricao: '', um: '', qtd: '' })
+    setMaterialExitForm({ data: '', codigo: '', descricao: '', um: '', qtd: '', turno: '', destino: '', solicitante: '' })
     setShowMaterialExitNewRow(false)
   }
 
@@ -722,19 +745,66 @@ function App() {
     reader.onload = async () => {
       try {
         const XLSX = await import('xlsx')
-        const sheet = XLSX.read(reader.result, { type: 'array' }).Sheets[XLSX.read(reader.result, { type: 'array' }).SheetNames[0]]
-        const rows = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: '', raw: true })
-        const start = rows[0]?.some(cell => /data|c[oó]digo|descri/i.test(String(cell))) ? 1 : 0
-        const entries = rows.slice(start).map(row => ({ _syncId: createSyncId(), data: parseImportedMaterialDate(row[0]), codigo: String(row[1] || '').trim() || 'SEM CÓDIGO', descricao: String(row[2] || '').trim(), um: String(row[3] || '').trim(), qtd: row[4] || '' })).filter(entry => entry.descricao)
-        if (!entries.length) throw new Error('Sem dados')
-        const response = await fetch('/api/material-exits', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ entries }) })
+        const workbook = XLSX.read(reader.result, { type: 'array', cellDates: false })
+        const sheet = workbook.Sheets[workbook.SheetNames[0]]
+        if (!sheet) throw new Error('Sem aba')
+        const matrix = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: '', raw: true, blankrows: false })
+        const normalizeKey = value => String(value ?? '')
+          .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+          .toLowerCase().replace(/[^a-z0-9]+/g, '')
+        const fromHeaderCandidates = ['data', 'dt', 'data saida', 'data de saida', 'data da saida', 'codigo', 'cod', 'codigo material', 'descricao', 'descricao material', 'material', 'um', 'un', 'unidade', 'qtd', 'qtde', 'quantidade', 'turno', 'tur', 'destino', 'dest', 'setor', 'solicitante', 'requisitante', 'requerente', 'responsavel', 'colaborador']
+          .map(normalizeKey)
+        const headerIndex = matrix.findIndex(row => Array.isArray(row) && row.filter(cell => fromHeaderCandidates.includes(normalizeKey(cell))).length >= 3)
+        const header = headerIndex >= 0 ? matrix[headerIndex] : []
+        const findColumn = (candidates, fallbackIndex) => {
+          const names = candidates.map(normalizeKey)
+          const index = header.findIndex(cell => names.includes(normalizeKey(cell)))
+          return index >= 0 ? index : fallbackIndex
+        }
+        // Ordem posicional padrão (planilhas sem linha de cabeçalho, ex.: SAIDAS.xlsx):
+        // DATA | CÓDIGO | DESCRIÇÃO | UM | QTD | TURNO | DESTINO | SOLICITANTE
+        const columnMap = {
+          data: findColumn(['data', 'dt', 'data saida', 'data de saida', 'data da saida'], 0),
+          codigo: findColumn(['codigo', 'cod', 'codigo material', 'cod material'], 1),
+          descricao: findColumn(['descricao', 'descricao material', 'material', 'descricao do material'], 2),
+          um: findColumn(['um', 'un', 'unidade', 'unid'], 3),
+          qtd: findColumn(['qtd', 'qtde', 'quantidade', 'qtd saida', 'quantidade saida'], 4),
+          turno: findColumn(['turno', 'tur'], 5),
+          destino: findColumn(['destino', 'dest', 'setor destino', 'setor', 'local destino', 'equipamento destino', 'maquina destino'], 6),
+          solicitante: findColumn(['solicitante', 'solicit', 'requisitante', 'requerente', 'responsavel', 'colaborador'], 7)
+        }
+        const dataRows = matrix.slice(headerIndex >= 0 ? headerIndex + 1 : 0).filter(row => Array.isArray(row) && row.some(cell => String(cell ?? '').trim() !== ''))
+        const imported = dataRows.map(row => ({
+          _syncId: createSyncId(),
+          data: getNextMaterialExitDate(row[columnMap.data] ?? ''),
+          codigo: String(row[columnMap.codigo] ?? '').trim() || 'SEM CÓDIGO',
+          descricao: String(row[columnMap.descricao] ?? '').trim(),
+          um: String(row[columnMap.um] ?? '').trim(),
+          qtd: row[columnMap.qtd] ?? '',
+          turno: String(row[columnMap.turno] ?? '').trim(),
+          destino: String(row[columnMap.destino] ?? '').trim(),
+          solicitante: String(row[columnMap.solicitante] ?? '').trim()
+        })).filter(entry => entry.descricao)
+        if (!imported.length) { window.alert('Nenhum dado válido encontrado. Use as colunas: DATA, CÓDIGO, DESCRIÇÃO, UM, QTD, TURNO, DESTINO e SOLICITANTE.'); event.target.value = ''; return }
+        const eraseDatabase = window.confirm('Confirma a operação?\n\nOK = Apagar o Banco e carregar somente o Excel.\nCancelar = Apenas incluir novos dados e preservar o banco atual.')
+        const response = await fetch('/api/material-exits', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ entries: imported, replaceAll: eraseDatabase }) })
         if (!response.ok) throw new Error('SQLite')
-        saveMaterialExits(await response.json())
-      } catch {
-        window.alert('Não foi possível importar o Excel. Use as colunas: DATA, CÓDIGO, DESCRIÇÃO, UM e QTD.')
+        const savedExits = await response.json()
+        saveMaterialExits(Array.isArray(savedExits) ? savedExits : [...imported, ...materialExits])
+        window.alert(eraseDatabase ? `${imported.length} registro(s) carregado(s). O banco anterior foi apagado.` : `${imported.length} registro(s) incluído(s). Os dados existentes foram preservados.`)
+      } catch (importError) {
+        console.error('[saída] falha na carga do Excel:', importError)
+        let message = 'Não foi possível importar o Excel. Use as colunas: DATA, CÓDIGO, DESCRIÇÃO, UM, QTD, TURNO, DESTINO e SOLICITANTE.'
+        if (importError instanceof Error && /quota|storage/i.test(importError.message)) {
+          message = 'Carga interrompida: armazenamento local cheio. Apague o banco (OK no confirm) ou exclua registros antes de importar.'
+        } else if (importError instanceof Error && /SQLite|material-exits/i.test(importError.message)) {
+          message = 'Carga interrompida: não foi possível gravar no banco SQLite. Reinicie o servidor (SMARTMAINT.bat) e tente de novo.'
+        }
+        window.alert(message)
       }
       event.target.value = ''
     }
+    reader.onerror = () => { window.alert('Não foi possível ler o arquivo selecionado.'); event.target.value = '' }
     reader.readAsArrayBuffer(file)
   }
 
@@ -758,7 +828,20 @@ function App() {
   }, [materialEntries, materialExits, materialSummarySearch])
 
   const filteredMaterialEntries = useMemo(() => materialEntries.filter(item => `${item.codigo} ${item.descricao}`.toLowerCase().includes(materialEntrySearch.toLowerCase())), [materialEntries, materialEntrySearch])
-  const filteredMaterialExits = useMemo(() => materialExits.filter(item => `${item.codigo} ${item.descricao}`.toLowerCase().includes(materialExitSearch.toLowerCase())), [materialExits, materialExitSearch])
+  const filteredMaterialExits = useMemo(() => materialExits.filter(item => `${item.codigo} ${item.descricao} ${item.turno || ''} ${item.destino || ''} ${item.solicitante || ''}`.toLowerCase().includes(materialExitSearch.toLowerCase())), [materialExits, materialExitSearch])
+
+  const getNextMaterialExitDate = value => {
+    if (!value) return ''
+    if (value instanceof Date && !Number.isNaN(value.getTime())) return value.toISOString().slice(0, 10)
+    if (typeof value === 'number') {
+      if (value < 2) return ''
+      const date = new Date(Date.UTC(1899, 11, 30) + value * 86400000)
+      return date.toISOString().slice(0, 10)
+    }
+    const text = String(value).trim()
+    const br = text.match(/^(\d{1,2})[\/-](\d{1,2})[\/-](\d{4})$/)
+    return br ? `${br[3]}-${String(br[2]).padStart(2, '0')}-${String(br[1]).padStart(2, '0')}` : text
+  }
 
   const materialDashboard = useMemo(() => {
     const totalMateriais = new Set(materialEntries.map(item => item.codigo || 'SEM CÓDIGO')).size
@@ -866,6 +949,51 @@ function App() {
     reader.readAsArrayBuffer(file)
   }
 
+  const handleMaterialEntriesExcelExport = async () => {
+    const source = materialEntrySearch.trim() ? filteredMaterialEntries : materialEntries
+    if (!source.length) { window.alert('Não há registros de entrada para exportar.'); return }
+    try {
+      const XLSX = await import('xlsx')
+      const data = source.map(entry => ({
+        'DATA RECEBIMENTO': formatShortDate(entry.data) || '',
+        'CÓDIGO': entry.codigo || '',
+        'DESCRIÇÃO': entry.descricao || '',
+        UM: entry.um || '',
+        QTD: entry.qtd === '' || entry.qtd === null || entry.qtd === undefined ? '' : Number(entry.qtd),
+        FORNECEDOR: entry.fornecedor || '',
+        'Nº NOTA': entry.nota || ''
+      }))
+      const worksheet = XLSX.utils.json_to_sheet(data)
+      worksheet['!cols'] = [{ wch: 16 }, { wch: 16 }, { wch: 50 }, { wch: 8 }, { wch: 10 }, { wch: 30 }, { wch: 14 }]
+      const workbook = XLSX.utils.book_new()
+      XLSX.utils.book_append_sheet(workbook, worksheet, 'Entradas')
+      XLSX.writeFile(workbook, `entradas_materiais_${new Date().toISOString().slice(0, 10)}.xlsx`)
+    } catch { window.alert('Não foi possível gerar o Excel de entradas.') }
+  }
+
+  const handleMaterialExitsExcelExport = async () => {
+    const source = materialExitSearch.trim() ? filteredMaterialExits : materialExits
+    if (!source.length) { window.alert('Não há registros de saída para exportar.'); return }
+    try {
+      const XLSX = await import('xlsx')
+      const data = source.map(entry => ({
+        DATA: formatShortDate(entry.data) || '',
+        'CÓDIGO': entry.codigo || '',
+        'DESCRIÇÃO': entry.descricao || '',
+        UM: entry.um || '',
+        QTD: entry.qtd === '' || entry.qtd === null || entry.qtd === undefined ? '' : Number(entry.qtd),
+        TURNO: entry.turno || '',
+        DESTINO: entry.destino || '',
+        SOLICITANTE: entry.solicitante || ''
+      }))
+      const worksheet = XLSX.utils.json_to_sheet(data)
+      worksheet['!cols'] = [{ wch: 16 }, { wch: 16 }, { wch: 50 }, { wch: 8 }, { wch: 10 }, { wch: 12 }, { wch: 24 }, { wch: 28 }]
+      const workbook = XLSX.utils.book_new()
+      XLSX.utils.book_append_sheet(workbook, worksheet, 'Saidas')
+      XLSX.writeFile(workbook, `saidas_materiais_${new Date().toISOString().slice(0, 10)}.xlsx`)
+    } catch { window.alert('Não foi possível gerar o Excel de saídas.') }
+  }
+
   const toggleMenu = menu => setExpandedMenus(prev => ({ ...prev, [menu]: !prev[menu] }))
 
   const handleChange = event => {
@@ -946,8 +1074,13 @@ function App() {
     }
   }
 
-  const handleAddPurchaseItem = () => {
-    setPurchaseForm(prev => ({ ...prev, items: [...prev.items, { ...emptyPurchaseItem }] }))
+  const handleAddPurchaseItem = (index = null) => {
+    setPurchaseForm(prev => {
+      const items = [...prev.items]
+      if (index === null || index === undefined) items.push({ ...emptyPurchaseItem })
+      else items.splice(index + 1, 0, { ...emptyPurchaseItem })
+      return { ...prev, items }
+    })
   }
 
   const handleRemovePurchaseItem = index => {
@@ -1646,6 +1779,7 @@ function App() {
                       {showMaterialNewRow ? <button type="button" onClick={() => handleMaterialSubmit({ preventDefault: () => {} })} className="rounded-xl border border-brand-300 bg-brand-50 px-3 py-2 text-sm font-semibold text-brand-700 transition hover:bg-brand-100">Salvar</button> : null}
                       <button type="button" onClick={() => setShowMaterialEntrySearch(previous => !previous)} className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100">Pesquisar</button>
                       <button type="button" onClick={handleMaterialDelete} disabled={selectedMaterialEntryIds.length === 0} className="rounded-xl border border-red-300 bg-red-50 px-3 py-2 text-sm font-semibold text-red-700 transition hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-40">Excluir selecionados</button>
+                      <button type="button" onClick={handleMaterialEntriesExcelExport} disabled={materialEntries.length === 0} className="rounded-xl border border-sky-300 bg-sky-50 px-3 py-2 text-sm font-semibold text-sky-700 transition hover:bg-sky-100 disabled:cursor-not-allowed disabled:opacity-40">Baixar Excel 📥</button>
                       <label className="cursor-pointer rounded-xl border border-emerald-300 bg-emerald-50 px-3 py-2 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-100">Carga via Excel<input type="file" accept=".xlsx,.xls,.csv" onChange={handleMaterialExcelImport} className="sr-only" /></label>
                     </div>
                     <p className="text-sm font-semibold text-slate-600">Registros de entrada: <span className="text-slate-950">{materialEntries.length}</span></p>
@@ -1666,28 +1800,29 @@ function App() {
                 <div className="mt-2 grid gap-5">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="flex gap-2">
-                      <button type="button" onClick={() => { setMaterialExitForm({ data: '', codigo: '', descricao: '', um: '', qtd: '' }); setShowMaterialExitNewRow(true) }} className="rounded-xl bg-brand-500 px-3 py-2 text-sm font-semibold text-white transition hover:bg-brand-700">Novo</button>
+                      <button type="button" onClick={() => { setMaterialExitForm({ data: '', codigo: '', descricao: '', um: '', qtd: '', turno: '', destino: '', solicitante: '' }); setShowMaterialExitNewRow(true) }} className="rounded-xl bg-brand-500 px-3 py-2 text-sm font-semibold text-white transition hover:bg-brand-700">Novo</button>
                       {showMaterialExitNewRow ? <button type="button" onClick={saveMaterialExit} className="rounded-xl border border-brand-300 bg-brand-50 px-3 py-2 text-sm font-semibold text-brand-700 transition hover:bg-brand-100">Salvar</button> : null}
                       <button type="button" onClick={() => setShowMaterialExitSearch(previous => !previous)} className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100">Pesquisar</button>
                       <button type="button" onClick={deleteSelectedMaterialExits} disabled={selectedMaterialExitIds.length === 0} className="rounded-xl border border-red-300 bg-red-50 px-3 py-2 text-sm font-semibold text-red-700 transition hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-40">Excluir selecionados</button>
+                      <button type="button" onClick={handleMaterialExitsExcelExport} disabled={materialExits.length === 0} className="rounded-xl border border-sky-300 bg-sky-50 px-3 py-2 text-sm font-semibold text-sky-700 transition hover:bg-sky-100 disabled:cursor-not-allowed disabled:opacity-40">Baixar Excel 📥</button>
                       <label className="cursor-pointer rounded-xl border border-emerald-300 bg-emerald-50 px-3 py-2 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-100">Carga via Excel<input type="file" accept=".xlsx,.xls,.csv" onChange={handleMaterialExitExcelImport} className="sr-only" /></label>
                     </div>
                     <p className="text-sm font-semibold text-slate-600">Registros cadastrados: <span className="text-slate-950">{materialExits.length}</span></p>
                   </div>
                   {showMaterialExitSearch ? <input autoFocus value={materialExitSearch} onChange={event => setMaterialExitSearch(event.target.value)} placeholder="Pesquisar código ou descrição" className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-[11px] outline-none focus:border-brand-500" /> : null}
                   <div className="max-h-[calc(100vh-160px)] overflow-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
-                    <table className="min-w-[900px] w-full border-collapse text-left text-[11px]"><thead className="sticky top-0 z-20 bg-slate-100 text-slate-500"><tr><th className="w-10 px-2 py-1 font-medium">Sel.</th>{['Data', 'Código', 'Descrição', 'UM', 'QTD'].map(label => <th key={label} className="px-2 py-1 font-medium">{label}</th>)}</tr></thead>
+                    <table className="min-w-[1320px] w-full border-collapse text-left text-[11px]"><thead className="sticky top-0 z-20 bg-slate-100 text-slate-500"><tr><th className="w-10 px-2 py-1 font-medium">Sel.</th>{['Data', 'Código', 'Descrição', 'UM', 'QTD', 'Turno', 'Destino', 'Solicitante'].map(label => <th key={label} className="px-2 py-1 font-medium">{label}</th>)}</tr></thead>
                       <tbody>
-                        {showMaterialExitNewRow ? <tr className="border-b-2 border-brand-200 bg-brand-50/40"><td className="px-2 py-1 text-center text-slate-400">Novo</td>{[['data', 'date', 'min-w-[130px]'], ['codigo', 'text', 'min-w-[140px]'], ['descricao', 'text', 'min-w-[360px]'], ['um', 'text', 'min-w-[90px]'], ['qtd', 'number', 'min-w-[90px]']].map(([name, type, width]) => <td key={name} className="p-1"><input type={type} value={materialExitForm[name]} onChange={event => setMaterialExitForm(previous => ({ ...previous, [name]: event.target.value }))} placeholder={name === 'descricao' ? 'Descrição*' : name === 'data' ? 'Data*' : name.toUpperCase()} className={`w-full ${width} rounded border border-slate-200 bg-white px-2 py-1 text-[11px] outline-none focus:border-brand-500`} /></td>)}</tr> : null}
-                        {filteredMaterialExits.length === 0 ? <tr><td colSpan="6" className="px-3 py-5 text-center text-sm text-slate-500">{materialExitSearch ? 'Nenhum resultado encontrado para a pesquisa.' : 'Nenhuma saída cadastrada.'}</td></tr> : filteredMaterialExits.map(entry => <tr key={entry._syncId} className={`border-t border-slate-200/70 hover:bg-slate-50 ${selectedMaterialExitIds.includes(entry._syncId) ? 'bg-brand-50' : ''}`}><td className="px-2 py-1 text-center"><input type="checkbox" checked={selectedMaterialExitIds.includes(entry._syncId)} onChange={() => toggleMaterialExitSelection(entry._syncId)} aria-label={`Selecionar ${entry.descricao || entry.codigo || 'registro'}`} /></td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'data', event.currentTarget.textContent)} className="min-w-[130px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{formatShortDate(entry.data) || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'codigo', event.currentTarget.textContent)} className="min-w-[140px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.codigo || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'descricao', event.currentTarget.textContent)} className="min-w-[360px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.descricao || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'um', event.currentTarget.textContent)} className="min-w-[90px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.um || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'qtd', event.currentTarget.textContent)} className="min-w-[90px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.qtd || '—'}</td></tr>)}
+                        {showMaterialExitNewRow ? <tr className="border-b-2 border-brand-200 bg-brand-50/40"><td className="px-2 py-1 text-center text-slate-400">Novo</td>{[['data', 'date', 'min-w-[130px]'], ['codigo', 'text', 'min-w-[140px]'], ['descricao', 'text', 'min-w-[360px]'], ['um', 'text', 'min-w-[90px]'], ['qtd', 'number', 'min-w-[90px]'], ['turno', 'text', 'min-w-[90px]'], ['destino', 'text', 'min-w-[180px]'], ['solicitante', 'text', 'min-w-[200px]']].map(([name, type, width]) => <td key={name} className="p-1"><input type={type} value={materialExitForm[name]} onChange={event => setMaterialExitForm(previous => ({ ...previous, [name]: event.target.value }))} placeholder={name === 'descricao' ? 'Descrição*' : name === 'data' ? 'Data*' : name.toUpperCase()} className={`w-full ${width} rounded border border-slate-200 bg-white px-2 py-1 text-[11px] outline-none focus:border-brand-500`} /></td>)}</tr> : null}
+                        {filteredMaterialExits.length === 0 ? <tr><td colSpan="9" className="px-3 py-5 text-center text-sm text-slate-500">{materialExitSearch ? 'Nenhum resultado encontrado para a pesquisa.' : 'Nenhuma saída cadastrada.'}</td></tr> : filteredMaterialExits.map(entry => <tr key={entry._syncId} className={`border-t border-slate-200/70 hover:bg-slate-50 ${selectedMaterialExitIds.includes(entry._syncId) ? 'bg-brand-50' : ''}`}><td className="px-2 py-1 text-center"><input type="checkbox" checked={selectedMaterialExitIds.includes(entry._syncId)} onChange={() => toggleMaterialExitSelection(entry._syncId)} aria-label={`Selecionar ${entry.descricao || entry.codigo || 'registro'}`} /></td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'data', event.currentTarget.textContent)} className="min-w-[130px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{formatShortDate(entry.data) || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'codigo', event.currentTarget.textContent)} className="min-w-[140px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.codigo || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'descricao', event.currentTarget.textContent)} className="min-w-[360px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.descricao || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'um', event.currentTarget.textContent)} className="min-w-[90px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.um || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'qtd', event.currentTarget.textContent)} className="min-w-[90px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.qtd || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'turno', event.currentTarget.textContent)} className="min-w-[90px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.turno || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'destino', event.currentTarget.textContent)} className="min-w-[180px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.destino || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'solicitante', event.currentTarget.textContent)} className="min-w-[200px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.solicitante || '—'}</td></tr>)}
                       </tbody>
                     </table>
                   </div>
                 </div>
               ) : selectedSection === 'resumomateriais' ? (
                 <section className="mt-2 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
-                  <div className="mb-3 flex flex-wrap items-center justify-between gap-3"><label className="text-[11px] text-slate-600">Pesquisar <input value={materialSummarySearch} onChange={event => setMaterialSummarySearch(event.target.value)} className="ml-2 rounded border border-slate-300 px-2 py-1 text-[11px] outline-none focus:border-brand-500" /></label><div className="flex gap-6 text-right text-[11px]"><span>ENTRADAS<br /><b className="text-emerald-700">{materialSummary.reduce((sum, item) => sum + item.entradas, 0)}</b></span><span>SAÍDAS<br /><b className="text-red-700">{materialSummary.reduce((sum, item) => sum + item.saidas, 0)}</b></span><span>SALDO<br /><b className="text-brand-700">{materialSummary.reduce((sum, item) => sum + item.saldo, 0)}</b></span></div></div>
-                  <div className="max-h-[calc(100vh-210px)] overflow-auto rounded border border-slate-300"><table className="w-full min-w-[1440px] text-left text-[11px]"><thead className="sticky top-0 bg-slate-100 text-slate-600"><tr>{['Código', 'Descrição', 'Entradas', 'Saídas', 'Saldo', 'Lead Time', 'Consumo dia', 'Est. Segurança', 'Est. Min', 'Est. Max', 'Ressuprimento'].map(label => <th key={label} className="px-2 py-1">{label}</th>)}</tr></thead><tbody>{materialSummary.length === 0 ? <tr><td colSpan="11" className="px-2 py-4 text-center text-slate-500">Nenhum material encontrado.</td></tr> : materialSummary.map(item => { const planning = materialPlanning[item.codigo] || {}; const endOfStock = calculateStockDate(item.saldo, planning.consumoDia); const resupplyDate = calculateStockDate(item.saldo, planning.consumoDia, planning.leadTime); return <tr key={item.codigo} className="border-t"><td className="px-2 py-1">{item.codigo}</td><td className="px-2 py-1">{item.descricao}</td><td className="px-2 py-1">{item.entradas}</td><td className="px-2 py-1">{item.saidas}</td><td className="px-2 py-1 font-semibold text-brand-700">{item.saldo >= 0 ? '+' : ''}{item.saldo}</td>{[['leadTime', 'Lead Time'], ['consumoDia', 'Consumo dia'], ['estSeguranca', 'Est. Segurança'], ['estMin', 'Est. Min'], ['estMax', 'Est. Max']].map(([field, label]) => <td key={field} className="px-1 py-1"><input aria-label={`${label} - ${item.codigo}`} type="number" min="0" value={planning[field] || ''} onChange={event => updateMaterialPlanning(item.codigo, field, event.target.value)} className="w-20 rounded border border-slate-200 px-1 py-0.5 text-[11px] outline-none focus:border-brand-500" /></td>)}<td className="px-2 py-1"><span className="block text-brand-700">{resupplyDate}</span><span className="text-[9px] text-slate-500">Fim: {endOfStock}</span></td></tr>})}</tbody></table></div>
+                  <div className="mb-3 flex flex-wrap items-center justify-between gap-3"><label className="text-[11px] text-slate-600">Pesquisar <input value={materialSummarySearch} onChange={event => setMaterialSummarySearch(event.target.value)} className="ml-2 rounded border border-slate-300 px-2 py-1 text-[11px] outline-none focus:border-brand-500" /></label><div className="flex gap-6 text-right text-[11px]"><span>ENTRADAS<br /><b className="text-emerald-700">{formatIntegerThousands(materialSummary.reduce((sum, item) => sum + item.entradas, 0))}</b></span><span>SAÍDAS<br /><b className="text-red-700">{formatIntegerThousands(materialSummary.reduce((sum, item) => sum + item.saidas, 0))}</b></span><span>SALDO<br /><b className="text-brand-700">{formatIntegerThousands(materialSummary.reduce((sum, item) => sum + item.saldo, 0))}</b></span></div></div>
+                  <div className="max-h-[calc(100vh-210px)] overflow-auto rounded border border-slate-300"><table className="w-full min-w-[1440px] text-left text-[11px]"><thead className="sticky top-0 bg-slate-100 text-slate-600"><tr>{['Código', 'Descrição', 'Entradas', 'Saídas', 'Saldo', 'Lead Time', 'Consumo dia', 'Est. Segurança', 'Est. Min', 'Est. Max', 'Ressuprimento'].map(label => <th key={label} className="px-2 py-1">{label}</th>)}</tr></thead><tbody>{materialSummary.length === 0 ? <tr><td colSpan="11" className="px-2 py-4 text-center text-slate-500">Nenhum material encontrado.</td></tr> : materialSummary.map(item => { const planning = materialPlanning[item.codigo] || {}; const endOfStock = calculateStockDate(item.saldo, planning.consumoDia); const resupplyDate = calculateStockDate(item.saldo, planning.consumoDia, planning.leadTime); return <tr key={item.codigo} className={`border-t ${item.saldo < 0 ? 'bg-red-50' : ''}`}><td className="px-2 py-1">{item.codigo}</td><td className="px-2 py-1">{item.descricao}</td><td className="px-2 py-1">{formatIntegerThousands(item.entradas)}</td><td className="px-2 py-1">{formatIntegerThousands(item.saidas)}</td><td className={`px-2 py-1 font-semibold ${item.saldo < 0 ? 'text-red-700' : 'text-brand-700'}`}>{item.saldo >= 0 ? '+' : '−'}{formatIntegerThousands(Math.abs(item.saldo))}</td>{[['leadTime', 'Lead Time'], ['consumoDia', 'Consumo dia'], ['estSeguranca', 'Est. Segurança'], ['estMin', 'Est. Min'], ['estMax', 'Est. Max']].map(([field, label]) => <td key={field} className="px-1 py-1"><input aria-label={`${label} - ${item.codigo}`} type="number" min="0" value={planning[field] || ''} onChange={event => updateMaterialPlanning(item.codigo, field, event.target.value)} className="w-20 rounded border border-slate-200 px-1 py-0.5 text-[11px] outline-none focus:border-brand-500" /></td>)}<td className="px-2 py-1"><span className="block text-brand-700">{resupplyDate}</span><span className="text-[9px] text-slate-500">Fim: {endOfStock}</span></td></tr>})}</tbody></table></div>
                 </section>
               ) : selectedSection === 'catalogo' ? (
                 <div className="mt-2 grid gap-5">
@@ -1810,7 +1945,6 @@ function App() {
                   <div className="border-t border-slate-200 pt-4">
                     <div className="mb-3 flex items-center justify-between gap-3">
                       <p className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">Itens do pedido</p>
-                      <button type="button" onClick={handleAddPurchaseItem} className="rounded-xl border border-brand-500 bg-brand-50 px-3 py-2 text-sm font-semibold text-brand-700 transition hover:bg-brand-100">Adicionar item</button>
                     </div>
                     <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white">
                       <table className="min-w-[960px] w-full border-collapse text-left text-sm">
@@ -1823,7 +1957,8 @@ function App() {
                             <th className="w-36 px-3 py-2 font-medium">Referência</th>
                             <th className="w-28 px-3 py-2 font-medium">Qtd.</th>
                             <th className="w-28 px-3 py-2 font-medium">Unidade</th>
-                            <th className="w-20 px-3 py-2 font-medium"></th>
+                            <th className="w-14 px-3 py-2 text-center font-medium">+</th>
+                            <th className="w-14 px-3 py-2 text-center font-medium">×</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -1831,27 +1966,30 @@ function App() {
                             <tr key={index} className="border-t border-slate-200">
                               <td className="px-3 py-2 text-center text-sm font-medium text-slate-500">{index + 1}</td>
                               <td className="p-2">
-                                <select ref={el => (purchaseFormRefs.current[`item-${index}-tipoComponente`] = el)} name="tipoComponente" value={item.tipoComponente} onChange={event => handlePurchaseItemChange(index, event)} className={`w-full rounded-xl border bg-white px-3 py-2 text-sm outline-none transition focus:border-brand-500 ${purchaseInvalidFields.includes(`item-${index}-tipoComponente`) ? 'border-red-400' : 'border-slate-200'}`}>
+                                <select ref={el => (purchaseFormRefs.current[`item-${index}-tipoComponente`] = el)} name="tipoComponente" value={item.tipoComponente} onChange={event => handlePurchaseItemChange(index, event)} className={`w-full rounded-xl border bg-white px-3 py-2 text-sm font-medium text-slate-800 outline-none transition focus:border-brand-500 ${purchaseInvalidFields.includes(`item-${index}-tipoComponente`) ? 'border-red-400' : 'border-slate-200'}`}>
                                   <option value="">Selecione</option>
                                   {purchaseTipoComponenteOptions.map(option => <option key={option} value={option}>{option}</option>)}
                                 </select>
                               </td>
                               <td className="p-2">
-                                <input type="text" name="codigo" value={item.codigo || ''} onChange={event => handlePurchaseItemChange(index, event)} placeholder="Código" className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm outline-none transition focus:border-brand-500" />
+                                <input type="text" name="codigo" value={item.codigo || ''} onChange={event => handlePurchaseItemChange(index, event)} placeholder="Código" className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-800 outline-none transition focus:border-brand-500" />
                               </td>
                               <td className="p-2">
-                                <input ref={el => (purchaseFormRefs.current[`item-${index}-descricao`] = el)} type="text" name="descricao" value={item.descricao} onChange={event => handlePurchaseItemChange(index, event)} placeholder="Descreva o produto" className={`w-full rounded-xl border bg-white px-3 py-2 text-sm outline-none transition focus:border-brand-500 ${purchaseInvalidFields.includes(`item-${index}-descricao`) ? 'border-red-400' : 'border-slate-200'}`} />
+                                <input ref={el => (purchaseFormRefs.current[`item-${index}-descricao`] = el)} type="text" name="descricao" value={item.descricao} onChange={event => handlePurchaseItemChange(index, event)} placeholder="Descreva o produto" className={`w-full rounded-xl border bg-white px-3 py-2 text-sm font-medium text-slate-800 outline-none transition focus:border-brand-500 ${purchaseInvalidFields.includes(`item-${index}-descricao`) ? 'border-red-400' : 'border-slate-200'}`} />
                               </td>
                               <td className="p-2">
-                                <input type="text" name="referencia" value={item.referencia || ''} onChange={event => handlePurchaseItemChange(index, event)} placeholder="Referência" className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm outline-none transition focus:border-brand-500" />
+                                <input type="text" name="referencia" value={item.referencia || ''} onChange={event => handlePurchaseItemChange(index, event)} placeholder="Referência" className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-800 outline-none transition focus:border-brand-500" />
                               </td>
                               <td className="p-2">
-                                <input ref={el => (purchaseFormRefs.current[`item-${index}-quantidade`] = el)} type="number" min="1" name="quantidade" value={item.quantidade} onChange={event => handlePurchaseItemChange(index, event)} className={`w-full rounded-xl border bg-white px-3 py-2 text-sm outline-none transition focus:border-brand-500 ${purchaseInvalidFields.includes(`item-${index}-quantidade`) ? 'border-red-400' : 'border-slate-200'}`} />
+                                <input ref={el => (purchaseFormRefs.current[`item-${index}-quantidade`] = el)} type="number" min="1" name="quantidade" value={item.quantidade} onChange={event => handlePurchaseItemChange(index, event)} className={`w-full rounded-xl border bg-white px-3 py-2 text-sm font-medium text-slate-800 outline-none transition focus:border-brand-500 ${purchaseInvalidFields.includes(`item-${index}-quantidade`) ? 'border-red-400' : 'border-slate-200'}`} />
                               </td>
                               <td className="p-2">
-                                <select name="unidade" value={item.unidade} onChange={event => handlePurchaseItemChange(index, event)} className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm outline-none transition focus:border-brand-500">
+                                <select name="unidade" value={item.unidade} onChange={event => handlePurchaseItemChange(index, event)} className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-800 outline-none transition focus:border-brand-500">
                                   <option value="UN">UN</option><option value="CX">CX</option><option value="KG">KG</option><option value="M">M</option><option value="L">L</option>
                                 </select>
+                              </td>
+                              <td className="p-2 text-center">
+                                <button type="button" onClick={() => handleAddPurchaseItem(index)} title={`Incluir novo item após o item ${index + 1}`} aria-label={`Incluir novo item após o item ${index + 1}`} className="h-9 w-9 rounded-xl text-lg font-bold text-brand-600 transition hover:bg-brand-50">+</button>
                               </td>
                               <td className="p-2 text-center">
                                 <button type="button" onClick={() => handleRemovePurchaseItem(index)} disabled={purchaseForm.items.length === 1} className={`h-9 w-9 rounded-xl text-lg transition ${purchaseForm.items.length === 1 ? 'cursor-not-allowed text-slate-300' : 'text-red-600 hover:bg-red-50'}`} aria-label="Remover item">×</button>
@@ -2014,7 +2152,7 @@ function App() {
                     <p className="mt-2 text-sm text-slate-500"></p>
                   </div>
                   <label className="w-full max-w-sm text-sm text-slate-700 sm:w-auto">
-                    <input value={purchaseSearchTerm} onChange={e => setPurchaseSearchTerm(e.target.value)} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500" placeholder="Buscar por número, setor, descrição..." />
+                    <input value={purchaseSearchTerm} onChange={e => setPurchaseSearchTerm(e.target.value)} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500" placeholder="Buscar por número, código, descrição, solicitante..." />
                   </label>
                 </div>
 
@@ -2023,9 +2161,7 @@ function App() {
                     <thead className="bg-slate-100 text-slate-500">
                       <tr>
                         <th className="px-2.5 py-2 font-medium">Nº</th>
-                        <th className="px-2.5 py-2 font-medium">Setor</th>
-                        <th className="px-2.5 py-2 font-medium">Tipo</th>
-                        <th className="px-2.5 py-2 font-medium">Componente</th>
+                        <th className="px-2.5 py-2 font-medium">Código</th>
                         <th className="px-2.5 py-2 font-medium">Descrição</th>
                         <th className="px-2.5 py-2 font-medium">Qtd.</th>
                         <th className="px-2.5 py-2 font-medium">Solicitante</th>
@@ -2035,7 +2171,7 @@ function App() {
                     <tbody>
                       {filteredPurchaseItems.length === 0 ? (
                         <tr>
-                          <td colSpan="8" className="px-2.5 py-4 text-center text-sm text-slate-500">Nenhuma solicitação cadastrada.</td>
+                          <td colSpan="6" className="px-2.5 py-4 text-center text-sm text-slate-500">Nenhuma solicitação cadastrada.</td>
                         </tr>
                       ) : (
                         filteredPurchaseItems.map(({ purchase, item, itemIndex }) => (
@@ -2051,9 +2187,7 @@ function App() {
                             }}
                           >
                             <td className="px-2.5 py-2 whitespace-nowrap text-slate-700">{purchase.numero}</td>
-                            <td className="px-2.5 py-2 whitespace-nowrap text-slate-700">{purchase.setor}</td>
-                            <td className="px-2.5 py-2 whitespace-nowrap text-slate-700">{purchase.tipoSolicitacao}</td>
-                            <td className="px-2.5 py-2 whitespace-nowrap text-slate-700">{item.tipoComponente}</td>
+                            <td className="px-2.5 py-2 whitespace-nowrap text-slate-700">{item.codigo || '—'}</td>
                             <td className="px-2.5 py-2 max-w-[220px] truncate text-slate-700">{item.descricao}</td>
                             <td className="px-2.5 py-2 whitespace-nowrap text-slate-700">{item.quantidade}</td>
                             <td className="px-2.5 py-2 whitespace-nowrap text-slate-700">{purchase.solicitante}</td>

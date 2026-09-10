@@ -22,38 +22,51 @@ function sharedDataApi() {
   const legacyDatabaseFile = resolve(projectRoot, 'data', 'material-exits.sqlite')
   let writeQueue = Promise.resolve()
 
-  const readLegacyMaterialExits = async () => {
+    const readLegacyMaterialExits = async () => {
     if (!(await import('node:fs')).existsSync(legacyDatabaseFile)) return []
     const database = new sqlite3.Database(legacyDatabaseFile)
     return new Promise(resolvePromise => database.all(
-      'SELECT id AS _syncId, data, codigo, descricao, um, qtd FROM material_exits ORDER BY rowid DESC',
+      'SELECT id AS _syncId, data, codigo, descricao, um, qtd, turno, destino, solicitante FROM material_exits ORDER BY rowid DESC',
       (error, rows) => {
-        database.close()
-        resolvePromise(error ? [] : rows)
+        if (!error) { database.close(); resolvePromise(rows); return }
+        database.all('SELECT id AS _syncId, data, codigo, descricao, um, qtd FROM material_exits ORDER BY rowid DESC', (fallbackError, fallbackRows) => {
+          database.close()
+          resolvePromise(fallbackError ? [] : (fallbackRows || []).map(row => ({ ...row, turno: '', destino: '', solicitante: '' })))
+        })
       }
     ))
   }
 
+  const sanitizeData = saved => ({
+    orders: Array.isArray(saved?.orders) ? saved.orders : [],
+    extraEntries: Array.isArray(saved?.extraEntries) ? saved.extraEntries : [],
+    purchases: Array.isArray(saved?.purchases) ? saved.purchases : [],
+    catalogItems: Array.isArray(saved?.catalogItems) ? saved.catalogItems : [],
+    materialEntries: Array.isArray(saved?.materialEntries) ? saved.materialEntries : [],
+    materialExits: Array.isArray(saved?.materialExits) ? saved.materialExits : [],
+    materialPlanning: saved?.materialPlanning && typeof saved.materialPlanning === 'object' ? saved.materialPlanning : {}
+  })
+
   const readData = async () => {
+    let saved
     try {
       const content = await readFile(dataFile, 'utf8')
-      const saved = JSON.parse(content)
-      return {
-        initialized: true,
-        data: {
-          orders: Array.isArray(saved.orders) ? saved.orders : [],
-          extraEntries: Array.isArray(saved.extraEntries) ? saved.extraEntries : [],
-          purchases: Array.isArray(saved.purchases) ? saved.purchases : [],
-          catalogItems: Array.isArray(saved.catalogItems) ? saved.catalogItems : []
-          ,materialEntries: Array.isArray(saved.materialEntries) ? saved.materialEntries : [],
-          materialExits: Array.isArray(saved.materialExits) ? saved.materialExits : await readLegacyMaterialExits(),
-          materialPlanning: saved.materialPlanning && typeof saved.materialPlanning === 'object' ? saved.materialPlanning : {}
-        }
+      try {
+        saved = JSON.parse(content)
+      } catch {
+        const backupFile = `${dataFile}.corrompido.${Date.now()}.bak.json`
+        try { await writeFile(backupFile, content, 'utf8') } catch {}
+        saved = undefined
       }
     } catch (error) {
       if (error.code === 'ENOENT') return { initialized: false, data: emptyData }
       throw error
     }
+    const data = sanitizeData(saved)
+    if (!Array.isArray(saved?.materialExits)) {
+      try { data.materialExits = await readLegacyMaterialExits() } catch { data.materialExits = [] }
+    }
+    return { initialized: true, data }
   }
 
   const saveData = async data => {
@@ -97,9 +110,15 @@ function sharedDataApi() {
 
   const handler = async (request, response, next) => {
     if (request.method === 'GET') {
-      const store = await readData()
-      response.setHeader('Content-Type', 'application/json')
-      response.end(JSON.stringify(store))
+      try {
+        const store = await readData()
+        response.setHeader('Content-Type', 'application/json')
+        response.end(JSON.stringify(store))
+      } catch {
+        response.statusCode = 500
+        response.setHeader('Content-Type', 'application/json')
+        response.end(JSON.stringify({ initialized: true, data: emptyData, error: 'Base compartilhada indisponível. Usando dados locais.' }))
+      }
       return
     }
 
@@ -150,19 +169,49 @@ function materialExitSqliteApi() {
   let database
 
   const getDatabase = async () => {
-    if (database) return database
+    if (database) {
+      try {
+        await new Promise((resolvePromise, reject) => database.all('SELECT turno, destino, solicitante FROM material_exits LIMIT 1', error => error ? reject(error) : resolvePromise()))
+      } catch {
+        try { await new Promise((resolvePromise, reject) => database.run('ALTER TABLE material_exits ADD COLUMN turno TEXT DEFAULT \'\'', error => error ? reject(error) : resolvePromise())) } catch {}
+        try { await new Promise((resolvePromise, reject) => database.run('ALTER TABLE material_exits ADD COLUMN destino TEXT DEFAULT \'\'', error => error ? reject(error) : resolvePromise())) } catch {}
+        try { await new Promise((resolvePromise, reject) => database.run('ALTER TABLE material_exits ADD COLUMN solicitante TEXT DEFAULT \'\'', error => error ? reject(error) : resolvePromise())) } catch {}
+      }
+      return database
+    }
     await mkdir(dirname(databaseFile), { recursive: true })
     database = new sqlite3.Database(databaseFile)
     await new Promise((resolvePromise, reject) => database.run(`CREATE TABLE IF NOT EXISTS material_exits (
-      id TEXT PRIMARY KEY, data TEXT NOT NULL, codigo TEXT, descricao TEXT NOT NULL, um TEXT, qtd REAL
+      id TEXT PRIMARY KEY, data TEXT NOT NULL, codigo TEXT, descricao TEXT NOT NULL, um TEXT, qtd REAL, turno TEXT DEFAULT '', destino TEXT DEFAULT '', solicitante TEXT DEFAULT ''
     )`, error => error ? reject(error) : resolvePromise()))
+    await new Promise(resolvePromise => database.all('PRAGMA table_info(material_exits)', (error, columns) => {
+      if (error) { resolvePromise(); return }
+      const names = new Set((columns || []).map(col => col.name))
+      const missing = ['turno', 'destino', 'solicitante'].filter(name => !names.has(name))
+      if (!missing.length) { resolvePromise(); return }
+      database.serialize(() => {
+        let pending = missing.length
+        let failed = false
+        missing.forEach(name => database.run(`ALTER TABLE material_exits ADD COLUMN ${name} TEXT DEFAULT ''`, () => {
+          pending -= 1
+          if (pending === 0 && !failed) resolvePromise()
+        }))
+      })
+    }))
     return database
   }
 
-  const listEntries = async () => {
-    const db = await getDatabase()
-    return new Promise((resolvePromise, reject) => db.all('SELECT id AS _syncId, data, codigo, descricao, um, qtd FROM material_exits ORDER BY rowid DESC', (error, rows) => error ? reject(error) : resolvePromise(rows)))
-  }
+  const selectAllExits = db => new Promise((resolvePromise, reject) => {
+    db.all('SELECT id AS _syncId, data, codigo, descricao, um, qtd, turno, destino, solicitante FROM material_exits ORDER BY rowid DESC', (error, rows) => {
+      if (!error) { resolvePromise(rows); return }
+      db.all('SELECT id AS _syncId, data, codigo, descricao, um, qtd FROM material_exits ORDER BY rowid DESC', (fallbackError, fallbackRows) => {
+        if (fallbackError) { reject(fallbackError); return }
+        resolvePromise((fallbackRows || []).map(row => ({ ...row, turno: '', destino: '', solicitante: '' })))
+      })
+    })
+  })
+
+  const listEntries = async () => selectAllExits(await getDatabase())
 
   const handler = async (request, response, next) => {
     if (request.method === 'GET') {
@@ -182,15 +231,31 @@ function materialExitSqliteApi() {
       try {
         const payload = JSON.parse(body)
         const entries = Array.isArray(payload.entries) ? payload.entries : []
+        const replaceAll = payload.replaceAll === true
         const db = await getDatabase()
         await new Promise((resolvePromise, reject) => db.serialize(() => {
           db.run('BEGIN TRANSACTION')
-          const statement = db.prepare('INSERT OR REPLACE INTO material_exits (id, data, codigo, descricao, um, qtd) VALUES (?, ?, ?, ?, ?, ?)')
-          entries.forEach(entry => statement.run(entry._syncId || crypto.randomUUID(), entry.data, entry.codigo || 'SEM CÓDIGO', entry.descricao, entry.um || '', Number(entry.qtd) || 0))
-          statement.finalize(error => {
-            if (error) { db.run('ROLLBACK'); reject(error); return }
-            db.run('COMMIT', commitError => commitError ? reject(commitError) : resolvePromise())
-          })
+          const proceed = useNewColumns => {
+            const statement = useNewColumns
+              ? db.prepare('INSERT OR REPLACE INTO material_exits (id, data, codigo, descricao, um, qtd, turno, destino, solicitante) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)')
+              : db.prepare('INSERT OR REPLACE INTO material_exits (id, data, codigo, descricao, um, qtd) VALUES (?, ?, ?, ?, ?, ?)')
+            entries.forEach(entry => {
+              if (useNewColumns) statement.run(entry._syncId || crypto.randomUUID(), entry.data, entry.codigo || 'SEM CÓDIGO', entry.descricao, entry.um || '', Number(entry.qtd) || 0, entry.turno || '', entry.destino || '', entry.solicitante || '')
+              else statement.run(entry._syncId || crypto.randomUUID(), entry.data, entry.codigo || 'SEM CÓDIGO', entry.descricao, entry.um || '', Number(entry.qtd) || 0)
+            })
+            statement.finalize(error => {
+              if (error) { db.run('ROLLBACK'); reject(error); return }
+              db.run('COMMIT', commitError => commitError ? reject(commitError) : resolvePromise())
+            })
+          }
+          if (replaceAll) {
+            db.run('DELETE FROM material_exits', deleteError => {
+              if (deleteError) { db.run('ROLLBACK'); reject(deleteError); return }
+              db.all('SELECT turno, destino, solicitante FROM material_exits LIMIT 1', probeError => proceed(!probeError))
+            })
+          } else {
+            db.all('SELECT turno, destino, solicitante FROM material_exits LIMIT 1', probeError => proceed(!probeError))
+          }
         }))
         response.setHeader('Content-Type', 'application/json')
         response.end(JSON.stringify(await listEntries()))
