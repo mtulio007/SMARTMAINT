@@ -1886,7 +1886,7 @@ function App() {
               ) : selectedSection === 'compras' ? (
                 <form className="mt-0 grid gap-2" onSubmit={handlePurchaseSubmit}>
                   <div className="flex flex-col gap-1.5 rounded-2xl border border-slate-200 bg-white/80 px-3 py-2 shadow-sm sm:flex-row sm:items-center sm:justify-between">
-                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Pedidos</p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Pedidos de Itens</p>
                     <div className="flex flex-wrap items-center gap-2 text-sm">
                       <button
                         type="button"

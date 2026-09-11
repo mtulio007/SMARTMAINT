@@ -117,6 +117,1424 @@
   ],
   "purchases": [
     {
+      "numero": "M152",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Outro",
+      "descricao": "PLACA EM MDF 3000MMx1000MMx30MM",
+      "quantidade": 2,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "PLACA EM MDF 3000MMx1000MMx30MM",
+          "referencia": "3000MMx1000MMx30MM",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Hidráulico",
+          "codigo": "",
+          "descricao": "MANGUEIRA 8MM PU",
+          "referencia": "8MM PU",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Hidráulico",
+          "codigo": "",
+          "descricao": "NIPLE ROSCÁVEL PVC 3/4\"",
+          "referencia": "3/4\"",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Hidráulico",
+          "codigo": "",
+          "descricao": "COTOVELO ROSCÁVEL 3/4\"",
+          "referencia": "3/4\"",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Hidráulico",
+          "codigo": "",
+          "descricao": "CONTATORA C32 220V/380V",
+          "referencia": "C32 220V/380V",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-11-22",
+      "observacoes": "MATERIAL NECESSÁRIO PARA MÁQUINA DE CORTE GALPÃO 2.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "3000MMx1000MMx30MM"
+    },
+    {
+      "numero": "M151",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Emergencial",
+      "tipoComponente": "Mecânico",
+      "descricao": "SERVIÇO DE TERMOGRAFIA",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SERVIÇO DE TERMOGRAFIA",
+          "referencia": "",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-11-22",
+      "observacoes": "SERVIÇO NECESSÁRIO PARA AVALIAR AS CONDIÇÕES DA SUBESTAÇÃO ELÉTRICA DA FÁBRICA.",
+      "status": "Cancelada",
+      "codigo": "",
+      "referencia": ""
+    },
+    {
+      "numero": "M150",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Eletrônico",
+      "descricao": "INVERSOR DE FREQUÊNCIA UNPUT 380V OUTPUT 380V 7 A 10 AMPERES",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Eletrônico",
+          "codigo": "",
+          "descricao": "INVERSOR DE FREQUÊNCIA UNPUT 380V OUTPUT 380V 7 A 10 AMPERES",
+          "referencia": "380V 7 A 10 AMPERES",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-11-21",
+      "observacoes": "MATERIAL NECESSÁRIO PARA SUBSTITUIÇÃO DO EQUIPAMENTO COM DEFEITO, O MESMO FARÁ A LIGAÇÃO DO MOTOR DO ALINHADOR DA LAMINADORA.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "380V 7 A 10 AMPERES"
+    },
+    {
+      "numero": "M149",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "\"ACOMPLAMENTO RÍGIDO 6008 Ø interno 40mm Largura 15mm Ø externo 68mm\"",
+      "quantidade": 6,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "6008",
+          "descricao": "\"ACOMPLAMENTO RÍGIDO 6008 Ø interno 40mm Largura 15mm Ø externo 68mm\"",
+          "referencia": "",
+          "quantidade": 6,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-11-19",
+      "observacoes": "MATERIAL NECESSÁRIO PARA SUBSTITUIÇÃO NO TEAR 335, POIS O MESMO ESTÁ DANIFICADO.",
+      "status": "Pendente",
+      "codigo": "6008",
+      "referencia": ""
+    },
+    {
+      "numero": "M148",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "SERVIÇO DE AJUSTE DE MEDIDA INTERNA EM ACOPLAMENTO",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SERVIÇO DE AJUSTE DE MEDIDA INTERNA EM ACOPLAMENTO",
+          "referencia": "",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SERVIÇO DE RECUPERAÇÃO DE LUVA INTERNA REDUTOR DE VELOCIDADE COM RASGO DE CHAVETA",
+          "referencia": "",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "RECUPERAÇÃO DE MEDIDA EIXO DE ENGRENAGEM DE CORRENTE",
+          "referencia": "",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-12-18",
+      "observacoes": "SERVIÇO DE USINAGEM EM PEÇAS PARA A EXTRUSORA LOREX.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": ""
+    },
+    {
+      "numero": "M147",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "QUADRO DE COMANDO ELÉTRICO",
+      "quantidade": 3,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "QUADRO DE COMANDO ELÉTRICO",
+          "referencia": " 260x800x600",
+          "quantidade": 3,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-11-19",
+      "observacoes": "AQUISIÇÃO DE QUADROS DE COMANDO ELÉTRICO PARA PROTEÇÃO DOS COMPONENTES ELÉTRICOS NO GALPÃO 2.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": " 260x800x600"
+    },
+    {
+      "numero": "M146",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "SERVIÇO DE RECUPERAÇÃO DE MOTORES DE COMPRESSORES",
+      "quantidade": 2,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SERVIÇO DE RECUPERAÇÃO DE MOTORES DE COMPRESSORES",
+          "referencia": "",
+          "quantidade": 2,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-11-18",
+      "observacoes": "SERVIÇO DE RECUPERAÇÃO DE MOTORES DE DOIS COMPRESSORES DE 2Hp CADA, QUE SERÃO REUTILIZADOS COMO SUPORTE NO CORTE DE PANO DE CAFÉ.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": ""
+    },
+    {
+      "numero": "M145",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "SERVIÇO DE CALIBRAÇÃO DE PERIFÉRICOS",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SERVIÇO DE CALIBRAÇÃO DE PERIFÉRICOS",
+          "referencia": "DISPOSITIVOS PERIFÉRICOS DE SEGURANÇA",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-11-19",
+      "observacoes": "SERVIÇO DE CALIBRAÇÃO DE PERIFÉRICOS DE SEGURANÇA. DEVE SER FEITA A CALIBRAÇÃO PARA PREVENÇÃO CONTRA FISCALIZAÇÕES E EVITAR ACIDENTES FATAIS.",
+      "status": "Pendente",
+      "codigo": "",
+      "referencia": "DISPOSITIVOS PERIFÉRICOS DE SEGURANÇA"
+    },
+    {
+      "numero": "M144",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "MANÔMETRO",
+      "quantidade": 4,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "MANÔMETRO",
+          "referencia": "CAIXA INOX ROSCA HORIZONTAL 1/8\" BSP ESCALA 0 A 10 Bar 240 Psi",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "TUBO",
+          "referencia": "PPR 1\"",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "TUBO",
+          "referencia": "PPR 1.1/2\"",
+          "quantidade": 60,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "TUBO",
+          "referencia": "PPR 2\"",
+          "quantidade": 15,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "REDUÇÃO ",
+          "referencia": "PPR 2\" PARA 1.1/2\"",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CURVA LONGA",
+          "referencia": "PPR 90° 1\"",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "VÁLVULA  ROSCAVEL",
+          "referencia": "ESFÉRICA TRIPARTIDA FECHO RÁPIDO 2\"",
+          "quantidade": 6,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "VÁLVULA  ROSCAVEL",
+          "referencia": "ESFÉRICA TRIPARTIDA FECHO RÁPIDO 1\"",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "TEE COM REDUÇÃO",
+          "referencia": "PPR 1.1/2\" PARA 1\"",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "TEE  ",
+          "referencia": "PPR 2\" ",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "TEE  ",
+          "referencia": "PPR 1.1/2\" ",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CRUZETA ",
+          "referencia": "PPR 2\"",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CURVA 90°",
+          "referencia": "PPR 2\"",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CURVA 90°",
+          "referencia": "PPR 1.1/2\"",
+          "quantidade": 5,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-11-18",
+      "observacoes": "MATERIAL NECESSÁRIO PARA INSTALAÇÃO DE ATERRAMENTO NO PAINEL DE COMANDO DA MÁQUINA EXTRUSORA DE COMPOSTO. A AUSENCIA DE ATERRAMENTO CAUSA PANE NO TOTEN DE COMANDO DA MÁQUINA.",
+      "status": "Pendente",
+      "codigo": "",
+      "referencia": "CAIXA INOX ROSCA HORIZONTAL 1/8\" BSP ESCALA 0 A 10 Bar 240 Psi"
+    },
+    {
+      "numero": "M143",
+      "setor": "Produção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "SERVIÇO DE USINAGEM DE TAMPA DE DEGASAGEM DA EXTRUSORA COMPOSTO",
+      "quantidade": 2,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SERVIÇO DE USINAGEM DE TAMPA DE DEGASAGEM DA EXTRUSORA COMPOSTO",
+          "referencia": "",
+          "quantidade": 2,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "ALEX",
+      "dataSolicitacao": "2026-09-11",
+      "observacoes": "SERVIÇO DE DESBASTE NA PEÇA UTILIZADA NO SISTEMA DE REMOÇÃO DE GASES EMITIDOS DURANTE O PROCESSO DE EXTRUSÃO.",
+      "status": "Pendente",
+      "codigo": "",
+      "referencia": ""
+    },
+    {
+      "numero": "M142",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "FILTRO SECADOR 3/8",
+      "quantidade": 2,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "FILTRO SECADOR 3/8",
+          "referencia": "",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "TUBO DE COBRE 3/8",
+          "referencia": "",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "TUBO DE COBRE 1/4",
+          "referencia": "",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PORCA ",
+          "referencia": "3/8\"",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PORCA ",
+          "referencia": "1/4\"",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CONTACTORA",
+          "referencia": "32A",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CAPACITOR ",
+          "referencia": "200-250 µF",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CAPACITOR ",
+          "referencia": "12µF",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SOLDA FOSCOP",
+          "referencia": "",
+          "quantidade": 6,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PRESSOSTATO",
+          "referencia": "KP15",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "VÁLVULA DE SERVIÇO ",
+          "referencia": "",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "COMPRESSOR ",
+          "referencia": "EMERSON COPELAND CR27K6M-PFV-141 (R-22)",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "MOTOR VENTILADOR DO CONDENSADOR",
+          "referencia": "",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "OXYTURBO",
+          "referencia": "RECARGA DE 1 CILINDRO",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "NITROGENIO",
+          "referencia": "RECARGA DE 1 CILINDRO",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "MANTA FILTRANTE P-210",
+          "referencia": "MARCA 3M",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "FLUIDO 141B",
+          "referencia": "",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-12-03",
+      "observacoes": "MATERIAL NECESSÁRIO PARA MANUTENÇÃO CORRETIVA NO PAINEL ELÉTRICO DE COMANDO DA MÁQUINA EXTRUSORA DE RÁFIA. O PAINEL NÃO ESTÁ FUNCIONANDO DA FORMA ADEQUADA, SENDO NECESSÁRIA MANUTENÇÃO CORRETIVA NO SISTEMA DE RESFRIAMENTO. CASO NÃO SEJA REALIZADO, APRESENTA RISCO GRAVE DE DANOS A FÁBRICA POR CURTO CIRCUITO, PERDA TOTAL DO PAINEL/MÁQUINA EXTRUSORA, E RISCO DE ACIDENTES",
+      "status": "Pendente",
+      "codigo": "",
+      "referencia": ""
+    },
+    {
+      "numero": "M141",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "CABO SINGELO",
+      "quantidade": 110,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CABO SINGELO",
+          "referencia": "50mm VERDE",
+          "quantidade": 110,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CABO SINGELO ",
+          "referencia": "10mm VERDE",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "TERMINAL OLHAL",
+          "referencia": "50mm ",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "TERMINAL OLHAL",
+          "referencia": "10mm ",
+          "quantidade": 10,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-11-14",
+      "observacoes": "MATERIAL NECESSÁRIO PARA INSTALAÇÃO DE ATERRAMENTO NO PAINEL DE COMANDO DA MÁQUINA EXTRUSORA DE COMPOSTO. A AUSENCIA DE ATERRAMENTO CAUSA PANE NO TOTEN DE COMANDO DA MÁQUINA.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "50mm VERDE"
+    },
+    {
+      "numero": "M140",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "ABRAÇADEIRA",
+      "quantidade": 500,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ABRAÇADEIRA",
+          "referencia": "NYLON 3,6X200",
+          "quantidade": 500,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "JOVERLEY",
+      "dataSolicitacao": "2025-11-13",
+      "observacoes": "MATERIAL NECESSÁRIO PARA REPAROS NAS FIAÇÕES DAS GAIOLAS DOS TEARES BAGS.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "NYLON 3,6X200"
+    },
+    {
+      "numero": "M139",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "TENSION PAD FELT - N (FELTRO DE TENSÃO N)",
+      "quantidade": 2000,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11405099000",
+          "descricao": "TENSION PAD FELT - N (FELTRO DE TENSÃO N)",
+          "referencia": "",
+          "quantidade": 2000,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-11-13",
+      "observacoes": "MATERIAL NECESSÁRIO PARA SUBSTITUIÇÃO NOS TEARES, POIS NÃO TEMOS MAIS EM ESTOQUE.",
+      "status": "Pendente",
+      "codigo": "11405099000",
+      "referencia": ""
+    },
+    {
+      "numero": "M138",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "SERVIÇO DE RECUPERAÇÃO DA UNIÃO ROTATIVA DA EXTRUSORA",
+      "quantidade": 2,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SERVIÇO DE RECUPERAÇÃO DA UNIÃO ROTATIVA DA EXTRUSORA",
+          "referencia": "",
+          "quantidade": 2,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-11-13",
+      "observacoes": "MATERIAL NECESSÁRIO PARA REALIZAÇÃO DE CORTE QUENTE DOS FIOS DE RÁFIA DA EXTRUSORA.",
+      "status": "Pendente",
+      "codigo": "",
+      "referencia": ""
+    },
+    {
+      "numero": "M137",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "LÂMINA OLFA SKB-2/5B",
+      "quantidade": 20,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "LÂMINA OLFA SKB-2/5B",
+          "referencia": "OLFA SKB-2/5B",
+          "quantidade": 20,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-11-13",
+      "observacoes": "MATERIAL NECESSÁRIO PARA TROCA DAS LÂMINAS DOS ESTILETES.",
+      "status": "Pendente",
+      "codigo": "",
+      "referencia": "OLFA SKB-2/5B"
+    },
+    {
+      "numero": "M136",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "SERVIÇO DE CONFECÇÃO DE PONTEIRA PARA A PISTOLA DE CORTE QUENTE DA EXTRUSORA",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SERVIÇO DE CONFECÇÃO DE PONTEIRA PARA A PISTOLA DE CORTE QUENTE DA EXTRUSORA",
+          "referencia": "",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-11-13",
+      "observacoes": "MATERIAL NECESSÁRIO PARA REALIZAÇÃO DE CORTE QUENTE DOS FIOS DE RÁFIA DA EXTRUSORA.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": ""
+    },
+    {
+      "numero": "M135",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "GRAXA GRAFITADA MULTIUSO (PARA JUNTAS HOMOCINÉTICAS / ALTA TEMPERATURA)",
+      "quantidade": 20,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "GRAXA GRAFITADA MULTIUSO (PARA JUNTAS HOMOCINÉTICAS / ALTA TEMPERATURA)",
+          "referencia": "NLGI 1",
+          "quantidade": 20,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-11-13",
+      "observacoes": "MATERIAL NECESSÁRIO PARA LUBRIFICAÇÃO DAS JUNTAS HOMOCINÉTICAS, RESISTENTES À ALKTAS TEMPERATURAS DAS MÁQUINAS INDUSTRIAIS.",
+      "status": "Pendente",
+      "codigo": "",
+      "referencia": "NLGI 1"
+    },
+    {
+      "numero": "M134",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "SERVIÇO DE CONFECÇÃO DE ENGRENAGEM DUPLA ASA 40 COM 41 DENTES",
+      "quantidade": 4,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SERVIÇO DE CONFECÇÃO DE ENGRENAGEM DUPLA ASA 40 COM 41 DENTES",
+          "referencia": " ASA 40 COM 41 DENTES",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ROLAMENTO UC 209",
+          "referencia": "UC209",
+          "quantidade": 8,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-11-12",
+      "observacoes": "MATERIAL NECESSÁRIO PARA SUBSTITUIÇÃO, POIS A ENGRENAGEM ATUAL SE ENCONTRA COM OS DENTES DANIFICADOS - NOVA 10.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": " ASA 40 COM 41 DENTES"
+    },
+    {
+      "numero": "M133",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "TECLADO 4 TECLAS OVAL COMPL. ",
+      "quantidade": 10,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "TECLADO 4 TECLAS OVAL COMPL. ",
+          "referencia": "",
+          "quantidade": 10,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-11-10",
+      "observacoes": "TECLADO DE COMANDO 4 TECLAS UTILIZADO NAS BOBINADEIRAS DA EXTRUSORA LOFIL. SEM O TECLADO, NÃO É POSSÍVEL ACIONAR O COMANDO DE BOBINAMENTO\nTEMOS 8 EM USO, SENDO 2 COM DEFEITO, E NENHUM EM ESTOQUE.\n",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": ""
+    },
+    {
+      "numero": "M132",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "AGULHA BARBUDA MEDIDOR 10",
+      "quantidade": 800,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "13.135.80.120",
+          "descricao": "AGULHA BARBUDA MEDIDOR 10",
+          "referencia": "BEARDED NEEDLE GAUGE 10",
+          "quantidade": 800,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "RONÉLIO",
+      "dataSolicitacao": "2025-11-10",
+      "observacoes": "MATERIAL PARA COSTURA NAS MÁQUINAS TRAVA,  NECESSÁRIO URGÊNCIA, TENDO EM VISTA QUE NÃO TEMOS MAIS EM ESTOQUE, IMPOSSIBILITANDO A PRODUÇÃO DA MÁQUINAS.",
+      "status": "Cancelada",
+      "codigo": "13.135.80.120",
+      "referencia": "BEARDED NEEDLE GAUGE 10"
+    },
+    {
+      "numero": "M131",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "GRAXA PARA ROLAMENTO ALTA TEMPERATURA ",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "GRAXA PARA ROLAMENTO ALTA TEMPERATURA ",
+          "referencia": "220°C COM BASE DE LÍTIO",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-11-05",
+      "observacoes": "GRAXA UTILIZADA PARA ROLAMENTOS DE BOBINADORES DA EXTRUSORA LOFIL (A GRAXA ATUAL NÃO É A IDEAL, DANIFICANDO O ROLAMENTO EM MENOS TEMPO).",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "220°C COM BASE DE LÍTIO"
+    },
+    {
+      "numero": "M130",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "\"REBOBINAMENTO MOTOR ELÉTRICO DE 1.0CV Troca de 4 rolamentos SERVIÇO DE TORNEARIA Mão de obra\"",
+      "quantidade": 2,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "\"REBOBINAMENTO MOTOR ELÉTRICO DE 1.0CV Troca de 4 rolamentos SERVIÇO DE TORNEARIA Mão de obra\"",
+          "referencia": "1.0CV ",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "\"REBOBINAMENTO MOTOR ELÉTRICO DE 1.0CV Troca de 6 rolamentos SERVIÇO DE TORNEARIA Mão de obra\"",
+          "referencia": "1.0CV ",
+          "quantidade": 3,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-11-04",
+      "observacoes": "SERVIÇO DE REBOBINAMENTO DOS MOTORES EM CURTO DOS TEARES NOVA 06.",
+      "status": "Pendente",
+      "codigo": "",
+      "referencia": "1.0CV "
+    },
+    {
+      "numero": "M129",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "FONTE CHAVEADA 24V 15A BIVOLT 60HZ INDUSTRIAL",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "FONTE CHAVEADA 24V 15A BIVOLT 60HZ INDUSTRIAL",
+          "referencia": "24V 15A BIVOLT 60HZ INDUSTRIAL",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-11-04",
+      "observacoes": "MATERIAL NECESSÁRIO PARA SUBSTITUIÇÃO DA PEÇA ORIGINAL DANIFICADA DA MÁQUINA CABLEADORA.",
+      "status": "Pendente",
+      "codigo": "",
+      "referencia": "24V 15A BIVOLT 60HZ INDUSTRIAL"
+    },
+    {
+      "numero": "M128",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "VENTILADOR REXNORD DE 4 POLEGADAS, REC 22038B2 T VAC 220/240 Hz 50 AMP 0.10",
+      "quantidade": 5,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "VENTILADOR REXNORD DE 4 POLEGADAS, REC 22038B2 T VAC 220/240 Hz 50 AMP 0.10",
+          "referencia": " REC 22038B2 T VAC 220/240 Hz 50 AMP 0.10",
+          "quantidade": 5,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-11-10",
+      "observacoes": "MATERIAL NECESSÁRIO PARA OS TEARES BAGS.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": " REC 22038B2 T VAC 220/240 Hz 50 AMP 0.10"
+    },
+    {
+      "numero": "M127",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Outro",
+      "descricao": "SERVIÇO ELÉTRICO TERCEIRIZADO",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "SERVIÇO ELÉTRICO TERCEIRIZADO",
+          "referencia": "BRUNO HONORÁRIO FERREIRA CNPJ: 58.448.034/0001-23 / CPF: 009.167.612-66  AGÊNCIA: 0001  CONTA CORRENTE: 397453349-3 BANCO: NUBANK",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-11-04",
+      "observacoes": "SERVIÇOS ELÉTRO/ELETRÔNICOS EM GERAL.",
+      "status": "Pendente",
+      "codigo": "",
+      "referencia": "BRUNO HONORÁRIO FERREIRA CNPJ: 58.448.034/0001-23 / CPF: 009.167.612-66  AGÊNCIA: 0001  CONTA CORRENTE: 397453349-3 BANCO: NUBANK"
+    },
+    {
+      "numero": "M126",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Outro",
+      "descricao": "DESENGRAXANTE ALCALINO 5L ALLCHEM",
+      "quantidade": 6,
+      "unidade": "L",
+      "items": [
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "DESENGRAXANTE ALCALINO 5L ALLCHEM",
+          "referencia": "5L",
+          "quantidade": 6,
+          "unidade": "L"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-11-04",
+      "observacoes": "SERVIÇO DE CONFECÇÃO DE TELA FILTRANTE PARA EXTRUSORA LOREX, A ATUAL APRESENTA FUROS, IMPEDINDO SEU USO NA EXTRUSORA.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "5L"
+    },
+    {
+      "numero": "M125",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "SERVIÇO DE CONFECÇÃO DE PENEIRA EM CHAPA DE INOX DE 3MM COM FUROS DE 6MM PARA LOREX",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SERVIÇO DE CONFECÇÃO DE PENEIRA EM CHAPA DE INOX DE 3MM COM FUROS DE 6MM PARA LOREX",
+          "referencia": "",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-11-03",
+      "observacoes": "SERVIÇO DE CONFECÇÃO DE TELA FILTRANTE PARA EXTRUSORA LOREX, A ATUAL APRESENTA FUROS, IMPEDINDO SEU USO NA EXTRUSORA.",
+      "status": "Pendente",
+      "codigo": "",
+      "referencia": ""
+    },
+    {
+      "numero": "M124",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "SERVIÇO DE AFIAÇÃO DE JOGO DE FACAS",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SERVIÇO DE AFIAÇÃO DE JOGO DE FACAS",
+          "referencia": "",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "ALEX",
+      "dataSolicitacao": "2025-10-30",
+      "observacoes": "SERVIÇO DE AFIAÇÃO DE JOGO DE FACAS UTILIZADAS PARA CORTE NA SAÍDA DO CANHÃO DA EXTRUSORA DE COMPOSTO.",
+      "status": "Pendente",
+      "codigo": "",
+      "referencia": ""
+    },
+    {
+      "numero": "M123",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "FLEXIBLE JAW COUPLING (L110)",
+      "quantidade": 4,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11208330000",
+          "descricao": "FLEXIBLE JAW COUPLING (L110)",
+          "referencia": "ACOPLAMENTO MANDÍBULA FLEXÍVEL",
+          "quantidade": 4,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "ALENCAR",
+      "dataSolicitacao": "2025-10-27",
+      "observacoes": "MATERIAL SOLICITADO PARA REPOSIÇÃO NA MÁQUINA LOREX, POIS O QUE ESTAVA EM USO ESTOUROU DURANTE PRODUÇÃO.",
+      "status": "Cancelada",
+      "codigo": "11208330000",
+      "referencia": "ACOPLAMENTO MANDÍBULA FLEXÍVEL"
+    },
+    {
+      "numero": "M122",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "ENGRENAGEM HELICOIDAL 25T (MÃO ESQUERDA)",
+      "quantidade": 15,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130496410",
+          "descricao": "ENGRENAGEM HELICOIDAL 25T (MÃO ESQUERDA)",
+          "referencia": "HELICAL GEAR 25T (LEFT HAND)",
+          "quantidade": 15,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130496110",
+          "descricao": "ENGRENAGEM HELICOIDAL 40T",
+          "referencia": "HELICAL GEAR 40T",
+          "quantidade": 6,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130496500",
+          "descricao": "ENGRENAGEM HELICOIDAL 38T",
+          "referencia": "HELICAL GEAR 38T",
+          "quantidade": 6,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "11130458900",
+          "descricao": "\" RODA DENTADA-23T-820\"",
+          "referencia": "SPROCKET-23T-820",
+          "quantidade": 6,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "RONÉLIO",
+      "dataSolicitacao": "2025-10-24",
+      "observacoes": "MATERIAL SOLICITADO PARA USO NA MÁQUINA NOVA 82.",
+      "status": "Aprovada",
+      "codigo": "11130496410",
+      "referencia": "HELICAL GEAR 25T (LEFT HAND)"
+    },
+    {
+      "numero": "M121",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "PARAFUSO SEXTAVADO",
+      "quantidade": 20,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARAFUSO SEXTAVADO",
+          "referencia": "4×40 PASSE 1.5",
+          "quantidade": 20,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "ALENCAR",
+      "dataSolicitacao": "2025-10-27",
+      "observacoes": "MATERIAL SOLICITADO PARA USO NA MÁQUINA LAMINADORA.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "4×40 PASSE 1.5"
+    },
+    {
+      "numero": "M120",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "JOGO DE CHAVE COMBINADA",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "JOGO DE CHAVE COMBINADA",
+          "referencia": "06 A 36",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CHAVE ALLEN",
+          "referencia": "14 A 20mm",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ALICATE UNIVERSAL",
+          "referencia": "",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ALICATE DE PRESSÃO",
+          "referencia": "",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "KIT 4 ALICATES TRAVA ANEL ",
+          "referencia": "EXTRATOR RETO E CURVO INTERNO E EXTERNO ",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "KIT CHAVE CANHÃO ",
+          "referencia": "06-10 mm",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "KIT EXTRATOR DE PARAFUSOS",
+          "referencia": "",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "JOGO DE CHAVE ALLEN T",
+          "referencia": "2.5 A 6mm",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "JOGO DE CHAVE FENDA",
+          "referencia": "",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "JOGO DE CHAVE PHILIPS",
+          "referencia": "",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "JOGO DE CHAVE CATRACA",
+          "referencia": "CARRINHO PARA FERRAMENTAS INDUSTRIAL",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "FURADEIRA 220V",
+          "referencia": "",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "VIRA MACHO MÉDIO DESANDADOR",
+          "referencia": "",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "VIRA MACHO T ",
+          "referencia": "1/4\" A 1/2\" 90mm",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "ALENCAR",
+      "dataSolicitacao": "2025-10-24",
+      "observacoes": "MATERIAL SOLICITADO PARA USO NO SETOR DE MANUTENÇÃO.",
+      "status": "Cancelada",
+      "codigo": "",
+      "referencia": "06 A 36"
+    },
+    {
+      "numero": "M119",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "\"UNIÃO ROTATIVA ø 1.1/4\"\" DIR. S/ ROL RWC ROSCA BSP DIREITA S/ ROLAMENTO FLUXO ÚNICO - PASSAGEM DE ÓLEO QUENTE\"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "94365",
+          "descricao": "\"UNIÃO ROTATIVA ø 1.1/4\"\" DIR. S/ ROL RWC ROSCA BSP DIREITA S/ ROLAMENTO FLUXO ÚNICO - PASSAGEM DE ÓLEO QUENTE\"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "94365\t\t\t\t\t\t\t\t",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "94366",
+          "descricao": "\"UNIÃO ROTATIVA ø 1.1/4\"\" ESQ. S/ ROL RWC ROSCA BSP ESQUERDA S/ ROLAMENTO FLUXO ÚNICO - PASSAGEM DE ÓLEO QUENTE\"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "94366\t\t\t\t\t\t\t\t",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "RONÉLIO",
+      "dataSolicitacao": "2025-10-24",
+      "observacoes": "MATERIAL NECESSÁRIO PARA TRABALHO DOS CILINDROS DE ÓLEO TÉRMICO E ARREFECIMENTO NA EXTRUSORA LOREX (UMA UNIÃO FOI RETIRADA PARA RECUPERAR E AS DEMAIS APRESENTAM VAZAMENTOS. NÃO TEMOS MATERIAL EM ESTOQUE).",
+      "status": "Pendente",
+      "codigo": "94365",
+      "referencia": "94365\t\t\t\t\t\t\t\t"
+    },
+    {
+      "numero": "M118",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "AGULHA\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+      "quantidade": 2000,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JCM 79119",
+          "descricao": "AGULHA\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "NEEDLE",
+          "quantidade": 2000,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "RONÉLIO",
+      "dataSolicitacao": "2025-08-23",
+      "observacoes": "MATERIAL EMERGENCIAL PARA AS MÁQUINAS ALÇA E CADARÇO.",
+      "status": "Pendente",
+      "codigo": "JCM 79119",
+      "referencia": "NEEDLE"
+    },
+    {
+      "numero": "M117",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Ordem de serviço",
+      "tipoComponente": "Mecânico",
+      "descricao": "SERVIÇO DE USINAGEM DE CILINDRO DE BORRACHA 20MMX1700MM",
+      "quantidade": 5,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SERVIÇO DE USINAGEM DE CILINDRO DE BORRACHA 20MMX1700MM",
+          "referencia": "20MMX1700MM",
+          "quantidade": 5,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-11-12",
+      "observacoes": "SERVIÇO DE USINAGEM DOS CILINDROS DA LAMINADORA, POIS OS MESMOS APRESENTAM DEFORMIDADES NAS SUPERFÍCIES.",
+      "status": "Aprovada",
+      "codigo": "",
+      "referencia": "20MMX1700MM"
+    },
+    {
+      "numero": "M116",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Outro",
+      "descricao": "IMPRESSORA ARGOX 214 PLUS 2.4A SERIAL N. 21B53961",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "IMPRESSORA ARGOX 214 PLUS 2.4A SERIAL N. 21B53961",
+          "referencia": "ARGOX 214 PLUS 2.4A SERIAL N. 21B53961",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Alta",
+      "solicitante": "RAIDSON",
+      "dataSolicitacao": "2025-10-24",
+      "observacoes": "MATERIAL PARA ETIQUETAR PRODUTOS ACABADOS DO GALPÃO 2.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "ARGOX 214 PLUS 2.4A SERIAL N. 21B53961"
+    },
+    {
       "numero": "M115",
       "setor": "Manutenção",
       "tipoSolicitacao": "Reposição",
