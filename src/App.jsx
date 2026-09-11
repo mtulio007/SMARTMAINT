@@ -1910,6 +1910,15 @@ function App() {
                     </div>
                   </div>
 
+                   <label className="space-y-1 text-xs text-slate-700">
+                      <span>Status</span>
+                      <select name="status" value={purchaseForm.status} onChange={handlePurchaseChange} className="w-48 rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs outline-none transition focus:border-brand-500">
+                        {purchaseStatusOptions.map(option => (
+                          <option key={option} value={option}>{option}</option>
+                        ))}
+                      </select>
+                    </label>
+
                   <div className="grid gap-3 sm:grid-cols-2">
                     <label className="space-y-1 text-xs text-slate-700">
                       <span>Número</span>
@@ -1940,6 +1949,29 @@ function App() {
                         ))}
                       </select>
                     </label>
+                  </div>
+                   
+                   
+                   <div className="grid gap-3 sm:grid-cols-2">
+                    <label className="space-y-1 text-xs text-slate-700">
+                      <span>Prioridade</span>
+                      <select name="prioridade" value={purchaseForm.prioridade} onChange={handlePurchaseChange} className="w-48 rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs outline-none transition focus:border-brand-500">
+                        <option value="Baixa">Baixa</option>
+                        <option value="Média">Média</option>
+                        <option value="Alta">Alta</option>
+                        <option value="Urgente">Urgente</option>
+                      </select>
+                    </label>
+                  </div>
+
+                  
+
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <label className="space-y-1 text-xs">
+                      <span className={`block font-medium ${purchaseInvalidFields.includes('solicitante') ? 'text-red-600' : 'text-slate-700'}`}>Solicitante*</span>
+                      <input ref={el => (purchaseFormRefs.current.solicitante = el)} type="text" name="solicitante" value={purchaseForm.solicitante} onChange={handlePurchaseChange} placeholder="Informe o solicitante" className="w-48 rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs outline-none transition focus:border-brand-500" />
+                    </label>
+                   
                   </div>
 
                   <div className="border-t border-slate-200 pt-3">
@@ -2001,32 +2033,7 @@ function App() {
                     </div>
                   </div>
 
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <label className="space-y-1 text-xs text-slate-700">
-                      <span>Prioridade</span>
-                      <select name="prioridade" value={purchaseForm.prioridade} onChange={handlePurchaseChange} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs outline-none transition focus:border-brand-500">
-                        <option value="Baixa">Baixa</option>
-                        <option value="Média">Média</option>
-                        <option value="Alta">Alta</option>
-                        <option value="Urgente">Urgente</option>
-                      </select>
-                    </label>
-                  </div>
-
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <label className="space-y-1 text-xs">
-                      <span className={`block font-medium ${purchaseInvalidFields.includes('solicitante') ? 'text-red-600' : 'text-slate-700'}`}>Solicitante*</span>
-                      <input ref={el => (purchaseFormRefs.current.solicitante = el)} type="text" name="solicitante" value={purchaseForm.solicitante} onChange={handlePurchaseChange} placeholder="Informe o solicitante" className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs outline-none transition focus:border-brand-500" />
-                    </label>
-                    <label className="space-y-1 text-xs text-slate-700">
-                      <span>Status</span>
-                      <select name="status" value={purchaseForm.status} onChange={handlePurchaseChange} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs outline-none transition focus:border-brand-500">
-                        {purchaseStatusOptions.map(option => (
-                          <option key={option} value={option}>{option}</option>
-                        ))}
-                      </select>
-                    </label>
-                  </div>
+                 
 
                   <label className="space-y-1 text-xs text-slate-700">
                     <span>Justificativas</span>

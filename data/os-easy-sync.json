@@ -117,6 +117,2036 @@
   ],
   "purchases": [
     {
+      "numero": "M115",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Elétrico",
+      "descricao": "DISJUNTOR TRIFASICO 50 A CURVA C",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "DISJUNTOR TRIFASICO 50 A CURVA C",
+          "referencia": "50A CURVA C",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "DISJUNTOR TRIFASICO 63A",
+          "referencia": "63A CAIXA MOLDADA",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "CAIXA SOBREPOR 40X40X20 BN IP65",
+          "referencia": "40X40X20 BN IP65",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "\"KIT BARRAMENTO TRIFASICO PARA 16 CIRCUITOS 40A (BRRA DE ATERRAMENTO, BARRA NEUTRO, TERMINAL DE CONEXÃO, DISJUNTOR BARRAMENTO)\"",
+          "referencia": "\"16 CIRCUITOS 40A (BRRA DE ATERRAMENTO, BARRA NEUTRO, TERMINAL DE CONEXÃO, DISJUNTOR BARRAMENTO)\"",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "TOMADA 10A 2P+T GALVANIZADA",
+          "referencia": "10A",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "TOMADA 10A 2P+T DUPLA GALVANIZADA",
+          "referencia": "10A",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "TOMADA 20A 2P+T DUPLA GALVANIZADA",
+          "referencia": "20A",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "TOMADA 20A 2P+T ÚNICA GALVANIZADA",
+          "referencia": "20A",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "PLUG MACHO 2P+T 20A",
+          "referencia": "PLUG MACHO 2P+T 20A",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "DISJUNTOR BIFÁSICO 25A",
+          "referencia": "25A",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "DISJUNTOR BIFÁSICO 16A",
+          "referencia": "16A",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "CABO SINGELO 10MM",
+          "referencia": "10MM",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "\"CABO SINGELO 4MM  (VERMELHO OU PRETO)\"",
+          "referencia": "4MM",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "\"CABO SINGELO 4MM  (VERDE OU AZUL)\"",
+          "referencia": "4MM",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "3X TRILHO DIN TS35 PERFURADO 10CM PARA DISJUNTOR",
+          "referencia": "DIN TS35 PERFURADO 10CM ",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "CANALETA PVC 25X75MM PARA QUADRO ELÉTRICO COM TAMPA",
+          "referencia": "PVC 25X75MM",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "PARAFUSO 6MM PHILLIPS",
+          "referencia": "6MM PHILLIPS",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "BUCHA 6MM PHILLIPS",
+          "referencia": "6MM PHILLIPS",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "BROCA WÍDEA 6MM",
+          "referencia": " WÍDEA 6MM",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "TERMINAL OLHAL 10MM",
+          "referencia": "10MM",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "TERMINAL OLHAL 16MM",
+          "referencia": "16MM",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "PARAFUSO AUTOBROCANTE 4.2X19 FLANG VONDER",
+          "referencia": " 4.2X19 FLANG VONDER",
+          "quantidade": 20,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "RENATA",
+      "dataSolicitacao": "2025-11-11",
+      "observacoes": "MATERIAL PARA ADEQUAÇÃO ELÉTRICA DO MAQUINÁRIO NO LABORATÓRIO.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "50A CURVA C"
+    },
+    {
+      "numero": "M114",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "BARRA ROSCADA",
+      "quantidade": 2,
+      "unidade": "M",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BARRA ROSCADA",
+          "referencia": "1/2\"",
+          "quantidade": 2,
+          "unidade": "M"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PORCA PARA BARRA ROSCADA",
+          "referencia": "1/2\"",
+          "quantidade": 12,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "ALENCAR",
+      "dataSolicitacao": "2025-10-23",
+      "observacoes": "MATERIAL PARA OPERAÇÃO MECÂNICA DOS CABEÇOTES E FIXAÇÃO DAS MAQUINAS DE CORTE.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "1/2\""
+    },
+    {
+      "numero": "M113",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Outro",
+      "descricao": "BLOCO DE CONCRETO ",
+      "quantidade": 216,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "BLOCO DE CONCRETO ",
+          "referencia": "14cm X 19cm X 44cm",
+          "quantidade": 216,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "CIMENTO",
+          "referencia": "SACO",
+          "quantidade": 50,
+          "unidade": "KG"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "AREIA",
+          "referencia": "M²",
+          "quantidade": 4,
+          "unidade": "M"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "BRITA",
+          "referencia": "M²",
+          "quantidade": 4,
+          "unidade": "M"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "TELA SOLDADA ",
+          "referencia": "PAINEL COM FIO 6 mm – MALHA 200 × 200 mm – AÇO CA-60",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "TUBO AÇO CARBONO ",
+          "referencia": "1\"",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "PERFIL TIPO C",
+          "referencia": "4\"",
+          "quantidade": 6,
+          "unidade": "M"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "VIGA I",
+          "referencia": "3\"",
+          "quantidade": 6,
+          "unidade": "M"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "METALON",
+          "referencia": "50x30 CHAPA 16",
+          "quantidade": 16,
+          "unidade": "M"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "TELHA",
+          "referencia": "GALVALUME ",
+          "quantidade": 9,
+          "unidade": "M"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-10-24",
+      "observacoes": "MATERIAL PARA CONSTRUÇÃO DE BACIA DE CONTENÇÃO PARA DESCARTE DE ÓLEO CONTAMINADO E ARMAZENAMENTO DE BARRIS DE ÓLEO PARA USO NAS MÁQUINAS.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "14cm X 19cm X 44cm"
+    },
+    {
+      "numero": "M112",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Compra",
+      "tipoComponente": "Elétrico",
+      "descricao": "DISJUNTOR ",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "DISJUNTOR ",
+          "referencia": "TRIFASICO 32A",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "DISJUNTOR ",
+          "referencia": "TRIFASICO 50A",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "CABO PP",
+          "referencia": "PP 4 VIAS 10mm",
+          "quantidade": 140,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "KIT BARRAMENTO ",
+          "referencia": "CENTRAL PARA 14 CIRCUITOS",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "CORREIA",
+          "referencia": "M38",
+          "quantidade": 8,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-10-24",
+      "observacoes": "MATERIAL PARA INSTALAÇÃO ELÉTRICA NAS MAQUINAS DE CORTE DO GALPÃO 2.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "TRIFASICO 32A"
+    },
+    {
+      "numero": "M111",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "COMPRESSOR SCHULZ",
+      "quantidade": 3,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "COMPRESSOR SCHULZ",
+          "referencia": "5HP",
+          "quantidade": 3,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "TUBULAÇÃO ",
+          "referencia": "1\" AÇO CARBONO SEM COSTURA",
+          "quantidade": 60,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "TUBULAÇÃO ",
+          "referencia": "1/2\" AÇO CARBONO SEM COSTURA",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CURVA LONGA ",
+          "referencia": "1/2\" PARA AR COMPRIMIDO",
+          "quantidade": 8,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "VÁLVULA ",
+          "referencia": "TRIPARTIDA ROSCAVEL FECHO RÁPIDO 1/2\"",
+          "quantidade": 5,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "MANOMETRO ",
+          "referencia": "SEM REFERÊNCIA",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PURGADOR ",
+          "referencia": "SEM REFERÊNCIA",
+          "quantidade": 300,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "RONÉLIO",
+      "dataSolicitacao": "2025-11-14",
+      "observacoes": "COMPRESSORES PARA USO NAS MAQUINAS DE CORTE DO GALPÃO 2.",
+      "status": "Cancelada",
+      "codigo": "",
+      "referencia": "5HP"
+    },
+    {
+      "numero": "M110",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Elétrico",
+      "descricao": "CABO PARA PORTA ELETRODO",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "CABO PARA PORTA ELETRODO",
+          "referencia": "16mm² 60245 IEC81 YH 06.03.071",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "PORTA ELETRODO ",
+          "referencia": "CARBOGRAFITE 1000A",
+          "quantidade": 4,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "FRANCISCO",
+      "dataSolicitacao": "2025-10-24",
+      "observacoes": "MATERIAL PARA USO DOS SOLDADORES E SERRALHEIROS NA ESTRUTURA DO GALPÃO 2.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "16mm² 60245 IEC81 YH 06.03.071"
+    },
+    {
+      "numero": "M109",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "ÓLEO PARA BOMBA DE VÁCUO ",
+      "quantidade": 10,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ÓLEO PARA BOMBA DE VÁCUO ",
+          "referencia": "VWC100",
+          "quantidade": 10,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "RONÉLIO",
+      "dataSolicitacao": "2025-10-15",
+      "observacoes": "ÓLEO PARA USO NA BOMBA DE VÁCUO DA EXTRUSORA DE COMPOSTO.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "VWC100"
+    },
+    {
+      "numero": "M108",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Ordem de serviço",
+      "tipoComponente": "Mecânico",
+      "descricao": "SERVIÇO DE REBOBINAMENTO",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SERVIÇO DE REBOBINAMENTO",
+          "referencia": "MOTOR ELÉTRICO 3CV",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "RONÉLIO",
+      "dataSolicitacao": "2025-10-14",
+      "observacoes": "REBOBINAMENTO DE MOTOR UTILIZADO PARA FAZER O MOVIMENTO DE SUBIDA E DESCIDA NA LAMINADORA.",
+      "status": "Aprovada",
+      "codigo": "",
+      "referencia": "MOTOR ELÉTRICO 3CV"
+    },
+    {
+      "numero": "M107",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "MANGUEIRA DE AR PT 300 1/2\"",
+      "quantidade": 80,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "MANGUEIRA DE AR PT 300 1/2\"",
+          "referencia": "PT 300 1/2\"",
+          "quantidade": 80,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-10-14",
+      "observacoes": "MATERIAL NECESSÁRIO PARA REPOSIÇÃO E MANUTENÇÃO DOS SISTEMAS PNEUMÁTICOS DA EXTRUSORA",
+      "status": "Aprovada",
+      "codigo": "",
+      "referencia": "PT 300 1/2\""
+    },
+    {
+      "numero": "M106",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Compra",
+      "tipoComponente": "Mecânico",
+      "descricao": "\"CHAVE LIGA/DESLIGA  3P 32A\"",
+      "quantidade": 10,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "14037503200",
+          "descricao": "\"CHAVE LIGA/DESLIGA  3P 32A\"",
+          "referencia": "ROTARY CAM SWITCH PADLOCK TYPE",
+          "quantidade": 10,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-10-15",
+      "observacoes": "MATERIAL NECESSÁRIO REPOSIÇÃO NOS TEARES NOVA 06.",
+      "status": "Comprada",
+      "codigo": "14037503200",
+      "referencia": "ROTARY CAM SWITCH PADLOCK TYPE"
+    },
+    {
+      "numero": "M105",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "ALAVANCA DE DESCARGA",
+      "quantidade": 56,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-C30-07/1",
+          "descricao": "ALAVANCA DE DESCARGA",
+          "referencia": "SHEDDING LEVER",
+          "quantidade": 56,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-C30-07/2",
+          "descricao": "ALAVANCA DE DESCARGA",
+          "referencia": "SHEDDING LEVER",
+          "quantidade": 56,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-C30-07/3",
+          "descricao": "ALAVANCA DE DESCARGA",
+          "referencia": "SHEDDING LEVER",
+          "quantidade": 56,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-C30-07/4",
+          "descricao": "ALAVANCA DE DESCARGA",
+          "referencia": "SHEDDING LEVER",
+          "quantidade": 56,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-C30-16",
+          "descricao": "BLOCO DE AJUSTE LONGO",
+          "referencia": "ADJUSTING BLOCK-LONG",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-C30-17",
+          "descricao": "BLOCO DE AJUSTE LONGO",
+          "referencia": "ADJUSTING BLOCK-LONG",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "GB6170-86",
+          "descricao": "PORCA M4",
+          "referencia": "NUT M4",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "GB6170-86",
+          "descricao": "PORCA M4",
+          "referencia": "NUT M4",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "GB70-85",
+          "descricao": "PARAFUSO M4X12",
+          "referencia": "SCREW M4X12",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "GB70-85",
+          "descricao": "PARAFUSO M4X7",
+          "referencia": "SCREW M4X7",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-D30-02",
+          "descricao": "CAME",
+          "referencia": "CAM",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-D30-07",
+          "descricao": "BLOCO DE UNIÃO DIREITO",
+          "referencia": "JOIN BLOCK-RIGHT",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-D30-06",
+          "descricao": "BLOCO DE UNIÃO ESQUERDO",
+          "referencia": "JOIN BLOCK-LEFT",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "A-1",
+          "descricao": "PLACA DE CORRENTE",
+          "referencia": "CHAIN BOARD",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "A-2",
+          "descricao": "PLACA DE CORRENTE",
+          "referencia": "CHAIN BOARD",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "A-3",
+          "descricao": "PLACA DE CORRENTE",
+          "referencia": "CHAIN BOARD",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "A-4",
+          "descricao": "PLACA DE CORRENTE",
+          "referencia": "CHAIN BOARD",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "A-5",
+          "descricao": "PLACA DE CORRENTE",
+          "referencia": "CHAIN BOARD",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "A-6",
+          "descricao": "PLACA DE CORRENTE",
+          "referencia": "CHAIN BOARD",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-H30-19",
+          "descricao": "MOLA DE TENSÃO",
+          "referencia": "TENSION SPRING",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-H30-24",
+          "descricao": "PINO ROSCADO / PRISIONEIRO",
+          "referencia": "STUD",
+          "quantidade": 60,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "GB70-85",
+          "descricao": "PARAFUSO M8X85",
+          "referencia": "SCREW (M8X85)",
+          "quantidade": 60,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-H30-16",
+          "descricao": "ROLO DE PRESSÃO",
+          "referencia": "PRESSURE ROLLER",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "GB641-86",
+          "descricao": "ANEL DE RETENÇÃO (TRAVA)",
+          "referencia": "CIR CLIP",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-C30-14",
+          "descricao": "ALÇA / MANOPLA",
+          "referencia": "HANDLE",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-C30-07/2",
+          "descricao": "AGULHA DE TRAMA VERTICAL",
+          "referencia": "WEFT NEEDLE-VERTICAL",
+          "quantidade": 60,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-D30-05",
+          "descricao": "ALAVANCA DA AGULHA DE TRAMA",
+          "referencia": "WEFT NEEDLE LEVER",
+          "quantidade": 60,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "GB/T71-1985",
+          "descricao": "PARAFUSO SEM CABEÇA (GRUB SCREW)",
+          "referencia": "GRUN SCREW",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-E55-08",
+          "descricao": "MANIVELA DA TRAMA",
+          "referencia": "WEFT CRANK",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "GB70-86",
+          "descricao": "PARAFUSO M4X14",
+          "referencia": "SCREW (M4X14)",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-E30-13",
+          "descricao": "SUPORTE DA FITA INFERIOR",
+          "referencia": "LOW-RIBBON HOLDER",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-J30-104",
+          "descricao": "OLHAL",
+          "referencia": "EYE LET",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-F30-07",
+          "descricao": "BUCHA DO ROLAMENTO",
+          "referencia": "BEARING BUSHING",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-G30-32",
+          "descricao": "MOLA",
+          "referencia": "SPRING",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-E110-07",
+          "descricao": "AGULHA DE TRAMA",
+          "referencia": "WEFT NEEDLE",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-G30-30",
+          "descricao": "AGULHA",
+          "referencia": "NEEDLE",
+          "quantidade": 800,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-E30-05",
+          "descricao": "ALAVANCA DA AGULHA DE TRAMA 10X27",
+          "referencia": "WEFT NEEDLE LEVER 10X27",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-L30-85",
+          "descricao": "SUPORTE DE FIXAÇÃO",
+          "referencia": "BRACKET HOLDER",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-L30-86",
+          "descricao": "ILHÓ / OLHAL",
+          "referencia": "EYELET",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-L30-87",
+          "descricao": "ARRUELA",
+          "referencia": "WASHER",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-L30-88",
+          "descricao": "PEÇA",
+          "referencia": "PIECE",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-L30-89",
+          "descricao": "PILAR CERÂMICO",
+          "referencia": "CERAMIC PILLAR",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-L30-51",
+          "descricao": "PARAFUSO",
+          "referencia": "SCREW",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-L30-90",
+          "descricao": "MOLA DE TENSÃO DA TRAMA",
+          "referencia": "WEFT TENSION SPRING",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-L30-06",
+          "descricao": "PORCA DE AJUSTE DE TENSÃO",
+          "referencia": "TENSION NUT",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-J30-09A",
+          "descricao": "MOLA DE TENSÃO DA TRAMA",
+          "referencia": "WEFT TENSION SPRING",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-J30-09B",
+          "descricao": "MOLA DE TENSÃO DA TRAMA",
+          "referencia": "WEFT TENSION SPRING",
+          "quantidade": 200,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JV10",
+          "descricao": "ROLAMENTO OSCILANTE D15",
+          "referencia": "OSCILLATING BEARING D 15",
+          "quantidade": 50,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-G30-11",
+          "descricao": "RODA SINCRONIZADORA / POLIA DE SINCRONISMO",
+          "referencia": "TIMING WHEEL",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-G30-03",
+          "descricao": "RODA SINCRONIZADORA / POLIA DE SINCRONISMO",
+          "referencia": "TIMING WHEEL",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-G30-06",
+          "descricao": "RODA SINCRONIZADORA / POLIA DE SINCRONISMO",
+          "referencia": "TIMING WHEEL",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-G30-07",
+          "descricao": "RODA SINCRONIZADORA / POLIA DE SINCRONISMO",
+          "referencia": "TIMING WHEEL",
+          "quantidade": 15,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-G45-50",
+          "descricao": "ENGRENAGEM",
+          "referencia": "GEAR",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-H45-14-2",
+          "descricao": "ENGRENAGEM",
+          "referencia": "GEAR",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-H45-54",
+          "descricao": "ENGRENAGEM",
+          "referencia": "GEAR",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-G30-44",
+          "descricao": "ENGRENAGEM 60 DENTES",
+          "referencia": "GEAR 60T",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-G30-45",
+          "descricao": "ENGRENAGEM",
+          "referencia": "GEAR",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-G30-38",
+          "descricao": "EIXO",
+          "referencia": "AXLE",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-G30-37",
+          "descricao": "ENGRENAGEM DE TROCA",
+          "referencia": "CHANGE GEAR",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-G30-41",
+          "descricao": "ENGRENAGEM DE TROCA",
+          "referencia": "CHANGE GEAR",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-J30-31",
+          "descricao": "ENGRENAGEM DE TROCA",
+          "referencia": "CHANGE GEAR",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-J30-04",
+          "descricao": "RODA SINCRONIZADORA / POLIA DE SINCRONISMO",
+          "referencia": "TIMING WHEEL",
+          "quantidade": 30,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-J30-93",
+          "descricao": "SEM DESCRIÇÃO",
+          "referencia": "SEM REFERÊNCIA",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-J30-31",
+          "descricao": "SEM DESCRIÇÃO",
+          "referencia": "CHANGE GEAR",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-J30-04",
+          "descricao": "SEM DESCRIÇÃO",
+          "referencia": "TIMING WHEEL",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-E110-12",
+          "descricao": "SEM DESCRIÇÃO",
+          "referencia": "UP RIBBON HOLDER",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-E55-16",
+          "descricao": "SEM DESCRIÇÃO",
+          "referencia": "SELVEDGE PLATE",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-E55-05",
+          "descricao": "SEM DESCRIÇÃO",
+          "referencia": "WEFT NEEDLE LEVER",
+          "quantidade": 20,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-E110-10",
+          "descricao": "SEM DESCRIÇÃO",
+          "referencia": "TAPE PLATE",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-F30-09/1",
+          "descricao": "SEM DESCRIÇÃO",
+          "referencia": "45º LATCH NEEDLE HOLDER (4X80) SEM SUPORTE",
+          "quantidade": 300,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "GB70-85",
+          "descricao": "SEM DESCRIÇÃO",
+          "referencia": "SCREW M4X8",
+          "quantidade": 100,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-G30-40",
+          "descricao": "SEM DESCRIÇÃO",
+          "referencia": "BLOCK",
+          "quantidade": 20,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "RONÉLIO",
+      "dataSolicitacao": "2025-10-13",
+      "observacoes": "MATERIAL NECESSÁRIO PARA MANUTENÇÃO CORRETIVA, SEM QUANTIDADES PARA ESTOQUE.",
+      "status": "Cancelada",
+      "codigo": "JYF-C30-07/1",
+      "referencia": "SHEDDING LEVER"
+    },
+    {
+      "numero": "M104",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Emergencial",
+      "tipoComponente": "Mecânico",
+      "descricao": "SUPORTE LEVE P/TUBOS E PIQUETES P/BARRAS REDONDAS",
+      "quantidade": 960,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "30.0078.0010.00",
+          "descricao": "SUPORTE LEVE P/TUBOS E PIQUETES P/BARRAS REDONDAS",
+          "referencia": "LIGHT SUPPORT FOR TUBES AND PIKERS ",
+          "quantidade": 960,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "13.815.02.0.00",
+          "descricao": "TUBO GUIA DE FIO INOX DIAM. 2 MM",
+          "referencia": "INOX YARN GUIDE TUBE DIAM. 2 MM",
+          "quantidade": 500,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "13.815.04.0.00",
+          "descricao": "TUBO GUIA DE FIO INOX DIAM. 4 MM",
+          "referencia": "INOX YARN GUIDE TUBE DIAM. 4 MM",
+          "quantidade": 452,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "13.135.80.120",
+          "descricao": "AGULHA BARBUDA MEDIDOR 10",
+          "referencia": "BEARDED NEEDLE GAUGE 10",
+          "quantidade": 692,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "13.091.01.000",
+          "descricao": "AGULHA FALSA DE FORMA LONGO GG10",
+          "referencia": "LONG SHAPED FALSE NEEDLE GG 10",
+          "quantidade": 630,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "13.083.01.000",
+          "descricao": "AGULHA FALSA DE FORMA CURTA",
+          "referencia": "SHORT SHAPE FALSE NEEDLE GG 10",
+          "quantidade": 246,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "13.095.76.116",
+          "descricao": "LIÇO COM ILHÓS ",
+          "referencia": "HEDDLE WITH EYELET ",
+          "quantidade": 300,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "RONÉLIO",
+      "dataSolicitacao": "2025-11-10",
+      "observacoes": "MATERIAL NECESSÁRIO PARA MANUTENÇÕES NAS MÁQUINAS TRAVA.",
+      "status": "Cancelada",
+      "codigo": "30.0078.0010.00",
+      "referencia": "LIGHT SUPPORT FOR TUBES AND PIKERS "
+    },
+    {
+      "numero": "M103",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "REGULADOR DE PRESSÃO DE 1/4\"",
+      "quantidade": 6,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "REGULADOR DE PRESSÃO DE 1/4\"",
+          "referencia": "1/4\"",
+          "quantidade": 6,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "VÁLVULA PNEUMATICA ROTATIVA",
+          "referencia": "WERK SCHOT 6475",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "MANGUEIRA HIDRAULICA GOLDEN FIX PARA AR COMPRIMIDO",
+          "referencia": "1\" (EXPESSURA 4.48mm E DIÂMETRO EXTERNO 35mm)",
+          "quantidade": 6,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "MANGUEIRA HIDRAULICA GOLDEN FIX PARA AR COMPRIMIDO",
+          "referencia": "1.1/4\" (EXPESSURA 4.48mm E DIÂMETRO EXTERNO 40mm)",
+          "quantidade": 6,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "VÁLVULA PNEUMÁTICA DE ESCAPE ",
+          "referencia": "1/2\"",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ENGATE RÁPIDO",
+          "referencia": "1/2\"",
+          "quantidade": 30,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "OZAMIR",
+      "dataSolicitacao": "2025-12-04",
+      "observacoes": "MATERIAL NECESSÁRIO PARA MANUTENÇÕES NO SISTEMA DE AR COMPRIMIDO E TRANSFERENCIA DE FLUIDOS DA LAMINADORA ",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "1/4\""
+    },
+    {
+      "numero": "M102",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Ordem de serviço",
+      "tipoComponente": "Mecânico",
+      "descricao": "SERVIÇO DE MANUTENÇÃO CORRETIVA",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SERVIÇO DE MANUTENÇÃO CORRETIVA",
+          "referencia": "FURADEIRA MAKITA",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "SERVIÇO DE MANUTENÇÃO CORRETIVA",
+          "referencia": "LAVADORA DE ALTA PRESSÃO KALA LK1305",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-10-13",
+      "observacoes": "SERVIÇO DE MANUTENÇÃO CORRETIVA EM UMA LAVADORA E FURADEIRA UTILIZADOS PELO SETOR DE MANUTENÇÃO.",
+      "status": "Aprovada",
+      "codigo": "",
+      "referencia": "FURADEIRA MAKITA"
+    },
+    {
+      "numero": "M101",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "LIMPA CONTATO ELÉTRICO ELETRÔNICO",
+      "quantidade": 48,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "LIMPA CONTATO ELÉTRICO ELETRÔNICO",
+          "referencia": "M80",
+          "quantidade": 48,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "FUSÍVEL 2A 250V",
+          "referencia": "2A 250V",
+          "quantidade": 200,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-10-13",
+      "observacoes": "MATERIAL NECESSÁRIO PARA DIVERSAS MANUTENÇÕES ELÉTRICAS E MECÂNICAS NOS MAQUINÁRIOS.",
+      "status": "Pendente",
+      "codigo": "",
+      "referencia": "M80"
+    },
+    {
+      "numero": "M100",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Outro",
+      "descricao": "METAL LIQUIDO ",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "METAL LIQUIDO ",
+          "referencia": "BI COMPONENTE 500G (250 A+250G B)",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "HHS 2000 200ML/140G",
+          "referencia": "HHS 2000 200ML/140G",
+          "quantidade": 12,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "DESENGRAXANTE UNIVERSAL ",
+          "referencia": "ECO-W 5L",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-10-13",
+      "observacoes": "MATERIAL PARA COLAGEM DOS PENTES GUIAS NOS TEARES BAG E LEVE, MATERIAL DE LIMPEZA PESADA PARA ÁREA ADMINISTRATIVA E INDUSTRIAL.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "BI COMPONENTE 500G (250 A+250G B)"
+    },
+    {
+      "numero": "M099",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "ROLAMENTO RÍGIDO DE ESFERAS 6016-ZZ - 80X125X22MM",
+      "quantidade": 10,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ROLAMENTO RÍGIDO DE ESFERAS 6016-ZZ - 80X125X22MM",
+          "referencia": "6016-ZZ - 80X125X22MM",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ROLAMENTO RÍGIDO DE ESFERAS 1 CARREIRA DE ESFERAS COM BLINDADO EM AMBAS AS PARTES 6018-ZZ/C3 - 90X140X24MM",
+          "referencia": " 6018-ZZ/C3 - 90X140X24MM",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ROLAMENTO RÍGIDO DE ESFERAS 1 CARREIRA DE ESFERAS COM BLINDAGEM EM AMBOS OS LADOS 6012-ZZ/C3 - 60X95X18MM",
+          "referencia": "6012-ZZ/C3 - 60X95X18MM",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ROLAMENTO 6216 ZZ C3 80 X 140 X 26 ",
+          "referencia": " 6216 ZZ C3 80 X 140 X 26 ",
+          "quantidade": 10,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "RONÉLIO",
+      "dataSolicitacao": "2025-10-13",
+      "observacoes": "MATERIAL NECESSÁRIO PARA SUBSTITUIÇÃO NOS TEARES NOVA 6, NOVA 10 E NOVA 82, POLIAS E CENTRAL DO ANEL DAS LANÇADEIRAS.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "6016-ZZ - 80X125X22MM"
+    },
+    {
+      "numero": "M098",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "CHAVE COMBINADA 37MM",
+      "quantidade": 2,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CHAVE COMBINADA 37MM",
+          "referencia": "37MM",
+          "quantidade": 2,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "FRANCISCO",
+      "dataSolicitacao": "2025-10-15",
+      "observacoes": "NECESSÁRIO PARA SERVIÇOS DE MANUTENÇÃO.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "37MM"
+    },
+    {
+      "numero": "M097",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Outro",
+      "descricao": "ARALDITE ",
+      "quantidade": 2,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "ARALDITE ",
+          "referencia": "PROFISSONAL EM BALDE 1,8KG TEKBOND",
+          "quantidade": 2,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-10-10",
+      "observacoes": "MATERIAL UTILIZADO NOS TEARES BAG E LEVES PARA COLAGEM DOS PENTES GUIAS DOS FIOS.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "PROFISSONAL EM BALDE 1,8KG TEKBOND"
+    },
+    {
+      "numero": "M096",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "CORREIA ",
+      "quantidade": 3,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CORREIA ",
+          "referencia": "PIX TORQUE OLUS - XT2 2600 8M050 1537",
+          "quantidade": 3,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-10-09",
+      "observacoes": "CORREIA UTILIZADA NO TEAR BAG 285, LIGADA AO MOTOR PRINCIPAL DO TEAR.",
+      "status": "Aprovada",
+      "codigo": "",
+      "referencia": "PIX TORQUE OLUS - XT2 2600 8M050 1537"
+    },
+    {
+      "numero": "M095",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Ordem de serviço",
+      "tipoComponente": "Outro",
+      "descricao": "SACA DE CIMENTO\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+      "quantidade": 10,
+      "unidade": "KG",
+      "items": [
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "SACA DE CIMENTO\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "",
+          "quantidade": 10,
+          "unidade": "KG"
+        },
+        {
+          "tipoComponente": "Outro",
+          "codigo": "",
+          "descricao": "SACA DE GESSO\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "referencia": "",
+          "quantidade": 1,
+          "unidade": "KG"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "EDVALDO",
+      "dataSolicitacao": "2025-10-09",
+      "observacoes": "MATERIAL NECESSÁRIO PARA REFORMA DA SALA GERÊNCIA INDUSTRIAL.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": ""
+    },
+    {
+      "numero": "M094",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "MOLA DE PARADA DA TRAMA ESQUERDA 0,80",
+      "quantidade": 100,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "JYF-J30-09A ",
+          "descricao": "MOLA DE PARADA DA TRAMA ESQUERDA 0,80",
+          "referencia": "\"JYF-J30-09A  (WEFT SPRING)\"",
+          "quantidade": 100,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-10-09",
+      "observacoes": "MATERIAL NECESSÁRIO PARA SUBSTITUIÇÃO POR TEMPO DE USO DE DESGASTE NA EXTRUSORA LOREX.",
+      "status": "Cancelada",
+      "codigo": "JYF-J30-09A ",
+      "referencia": "\"JYF-J30-09A  (WEFT SPRING)\""
+    },
+    {
+      "numero": "M093",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Elétrico",
+      "descricao": "SERVIÇO DE RECUPERAÇÃO DE UNIÃO ROTATIVA",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "SERVIÇO DE RECUPERAÇÃO DE UNIÃO ROTATIVA",
+          "referencia": "",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-10-15",
+      "observacoes": "SERVIÇO EM TORNEARIA PARA  RECUPERAÇÃO DE UMA UNIÃO ROTATIVA UTILIZADA NO SISTEMA DE ÓLEO TÉRMICO DA EXTRUSORA LOREX.",
+      "status": "Aprovada",
+      "codigo": "",
+      "referencia": ""
+    },
+    {
+      "numero": "M092",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Ordem de serviço",
+      "tipoComponente": "Elétrico",
+      "descricao": "MANUTENÇÃO CORRETIVA NO AR CONDICIONADO DO PAINEL ELÉTRICO DA EXTRUSORA LOREX",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Elétrico",
+          "codigo": "",
+          "descricao": "MANUTENÇÃO CORRETIVA NO AR CONDICIONADO DO PAINEL ELÉTRICO DA EXTRUSORA LOREX",
+          "referencia": "",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-10-15",
+      "observacoes": "SERVIÇO DE MANUTENÇÃO CORRETIVA EM AR CONDICIONADO DE REFRIGERAÇÃO DO PAINEL ELÉTRICO DA EXTRUSORA LOREX (O MESMO NÃO ESTÁ RESFRIANDO, O PAINEL ESTÁ ABERTO E SUJEITO A DANOS POR CONTAMINAÇÃO DE POEIRA OU SUPERAQUECIMENTO).",
+      "status": "Aprovada",
+      "codigo": "",
+      "referencia": ""
+    },
+    {
+      "numero": "M091",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "UNIÃO ROTATIVA-2G FM5200-4003R, FOURWENT (ÓLEO QUENTE)",
+      "quantidade": 2,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12470170050",
+          "descricao": "UNIÃO ROTATIVA-2G FM5200-4003R, FOURWENT (ÓLEO QUENTE)",
+          "referencia": "ROTARY UNION-2G FM5200-4003R, FOURWENT (ÓLEO QUENTE)",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "RW75190",
+          "descricao": "UNIÃO ROTATIVA Ø 1.1/2 ROSCA BSPT ESQ C/ ROL RWC",
+          "referencia": "RW75190 FLUXO DUPLO PARA PSSAGEM DE ÁGUA",
+          "quantidade": 2,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "RW75191",
+          "descricao": "UNIÃO ROTATIVA Ø 1.1/2 ROSCA BSPT DIR C/ ROL RWC",
+          "referencia": "RW75191 FLUXO DUPLO PARA PASSAGEM DE ÁGUA",
+          "quantidade": 2,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "RONÉLIO",
+      "dataSolicitacao": "2025-10-24",
+      "observacoes": "MATERIAL NECESSÁRIO PARA TRABALHO DOS CILINDROS DE ÓLEO TÉRMICO E ARREFECIMENTO NA EXTRUSORA LOREX (UMA UNIÃO FOI RETIRADA PARA RECUPERAR E AS DEMAIS APRESENTAM VAZAMENTOS. NÃO TEMOS MATERIAL EM ESTOQUE)  ",
+      "status": "Comprada",
+      "codigo": "12470170050",
+      "referencia": "ROTARY UNION-2G FM5200-4003R, FOURWENT (ÓLEO QUENTE)"
+    },
+    {
+      "numero": "M090",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "AGULHA DA TRAVA",
+      "quantidade": 1000,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "1313580120",
+          "descricao": "AGULHA DA TRAVA",
+          "referencia": "BEARING NEEDLE GAUGE 10",
+          "quantidade": 1000,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-10-08",
+      "observacoes": "MATERIAL NECESSÁRIO PARA SUBSTITUIÇÃO POR TEMPO DE USO DE DESGASTE TRAVA.",
+      "status": "Cancelada",
+      "codigo": "1313580120",
+      "referencia": "BEARING NEEDLE GAUGE 10"
+    },
+    {
+      "numero": "M089",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "MANGUEIRA ATOXICA KANAFLEX KEF 1.5/8\" P104123 100848",
+      "quantidade": 40,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "MANGUEIRA ATOXICA KANAFLEX KEF 1.5/8\" P104123 100848",
+          "referencia": "KANAFLEX KEF 1.5/8\" P104123 100848",
+          "quantidade": 40,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "CURVA PVC 45º 1.5/8\"",
+          "referencia": "PVC 45º 1.5/8\"",
+          "quantidade": 4,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-10-08",
+      "observacoes": "MATERIAL NECESSÁRIO PARA SUBSTITUIÇÃO POR TEMPO DE USO DE DESGASTE NA EXTRUSORA LOREX.",
+      "status": "Aprovada",
+      "codigo": "",
+      "referencia": "KANAFLEX KEF 1.5/8\" P104123 100848"
+    },
+    {
+      "numero": "M088",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "KIT REPARO DE PISTÃO CILINDRO PNEUMÁTICO MARCA FESTO UTILIZADO NA BCS 850/45",
+      "quantidade": 6,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "KIT REPARO DE PISTÃO CILINDRO PNEUMÁTICO MARCA FESTO UTILIZADO NA BCS 850/45",
+          "referencia": "DSBC-40-80-PPVA-N3",
+          "quantidade": 6,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "KIT REPARO CILINDRO PNEUMÁTICO MARCA FESTO UTILIZADO NA LAMINADORA",
+          "referencia": "ARTIC SEALS MPS120 63555-2",
+          "quantidade": 2,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "VICTOR",
+      "dataSolicitacao": "2025-10-15",
+      "observacoes": "MATERIAL PARA REPARO DOS CILINDROS UTILIZADOS NA MÁQUINA BCS (CORTE E COSTURA) E LAMINADORA.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "DSBC-40-80-PPVA-N3"
+    },
+    {
+      "numero": "M087",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "PORCA DE CABEÇA SEXTAVADA M6",
+      "quantidade": 200,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "12320101206",
+          "descricao": "PORCA DE CABEÇA SEXTAVADA M6",
+          "referencia": "\"HEX HEAD NUT M6 12320101206\"",
+          "quantidade": 200,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "RONÉLIO",
+      "dataSolicitacao": "2025-10-15",
+      "observacoes": "MATERIAL NECESSÁRIO PARA INSTALAÇÃO NAS ALAVANCAS DOS TEARES.",
+      "status": "Comprada",
+      "codigo": "12320101206",
+      "referencia": "\"HEX HEAD NUT M6 12320101206\""
+    },
+    {
+      "numero": "M086",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "VENTILADOR AXIAL  INDUSTRIAL ZIEHL-ABEGG TRIFÁSICO",
+      "quantidade": 3,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "VENTILADOR AXIAL  INDUSTRIAL ZIEHL-ABEGG TRIFÁSICO",
+          "referencia": "FN063-ADQ.4N.V7P2 230/400V IP54",
+          "quantidade": 3,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "RONÉLIO",
+      "dataSolicitacao": "2025-11-18",
+      "observacoes": "MATERIAL PARA SUBSTITUIÇÃO DE VENTILADOR DANIFICADO NO CHILLER MECALOR (O MESMO ESTÁ TRABALHANDO COM O SISTEMA DE RESFRIAMENTO COMPROMETIDO).",
+      "status": "Cancelada",
+      "codigo": "",
+      "referencia": "FN063-ADQ.4N.V7P2 230/400V IP54"
+    },
+    {
+      "numero": "M085",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "GRAXA LUBRAX POLYTECH 2 10KG",
+      "quantidade": 1,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "GRAXA LUBRAX POLYTECH 2 10KG",
+          "referencia": "NLGI 2",
+          "quantidade": 1,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "RONÉLIO",
+      "dataSolicitacao": "2025-10-02",
+      "observacoes": "MATERIAL NECESSÁRIO PARA A LUBRIFICAÇÃO DA LOREX E MÁQUINAS EM GERAL.",
+      "status": "Aprovada",
+      "codigo": "",
+      "referencia": "NLGI 2"
+    },
+    {
+      "numero": "M084",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "LOCAÇÃO DE MACACO HIDRÁULICO",
+      "quantidade": 2,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "LOCAÇÃO DE MACACO HIDRÁULICO",
+          "referencia": "5 TONELADAS",
+          "quantidade": 2,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "ALENCAR",
+      "dataSolicitacao": "2025-10-01",
+      "observacoes": "",
+      "status": "Cancelada",
+      "codigo": "",
+      "referencia": "5 TONELADAS"
+    },
+    {
+      "numero": "M083",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "PARABOUT CHUMBADOR PARA CONCRETO",
+      "quantidade": 10,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARABOUT CHUMBADOR PARA CONCRETO",
+          "referencia": "5/8 bpa 15cm",
+          "quantidade": 10,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "PARABOUT CHUMBADOR PARA CONCRETO",
+          "referencia": "1/2 bpa 10cm",
+          "quantidade": 4,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BROCA WIDEA",
+          "referencia": "1/2x10cm",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "BROCA WIDEA",
+          "referencia": "5/8x15cm",
+          "quantidade": 1,
+          "unidade": "UN"
+        },
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ROLAMENTO RIGIDO DE ESFERAS",
+          "referencia": "SKF 6013 - 2RS1",
+          "quantidade": 6,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "TÚLIO",
+      "dataSolicitacao": "2025-10-01",
+      "observacoes": "MATERIAL PARA SERVIÇO DE FIXAÇÃO DO MOTOR DA LAMINADORA.",
+      "status": "Aprovada",
+      "codigo": "",
+      "referencia": "5/8 bpa 15cm"
+    },
+    {
+      "numero": "M081",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "ROLAMENTO 13-136 HRS >NBR Fe<",
+      "quantidade": 6,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ROLAMENTO 13-136 HRS >NBR Fe<",
+          "referencia": " 13-136 HRS >NBR Fe<",
+          "quantidade": 6,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-09-30",
+      "observacoes": "ROLAMENTOS PARA SUBSTITUIÇÃO NOS VENTILADORES DO AR CONDICIONADO DA EXTRUSORA LOREX.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": " 13-136 HRS >NBR Fe<"
+    },
+    {
+      "numero": "M080",
+      "setor": "Manutenção",
+      "tipoSolicitacao": "Reposição",
+      "tipoComponente": "Mecânico",
+      "descricao": "ROLAMENTO",
+      "quantidade": 20,
+      "unidade": "UN",
+      "items": [
+        {
+          "tipoComponente": "Mecânico",
+          "codigo": "",
+          "descricao": "ROLAMENTO",
+          "referencia": "6204",
+          "quantidade": 20,
+          "unidade": "UN"
+        }
+      ],
+      "prioridade": "Média",
+      "solicitante": "CLEBER",
+      "dataSolicitacao": "2025-09-27",
+      "observacoes": "ROLAMENTOS PARA SUBSTITUIÇÃO NAS MAQUINAS DE TECELAGEM NOVA 6.",
+      "status": "Comprada",
+      "codigo": "",
+      "referencia": "6204"
+    },
+    {
       "numero": "M078",
       "setor": "Manutenção",
       "tipoSolicitacao": "Compra",
@@ -5746,6 +7776,18 @@
     }
   ],
   "catalogItems": [
+    {
+      "_syncId": "f4ceba7e-2265-4dda-af47-a1d48d7e4c60",
+      "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAC1AJQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9U6KKKACiiigAppbaeelcz8QviJonwz8N3Ota7eC1tIRwP45G/uqO5r85fjv/AMFAdc8VeMrfw1pEE2m6ZcRvMkcLlVkjQEkySDljx91cD3NZzmoohysfoN4w+NPhnwg5geebVNRPCWGmRG4mc+mF4H418nfF3/gorrXg/VrnStN8GR6XewNtkj1t385DjIyigDofWvadQ+Kfg/4VWtkLjWtB8Ow/Zon8i2T7Re3OURj8i8r1Yc+xr87f2r/FmmfEj4u6z4m0WOcadfFGRrhNjnaiqSV7dK45VpdNCW7nf3//AAUs+LrS77eLQo4/7n2JiB+JbNdb8LP+CifxY8aeLtL8OJ4e8PapqOoziC3jYvbBnIJAL5IHT0r4olwsZYnj071u/DrxbJ4I8b6D4mtYxPNpN7FeLETt37GyVJ9xxWXtp9wSP1bs/wBqbXvDZUfEH4W6/wCHYf49S0wrqNoo7kmP5gPwr1/wP8UvCXxHtBP4Z8QWGsrsDstrMGdQf7y9R+Ir4m8L/t0fDnVNSEmq6VrnheS4cmZ7eb7TByW3ZXOcEsc4FfAHh7WvEngz45apJ4X1m907ThczT2d9bMyb13Erg9h7GtoV39orVH9AIORS1+f37MH/AAUih1nXE8F/E1o7fUY5fITWkG1SexlX3/vD8a+/La5iu4EmgkWWGRQySI2VYHoQe4rtjJSWhSdyWiiiqGFFFFABRRRQAUUhOKM0ALWR4q8T6d4N8P32s6pdR2dhZxNLLLKcKABWsc4NfmT/AMFYf2k5rW5sPhPol0Y2MQvNXeJsHafuR/iOTUSkkJnzl+0x+1xr/wC0Z8SLK2Fy1n4XhvVijtoWO113gfkf1q/rXh3TTf2WpXEYN1DDJDFM7bVRWPzD0rw7wZ4INlosfi/X2kstGhkVrS3TCy3sgOFC5xhd2Oa6b4sQ+I/EfiPw0t3M82nXk5STTrRMRQhNrYJ6kc8k1wT9+S1MbXPqvwJ+zN418dwHU7fSBpel8GTWfELm2txH/fGRucY6dvevO/2ivA8vwn8X6h4VfUVvmtViP2iKAKsm5A3GScDmvo3Uf2w7BNA0u38P+Er3XdSGmWtlNPrFw62StHHtPl26n5xk8k4zgV4N8YtQ8R/EhrvxN4jNvHq05XebeFYU8tRtUBcnoBUTUEvd1YWXQ+ebhHnCB3O5ec8VE1tdRYeO9lQDsFUj+VXbpTAzbioweGJHNQLcIzBWdPpuFY3LR9v3X/BPbTNb8L6FqmgeNtQil1TTor5f7R0ozwZZAxBlhxt5PcV8ofFvwtdfs/8AxOk8G+Kry0j1NII7qK5tnY28sT52kMwBHQ8EV1Xg39qT4o/Du0tbTQ/GepRWNsAkNtIVnhRR0UI4Ix7CuK/aD+IOsftI+MvD3ijxJHYLrOmW6Wk01tEY1u41csu9ckAgk/dAHNa81OW49zyr4k29xb+JW1eEMsM6oVuY/u7gMdR34r9GP+Caf7Z768Lf4W+Lbofa0X/iUXcrcuP+eRJ/Svgrxb4ibwjqNoRaQ6jo98hF1YSjCvjup/hYeorGu9Ln8ITaX4+8F3VwdKhulaKYnE1jcKd3lSY/Q9DmtqU7JAz+i+lryf8AZd+Mlv8AHj4IeGPF8TD7Tc24ivEzylwnyyA/iM/jXq9d6dykLRSZ4ozTGLRSUUAVdSujZ2rSqu5hwBXLTazfFuZiuey9K2fGN62n+HrqZRyo/KvE7zxheSvlZCuK/nTxMzfG4XGUsJhK04e7f3XZbvdrXofQZbgniIudluen/wBr3p/5eWrxzxr+yr8KfiL4mvfEPiTwVp+r61eOJLi9uC5eRgMDOG9AKtnxZe95mzR/wll6es7V+Kf2vnS/5iqn/gcv8z3P7M8kZXiD9kP4ReKDaf2n4Ls7lbRQluvmSBYgOgUBsCp5/wBlX4YTxlD4ZQLyAFuZh169Gq4fFt4Os5/Oo38Z3CAbp2H40lmud6WxM/8AwJ/5j/steX3Hn/if9i6xvbqdvDXii68M2jhRHbi1Fx5WBjh2cHHfFN0/9g3wFeaDa2viu91bxPqce7zr83klsJSSSP3aNgYHH4V3zePJgcLM7H0Bq9Ya5rmo4+z28zA/xNwK9OrxPxE6KpSxTSXW6T+b3ZH9kQh72iPLv+HdXwPON/h+/l9n1Sf/AOKq4/8AwT6+BjQoi+DnTb/Guo3AY/U769ft7LxFKMvLHEfQtmrH9l63/wA/sefQg148+J86b1x09P77M3g6K6xPGIP+Cf3wUtJN8Phu8jI7jVbn/wCLrL8V/wDBPn4ca3PbSaRNqXhxY1IkS3mMwlPYnzMkH6V7jPY+IIc7Jkl+jYrFvtV12xz50cgHdgcit6PEmeKanDHSb85N/gy45dSnonE8s8P/APBPb4VWkEkfiK0uvFzZzE9/M0XkjuFEZXr711OjfsTfBjQLS/tbLwdHHa38flXMBvJ2SRfcF8ZHr1rZbxnerw0jqfc0n/CaXv8Az3b863q5zxDWk5Sxc9e0ml9y0NFlMUraHa/Cn4beG/gj4ek0LwXpy6HpMkxuGto5GdfMOMn5ifSu0Or3TDm4b868VPjK+/57vQvi++b/AJeHrJ5nnrVnip/+BS/zH/ZcfL7j2U6ldHP+kyfg1QDxDd6fdQSfaWkjLhZFc5GCa8j/AOEsvgP9e1IfEVzdjZJIWz0rbBZrnOFxVPEPESfK07c0nf72DyyNne33H0+pyAR0oqnoztJpNmz8sYUJz9BRX9z06ntIRmuqTPgmrOxkfET/AJFDUO3yj+Yr53mJ3Hmvon4hf8ijqH+4P5187XDAMa/mfxNX/CvS/wAC/Nn2+RfwJev6ETPtHNVpbsIOtR3NwFU9qxLu9MrbEP5V+W0qXNufS2L0+pEnC8mtLQ/DOoeIpQAuyLux6Cr3grwRJqrrPcqVh64I5NevWGnxWMKxQoEUDHArzsXj40n7Khq+5xYjFKlpHcwND8BadpKqzRieYdWcZrpo4ViwEUKPQCpQMUwnFeFUUpazd2eFOrOo7yY3pQe1V7jUbW1z5txFF/vuBWfJ4t0aIkNqtoD6ecv+Ncro1JfDF/cXClUlrGLfyNWUcZqnNGsgIYZBHeq8fiTTLoYiv7aT/dlU/wBamNzHIMq6t9Dmp9lOPxRZooTg9VY53WPDNreAlUCN7VxGp+H5bGQ9h69q9QlKtnBrI1KBZYyCMivQwuKq0Wot3R6lGpK1meZlWRtrDmlDEVs6npojZuDtNYkitCxVunY19RTqKoro7lJMfuJ4qxY83CD3FUww6Vf0RfN1G3X+86j9RXTCPNOMe7X5kz+Fs+rNMTy9OtV9IlH6UVPCuyFF9FAor+46UeWnGPZI/Jnq2zA8fjPhLUP9z+tfNeoTBGNfS/jtd3hPUR/0zr5ev4Z7q7jtbZPMuJpBHGg7sTgV/OPiRSlVzmhCCu3BJf8AgTPuuH7ewm5bJ/oZd/Mzx/JkgnHHr6V0ngnwPJqc63FypEQOQprqX8P6e+pW+gW0YkGjRg3EwH+snflvyxj8K7CGOHSbQu5WGKNcszHAAr8dz2tLLa8sBRd5qybXR21S9HoejUxd4pxVm9l5dPvLNnbJZwrGihVAxxWX4n8d6D4ItGuNZ1KGzHaMtl2+i9a8I+L37U8WltNpXhYC4n5V75h8q/7vrXyz4l8W3usXMl5q1/JcTNkl5XyfwrvyPhbEYm1fE+7F9OrPtsk4FxeZpYjGy9nB/wDgT/yPqDxv+2hDbl4PDGleaQcC5vOB9Qorwzxh+0n4914SGTW5LSEg5jtFEY+meteO6j4s6i1jLf8ATST/AArjbjVbzUZSZrh2wxAUHAFfrOF4fwlBJ+zTt31P2HLuGcly+0aNBSl3lq/xPe4fCfifxbpVpqt5rs7290CyuZmP1HJ61Tf4ZlZQs2tSKO5L8/zrBi1K7Gk2duLmVYVQYjVyFHHpUBkcnJdj9TXcqUY6QSS9D6Snhq8LpTjFdEorboT63FB4Wv4lTV32lAS7SkYb862tB+JGvaayvpfiK5jA5AScsPyNcB4ztftWno5GSAQCfWuQ0osluu0lSCRkfWumODo4iHvxT9UZ4qnTjGKrQU790v8AI+vPDv7Uni/SGRNQS31aIdfMXZJ+Yr2Pwf8AtF+G/FxSC4kbSb1uBFc4Ck+gbpX5/WOv39mQBMZU/uyc10en+KIbtljmXyXPcn5T+NfL5hwlgcSm4w5X3X+R8hi+GMozBe5D2cu8f8tj9E7uSK5j3IysGGQQcgiuevIACQRnNfMfgH4w6z4LkjhMrajpZ620rZ2j/ZPavojw94r07xrpi3mnTeavR4mPzxn0YV+d4rJsRlctdY9H/mflGccPYvJpc0/eh0kv17EVw0tncRxzIVEqeZG3Z1yRkfiCK3vCC/aNfsE67pk/mK17nw8viT4YzXEC7tU0KdpAB1aB8Fl/mfwrO+Fsf23xZpQHTzVb8ua995b7HE4OUHeFXkafzSa+TPlPbqph6j2cbp/p959VAYAopaK/sQ/LTF8Zrv8ADGoj/pka+WbnxVN4K1+31SC1S6kg3kCUZVeOv1r6p8WDPhzUP+uRrw7RPB9r4m0u4S8iEkU0xDEjooGDX88+IMq1PPMHLDpufLpbvzb/ACPsskq0qVCo6yvG+v3F34YW/wBm8KT69qbiOXUWa7keQ4wnYn9a+a/j5+0DceLb2fRtDmMGjRkq8iHDXBH8lrtP2n/ioNKsYvBujSCGNI1W5MRxtQD5Y/8AGvlwaLrGtwzHSbL7XKDyzOqKmfUk/pXzWByani8Y8VOPM76ebXVn7ZwpkeHpweeZnZResU9kuj1/AwdZ19NPfGfMuCPuZ6D3rjry9lv5WklcnJzjsK7kfBHxfds0ksFrGScsz3IJP5CuFurSWxvLq0mVVmtpTE4U5GR6V+jxw0qEbyR+oUc2wuYzlTw1VSt0TvoVmGRWPajLkerZ/WtqT5ayrFA02O+/+tD+Fnp0NJnpqLm3hGMbUHH4Uvl5HXFOjBCoM5GBTiuT0ryWerdspa1b/aNHlzyUwea4DT12mVMZ2ua9Nli86ynT+8p/lXnECiO7uAfUGuzDO10cWMV6afYsoBkjGOKf5XQ5p8fTimqRkjqR6muxnkdTR0vXJNOYRyky2/oeq/SvSfB3jO98LajBqmlz5H8S5+WVe6kV5JOo61b0DXjpd2IpW/0WQ4I/un1rixOFhXg01e50x5K8HQrrmi9NT9DfBvjSTxp4Xl1Hw/fNZXEqBLy3TBJH8Skfia6j4P6d5XjOyXIbyyx49lr5E+Dfj+XwH4tgmZy2nXLCOePPy4PRv8+tfbfww0+ODx6DA2+2eAzxN6ow4/w/CvmI4N1MwwXK9IzSa6au6aXTaz87PqfzbxTlDyGrWpR/hzTcX184t+X5HuVFIOlFf0sfixl+KufD1/8A9cW/lXjTeI4/B/w21DVHIHlI7Ln+9zivZvE4z4fv/wDri38q+P8A9ojxAdP+GOl6Yj4a7nYuB3UE1+McWz9lnNOa+J0pJespJfgmz7fhrA/2nWp4TpKav6JXZ8weK9fm1S+v9WvJS8jlppHNSWfiDXL7xJD4T8N6ppvhyODTINSnvr+ATy3LTZ4jQsowuOT7iuM8d33kaYlsjENcsVOP7oHP9KpfEfxBpEfg/wAJzanPokt49gi2dhe6eZ7qR8YJD71CJ0yWOK78hoQg7JdLLyP3HxF5qGX0KVJ2gnqvRaHU6/4w8R+K/Ct3oEmswQapZ+J7PSW1fSUxDdo2JCcZ+UjowBPIxXI+NY/L8b6+nB/0nce3VRW9oE90vwoivbzUvD12+hatZai1h4ciVIrOISAOHKn5m2sST7Gsr4jIF+IOt7T8r+XICOhyOte3mq/dK3c+Q8PJtZhVXeH6o5varHFZVkP9MYf9NMfrWoVCsDu71nWI/wCJjIOuJf618w/hZ/QdL4z0qNeBwce9P2ZqQJt+lLtFeQesmJCOo7HivObmLytYukx0P9TXpKDGcHFcBrKeV4iu/cZ/WujDv3mYYnWkxkXAIxUF3I0JVkAPOCKmQkHOeDxio5OWHtXoHkjJJWaMcYPvWZdykEg1enmCKfasa5uNzkjpVI0prU9O8E6udS0kRO2ZrfCN6kdjX6E/sfeJT4q0e1aV991p1u9q5PJK5BX+dfmP8OL5l8TTxbv3c8GNvutfc/7DXiIaf8QNQ015Akd3bFlVjwWFc9CnGnmVCT25l+P/AAT4bj3BfXsiqVbe9T1Xps/wPu4dBRQOQKK/aT+PzN8TDOgX/wD1xb+VfBf7TN2zS6BbZ+VYnb/x6vvTxLk6Df4/54t/KvgX9paJje6HNjgxSJn6Gvw3jR2z/BrvCX5n694cKLzON+7/ACZ8n/Ea5xrdlD2WLOPqf/rV1Hg/xvoVr4f06HUbO0urq1jMQaeFHZQGPAJBIri/ikrQ69aTDp5I/QmuNyjyFmByxz1r1cJU9jFOJ/Qmd5RTzimqNR2s7n0HqnxX0G60a90x7W3Wzu4WgmjiUIGVhg9B715LJrEOqazIYHeSKGCO3R5W3OyoMAse5xisK2gt5MZBBrUtre3tSGiBBPBOa6K2JlVjyM8XKuGsPk+IeIpyvJq33llmOD7GqNsfL1YkngyKT+lWDMMtmqIn/wCJj/3z0riezPsKUv3iPXCowxFMwfSo9X1KLR9Jur+VS0cEXmFR1bA4FeVTfF6SW2juzIIY2k3eVHIu9VBXKbccng8njBrkw2DqYm/JsjlzbO6GUKPtYyk5bKKuetopOf4a4TxNiLxLL7xg1L8NvH8/iw3dvdxKk0WXjcLt3JnuOmR7VH4yO3Xtx4Ywj+dTGlKjXdOW56tPEQxeGVWGz77me82BgVXeULkk4qF7jHJPFZ95fA8DtXckc6hcfqF7n5VPHSsmSXjNJLNkmq5cscdq3jEtqysjp/ATkeJbIj+8R+hr66/Zp8F2Xj74m2uk6g062hjaVzbSmNzt5A3DnFfJfw9tzL4hgYDiNWcn8MV92/sKaM198StRvypKWlmRnsCxrk5XUxtKK6tfmfPcVYiWDyHE1Yuz5Xb1dkfeNvCtvBHEmdiKFGTngCinjpRX7KfxFuZ/iIZ0K/8A+uLfyr4j/aF0v7d4Ut7tBk2dx8x9FYY/nX274gGdEvh/0xf+VfLPifSo9e0q/wBNmxsuYmjz6HsfwNfz74i1/qubYKt2T/M/RuDcV9TxKr/yyX3dfwPgT4p6cZrS1ulGdhMbH0zyP5V5Yj+WxVutfQ3inw/JJb3+l3KFLiMtGQ3UOK8E1Sxa2mdGUhlJDA9RXr4OopwSP68aVSCqQY1JcHrVqO+ZRjNY4lMfXn3p3nN26V3uBzN30NkX/rVb7QGu43z1H9azZJmxUdvOxuY8nvVcmjFGymme/wB3p0er6K1tIf3U8ABP1FeVXnwguVlJjVJVzw6kDI/GvWNHPm6NZSA53QLn8qsZ4rxadepQbUGd9SjSrL95G5yHgjwUvhZJppWDXMo24H8IrD+INx5GtRH+9CP516LOPSvLvic23WLf/rgP5mtaMnVrc0tzVxUKfLFWRzU96XOOlVHkJNNL1H94166jY5ZSS0QpPenxrmkSPitDS9Pl1C8it4Vy8hwPb3olKyuVTpuTuzufhxpxjtrm8YY3ny0P061+lX7C/gptE+Hd7rc6bZ9UuMpkciNRgV8NfDzwe2s6np+i2ynyRjzXA+6g5ZjX6ffBCySx8AWcMKCOFHZUUdlHA/lXPklaFfOY0uqi5enRfmfjvijmao5fDL6b1k036Lb8fyPQB0ooor9gP5dKWuLv0e9UDOYWH6V8wXrbWYjqDX1W67hgjIPWvOte+DNhqtzJNbXMlkZG3GMKGUfT0r8i464ZxueToV8ElJwTTTdt+up9BlOOpYRyjV2Z8X/Gnwebhv8AhILOIllG28RRyR2k/ofwr5n8f+FhdI2o2y7jj98ij/x6v1Huv2e/MVlGrB1YEFXhyCD1B5r5X+PX7N+q/CqV9VsojfeHZjlpYgSbZu6sP7voa+by3Kc3y6hy4yk0o7O6ennY/ofg/jHB1+XLa9T3vst6XXb17HwZdWxjY8HFaOhaEdWs7hk5eNhnnnBrvvFngP7QHu9OAbPzNCP5rXDaZd3PhrUjMiEr92WJuNw9K9xVXUpvkep+u16LlFumyhfaHc2zEGMkfSspo5LeRWZGUA9cV7FbXml6/CHt5ELkcxPw6n6Vz3jHSbe10eZyFRuNvuc1hRxspTVOpGzPF9tNu0kegeE387wzYH0jK/kav9K5r4X6iNR8KKActbyFD+IrpCea4qicZtM9+lLnSZGRkmvKfiic+IY1HQQL/M16t3ryr4jfvfE8w/uRov6VvhdKhrKPOrHG+Vk5qVYsjpVgQ9Ku6dpM+pTCKCMux6nsPqa9ZzshQw/UpQW7yOqIu5mOAB1Nem+DvCx0yNWdC99PhdqjJGeij3qfwj4KaK6gt7eF7/VJ2CRxxLuYseygV98/s9/sdw6HYR654zVzrMyhoLKF8C1Hqx7uf0rGGHxWYXhhY3t1ei+8+a4h4kwPDWH9piHeb+GK3f8AwO7PMPhb4FXwdpBlulH9p3QBmOM7B2QfTv719r/DKwk07wVpsUqGORo/MZW6jcc1V0j4ReGdHuUnisGmlQ5U3EhcA+uDxXZhQAABivV4Y4ZxeV4qrjsdNOclZJXdl6/I/kHPs8nnVV1Z3u3d3/JeSHUUgor9NPlRaKKKACq17ZQajbSW91ClxbyKUeORQysD1BBqzRSaTVmCbTTR8hfGr9jEyzT6v4EKx5y76RI2Fz/0zPb6Gvjnxn8Pnt76ax1vTJtN1BDtIkjKOPz6iv2CxXOeMPh74d8e2bWuvaTbajERgGVPnX6N1H518jjuHqVZuphnyS/D/gH7Fw94kY7LIxoY+Ptaa6395fPr8/vPxT1j4a3Vs7SWcguAOmDteuQ1TS9RgO25jmOOnmZIr9VPGf7B2hX5lk8N61caU5yVt7pfOiHsD94frXh3ib9iL4k6e8gtbTT9ZhHRre4Clv8AgLgYr5yWX5hh371Pm81qftOD434dzKOtdQl2l7v/AAPxPlP4JXLRz6rYPwWRZlB9QcH+deiMcscV1kf7NfxC8J6ob268HXkNuisJ5olV1VMckkHtXIsQCccj2rwsZCcanNOLjfufW4DGYTEprC1YzS7NP8hIzl8V5z4k0i61XxNfvFCxXzNoZuBwMV6bpFnLqOrWdnboZbi4lWKONerEnAFfSXhb/gn74h1GYzeIPENlpsbkuYrSNppBn3OB/OtcDhMRiZP2EbnPmfEWWZFZ5hVUW1otW36JHxPp/giOM7ryXcP7icA/jXufwi/Zu8W/E54l0XSTp2kk/PqN2hjiA9R3c/SvuH4b/sg+APh+YriaxOv6kn/L1qPzgH1CfdFe221vFbQrFEixxqMKiKAAPYCvrsLw7ObUsXPTsv8AM/Hc88V1JOllFLX+eX6R/wA/uPIfgp+zP4X+DsEdzFGNU18riTUrhcsp7hB/CK9gAxinYpa+1o0KeHgqdJWSP5/xuOxOY15YjFzc5vqwooorc4QooooAKKKKACiiigApMUUUABANAUDtRRQAyeFJoXSRA6MNrKwyCD2NeXzfsx/DK5u5Lh/CdkXdizAbgpJ68A4oorGpQpVv4kU/VXOvDY3FYNv6tVlC+/K2r/cbvhr4LeBvCV3HdaT4W02zuozlJkhBdT6gnOK7bAFFFFKnCmrQSXoRXxFbET5603J922/zDAoxiiitjnFooooAKKKKACiiigD/2Q==",
+      "description": "CHAVE LIGA/DESLIGA",
+      "createdAt": "2026-09-11T13:49:10.172Z"
+    },
+    {
+      "_syncId": "44991d7b-328d-4caf-9f6f-dcfcacae57f7",
+      "image": "data:image/jpeg;base64,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",
+      "description": "ROLAMENTO 13-136 HRS",
+      "createdAt": "2026-09-11T11:40:48.127Z"
+    },
     {
       "_syncId": "0e618579-ec6b-4cf3-a8dc-0a56c34bbe9b",
       "image": "data:image/jpeg;base64,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",
