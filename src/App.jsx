@@ -824,7 +824,10 @@ function App() {
       if (!current.descricao) current.descricao = item.descricao || ''
       totals.set(key, current)
     })
-    return [...totals.values()].map(item => ({ ...item, saldo: item.entradas - item.saidas })).filter(item => `${item.codigo} ${item.descricao}`.toLowerCase().includes(materialSummarySearch.toLowerCase()))
+    return [...totals.values()]
+      .map(item => ({ ...item, saldo: item.entradas - item.saidas }))
+      .filter(item => `${item.codigo} ${item.descricao}`.toLowerCase().includes(materialSummarySearch.toLowerCase()))
+      .sort((a, b) => b.saldo - a.saldo)
   }, [materialEntries, materialExits, materialSummarySearch])
 
   const filteredMaterialEntries = useMemo(() => materialEntries.filter(item => `${item.codigo} ${item.descricao}`.toLowerCase().includes(materialEntrySearch.toLowerCase())), [materialEntries, materialEntrySearch])
