@@ -169,7 +169,17 @@ const emptyPurchase = {
 const purchaseSetorOptions = ['Manutenção', 'Almoxarifado', 'Produção', 'ADM']
 const purchaseSolicitacaoOptions = ['Compra', 'Reposição', 'Emergencial', 'Ordem de serviço']
 const purchaseTipoComponenteOptions = ['Eletrônico', 'Mecânico', 'Hidráulico', 'Elétrico', 'Consumível', 'Outro']
-const purchaseStatusOptions = ['Pendente', 'Aprovada', 'Comprada', 'Cancelada']
+const purchaseStatusOptions = ['Pendente', 'Iniciada', 'Finalizada', 'Cancelados']
+const normalizePurchaseStatus = status => {
+  const legacyStatuses = {
+    aprovada: 'Iniciada',
+    comprada: 'Finalizada',
+    cancelada: 'Cancelados',
+    cancelado: 'Cancelados'
+  }
+  const normalizedStatus = String(status || '').trim()
+  return legacyStatuses[normalizedStatus.toLowerCase()] || normalizedStatus || 'Pendente'
+}
 const emptyPurchaseItem = { tipoComponente: '', codigo: '', descricao: '', referencia: '', quantidade: '', unidade: 'UN' }
 const getPurchaseItems = purchase => {
   if (Array.isArray(purchase?.items) && purchase.items.length > 0) return purchase.items
@@ -300,6 +310,7 @@ function App() {
   const [editingExtraEntryId, setEditingExtraEntryId] = useState('')
   const [purchaseForm, setPurchaseForm] = useState(emptyPurchase)
   const [purchaseSearchTerm, setPurchaseSearchTerm] = useState('')
+  const [purchaseStatusFilter, setPurchaseStatusFilter] = useState('')
   const [catalogDescription, setCatalogDescription] = useState('')
   const [catalogSearch, setCatalogSearch] = useState('')
   const [catalogImage, setCatalogImage] = useState('')
@@ -378,14 +389,15 @@ function App() {
   const filteredPurchases = useMemo(() => {
     const term = purchaseSearchTerm.trim().toLowerCase()
     return purchases.filter(purchase => {
+      const status = normalizePurchaseStatus(purchase.status)
+      if (purchaseStatusFilter && status !== purchaseStatusFilter) return false
       if (!term) return true
-      const itemText = getPurchaseItems(purchase)
-        .map(item => `${item.tipoComponente || ''} ${item.descricao || ''} ${item.quantidade || ''} ${item.unidade || ''}`)
+      const descriptionText = getPurchaseItems(purchase)
+        .map(item => `${item.codigo || ''} ${item.descricao || ''}`)
         .join(' ')
-      const purchaseText = `${purchase.numero || ''} ${purchase.setor || ''} ${purchase.tipoSolicitacao || ''} ${purchase.solicitante || ''} ${purchase.observacoes || ''} ${purchase.status || ''}`
-      return `${purchaseText} ${purchase.descricao || ''} ${itemText}`.toLowerCase().includes(term)
+      return `${purchase.codigo || ''} ${purchase.descricao || ''} ${descriptionText}`.toLowerCase().includes(term)
     })
-  }, [purchases, purchaseSearchTerm])
+  }, [purchases, purchaseSearchTerm, purchaseStatusFilter])
 
   const filteredPurchaseItems = useMemo(() => {
     return filteredPurchases.flatMap(purchase =>
@@ -403,6 +415,19 @@ function App() {
   const equipamentoMap = useMemo(() => {
     return Object.fromEntries(equipamentoOptions.map(item => [item.code, item.label]))
   }, [])
+
+  const machineRanking = useMemo(() => {
+    const totals = new Map()
+    filteredOrders.forEach(order => {
+      const machine = String(order.equipamento || '').trim()
+      if (!machine) return
+      totals.set(machine, (totals.get(machine) || 0) + 1)
+    })
+    return [...totals.entries()]
+      .map(([machine, count]) => ({ machine, label: equipamentoMap[machine] || machine, count }))
+      .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, 'pt-BR'))
+      .slice(0, 10)
+  }, [filteredOrders, equipamentoMap])
 
   const getOrderTimestamp = order => {
     const value = order?.horaParada
@@ -432,7 +457,11 @@ function App() {
   const navigateToOrder = direction => {
     if (orders.length === 0) return
 
-    const targetOrder = direction > 0 ? sortedOrders[0] : sortedOrders[sortedOrders.length - 1]
+    const currentSortedIndex = sortedOrders.findIndex(order => getOrderIndexInOrders(order) === currentOrderIndex)
+    const targetSortedIndex = currentSortedIndex < 0
+      ? (direction > 0 ? 0 : sortedOrders.length - 1)
+      : Math.max(0, Math.min(sortedOrders.length - 1, currentSortedIndex - direction))
+    const targetOrder = sortedOrders[targetSortedIndex]
     if (!targetOrder) return
 
     setCurrentOrderIndex(getOrderIndexInOrders(targetOrder))
@@ -500,7 +529,7 @@ function App() {
 
     if (currentPurchaseIndex >= 0 && purchases[currentPurchaseIndex]) {
       const purchase = purchases[currentPurchaseIndex]
-      setPurchaseForm({ ...emptyPurchase, ...purchase, items: getPurchaseItems(purchase) })
+      setPurchaseForm({ ...emptyPurchase, ...purchase, status: normalizePurchaseStatus(purchase.status), items: getPurchaseItems(purchase) })
       return
     }
 
@@ -863,6 +892,21 @@ function App() {
     }
   }, [materialEntries, materialSummary, materialPlanning, purchases])
 
+  const topMaterialExits = useMemo(() => {
+    const totals = new Map()
+    materialExits.forEach(item => {
+      const codigo = item.codigo || 'SEM CÓDIGO'
+      const current = totals.get(codigo) || { codigo, descricao: item.descricao || '', quantidade: 0, apontamentos: 0 }
+      current.quantidade += Number(item.qtd) || 0
+      current.apontamentos += 1
+      if (!current.descricao && item.descricao) current.descricao = item.descricao
+      totals.set(codigo, current)
+    })
+    return [...totals.values()]
+      .sort((a, b) => b.quantidade - a.quantidade || b.apontamentos - a.apontamentos || a.descricao.localeCompare(b.descricao, 'pt-BR'))
+      .slice(0, 20)
+  }, [materialExits])
+
   const updateMaterialPlanning = (codigo, field, value) => {
     setMaterialPlanning(previous => {
       const next = { ...previous, [codigo]: { ...(previous[codigo] || {}), [field]: value } }
@@ -1135,7 +1179,7 @@ function App() {
       quantidade: items[0].quantidade,
       unidade: items[0].unidade,
       dataSolicitacao: purchaseForm.dataSolicitacao || getCurrentDate(),
-      status: purchaseForm.status || 'Pendente'
+      status: normalizePurchaseStatus(purchaseForm.status)
     }
 
     if (currentPurchaseIndex >= 0) {
@@ -1152,6 +1196,7 @@ function App() {
       dataSolicitacao: getCurrentDate()
     })
     setPurchaseSearchTerm('')
+    setPurchaseStatusFilter('')
   }
 
   const handlePurchaseClear = () => {
@@ -1163,6 +1208,7 @@ function App() {
     setCurrentPurchaseIndex(-1)
     setPurchaseInvalidFields([])
     setPurchaseSearchTerm('')
+    setPurchaseStatusFilter('')
   }
 
   const handleNewPurchase = () => {
@@ -1290,6 +1336,85 @@ function App() {
     saveOrders(nextOrders)
     setCurrentOrderIndex(-1)
     setSelectedSection('cadastro')
+  }
+
+  const handleOrdersExcelImport = event => {
+    const file = event.target.files?.[0]
+    if (!file) return
+
+    const reader = new FileReader()
+    reader.onload = async () => {
+      try {
+        const XLSX = await import('xlsx')
+        const workbook = XLSX.read(reader.result, { type: 'array', cellDates: false })
+        const sheet = workbook.Sheets[workbook.SheetNames[0]]
+        if (!sheet) throw new Error('Sem aba')
+        const matrix = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: '', raw: true, blankrows: false })
+        const normalizeHeader = value => String(value ?? '').replace(/^\uFEFF/, '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '')
+        const headerIndex = matrix.findIndex(row => Array.isArray(row) && row.filter(cell => ['setor', 'equipamento', 'solicitante', 'horaparada', 'tiposervico', 'situacao'].includes(normalizeHeader(cell))).length >= 3)
+        if (headerIndex < 0) throw new Error('Cabeçalho não encontrado')
+        const header = matrix[headerIndex]
+        const column = (...names) => header.findIndex(cell => names.includes(normalizeHeader(cell)))
+        const valueAt = (row, ...names) => {
+          const index = column(...names)
+          return index >= 0 ? row[index] : ''
+        }
+        const dateTime = value => {
+          if (typeof value === 'number' && value > 1) {
+            const date = XLSX.SSF.parse_date_code(value)
+            if (date) return `${date.y}-${String(date.m).padStart(2, '0')}-${String(date.d).padStart(2, '0')}T${String(date.H || 0).padStart(2, '0')}:${String(date.M || 0).padStart(2, '0')}`
+          }
+          const text = String(value ?? '').trim()
+          const br = text.match(/^(\d{1,2})[/-](\d{1,2})[/-](\d{4})(?:\s+(\d{1,2}):(\d{2}))?$/)
+          if (br) return `${br[3]}-${String(br[2]).padStart(2, '0')}-${String(br[1]).padStart(2, '0')}T${String(br[4] || 0).padStart(2, '0')}:${br[5] || '00'}`
+          return text.replace(' ', 'T')
+        }
+        const status = value => {
+          const text = String(value ?? '').trim().toLowerCase()
+          if (text.includes('final')) return 'Finalizada'
+          if (text.includes('inici')) return 'Iniciada'
+          return 'Pendente'
+        }
+        let lastNumber = orders.reduce((highest, order) => Math.max(highest, Number(String(order.reg || '').match(/\d+$/)?.[0]) || 0), 0)
+        const imported = matrix.slice(headerIndex + 1)
+          .filter(row => Array.isArray(row) && row.some(cell => String(cell ?? '').trim() !== ''))
+          .map(row => {
+            const description = String(valueAt(row, 'descricao') ?? '').trim()
+            lastNumber += 1
+            return {
+              ...emptyOrder,
+              reg: String(lastNumber).padStart(3, '0'),
+              setor: String(valueAt(row, 'setor') ?? '').trim(),
+              equipamento: String(valueAt(row, 'equipamento', 'nequipamento', 'numeroequipamento') ?? '').trim(),
+              solicitante: String(valueAt(row, 'solicitante') ?? '').trim(),
+              horaParada: dateTime(valueAt(row, 'horaparada')),
+              tipoServico: String(valueAt(row, 'tiposervico') ?? '').trim(),
+              prioridade: String(valueAt(row, 'prioridade') ?? '').trim(),
+              especialidade: String(valueAt(row, 'especialidade') ?? '').trim(),
+              motivoAbertura: description,
+              descricao: description,
+              tecnico: String(valueAt(row, 'tecnico') ?? '').trim(),
+              turno: String(valueAt(row, 'turno') ?? '').trim(),
+              horaInicio: dateTime(valueAt(row, 'horainicio')),
+              horaFinal: dateTime(valueAt(row, 'horafinal')),
+              tempoParada: String(valueAt(row, 'tempoparada') ?? '').trim(),
+              tempoServico: String(valueAt(row, 'temposervico') ?? '').trim(),
+              tempoResposta: String(valueAt(row, 'tempoderesposta') ?? '').trim(),
+              status: status(valueAt(row, 'situacao', 'status'))
+            }
+          })
+          .filter(order => order.setor || order.equipamento || order.solicitante || order.descricao)
+        if (!imported.length) throw new Error('Nenhum registro válido')
+        saveOrders([...imported, ...orders])
+        window.alert(`${imported.length} OS(s) importada(s) com sucesso.`)
+      } catch (error) {
+        console.error('[OS] falha na carga do Excel:', error)
+        window.alert('Não foi possível importar o Excel. Verifique se há uma linha de cabeçalho com as colunas informadas.')
+      } finally {
+        event.target.value = ''
+      }
+    }
+    reader.readAsArrayBuffer(file)
   }
 
   const handleDeleteOrder = () => {
@@ -1423,7 +1548,7 @@ function App() {
                       : selectedSection === 'statuspedidos'
                         ? 'Status de pedidos'
                       : selectedSection === 'catalogo'
-                        ? 'Catálogo Manutenção'
+                        ? 'Catálogo Almoxarifado'
                       : selectedSection === 'dashboardmateriais'
                         ? 'Dashboard do Almoxarifado'
                       : selectedSection === 'materiais'
@@ -1457,8 +1582,8 @@ function App() {
               ) : null}
 
               {selectedSection === 'cadastro' ? (
-                <form className="mt-0 grid gap-4" onSubmit={handleSubmit}>
-                  <div className="rounded-2xl border border-slate-200 bg-white/80 px-3 py-2 shadow-sm">
+                <form className="mt-0 grid gap-3 [&_input]:rounded-lg [&_input]:px-3 [&_input]:py-2 [&_input]:text-xs [&_select]:rounded-lg [&_select]:px-3 [&_select]:py-2 [&_select]:text-xs [&_textarea]:rounded-lg [&_textarea]:px-3 [&_textarea]:py-2 [&_textarea]:text-xs [&_label]:space-y-1" onSubmit={handleSubmit}>
+                  <div className="rounded-xl border border-slate-200 bg-white px-3 py-2 shadow-sm">
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <p className="text-[0.65rem] font-semibold uppercase tracking-[0.24em] text-slate-500">Status da OS</p>
                       <div className="flex flex-wrap gap-2 text-[0.65rem]">
@@ -1485,17 +1610,17 @@ function App() {
                     </div>
                   </div>
 
-                  <div className="space-y-2 rounded-3xl border-t border-slate-200 pt-4">
-                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Dados da solicitação</p>
+                  <div className="border-b border-slate-200 pb-2">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Dados da solicitação</p>
                   </div>
-                  <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="grid gap-2 sm:grid-cols-2">
                     <label className="space-y-2 text-sm text-slate-700">
                       <span>Setor</span>
                       <input name="setor" value={form.setor} disabled className="w-full rounded-2xl border border-slate-200 bg-slate-100 px-3 py-2.5 text-sm text-slate-600 outline-none" />
                     </label>
                   </div>
 
-                  <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="grid gap-2 sm:grid-cols-2">
                     <label className="space-y-2 text-sm">
                       <span className={`block font-medium ${invalidFields.includes('equipamento') ? 'text-red-600' : 'text-slate-700'}`}>Equipamento*</span>
                       <select ref={el => (formRefs.current.equipamento = el)} name="equipamento" value={form.equipamento} onChange={handleChange} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500">
@@ -1516,7 +1641,7 @@ function App() {
                     </label>
                   </div>
 
-                  <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="grid gap-2 sm:grid-cols-2">
                     <label className="space-y-2 text-sm">
                       <span className={`block font-medium ${invalidFields.includes('horaParada') ? 'text-red-600' : 'text-slate-700'}`}>Hora Parada*</span>
                       <input ref={el => (formRefs.current.horaParada = el)} type="datetime-local" name="horaParada" value={toDateTimeLocal(form.horaParada)} onChange={handleChange} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500" />
@@ -1527,7 +1652,7 @@ function App() {
                     </label>
                   </div>
 
-                  <div className="grid gap-4 sm:grid-cols-3">
+                  <div className="grid gap-2 sm:grid-cols-3">
                     <label className="space-y-2 text-sm text-slate-700">
                       <span>Tipo Serviço</span>
                       <select name="tipoServico" value={form.tipoServico} onChange={handleChange} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500">
@@ -1559,11 +1684,11 @@ function App() {
                     </label>
                   </div>
 
-                  <div className="space-y-2 rounded-3xl border-t border-slate-200 pt-4">
-                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Dados do Especialista</p>
+                  <div className="border-b border-slate-200 pb-2 pt-1">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Dados do Especialista</p>
                   </div>
 
-                  <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="grid gap-2 sm:grid-cols-2">
                     <label className="space-y-2 text-sm">
                       <span className="block font-medium text-slate-700">Técnico</span>
                       <select ref={el => (formRefs.current.tecnico = el)} name="tecnico" value={form.tecnico} onChange={handleChange} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500">
@@ -1584,7 +1709,7 @@ function App() {
                     </label>
                   </div>
 
-                  <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="grid gap-2 sm:grid-cols-2">
                     <label className="space-y-2 text-sm">
                       <span className="block font-medium text-slate-700">Hora Inicial</span>
                       <input ref={el => (formRefs.current.horaInicio = el)} type="datetime-local" name="horaInicio" value={toDateTimeLocal(form.horaInicio)} onChange={handleChange} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500" />
@@ -1600,7 +1725,7 @@ function App() {
                     <textarea name="descricao" value={form.descricao} onChange={handleChange} rows="4" className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500"></textarea>
                   </label>
 
-                  <div className="order-first mt-0 flex flex-col gap-3 rounded-3xl border border-slate-200 bg-white/80 p-4 shadow-sm sm:flex-row sm:items-center sm:justify-center">
+                  <div className="order-first mt-0 flex flex-col gap-2 rounded-xl border border-slate-200 bg-white p-3 shadow-sm sm:flex-row sm:items-center sm:justify-between">
                     <div className="flex flex-wrap items-center justify-center gap-2 text-sm">
                       <button
                         type="button"
@@ -1625,6 +1750,10 @@ function App() {
                       >
                         Nova OS
                       </button>
+                      <label className="cursor-pointer rounded-full border border-emerald-300 bg-emerald-50 px-3 py-2 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-100">
+                        Carga via Excel
+                        <input type="file" accept=".xlsx,.xls,.csv" onChange={handleOrdersExcelImport} className="sr-only" />
+                      </label>
                     </div>
                     <div className="text-center text-sm text-slate-500">
                       {currentOrderIndex === -1
@@ -1633,17 +1762,17 @@ function App() {
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-center justify-center gap-3 pt-2 sm:flex-row">
-                    <div className="flex flex-wrap justify-center gap-3">
-                      <button type="submit" className="rounded-3xl bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700">Salvar</button>
-                      <button type="button" onClick={() => setForm(emptyOrder)} className="rounded-3xl border border-slate-300 bg-white px-5 py-2.5 text-sm text-slate-700 transition hover:bg-slate-100">Limpar</button>
-                      <button type="button" onClick={handleDeleteOrder} disabled={currentOrderIndex < 0} className={`rounded-3xl border px-5 py-2.5 text-sm font-semibold transition ${currentOrderIndex < 0 ? 'border-red-200 bg-red-50 text-red-200 cursor-not-allowed' : 'border-red-300 bg-red-50 text-red-700 hover:bg-red-100'}`}>Excluir</button>
+                  <div className="flex flex-col items-center justify-center gap-2 pt-1 sm:flex-row sm:justify-start">
+                    <div className="flex flex-wrap justify-center gap-2">
+                      <button type="submit" className="rounded-xl bg-brand-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-700">Salvar</button>
+                      <button type="button" onClick={() => setForm(emptyOrder)} className="rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm text-slate-700 transition hover:bg-slate-100">Limpar</button>
+                      <button type="button" onClick={handleDeleteOrder} disabled={currentOrderIndex < 0} className={`rounded-xl border px-4 py-2 text-sm font-semibold transition ${currentOrderIndex < 0 ? 'border-red-200 bg-red-50 text-red-200 cursor-not-allowed' : 'border-red-300 bg-red-50 text-red-700 hover:bg-red-100'}`}>Excluir</button>
                     </div>
                     <button
                       type="button"
                       onClick={handleFinalizeOS}
                       disabled={!isOrderSaved}
-                      className={`rounded-3xl border px-5 py-2.5 text-sm font-semibold transition ${isOrderSaved ? 'border-brand-500 bg-brand-50 text-brand-600 hover:bg-brand-100' : 'border-slate-200 bg-slate-100 text-slate-400 cursor-not-allowed'}`}
+                      className={`rounded-xl border px-4 py-2 text-sm font-semibold transition ${isOrderSaved ? 'border-brand-500 bg-brand-50 text-brand-600 hover:bg-brand-100' : 'border-slate-200 bg-slate-100 text-slate-400 cursor-not-allowed'}`}
                     >
                       Finalizar OS
                     </button>
@@ -1755,6 +1884,7 @@ function App() {
                       </tbody>
                     </table>
                   </div>
+
                 </div>
                 </>
               ) : selectedSection === 'dashboardmateriais' ? (
@@ -1777,6 +1907,37 @@ function App() {
                   <div className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-600 shadow-sm">
                     A Entrada de Materiais possui <span className="font-semibold text-slate-950">{materialEntries.length}</span> registros de entrada. O total acima conta apenas códigos de materiais distintos, por isso pode ser menor.
                   </div>
+                  <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                    <div className="mb-4 flex flex-wrap items-end justify-between gap-2">
+                      <div>
+                        <h2 className="text-base font-semibold text-slate-900">Top 20 itens com maior saída</h2>
+                        <p className="mt-1 text-xs text-slate-500">Ranking pela quantidade total apontada nas saídas de materiais.</p>
+                      </div>
+                      <span className="text-xs font-medium text-slate-500">{topMaterialExits.length} de 20 itens</span>
+                    </div>
+                    {topMaterialExits.length === 0 ? (
+                      <p className="py-6 text-center text-sm text-slate-500">Ainda não há saídas de materiais para classificar.</p>
+                    ) : (
+                      <div className="overflow-x-auto">
+                        <table className="w-full min-w-[620px] text-left text-sm">
+                          <thead className="border-b border-slate-200 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                            <tr><th className="w-16 px-2 py-2">Posição</th><th className="px-2 py-2">Item</th><th className="px-2 py-2">Código</th><th className="px-2 py-2 text-right">Apontamentos</th><th className="px-2 py-2 text-right">Qtd. saída</th></tr>
+                          </thead>
+                          <tbody>
+                            {topMaterialExits.map((item, index) => (
+                              <tr key={item.codigo} className="border-b border-slate-100 last:border-0 hover:bg-slate-50">
+                                <td className="px-2 py-2.5 font-semibold text-brand-700">#{index + 1}</td>
+                                <td className="max-w-[420px] px-2 py-2.5 font-medium text-slate-800">{item.descricao || 'Descrição não informada'}</td>
+                                <td className="px-2 py-2.5 text-slate-600">{item.codigo}</td>
+                                <td className="px-2 py-2.5 text-right text-slate-600">{formatIntegerThousands(item.apontamentos)}</td>
+                                <td className="px-2 py-2.5 text-right font-semibold text-rose-700">{formatIntegerThousands(item.quantidade)}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    )}
+                  </section>
                 </div>
               ) : selectedSection === 'materiais' ? (
                 <div className="mt-2 grid gap-5">
@@ -2100,6 +2261,10 @@ function App() {
                       <input value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500" placeholder="Reg, setor, solicitante, técnico..." />
                     </label>
                   </div>
+                  <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                    <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2"><div><h3 className="text-base font-semibold text-slate-900">Ranking de máquinas com mais apontamentos</h3><p className="mt-1 text-xs text-slate-500">Quantidade de registros de OS por máquina.</p></div>{machineRanking[0] ? <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">1º {machineRanking[0].machine}: {machineRanking[0].count}</span> : null}</div>
+                    {machineRanking.length === 0 ? <p className="py-5 text-center text-sm text-slate-500">Não há apontamentos para os filtros selecionados.</p> : <div className="space-y-3">{machineRanking.map((item, index) => <div key={item.machine} className="grid grid-cols-[2rem_minmax(9rem,1fr)_3rem] items-center gap-2 text-xs"><span className="font-semibold text-slate-500">#{index + 1}</span><div className="min-w-0"><div className="mb-1 flex justify-between gap-3"><span className="truncate font-medium text-slate-700" title={`${item.machine} - ${item.label}`}>{item.machine} - {item.label}</span><span className="font-semibold text-brand-700">{item.count}</span></div><div className="h-2 overflow-hidden rounded-full bg-slate-100"><div className="h-full rounded-full bg-brand-500" style={{ width: `${(item.count / machineRanking[0].count) * 100}%` }} /></div></div><span className="text-right text-slate-500">OS</span></div>)}</div>}
+                  </section>
                   <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
                     <table className="min-w-max border-collapse text-left text-[0.65rem] sm:text-xs">
                       <thead className="bg-slate-100 text-slate-500">
@@ -2169,12 +2334,20 @@ function App() {
               <section className="rounded-3xl border border-slate-200 bg-slate-50 p-4 shadow-sm sm:p-6">
                 <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <div>
-                    <h3 className="text-xl font-semibold text-slate-950"></h3>
-                    <p className="mt-2 text-sm text-slate-500"></p>
+                    <h3 className="text-xl font-semibold text-slate-950">Status dos pedidos</h3>
+                    <p className="mt-2 text-sm text-slate-500">Pesquise pelo código ou descrição do item e filtre pelo status.</p>
                   </div>
                   <label className="w-full max-w-sm text-sm text-slate-700 sm:w-auto">
-                    <input value={purchaseSearchTerm} onChange={e => setPurchaseSearchTerm(e.target.value)} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500" placeholder="Buscar por número, código, descrição, solicitante..." />
+                    <input value={purchaseSearchTerm} onChange={e => setPurchaseSearchTerm(e.target.value)} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500" placeholder="Buscar pelo código ou descrição..." />
                   </label>
+                </div>
+
+                <div className="mb-4 flex flex-wrap items-center gap-2">
+                  <span className="text-sm font-medium text-slate-600">Status:</span>
+                  <button type="button" onClick={() => setPurchaseStatusFilter('')} className={`rounded-full px-3 py-1 text-sm font-medium transition ${purchaseStatusFilter === '' ? 'bg-slate-700 text-white' : 'border border-slate-200 bg-white text-slate-600'}`}>Todos</button>
+                  {purchaseStatusOptions.map(status => (
+                    <button key={status} type="button" onClick={() => setPurchaseStatusFilter(status)} className={`rounded-full px-3 py-1 text-sm font-medium transition ${purchaseStatusFilter === status ? 'bg-brand-600 text-white' : 'border border-slate-200 bg-white text-slate-600 hover:border-brand-300'}`}>{status}</button>
+                  ))}
                 </div>
 
                 <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
@@ -2214,7 +2387,7 @@ function App() {
                             <td className="px-2.5 py-2 whitespace-nowrap text-slate-700">{purchase.solicitante}</td>
                             <td className="px-2.5 py-2 whitespace-nowrap text-slate-700">
                               <select
-                                value={purchase.status || 'Pendente'}
+                                value={normalizePurchaseStatus(purchase.status)}
                                 onChange={event => handlePurchaseStatusChange(purchase.numero, event.target.value)}
                                 onClick={event => event.stopPropagation()}
                                 className="rounded-lg border border-slate-200 bg-white px-2 py-1 text-xs outline-none transition focus:border-brand-500"
