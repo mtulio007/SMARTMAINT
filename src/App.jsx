@@ -1165,6 +1165,10 @@ function App() {
     setPurchaseSearchTerm('')
   }
 
+  const handleNewPurchase = () => {
+    handlePurchaseClear()
+  }
+
   const handlePurchaseDelete = () => {
     if (currentPurchaseIndex < 0) return
     const nextPurchases = purchases.filter((_, index) => index !== currentPurchaseIndex)
@@ -1894,21 +1898,28 @@ function App() {
                       <button
                         type="button"
                         onClick={() => navigateToPurchase(-1)}
-                        disabled={purchases.length === 0 || currentPurchaseIndex === purchases.length - 1}
-                        className={`rounded-full px-3 py-2 font-medium transition ${purchases.length === 0 || currentPurchaseIndex === purchases.length - 1 ? 'bg-slate-100 text-slate-400 cursor-not-allowed' : 'bg-brand-500 text-white hover:bg-brand-600'}`}
+                        disabled={purchases.length === 0 || currentPurchaseIndex === 0}
+                        className={`rounded-full px-3 py-2 font-medium transition ${purchases.length === 0 || currentPurchaseIndex === 0 ? 'bg-slate-100 text-slate-400 cursor-not-allowed' : 'bg-brand-500 text-white hover:bg-brand-600'}`}
                       >
                         Anterior
                       </button>
                       <button
                         type="button"
                         onClick={() => navigateToPurchase(1)}
-                        disabled={purchases.length === 0 || currentPurchaseIndex === 0}
-                        className={`rounded-full px-3 py-2 font-medium transition ${purchases.length === 0 || currentPurchaseIndex === 0 ? 'bg-slate-100 text-slate-400 cursor-not-allowed' : 'bg-brand-500 text-white hover:bg-brand-600'}`}
+                        disabled={purchases.length === 0 || currentPurchaseIndex === purchases.length - 1}
+                        className={`rounded-full px-3 py-2 font-medium transition ${purchases.length === 0 || currentPurchaseIndex === purchases.length - 1 ? 'bg-slate-100 text-slate-400 cursor-not-allowed' : 'bg-brand-500 text-white hover:bg-brand-600'}`}
                       >
                         Próximo
                       </button>
+                      <button
+                        type="button"
+                        onClick={handleNewPurchase}
+                        className="rounded-full border border-brand-300 bg-brand-50 px-3 py-2 font-semibold text-brand-700 transition hover:bg-brand-100"
+                      >
+                        Novo pedido
+                      </button>
                       <span className="text-xs text-slate-500">
-                        {currentPurchaseIndex < 0 ? 'Novo pedido' : `Pedido ${currentPurchaseIndex + 1}/${purchases.length}`}
+                        {currentPurchaseIndex < 0 ? '' : `Pedido ${currentPurchaseIndex + 1}/${purchases.length}`}
                       </span>
                     </div>
                   </div>
