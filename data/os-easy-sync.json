@@ -4942,7 +4942,7 @@
     },
     {
       "reg": "248",
-      "setor": "TEC.ALÇA",
+      "setor": "TEC.AL����A",
       "equipamento": "TA001",
       "solicitante": "ELZILENE",
       "horaParada": "2026-01-15T09:55",
@@ -12729,7 +12729,7 @@
       "motivoAbertura": "TROCA DE LÂMINA DO CORTE TÉRMICO",
       "tipoServico": "CORRETIVA",
       "prioridade": "URGENTE",
-      "especialidade": "MECÂNICA",
+      "especialidade": "MEC��NICA",
       "descricao": "TROCA DE LÂMINA DO CORTE TÉRMICO",
       "tecnico": "JOÃO V. CARDOSO",
       "status": "Pendente",
@@ -85164,7 +85164,7 @@
         {
           "tipoComponente": "Mecânico",
           "codigo": "JYF-E55-16",
-          "descricao": "SEM DESCRIÇÃO",
+          "descricao": "SEM DESCRI����ÃO",
           "referencia": "SELVEDGE PLATE",
           "quantidade": 100,
           "unidade": "UN"
@@ -145336,5 +145336,13 @@
       "qtd": 2
     }
   ],
-  "materialPlanning": {}
+  "materialPlanning": {
+    "46": {
+      "leadTime": "20",
+      "consumoDia": "100"
+    },
+    "11124030430": {
+      "leadTime": ""
+    }
+  }
 }
