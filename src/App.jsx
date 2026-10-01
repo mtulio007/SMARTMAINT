@@ -112,6 +112,63 @@ const equipamentoOptions = [
   { code: 'Compressor', label: 'REDE DE AR COMPRIMIDO' }
 ]
 
+const machineProblemReference = Object.fromEntries([
+  ['CB001', 'NOBREAK', 'GUIAS DE FIO', '—', 'TESTE/POSICIONAMENTO'],
+  ['CC001', '—', 'LANÇA, FACA, ABRIDOR, CORRENTE, MANCAL, LÂMINAS', 'MANGUEIRA DE AR / SOLENOIDE', 'RESISTÊNCIA, LIMPEZA'],
+  ['CC002', 'PLUG, ALIMENTAÇÃO', 'ROLDANA, ALAVANCAS, LÂMINAS, ROLAMENTOS, CINTA LIÇO, REDUTOR', '—', 'AJUSTES E REAPERTOS'],
+  ['CC003', 'SENSORES, CONTROLADOR, CABO, CONEXÃO P4', 'FACAS, LÂMINAS, EIXO, CINTA, ABRIDOR, BOBINADOR', 'ATUADOR, CONEXÕES E MANGUEIRA DE AR', 'TEMPERATURA/REGULAGEM'],
+  ['CC004', 'FIAÇÃO E SENSORES DE TEMPERATURA', 'CORREIAS, CABEÇOTE, MOLA, ROLDANA, AGULHA', 'REGULADOR/AJUSTE DE AR', 'LIMPEZA DA FACA QUENTE'],
+  ['CL001', 'FIAÇÃO, IHM, SENSORES, MOTOR', 'LÂMINAS, CORRENTES, EIXOS, BIELA, ROLOS, REDUTOR, CORREIAS', 'ATUADORES', 'GRANDE VOLUME DE AJUSTES, SOLDAS E RECUPERAÇÃO'],
+  ['CL002', 'INVERSOR, SENSORES, DISJUNTOR, BORNES, CABOS', 'LÂMINAS, CORRENTES, BIELAS, REDUTOR, ROLAMENTOS, MANCAIS', 'MANGUEIRAS/ATUADORES', 'LIMPEZA, LUBRIFICAÇÃO E AJUSTES RECORRENTES'],
+  ['CL003', 'DRIVE, CONTATORA, ENCODER, CABEAMENTO', 'BIELA, EIXO, MOTOR, ROLAMENTOS, LÂMINA, PARAFUSOS', 'ATUADORES PNEUMÁTICOS', 'METRAGEM, RESISTÊNCIA E AJUSTES'],
+  ['CL004', '—', 'ROLDANA DESGASTADA / EIXO TRAVANDO', '—', 'FALHA OPERACIONAL'],
+  ['EC001', 'COMANDO ELÉTRICO DO MOTOR', 'CORRENTE, MOTOR, ROLAMENTO, LÂMINAS', 'CILINDRO PNEUMÁTICO', 'CHILLER EM ALTA TEMPERATURA'],
+  ['EL001', 'DOSADOR/BATERIA', 'EIXO BOBINADOR', 'VAZAMENTO DE AR', 'RESET'],
+  ['EL002', 'ELÉTRICA DO CHILLER / SENSOR', 'MOTOR', '—', 'RESFRIAMENTO E TEMPERATURA'],
+  ['EM001', 'MOTOR, DISJUNTOR, INVERSOR, FUSÍVEL, PT100, TRANSFORMADOR, SENSORES', 'FREIOS, CORREIAS, ROLAMENTOS, MOTOR, FIEIRA', 'MANGUEIRAS', 'LIMPEZA/FILTROS'],
+  ['ER001', 'DISJUNTORES, CONTATORES, PAINEL, KEYPAD', 'MOTOR TRAVADO, ROLAMENTO, CILINDRO, BOBINADEIRA', 'MANGUEIRAS/AR', 'LUBRIFICAÇÃO E HIDRÁULICO'],
+  ['MC001', '—', 'SUPORTES, POLIAS, CABEÇOTE', 'ATUADORES PNEUMÁTICOS', 'LUBRIFICAÇÃO'],
+  ['MC002', '—', 'LOOPER, BIELA, AGULHA, SUPORTE, PEDAL, POLIA', '—', 'AJUSTES DE PONTO E COSTURA'],
+  ['MC003', 'CONEXÃO ELÉTRICA', 'BIELA, LOOPER, HASTE, PARAFUSOS', '—', 'AJUSTES MECÂNICOS'],
+  ['MC004', 'MOTOR', 'BIELA, LOOPER, SUPORTE, LÂMINA', '—', 'AJUSTES'],
+  ['TA001', 'SENSOR/LÂMPADAS', 'PREDOMINANTEMENTE MECÂNICO: AGULHAS, TRAMADOR, GUIA-FIO, ENGRENAGENS, CORREIAS, MOLAS, TENSORES', '—', 'FALHAS DE COSTURA E REGULAGEM DE TRAMA'],
+  ['TA002', 'SENSORES/COMANDOS', 'AGULHAS, TRAMADOR, MOLA, GUIA-FIO, TENSOR, ENGRENAGENS, ROLAMENTOS', '—', 'AJUSTES DE COSTURA'],
+  ['TA003', 'SENSORES', 'MUITO PREDOMINANTE: AGULHAS, BASES, TRAMADORES, BIELAS, ENGRENAGENS, MOLAS, ROLAMENTOS', '—', 'FALHAS DE COSTURA/SINCRONISMO'],
+  ['TA004', 'SENSOR', 'AGULHA, LANÇADEIRA, ROLAMENTOS, COMPONENTES MECÂNICOS', '—', 'AJUSTES'],
+  ['TA005', '—', 'AGULHAS E CACHIMBO', '—', '—'],
+  ['TC001', 'SENSOR', 'AGULHA, TENSOR, TRAMADOR', '—', 'AJUSTES DE FIO'],
+  ['TC002', 'GABINETE ELÉTRICO', 'AGULHAS, TENSORES, MOLAS, TRAMADORES', '—', 'AJUSTES DE TRAMA'],
+  ['TL001', 'COMUNICAÇÃO ELÉTRICA', 'LANÇADEIRAS, ROLDANAS, TRILHOS, CILINDROS, PORTA-BOBINAS', '—', 'LARGURA/TECIDO'],
+  ['TL002', 'SENSORES/COMANDO', 'LANÇADEIRAS, ROLDANAS, ROLAMENTOS, PORTA-BOBINAS, ALAVANCAS', '—', 'AJUSTES DE TECIDO/LARGURA'],
+  ['TL003', 'SENSOR/COMANDO', 'PORTA-BOBINAS, LANÇADEIRAS, ROLDANAS, TRILHOS, ROLAMENTOS', '—', 'LARGURA/VELOCIDADE'],
+  ['TL004', 'SENSORES', 'LANÇADEIRAS, ROLDANAS, CILINDRO, ROLAMENTOS, PORTA-BOBINAS', 'MANGUEIRAS', 'LIMPEZA/AJUSTE'],
+  ['TL005', 'CHAVE SECCIONADORA', 'LANÇADEIRAS, ROLDANAS, CINTAS, ALAVANCAS, PORTA-BOBINAS', '—', 'LARGURA DO TECIDO'],
+  ['TL006', '—', 'LANÇADEIRAS, ROLDANAS, CACHIMBOS, CORRENTES, PORTA-BOBINAS', 'AR COMPRIMIDO', 'LIMPEZA/AJUSTES'],
+  ['TL007', 'SENSORES', 'LANÇADEIRAS, ROLDANAS, TRILHOS, ALAVANCAS, PORTA-BOBINAS', '—', 'AJUSTES DE TECIDO'],
+  ['TL008', 'SENSORES', 'LANÇADEIRAS, ROLDANAS, TRILHOS, PORTA-BOBINAS, CORREIAS', '—', 'AJUSTES DE TECIDO/CACHIMBO'],
+  ['TL009', 'SENSORES/COMANDOS', 'LANÇADEIRAS, ROLDANAS, PORTA-BOBINAS, TRILHOS', '—', 'AJUSTES DE TECIDO'],
+  ['TL010', 'SENSORES', 'LANÇADEIRAS, ROLDANAS, ALAVANCAS, PORTA-BOBINAS', '—', 'AJUSTES'],
+  ['TL011', 'SENSORES', 'LANÇADEIRAS, ROLDANAS, PORTA-BOBINAS, COMPONENTES MECÂNICOS', '—', 'AJUSTES DE TECIDO'],
+  ['TL012', 'SENSOR/COMANDO', 'LANÇADEIRAS, ROLDANAS, PORTA-BOBINAS, CORREIAS', 'AR COMPRIMIDO', 'LIMPEZA/LUBRIFICAÇÃO'],
+  ['TL013', 'SENSORES', 'LANÇADEIRAS, ROLDANAS, PORTA-BOBINAS, ALAVANCAS', '—', 'AJUSTES'],
+  ['TL014', 'SENSORES E EMERGÊNCIA', 'LANÇADEIRAS, ROLDANAS, CINTAS, ALAVANCAS, PORTA-BOBINAS', '—', 'MÁQUINA PARANDO'],
+  ['TL015', 'SENSORES/COMANDO', 'LANÇADEIRAS, ROLDANAS, PORTA-BOBINAS, COMPONENTES MECÂNICOS', '—', 'AJUSTES'],
+  ['TP001', 'SENSORES/COMANDOS', 'LANÇADEIRAS, ROLDANAS, CINTAS, ROLAMENTOS, PORTA-BOBINAS', 'HIDRÁUL./PNEUM.', 'TEMPERATURA/CORTE'],
+  ['TP002', 'SENSORES/COMANDO', 'LANÇADEIRAS, ROLDANAS, PORTA-BOBINAS, ROLAMENTOS, CINTAS', 'HIDRÁULICO', 'LIMPEZA/LUBRIFICAÇÃO'],
+  ['TP003', 'SENSORES E COMPONENTES ELÉTRICOS', 'LANÇADEIRAS, ROLDANAS, ROLAMENTOS, CINTAS, ENGRENAGENS', '—', 'AJUSTES'],
+  ['TP004', 'SENSORES/COMANDO', 'LANÇADEIRAS, ROLDANAS, CINTAS LIÇO, PORTA-BOBINAS, ROLAMENTOS', 'PNEUMÁTICO', 'CORTE/TEMPERATURA'],
+  ['TP005', 'SENSORES/COMANDO', 'LANÇADEIRAS, ROLDANAS, CINTAS, ROLAMENTOS, PORTA-BOBINAS', '—', 'CORTE TÉRMICO E AJUSTES'],
+  ['TT001', 'COMPONENTE ELÉTRICO', 'COMPONENTES MECÂNICOS', '—', '—'],
+  ['TT002', '—', 'COMPONENTES MECÂNICOS', '—', '—']
+].map(([code, eletricos, mecanicos, hidraulicos, outros]) => [code, { eletricos, mecanicos, hidraulicos, outros }]))
+
+const machineProblemCategoryLabels = {
+  eletricos: 'Elétricos / automação',
+  mecanicos: 'Mecânicos',
+  hidraulicos: 'Hidráulicos / pneumáticos',
+  outros: 'Outros / processo'
+}
+
 const solicitanteOptions = [
   'AIRA', 'ALENCAR', 'ALESSANDRA', , 'ALISSON LIMA', 'ALESSANDRO', 'ALOISE', 'ANA', 'ANABELE',  'ANEISIA', 'ANTONIA', 'ANTÔNIO', 'ARIA', 'CLARICE', 'CLEBER ROGER', 'CRISTIANE', 'DANIEL', 'DIANA', 'DIEGO', 'DIVA', 'EDVALDO','ELDENIR',
   'EFFERSON', 'ELAIN', 'ELCENIR', 'ELIANA', 'ELIANE', 'ELISSON', 'ELTON', 'ELIZENE', 'EMERSON', 'ERIC MORAIS', 'ESTEFANY','EZILENE',
@@ -305,6 +362,7 @@ function App() {
   const [selectedSection, setSelectedSection] = useState('dashboardmateriais')
   const [searchTerm, setSearchTerm] = useState('')
   const [searchStatus, setSearchStatus] = useState('')
+  const [selectedMachine, setSelectedMachine] = useState('')
   const [form, setForm] = useState(emptyOrder)
   const [extraForm, setExtraForm] = useState(extraEmpty)
   const [editingExtraEntryId, setEditingExtraEntryId] = useState('')
@@ -428,6 +486,11 @@ function App() {
       .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, 'pt-BR'))
       .slice(0, 10)
   }, [filteredOrders, equipamentoMap])
+
+  const selectedMachineOrders = useMemo(() => {
+    if (!selectedMachine) return []
+    return filteredOrders.filter(order => String(order.equipamento || '').trim() === selectedMachine)
+  }, [filteredOrders, selectedMachine])
 
   const getOrderTimestamp = order => {
     const value = order?.horaParada
@@ -2274,8 +2337,87 @@ function App() {
                     </label>
                   </div>
                   <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                    <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2"><div><h3 className="text-base font-semibold text-slate-900">Ranking Ocorrência por Máquinas</h3><p className="mt-1 text-xs text-slate-500">Quantidade de registros de OS por máquina.</p></div>{machineRanking[0] ? <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">1º {machineRanking[0].machine}: {machineRanking[0].count}</span> : null}</div>
-                    {machineRanking.length === 0 ? <p className="py-5 text-center text-sm text-slate-500">Não há apontamentos para os filtros selecionados.</p> : <div className="space-y-3">{machineRanking.map((item, index) => <div key={item.machine} className="grid grid-cols-[2rem_minmax(9rem,1fr)_3rem] items-center gap-2 text-xs"><span className="font-semibold text-slate-500">#{index + 1}</span><div className="min-w-0"><div className="mb-1 flex justify-between gap-3"><span className="truncate font-medium text-slate-700" title={`${item.machine} - ${item.label}`}>{item.machine} - {item.label}</span><span className="font-semibold text-brand-700">{item.count}</span></div><div className="h-2 overflow-hidden rounded-full bg-slate-100"><div className="h-full rounded-full bg-brand-500" style={{ width: `${(item.count / machineRanking[0].count) * 100}%` }} /></div></div><span className="text-right text-slate-500">OS</span></div>)}</div>}
+                    <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
+                      <div>
+                        <h3 className="text-base font-semibold text-slate-900">Ranking Ocorrência por Máquinas</h3>
+                        <p className="mt-1 text-xs text-slate-500">Quantidade de registros de OS por máquina. Selecione uma máquina para ver os problemas.</p>
+                      </div>
+                      {machineRanking[0] ? <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">1º {machineRanking[0].machine}: {machineRanking[0].count}</span> : null}
+                    </div>
+                    {machineRanking.length === 0 ? <p className="py-5 text-center text-sm text-slate-500">Não há apontamentos para os filtros selecionados.</p> : (
+                      <div className="space-y-1">
+                        {machineRanking.map((item, index) => (
+                          <button
+                            key={item.machine}
+                            type="button"
+                            onClick={() => setSelectedMachine(item.machine)}
+                            aria-pressed={selectedMachine === item.machine}
+                            className={`grid w-full grid-cols-[2rem_minmax(9rem,1fr)_3rem] items-center gap-2 rounded-lg px-2 py-1.5 text-left text-xs transition ${selectedMachine === item.machine ? 'bg-brand-50 ring-1 ring-brand-200' : 'hover:bg-slate-50'}`}
+                          >
+                            <span className="font-semibold text-slate-500">#{index + 1}</span>
+                            <span className="min-w-0">
+                              <span className="mb-1 flex justify-between gap-3">
+                                <span className="truncate font-medium text-slate-700" title={`${item.machine} - ${item.label}`}>{item.machine} - {item.label}</span>
+                                <span className="font-semibold text-brand-700">{item.count}</span>
+                              </span>
+                              <span className="block h-2 overflow-hidden rounded-full bg-slate-100">
+                                <span className="block h-full rounded-full bg-brand-500" style={{ width: `${(item.count / machineRanking[0].count) * 100}%` }} />
+                              </span>
+                            </span>
+                            <span className="text-right text-slate-500">OS</span>
+                          </button>
+                        ))}
+                      </div>
+                    )}
+
+                    <div className="mt-4 border-t border-slate-200 pt-4">
+                      <label className="flex flex-wrap items-center gap-2 text-sm font-medium text-slate-700">
+                        Máquina
+                        <select value={selectedMachine} onChange={event => setSelectedMachine(event.target.value)} className="min-w-56 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-brand-500">
+                          <option value="">Selecione uma máquina do anexo</option>
+                          {Object.keys(machineProblemReference).sort().map(code => <option key={code} value={code}>{code} - {equipamentoMap[code] || 'Máquina'}</option>)}
+                        </select>
+                      </label>
+
+                      {!selectedMachine ? <p className="py-5 text-center text-sm text-slate-500">Selecione uma máquina no ranking ou na lista para consultar os problemas.</p> : (
+                        <>
+                          <div className="mt-4 flex flex-wrap items-baseline justify-between gap-2">
+                            <h4 className="font-semibold text-slate-900">{selectedMachine} - {equipamentoMap[selectedMachine] || 'Máquina'}</h4>
+                            <span className="text-xs text-slate-500">Referência do anexo: principais problemas por categoria</span>
+                          </div>
+                          <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                            {Object.entries(machineProblemReference[selectedMachine] || {}).map(([category, problems]) => (
+                              <div key={category} className="rounded-lg border border-slate-200 bg-slate-50 p-3">
+                                <h5 className="text-xs font-semibold uppercase tracking-wide text-slate-600">{machineProblemCategoryLabels[category]}</h5>
+                                <p className="mt-1.5 text-sm leading-5 text-slate-800">{problems === '—' ? 'Sem problema de referência informado.' : problems}</p>
+                              </div>
+                            ))}
+                          </div>
+                          <div className="mt-4">
+                            <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
+                              <h5 className="text-sm font-semibold text-slate-900">Problemas registrados nas OS</h5>
+                              <span className="text-xs text-slate-500">{selectedMachineOrders.length} ocorrência(s) nos filtros atuais</span>
+                            </div>
+                            {selectedMachineOrders.length === 0 ? <p className="rounded-lg bg-slate-50 px-3 py-4 text-center text-sm text-slate-500">Nenhuma OS desta máquina nos filtros selecionados.</p> : (
+                              <ul className="divide-y divide-slate-200 rounded-lg border border-slate-200">
+                                {selectedMachineOrders.map(order => {
+                                  const reportedProblem = [order.motivoAbertura, order.descricao]
+                                    .map(value => String(value || '').trim())
+                                    .filter((value, index, values) => value && values.indexOf(value) === index)
+                                    .join(' | ')
+                                  return (
+                                    <li key={order.reg} className="flex flex-wrap justify-between gap-x-4 gap-y-1 px-3 py-2 text-sm">
+                                      <span className="min-w-0 flex-1 text-slate-800"><span className="font-semibold">OS {order.reg}:</span> {reportedProblem || 'Problema não informado'}</span>
+                                      <span className="whitespace-nowrap text-xs text-slate-500">{order.status || 'Pendente'}</span>
+                                    </li>
+                                  )
+                                })}
+                              </ul>
+                            )}
+                          </div>
+                        </>
+                      )}
+                    </div>
                   </section>
                   <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
                     <table className="min-w-max border-collapse text-left text-[0.65rem] sm:text-xs">
