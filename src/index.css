@@ -11,6 +11,50 @@ body {
   @apply bg-slate-50 text-slate-900;
 }
 
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .catalog-print-surface,
+  .catalog-print-surface * {
+    visibility: visible;
+  }
+
+  .catalog-print-surface {
+    position: static;
+    display: block !important;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
+  .catalog-print-surface .no-print,
+  .catalog-print-surface .catalog-print-grid > .no-print {
+    display: none !important;
+  }
+
+  .catalog-print-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    justify-content: start;
+  }
+
+  .catalog-card {
+    width: 100% !important;
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+
+  .catalog-card img {
+    max-height: 220px;
+    object-fit: contain;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;

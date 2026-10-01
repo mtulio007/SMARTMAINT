@@ -1299,6 +1299,15 @@ function App() {
     setEditingCatalogDescription('')
   }
 
+  const handleCatalogPdfExport = () => {
+    if (!filteredCatalogItems.length) {
+      window.alert('Não há itens no catálogo para exportar em PDF.')
+      return
+    }
+
+    window.print()
+  }
+
   const handleSubmit = event => {
     event.preventDefault()
 
@@ -1993,8 +2002,8 @@ function App() {
                   <div className="max-h-[calc(100vh-210px)] overflow-auto rounded border border-slate-300"><table className="w-full min-w-[1440px] text-left text-[11px]"><thead className="sticky top-0 bg-slate-100 text-slate-600"><tr>{['Código', 'Descrição', 'Entradas', 'Saídas', 'Saldo', 'Lead Time', 'Consumo dia', 'Est. Segurança', 'Est. Min', 'Est. Max', 'Ressuprimento'].map(label => <th key={label} className="px-2 py-1">{label}</th>)}</tr></thead><tbody>{materialSummary.length === 0 ? <tr><td colSpan="11" className="px-2 py-4 text-center text-slate-500">Nenhum material encontrado.</td></tr> : materialSummary.map(item => { const planning = materialPlanning[item.codigo] || {}; const endOfStock = calculateStockDate(item.saldo, planning.consumoDia); const resupplyDate = calculateStockDate(item.saldo, planning.consumoDia, planning.leadTime); return <tr key={item.codigo} className={`border-t ${item.saldo < 0 ? 'bg-red-50' : ''}`}><td className="px-2 py-1">{item.codigo}</td><td className="px-2 py-1">{item.descricao}</td><td className="px-2 py-1">{formatIntegerThousands(item.entradas)}</td><td className="px-2 py-1">{formatIntegerThousands(item.saidas)}</td><td className={`px-2 py-1 font-semibold ${item.saldo < 0 ? 'text-red-700' : 'text-brand-700'}`}>{item.saldo >= 0 ? '+' : '−'}{formatIntegerThousands(Math.abs(item.saldo))}</td>{[['leadTime', 'Lead Time'], ['consumoDia', 'Consumo dia'], ['estSeguranca', 'Est. Segurança'], ['estMin', 'Est. Min'], ['estMax', 'Est. Max']].map(([field, label]) => <td key={field} className="px-1 py-1"><input aria-label={`${label} - ${item.codigo}`} type="number" min="0" value={planning[field] || ''} onChange={event => updateMaterialPlanning(item.codigo, field, event.target.value)} className="w-20 rounded border border-slate-200 px-1 py-0.5 text-[11px] outline-none focus:border-brand-500" /></td>)}<td className="px-2 py-1"><span className="block text-brand-700">{resupplyDate}</span><span className="text-[9px] text-slate-500">Fim: {endOfStock}</span></td></tr>})}</tbody></table></div>
                 </section>
               ) : selectedSection === 'catalogo' ? (
-                <div className="mt-2 grid gap-5">
-                  <form onSubmit={handleCatalogSubmit} className="grid gap-3 border-b border-slate-200 pb-5">
+                <div className="catalog-print-surface mt-2 grid gap-5">
+                  <form onSubmit={handleCatalogSubmit} className="no-print grid gap-3 border-b border-slate-200 pb-5">
                     <div className="grid gap-3 md:grid-cols-[180px_minmax(0,1fr)]">
                       <label className="flex min-h-32 cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-slate-300 bg-white p-3 text-center transition hover:border-brand-500 hover:bg-brand-50/40">
                         {catalogImage ? <img src={catalogImage} alt="Prévia do item do catálogo" className="max-h-32 w-full rounded-xl object-contain" /> : <span className="text-sm text-slate-500">Selecionar figura</span>}
@@ -2009,22 +2018,25 @@ function App() {
                     <div className="flex justify-end"><button type="submit" className="rounded-2xl bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700">Adicionar ao catálogo</button></div>
                   </form>
 
-                  <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div className="no-print flex flex-wrap items-center justify-between gap-3">
                     <label className="flex min-w-64 flex-1 items-center gap-2 text-sm font-medium text-slate-700">
                       <span className="sr-only">Pesquisar imagem cadastrada</span>
                       <input value={catalogSearch} onChange={event => setCatalogSearch(event.target.value)} placeholder="Pesquisar imagem cadastrada..." className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-normal outline-none transition focus:border-brand-500" />
                     </label>
-                    <p className="text-sm font-semibold text-slate-600">Imagens: <span className="text-slate-950">{filteredCatalogItems.length}</span></p>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <button type="button" onClick={handleCatalogPdfExport} className="rounded-xl border border-violet-300 bg-violet-50 px-3 py-2 text-sm font-semibold text-violet-700 transition hover:bg-violet-100">Baixar PDF 📄</button>
+                      <p className="text-sm font-semibold text-slate-600">Imagens: <span className="text-slate-950">{filteredCatalogItems.length}</span></p>
+                    </div>
                   </div>
 
-                  <div className="flex flex-wrap justify-end gap-3">
+                  <div className="catalog-print-grid flex flex-wrap justify-end gap-3">
                     {filteredCatalogItems.length === 0 ? (
                       <p className="w-full text-sm text-slate-500">{catalogSearch ? 'Nenhuma imagem encontrada para a pesquisa.' : 'Nenhum item cadastrado no catálogo.'}</p>
                     ) : (
                       filteredCatalogItems.map(item => {
                         const isEditing = editingCatalogItemId === item._syncId
                         return (
-                          <article key={item._syncId} className="w-[calc((100%-0.75rem)/2)] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm md:w-[calc((100%-1.5rem)/3)] lg:w-[calc((100%-2.25rem)/4)] xl:w-[calc((100%-3rem)/5)]">
+                          <article key={item._syncId} className="catalog-card w-[calc((100%-0.75rem)/2)] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm md:w-[calc((100%-1.5rem)/3)] lg:w-[calc((100%-2.25rem)/4)] xl:w-[calc((100%-3rem)/5)]">
                             <img src={item.image} alt={item.description} className="aspect-[4/3] w-full bg-slate-100 object-contain" />
                             <div className="p-2.5">
                               {isEditing ? (
@@ -2038,7 +2050,7 @@ function App() {
                               ) : (
                                 <div className="flex items-start justify-between gap-2">
                                   <p className="line-clamp-3 whitespace-pre-wrap text-xs leading-5 text-slate-700">{item.description}</p>
-                                  <div className="flex shrink-0 gap-1">
+                                  <div className="no-print flex shrink-0 gap-1">
                                     <button type="button" onClick={() => handleCatalogEditStart(item)} className="h-7 w-7 rounded-lg text-base text-brand-600 transition hover:bg-brand-50" aria-label="Editar descrição" title="Editar descrição">✎</button>
                                     <button type="button" onClick={() => handleCatalogDelete(item._syncId)} className="h-7 w-7 rounded-lg text-base text-red-600 transition hover:bg-red-50" aria-label="Remover item do catálogo" title="Remover item">×</button>
                                   </div>
