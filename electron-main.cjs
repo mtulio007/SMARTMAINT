@@ -95,7 +95,7 @@ async function createServer() {
     if (!file.startsWith(webDirectory)) { response.statusCode = 403; return response.end() }
     try {
       const content = await fs.readFile(file)
-      const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png' }
+      const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg' }
       response.setHeader('Content-Type', types[path.extname(file)] || 'application/octet-stream')
       response.end(content)
     } catch {

@@ -2393,28 +2393,6 @@ function App() {
                               </div>
                             ))}
                           </div>
-                          <div className="mt-4">
-                            <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
-                              <h5 className="text-sm font-semibold text-slate-900">Problemas registrados nas OS</h5>
-                              <span className="text-xs text-slate-500">{selectedMachineOrders.length} ocorrência(s) nos filtros atuais</span>
-                            </div>
-                            {selectedMachineOrders.length === 0 ? <p className="rounded-lg bg-slate-50 px-3 py-4 text-center text-sm text-slate-500">Nenhuma OS desta máquina nos filtros selecionados.</p> : (
-                              <ul className="divide-y divide-slate-200 rounded-lg border border-slate-200">
-                                {selectedMachineOrders.map(order => {
-                                  const reportedProblem = [order.motivoAbertura, order.descricao]
-                                    .map(value => String(value || '').trim())
-                                    .filter((value, index, values) => value && values.indexOf(value) === index)
-                                    .join(' | ')
-                                  return (
-                                    <li key={order.reg} className="flex flex-wrap justify-between gap-x-4 gap-y-1 px-3 py-2 text-sm">
-                                      <span className="min-w-0 flex-1 text-slate-800"><span className="font-semibold">OS {order.reg}:</span> {reportedProblem || 'Problema não informado'}</span>
-                                      <span className="whitespace-nowrap text-xs text-slate-500">{order.status || 'Pendente'}</span>
-                                    </li>
-                                  )
-                                })}
-                              </ul>
-                            )}
-                          </div>
                         </>
                       )}
                     </div>
