@@ -1420,15 +1420,48 @@ function App() {
         const XLSX = await import('xlsx')
         const workbook = XLSX.read(reader.result, { type: 'array', cellDates: false })
         const sheet = workbook.Sheets[workbook.SheetNames[0]]
-        if (!sheet) throw new Error('Sem aba')
-        const matrix = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: '', raw: true, blankrows: false })
+        if (!sheet) throw new Error('O arquivo não contém uma planilha para importar.')
+        const matrix = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: '', raw: true, blankrows: true })
         const normalizeHeader = value => String(value ?? '').replace(/^\uFEFF/, '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '')
-        const headerIndex = matrix.findIndex(row => Array.isArray(row) && row.filter(cell => ['setor', 'equipamento', 'solicitante', 'horaparada', 'tiposervico', 'situacao'].includes(normalizeHeader(cell))).length >= 3)
-        if (headerIndex < 0) throw new Error('Cabeçalho não encontrado')
+        const columns = {
+          setor: ['setor'],
+          equipamento: ['equipamento', 'nequipamento', 'numeroequipamento'],
+          solicitante: ['solicitante'],
+          horaParada: ['horaparada', 'datahoraparada'],
+          tipoServico: ['tiposervico'],
+          prioridade: ['prioridade'],
+          especialidade: ['especialidade'],
+          descricao: ['descricao', 'descricaoproblema', 'motivodaabertura'],
+          tecnico: ['tecnico'],
+          turno: ['turno'],
+          horaInicio: ['horainicio'],
+          horaFinal: ['horafinal'],
+          tempoParada: ['tempoparada'],
+          tempoServico: ['temposervico'],
+          tempoResposta: ['tempoderesposta'],
+          status: ['situacao', 'status']
+        }
+        const headerIndex = matrix.findIndex(row => Array.isArray(row)
+          && row.filter(cell => Object.values(columns).some(names => names.includes(normalizeHeader(cell)))).length >= 3)
+        if (headerIndex < 0) {
+          throw new Error('Cabeçalho não encontrado. Verifique se a planilha contém as colunas Equipamento, Solicitante, Hora Parada e Descrição.')
+        }
         const header = matrix[headerIndex]
-        const column = (...names) => header.findIndex(cell => names.includes(normalizeHeader(cell)))
-        const valueAt = (row, ...names) => {
-          const index = column(...names)
+        const column = name => header.findIndex(cell => columns[name].includes(normalizeHeader(cell)))
+        const requiredColumnNames = {
+          equipamento: 'Equipamento (ou Nº Equipamento)',
+          solicitante: 'Solicitante',
+          horaParada: 'Hora Parada',
+          descricao: 'Descrição'
+        }
+        const missingColumns = Object.entries(requiredColumnNames)
+          .filter(([name]) => column(name) < 0)
+          .map(([, label]) => label)
+        if (missingColumns.length > 0) {
+          throw new Error(`Colunas obrigatórias ausentes no cabeçalho: ${missingColumns.join(', ')}.`)
+        }
+        const valueAt = (row, name) => {
+          const index = column(name)
           return index >= 0 ? row[index] : ''
         }
         const dateTime = value => {
@@ -1443,48 +1476,82 @@ function App() {
         }
         const status = value => {
           const text = String(value ?? '').trim().toLowerCase()
-          if (text.includes('final')) return 'Finalizada'
+          if (text.includes('final') || text.includes('conclu') || text.includes('encerr')) return 'Finalizada'
           if (text.includes('inici')) return 'Iniciada'
           return 'Pendente'
         }
+        const dataRows = matrix
+          .slice(headerIndex + 1)
+          .map((row, index) => ({ row, excelRow: headerIndex + index + 2 }))
+          .filter(({ row }) => Array.isArray(row) && row.some(cell => String(cell ?? '').trim() !== ''))
+        if (dataRows.length === 0) throw new Error('Nenhum registro foi encontrado abaixo do cabeçalho.')
+
+        const missingData = dataRows.flatMap(({ row, excelRow }) => {
+          const missing = []
+          if (!String(valueAt(row, 'equipamento') ?? '').trim()) missing.push('Equipamento')
+          if (!String(valueAt(row, 'solicitante') ?? '').trim()) missing.push('Solicitante')
+          if (!String(valueAt(row, 'horaParada') ?? '').trim()) missing.push('Hora Parada')
+          if (!String(valueAt(row, 'descricao') ?? '').trim()) missing.push('Descrição')
+          return missing.length > 0 ? [{ excelRow, fields: missing }] : []
+        })
+        if (missingData.length > 0) {
+          const details = missingData.slice(0, 30)
+            .map(({ excelRow, fields }) => `Linha ${excelRow}: ${fields.join(', ')}`)
+          const remaining = missingData.length - details.length
+          throw new Error(
+            `Há ${missingData.length} registro(s) com dados obrigatórios faltando. Corrija a planilha e tente novamente:\n${details.join('\n')}${remaining > 0 ? `\n... e mais ${remaining} linha(s).` : ''}`
+          )
+        }
+
         let lastNumber = orders.reduce((highest, order) => Math.max(highest, Number(String(order.reg || '').match(/\d+$/)?.[0]) || 0), 0)
-        const imported = matrix.slice(headerIndex + 1)
-          .filter(row => Array.isArray(row) && row.some(cell => String(cell ?? '').trim() !== ''))
-          .map(row => {
-            const description = String(valueAt(row, 'descricao') ?? '').trim()
-            lastNumber += 1
-            return {
-              ...emptyOrder,
-              reg: String(lastNumber).padStart(3, '0'),
-              setor: String(valueAt(row, 'setor') ?? '').trim(),
-              equipamento: String(valueAt(row, 'equipamento', 'nequipamento', 'numeroequipamento') ?? '').trim(),
-              solicitante: String(valueAt(row, 'solicitante') ?? '').trim(),
-              horaParada: dateTime(valueAt(row, 'horaparada')),
-              tipoServico: String(valueAt(row, 'tiposervico') ?? '').trim(),
-              prioridade: String(valueAt(row, 'prioridade') ?? '').trim(),
-              especialidade: String(valueAt(row, 'especialidade') ?? '').trim(),
-              motivoAbertura: description,
-              descricao: description,
-              tecnico: String(valueAt(row, 'tecnico') ?? '').trim(),
-              turno: String(valueAt(row, 'turno') ?? '').trim(),
-              horaInicio: dateTime(valueAt(row, 'horainicio')),
-              horaFinal: dateTime(valueAt(row, 'horafinal')),
-              tempoParada: String(valueAt(row, 'tempoparada') ?? '').trim(),
-              tempoServico: String(valueAt(row, 'temposervico') ?? '').trim(),
-              tempoResposta: String(valueAt(row, 'tempoderesposta') ?? '').trim(),
-              status: status(valueAt(row, 'situacao', 'status'))
-            }
-          })
-          .filter(order => order.setor || order.equipamento || order.solicitante || order.descricao)
-        if (!imported.length) throw new Error('Nenhum registro válido')
-        saveOrders([...imported, ...orders])
-        window.alert(`${imported.length} OS(s) importada(s) com sucesso.`)
+        const imported = dataRows.map(({ row }) => {
+          const description = String(valueAt(row, 'descricao') ?? '').trim()
+          lastNumber += 1
+          return {
+            ...emptyOrder,
+            reg: String(lastNumber).padStart(3, '0'),
+            setor: String(valueAt(row, 'setor') ?? '').trim(),
+            equipamento: String(valueAt(row, 'equipamento') ?? '').trim(),
+            solicitante: String(valueAt(row, 'solicitante') ?? '').trim(),
+            horaParada: dateTime(valueAt(row, 'horaParada')),
+            tipoServico: String(valueAt(row, 'tipoServico') ?? '').trim(),
+            prioridade: String(valueAt(row, 'prioridade') ?? '').trim(),
+            especialidade: String(valueAt(row, 'especialidade') ?? '').trim(),
+            motivoAbertura: description,
+            descricao: description,
+            tecnico: String(valueAt(row, 'tecnico') ?? '').trim(),
+            turno: String(valueAt(row, 'turno') ?? '').trim(),
+            horaInicio: dateTime(valueAt(row, 'horaInicio')),
+            horaFinal: dateTime(valueAt(row, 'horaFinal')),
+            tempoParada: String(valueAt(row, 'tempoParada') ?? '').trim(),
+            tempoServico: String(valueAt(row, 'tempoServico') ?? '').trim(),
+            tempoResposta: String(valueAt(row, 'tempoResposta') ?? '').trim(),
+            status: status(valueAt(row, 'status'))
+          }
+        })
+        const replaceExisting = window.confirm(
+          `A base atual possui ${orders.length} OS(s), e o Excel contém ${imported.length} registro(s).\n\nOK = Apagar as OS existentes e carregar somente os dados do Excel.\nCancelar = Incluir as OS do Excel e preservar os dados existentes.`
+        )
+        saveOrders(replaceExisting ? imported : [...imported, ...orders])
+        window.alert(replaceExisting
+          ? `${imported.length} OS(s) carregada(s). A base anterior foi substituída.`
+          : `${imported.length} OS(s) incluída(s). As OS existentes foram preservadas.`)
       } catch (error) {
         console.error('[OS] falha na carga do Excel:', error)
-        window.alert('Não foi possível importar o Excel. Verifique se há uma linha de cabeçalho com as colunas informadas.')
+        const detail = error instanceof Error ? error.message : 'Erro inesperado ao ler a planilha.'
+        const quotaExceeded = error?.name === 'QuotaExceededError' || /quota exceeded|storage.*full/i.test(detail)
+        const message = quotaExceeded
+          ? 'O armazenamento local está cheio. Libere espaço ou reduza a quantidade de registros da planilha e tente novamente.'
+          : detail
+        window.alert(`Não foi possível importar o Excel.\n\n${message}`)
       } finally {
         event.target.value = ''
       }
+    }
+    reader.onerror = () => {
+      console.error('[OS] falha ao ler o arquivo Excel:', reader.error)
+      window.alert('Não foi possível ler o arquivo selecionado. Verifique se ele não está corrompido e tente novamente.')
+      event.target.value = ''
     }
     reader.readAsArrayBuffer(file)
   }
