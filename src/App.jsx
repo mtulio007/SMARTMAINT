@@ -487,6 +487,28 @@ function App() {
       .slice(0, 10)
   }, [filteredOrders, equipamentoMap])
 
+  const mechanicRanking = useMemo(() => {
+    const totals = new Map()
+    filteredOrders.forEach(order => {
+      const mechanic = String(order.tecnico || '').trim()
+      if (!mechanic) return
+      const key = mechanic.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleUpperCase('pt-BR')
+      const current = totals.get(key) || { mechanic, total: 0, completed: 0, started: 0, pending: 0 }
+      const status = String(order.status || '').trim().toLocaleLowerCase('pt-BR')
+      current.total += 1
+      if (status.includes('final') || status.includes('conclu') || status.includes('encerr')) {
+        current.completed += 1
+      } else if (status.includes('inici')) {
+        current.started += 1
+      } else {
+        current.pending += 1
+      }
+      totals.set(key, current)
+    })
+    return [...totals.values()]
+      .sort((a, b) => b.completed - a.completed || b.total - a.total || a.mechanic.localeCompare(b.mechanic, 'pt-BR'))
+  }, [filteredOrders])
+
   const selectedMachineOrders = useMemo(() => {
     if (!selectedMachine) return []
     return filteredOrders.filter(order => String(order.equipamento || '').trim() === selectedMachine)
@@ -668,8 +690,10 @@ function App() {
       const store = await response.json()
       if (store.data) applySharedData(store.data)
       setSyncStatus('Dados sincronizados')
+      return true
     } catch {
       setSyncStatus('Sem conexão com a base compartilhada')
+      return false
     }
   }
 
@@ -711,13 +735,13 @@ function App() {
     }
   }, [])
 
-  const saveOrders = nextOrders => {
+  const saveOrders = (nextOrders, replaceAll = false) => {
     const previousData = sharedDataRef.current
     const data = { ...previousData, orders: nextOrders }
     sharedDataRef.current = data
     setOrders(nextOrders)
     saveLocalData(data)
-    void sendSharedData(data, getChanges('orders', previousData.orders, nextOrders))
+    return sendSharedData(data, replaceAll ? undefined : getChanges('orders', previousData.orders, nextOrders))
   }
 
   const saveExtraEntries = nextEntries => {
@@ -1503,7 +1527,12 @@ function App() {
           )
         }
 
-        let lastNumber = orders.reduce((highest, order) => Math.max(highest, Number(String(order.reg || '').match(/\d+$/)?.[0]) || 0), 0)
+        const replaceExisting = window.confirm(
+          `A base atual possui ${orders.length} OS(s), e o Excel contém ${dataRows.length} registro(s).\n\nOK = Apagar as OS existentes e carregar somente os dados do Excel, reiniciando a numeração em 001.\nCancelar = Incluir as OS do Excel e preservar os dados existentes.`
+        )
+        let lastNumber = replaceExisting
+          ? 0
+          : orders.reduce((highest, order) => Math.max(highest, Number(String(order.reg || '').match(/\d+$/)?.[0]) || 0), 0)
         const imported = dataRows.map(({ row }) => {
           const description = String(valueAt(row, 'descricao') ?? '').trim()
           lastNumber += 1
@@ -1529,10 +1558,14 @@ function App() {
             status: status(valueAt(row, 'status'))
           }
         })
-        const replaceExisting = window.confirm(
-          `A base atual possui ${orders.length} OS(s), e o Excel contém ${imported.length} registro(s).\n\nOK = Apagar as OS existentes e carregar somente os dados do Excel.\nCancelar = Incluir as OS do Excel e preservar os dados existentes.`
-        )
-        saveOrders(replaceExisting ? imported : [...imported, ...orders])
+        if (replaceExisting) {
+          const saved = await saveOrders(imported, true)
+          if (!saved) {
+            throw new Error('A substituição foi aplicada neste computador, mas não foi possível confirmar a gravação no banco compartilhado. Verifique a conexão e tente sincronizar novamente.')
+          }
+        } else {
+          void saveOrders([...imported, ...orders])
+        }
         window.alert(replaceExisting
           ? `${imported.length} OS(s) carregada(s). A base anterior foi substituída.`
           : `${imported.length} OS(s) incluída(s). As OS existentes foram preservadas.`)
@@ -2403,6 +2436,49 @@ function App() {
                       <input value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="w-full rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500" placeholder="Reg, setor, solicitante, técnico..." />
                     </label>
                   </div>
+                  <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                    <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
+                      <div>
+                        <h3 className="text-base font-semibold text-slate-900">Ranking de atendimento por mecânico</h3>
+                        <p className="mt-1 text-xs text-slate-500">Ordenado por OS finalizadas. Considere os filtros de status e pesquisa acima.</p>
+                      </div>
+                      {mechanicRanking[0] ? (
+                        <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
+                          1º {mechanicRanking[0].mechanic}: {mechanicRanking[0].completed} finalizada(s)
+                        </span>
+                      ) : null}
+                    </div>
+                    {mechanicRanking.length === 0 ? (
+                      <p className="py-5 text-center text-sm text-slate-500">Não há OS com mecânico informado para os filtros selecionados.</p>
+                    ) : (
+                      <div className="overflow-x-auto">
+                        <table className="w-full min-w-[560px] border-collapse text-left text-xs">
+                          <thead className="bg-slate-100 text-slate-500">
+                            <tr>
+                              <th className="px-3 py-2 font-medium">Posição</th>
+                              <th className="px-3 py-2 font-medium">Mecânico</th>
+                              <th className="px-3 py-2 text-center font-medium">Finalizadas</th>
+                              <th className="px-3 py-2 text-center font-medium">Iniciadas</th>
+                              <th className="px-3 py-2 text-center font-medium">Pendentes</th>
+                              <th className="px-3 py-2 text-center font-medium">Total</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {mechanicRanking.map((item, index) => (
+                              <tr key={item.mechanic} className="border-t border-slate-200/70">
+                                <td className="px-3 py-2 font-semibold text-slate-500">#{index + 1}</td>
+                                <td className="px-3 py-2 font-medium text-slate-800">{item.mechanic}</td>
+                                <td className="px-3 py-2 text-center font-semibold text-blue-700">{item.completed}</td>
+                                <td className="px-3 py-2 text-center text-amber-700">{item.started}</td>
+                                <td className="px-3 py-2 text-center text-red-700">{item.pending}</td>
+                                <td className="px-3 py-2 text-center font-semibold text-slate-700">{item.total}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    )}
+                  </section>
                   <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
                     <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
                       <div>
