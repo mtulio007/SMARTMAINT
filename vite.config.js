@@ -7,6 +7,30 @@ import sqlite3 from 'sqlite3'
 
 const projectRoot = dirname(fileURLToPath(import.meta.url))
 
+const parseMaterialQuantity = value => {
+  if (value === null || value === undefined || value === '') return 0
+  if (typeof value === 'number') {
+    if (Number.isFinite(value)) return value
+    throw new Error('Quantidade inválida')
+  }
+
+  let text = String(value).trim().replace(/\s/g, '')
+  if (!text) return 0
+  if (text.includes(',') && text.includes('.')) {
+    const decimalSeparator = text.lastIndexOf(',') > text.lastIndexOf('.') ? ',' : '.'
+    const groupingSeparator = decimalSeparator === ',' ? /\./g : /,/g
+    text = text.replace(groupingSeparator, '').replace(decimalSeparator, '.')
+  } else if (text.includes(',')) {
+    text = text.endsWith(',') ? text.slice(0, -1) : text.replace(',', '.')
+  } else if (/^-?\d{1,3}(?:\.\d{3})+$/.test(text)) {
+    text = text.replace(/\./g, '')
+  }
+
+  const quantity = Number(text)
+  if (!Number.isFinite(quantity)) throw new Error(`Quantidade inválida: ${value}`)
+  return quantity
+}
+
 const emptyData = {
   orders: [],
   extraEntries: [],
@@ -230,7 +254,9 @@ function materialExitSqliteApi() {
     request.on('end', async () => {
       try {
         const payload = JSON.parse(body)
-        const entries = Array.isArray(payload.entries) ? payload.entries : []
+        const entries = Array.isArray(payload.entries)
+          ? payload.entries.map(entry => ({ ...entry, qtd: parseMaterialQuantity(entry.qtd) }))
+          : []
         const replaceAll = payload.replaceAll === true
         const db = await getDatabase()
         await new Promise((resolvePromise, reject) => db.serialize(() => {
@@ -240,8 +266,8 @@ function materialExitSqliteApi() {
               ? db.prepare('INSERT OR REPLACE INTO material_exits (id, data, codigo, descricao, um, qtd, turno, destino, solicitante) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)')
               : db.prepare('INSERT OR REPLACE INTO material_exits (id, data, codigo, descricao, um, qtd) VALUES (?, ?, ?, ?, ?, ?)')
             entries.forEach(entry => {
-              if (useNewColumns) statement.run(entry._syncId || crypto.randomUUID(), entry.data, entry.codigo || 'SEM CÓDIGO', entry.descricao, entry.um || '', Number(entry.qtd) || 0, entry.turno || '', entry.destino || '', entry.solicitante || '')
-              else statement.run(entry._syncId || crypto.randomUUID(), entry.data, entry.codigo || 'SEM CÓDIGO', entry.descricao, entry.um || '', Number(entry.qtd) || 0)
+              if (useNewColumns) statement.run(entry._syncId || crypto.randomUUID(), entry.data, entry.codigo || 'SEM CÓDIGO', entry.descricao, entry.um || '', entry.qtd, entry.turno || '', entry.destino || '', entry.solicitante || '')
+              else statement.run(entry._syncId || crypto.randomUUID(), entry.data, entry.codigo || 'SEM CÓDIGO', entry.descricao, entry.um || '', entry.qtd)
             })
             statement.finalize(error => {
               if (error) { db.run('ROLLBACK'); reject(error); return }

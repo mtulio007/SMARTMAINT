@@ -278,6 +278,48 @@ const formatIntegerThousands = value => {
   return rounded.toLocaleString('pt-BR', { maximumFractionDigits: 0 })
 }
 
+const parseMaterialQuantity = value => {
+  if (value === null || value === undefined || value === '') return ''
+  if (typeof value === 'number') {
+    if (Number.isFinite(value)) return value
+    throw new Error('Quantidade inválida')
+  }
+
+  let text = String(value).trim().replace(/\s/g, '')
+  if (!text) return ''
+
+  if (text.includes(',') && text.includes('.')) {
+    const decimalSeparator = text.lastIndexOf(',') > text.lastIndexOf('.') ? ',' : '.'
+    const groupingSeparator = decimalSeparator === ',' ? /\./g : /,/g
+    text = text.replace(groupingSeparator, '').replace(decimalSeparator, '.')
+  } else if (text.includes(',')) {
+    text = text.endsWith(',') ? text.slice(0, -1) : text.replace(',', '.')
+  } else if (/^-?\d{1,3}(?:\.\d{3})+$/.test(text)) {
+    text = text.replace(/\./g, '')
+  }
+
+  const quantity = Number(text)
+  if (!Number.isFinite(quantity)) throw new Error(`Quantidade inválida: ${value}`)
+  return quantity
+}
+
+const normalizeMaterialQuantity = value => {
+  try {
+    return parseMaterialQuantity(value)
+  } catch (error) {
+    console.error('[materiais] quantidade inválida nos dados salvos:', value, error)
+    return value
+  }
+}
+
+const formatMaterialQuantity = value => {
+  const quantity = Number(value)
+  return (Number.isFinite(quantity) ? quantity : 0).toLocaleString('pt-BR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 6
+  })
+}
+
 const formatShortDate = value => {
   if (!value) return ''
   const iso = toDateInput(value)
@@ -357,7 +399,7 @@ function App() {
     }
   })
   const [materialEntries, setMaterialEntries] = useState(() => {
-    try { return JSON.parse(localStorage.getItem('os_easy_material_entries') || '[]').map(entry => ({ ...entry, _syncId: entry._syncId || createSyncId(), codigo: !entry.codigo || String(entry.codigo).startsWith('MAT-') ? 'SEM CÓDIGO' : entry.codigo })) } catch { return [] }
+    try { return JSON.parse(localStorage.getItem('os_easy_material_entries') || '[]').map(entry => ({ ...entry, qtd: normalizeMaterialQuantity(entry.qtd), _syncId: entry._syncId || createSyncId(), codigo: !entry.codigo || String(entry.codigo).startsWith('MAT-') ? 'SEM CÓDIGO' : entry.codigo })) } catch { return [] }
   })
   const [selectedSection, setSelectedSection] = useState('dashboardmateriais')
   const [searchTerm, setSearchTerm] = useState('')
@@ -378,7 +420,7 @@ function App() {
   const [showMaterialNewRow, setShowMaterialNewRow] = useState(false)
   const [selectedMaterialEntryIds, setSelectedMaterialEntryIds] = useState([])
   const [materialExits, setMaterialExits] = useState(() => {
-    try { return JSON.parse(localStorage.getItem('os_easy_material_exits') || '[]').map(item => ({ turno: '', destino: '', solicitante: '', ...item, _syncId: item._syncId || createSyncId() })) } catch { return [] }
+    try { return JSON.parse(localStorage.getItem('os_easy_material_exits') || '[]').map(item => ({ turno: '', destino: '', solicitante: '', ...item, qtd: normalizeMaterialQuantity(item.qtd), _syncId: item._syncId || createSyncId() })) } catch { return [] }
   })
   const [materialExitForm, setMaterialExitForm] = useState({ data: '', codigo: '', descricao: '', um: '', qtd: '', turno: '', destino: '', solicitante: '' })
   const [showMaterialExitNewRow, setShowMaterialExitNewRow] = useState(false)
@@ -641,8 +683,8 @@ function App() {
       extraEntries: Array.isArray(data.extraEntries) ? data.extraEntries : [],
       purchases: Array.isArray(data.purchases) ? data.purchases : [],
       catalogItems: Array.isArray(data.catalogItems) ? data.catalogItems : [],
-      materialEntries: Array.isArray(data.materialEntries) ? data.materialEntries.map(entry => ({ ...entry, _syncId: entry._syncId || createSyncId(), codigo: !entry.codigo || String(entry.codigo).startsWith('MAT-') ? 'SEM CÓDIGO' : entry.codigo })) : [],
-      materialExits: Array.isArray(data.materialExits) ? data.materialExits.map(entry => ({ ...entry, _syncId: entry._syncId || createSyncId() })) : [],
+      materialEntries: Array.isArray(data.materialEntries) ? data.materialEntries.map(entry => ({ ...entry, qtd: normalizeMaterialQuantity(entry.qtd), _syncId: entry._syncId || createSyncId(), codigo: !entry.codigo || String(entry.codigo).startsWith('MAT-') ? 'SEM CÓDIGO' : entry.codigo })) : [],
+      materialExits: Array.isArray(data.materialExits) ? data.materialExits.map(entry => ({ ...entry, qtd: normalizeMaterialQuantity(entry.qtd), _syncId: entry._syncId || createSyncId() })) : [],
       materialPlanning: data.materialPlanning && typeof data.materialPlanning === 'object' ? data.materialPlanning : {}
     }
 
@@ -774,7 +816,7 @@ function App() {
   }
 
   const saveMaterialEntries = nextEntries => {
-    const entriesWithIds = nextEntries.map(item => ({ ...item, _syncId: item._syncId || createSyncId() }))
+    const entriesWithIds = nextEntries.map(item => ({ ...item, qtd: normalizeMaterialQuantity(item.qtd), _syncId: item._syncId || createSyncId() }))
     const previousData = sharedDataRef.current
     const data = { ...previousData, materialEntries: entriesWithIds }
     sharedDataRef.current = data
@@ -786,7 +828,14 @@ function App() {
   const handleMaterialSubmit = event => {
     event.preventDefault()
     if (!materialForm.data || !materialForm.descricao) return
-    const entry = { ...materialForm, codigo: materialForm.codigo.trim() || 'SEM CÓDIGO', data: materialForm.data || getCurrentDate() }
+    let qtd
+    try {
+      qtd = parseMaterialQuantity(materialForm.qtd)
+    } catch (error) {
+      window.alert(error.message)
+      return
+    }
+    const entry = { ...materialForm, qtd, codigo: materialForm.codigo.trim() || 'SEM CÓDIGO', data: materialForm.data || getCurrentDate() }
     if (editingMaterialId) {
       const nextEntries = materialEntries.map(item => item._syncId === editingMaterialId ? { ...item, ...entry, _syncId: editingMaterialId } : item)
       saveMaterialEntries(nextEntries)
@@ -804,7 +853,13 @@ function App() {
   }
 
   const handleMaterialCellChange = (entry, field, value) => {
-    const nextValue = value.trim()
+    let nextValue
+    try {
+      nextValue = field === 'qtd' ? parseMaterialQuantity(value.trim()) : value.trim()
+    } catch (error) {
+      window.alert(error.message)
+      return
+    }
     if (String(entry[field] ?? '') === nextValue) return
     saveMaterialEntries(materialEntries.map(item => item._syncId === entry._syncId ? { ...item, [field]: nextValue } : item))
   }
@@ -824,24 +879,37 @@ function App() {
   }
 
   const saveMaterialExits = nextEntries => {
-    const normalized = nextEntries.map(item => ({ turno: '', destino: '', solicitante: '', ...item, _syncId: item._syncId || createSyncId() }))
+    const normalized = nextEntries.map(item => ({ turno: '', destino: '', solicitante: '', ...item, qtd: normalizeMaterialQuantity(item.qtd), _syncId: item._syncId || createSyncId() }))
     const previousData = sharedDataRef.current
     const data = { ...previousData, materialExits: normalized }
     sharedDataRef.current = data
     setMaterialExits(normalized)
     saveLocalData(data)
-    void sendSharedData(data, getChanges('materialExits', previousData.materialExits || [], normalized))
+    return sendSharedData(data, getChanges('materialExits', previousData.materialExits || [], normalized))
   }
 
   const saveMaterialExit = () => {
     if (!materialExitForm.data || !materialExitForm.descricao) return
-    saveMaterialExits([{ ...materialExitForm, codigo: materialExitForm.codigo.trim() || 'SEM CÓDIGO' }, ...materialExits])
+    let qtd
+    try {
+      qtd = parseMaterialQuantity(materialExitForm.qtd)
+    } catch (error) {
+      window.alert(error.message)
+      return
+    }
+    saveMaterialExits([{ ...materialExitForm, qtd, codigo: materialExitForm.codigo.trim() || 'SEM CÓDIGO' }, ...materialExits])
     setMaterialExitForm({ data: '', codigo: '', descricao: '', um: '', qtd: '', turno: '', destino: '', solicitante: '' })
     setShowMaterialExitNewRow(false)
   }
 
   const updateMaterialExitCell = (entry, field, value) => {
-    const nextValue = value.trim()
+    let nextValue
+    try {
+      nextValue = field === 'qtd' ? parseMaterialQuantity(value.trim()) : value.trim()
+    } catch (error) {
+      window.alert(error.message)
+      return
+    }
     if (String(entry[field] ?? '') === nextValue) return
     saveMaterialExits(materialExits.map(item => item._syncId === entry._syncId ? { ...item, [field]: nextValue } : item))
   }
@@ -896,7 +964,7 @@ function App() {
           codigo: String(row[columnMap.codigo] ?? '').trim() || 'SEM CÓDIGO',
           descricao: String(row[columnMap.descricao] ?? '').trim(),
           um: String(row[columnMap.um] ?? '').trim(),
-          qtd: row[columnMap.qtd] ?? '',
+          qtd: parseMaterialQuantity(row[columnMap.qtd] ?? ''),
           turno: String(row[columnMap.turno] ?? '').trim(),
           destino: String(row[columnMap.destino] ?? '').trim(),
           solicitante: String(row[columnMap.solicitante] ?? '').trim()
@@ -906,7 +974,12 @@ function App() {
         const response = await fetch('/api/material-exits', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ entries: imported, replaceAll: eraseDatabase }) })
         if (!response.ok) throw new Error('SQLite')
         const savedExits = await response.json()
-        saveMaterialExits(Array.isArray(savedExits) ? savedExits : [...imported, ...materialExits])
+        const loadedExits = Array.isArray(savedExits) ? savedExits : imported
+        const nextExits = eraseDatabase
+          ? loadedExits
+          : [...loadedExits, ...materialExits.filter(existing => !loadedExits.some(item => item._syncId === existing._syncId))]
+        const synchronized = await saveMaterialExits(nextExits)
+        if (!synchronized) throw new Error('shared-data')
         window.alert(eraseDatabase ? `${imported.length} registro(s) carregado(s). O banco anterior foi apagado.` : `${imported.length} registro(s) incluído(s). Os dados existentes foram preservados.`)
       } catch (importError) {
         console.error('[saída] falha na carga do Excel:', importError)
@@ -915,6 +988,8 @@ function App() {
           message = 'Carga interrompida: armazenamento local cheio. Apague o banco (OK no confirm) ou exclua registros antes de importar.'
         } else if (importError instanceof Error && /SQLite|material-exits/i.test(importError.message)) {
           message = 'Carga interrompida: não foi possível gravar no banco SQLite. Reinicie o servidor (SMARTMAINT.bat) e tente de novo.'
+        } else if (importError instanceof Error && /shared-data/i.test(importError.message)) {
+          message = 'Os registros foram gravados no SQLite, mas não foi possível sincronizar a base compartilhada. Verifique a conexão e tente sincronizar novamente.'
         }
         window.alert(message)
       }
@@ -929,22 +1004,24 @@ function App() {
     materialEntries.forEach(item => {
       const key = item.codigo || 'SEM CÓDIGO'
       const current = totals.get(key) || { codigo: key, descricao: item.descricao || '', entradas: 0, saidas: 0 }
-      current.entradas += Number(item.qtd) || 0
+      current.entradas += Number(parseMaterialQuantity(item.qtd)) || 0
       if (!current.descricao) current.descricao = item.descricao || ''
       totals.set(key, current)
     })
     materialExits.forEach(item => {
       const key = item.codigo || 'SEM CÓDIGO'
       const current = totals.get(key) || { codigo: key, descricao: item.descricao || '', entradas: 0, saidas: 0 }
-      current.saidas += Number(item.qtd) || 0
+      current.saidas += Number(parseMaterialQuantity(item.qtd)) || 0
       if (!current.descricao) current.descricao = item.descricao || ''
       totals.set(key, current)
     })
     return [...totals.values()]
       .map(item => ({ ...item, saldo: item.entradas - item.saidas }))
-      .filter(item => `${item.codigo} ${item.descricao}`.toLowerCase().includes(materialSummarySearch.toLowerCase()))
       .sort((a, b) => b.saldo - a.saldo)
-  }, [materialEntries, materialExits, materialSummarySearch])
+  }, [materialEntries, materialExits])
+
+  const filteredMaterialSummary = useMemo(() => materialSummary
+    .filter(item => `${item.codigo} ${item.descricao}`.toLowerCase().includes(materialSummarySearch.toLowerCase())), [materialSummary, materialSummarySearch])
 
   const filteredMaterialEntries = useMemo(() => materialEntries.filter(item => `${item.codigo} ${item.descricao}`.toLowerCase().includes(materialEntrySearch.toLowerCase())), [materialEntries, materialEntrySearch])
   const filteredMaterialExits = useMemo(() => materialExits.filter(item => `${item.codigo} ${item.descricao} ${item.turno || ''} ${item.destino || ''} ${item.solicitante || ''}`.toLowerCase().includes(materialExitSearch.toLowerCase())), [materialExits, materialExitSearch])
@@ -984,7 +1061,7 @@ function App() {
     materialExits.forEach(item => {
       const codigo = item.codigo || 'SEM CÓDIGO'
       const current = totals.get(codigo) || { codigo, descricao: item.descricao || '', quantidade: 0, apontamentos: 0 }
-      current.quantidade += Number(item.qtd) || 0
+      current.quantidade += Number(parseMaterialQuantity(item.qtd)) || 0
       current.apontamentos += 1
       if (!current.descricao && item.descricao) current.descricao = item.descricao
       totals.set(codigo, current)
@@ -1069,7 +1146,7 @@ function App() {
           codigo: String(valueAt(row, 'codigo', 1)).trim() || 'SEM CÓDIGO',
           descricao: String(valueAt(row, 'descricao', 2)).trim(),
           um: String(valueAt(row, 'um', 3)).trim(),
-          qtd: valueAt(row, 'qtd', 4),
+          qtd: parseMaterialQuantity(valueAt(row, 'qtd', 4)),
           fornecedor: String(valueAt(row, 'fornecedor', 5)).trim(),
           nota: String(valueAt(row, 'nota', 6)).trim()
         })).filter(row => row.codigo || row.descricao)
@@ -1077,7 +1154,13 @@ function App() {
         const eraseDatabase = window.confirm('Confirma a operação?\n\nOK = Apagar o Banco e carregar somente o Excel.\nCancelar = Apenas incluir novos dados e preservar o banco atual.')
         saveMaterialEntries(eraseDatabase ? imported : [...imported, ...materialEntries])
         window.alert(eraseDatabase ? `${imported.length} registro(s) carregado(s). O banco anterior foi apagado.` : `${imported.length} registro(s) incluído(s). Os dados existentes foram preservados.`)
-      } catch (error) { window.alert('Não foi possível ler o Excel. Verifique se o arquivo está no formato .xlsx, .xls ou .csv.') }
+      } catch (error) {
+        console.error('[entrada] falha na carga do Excel:', error)
+        const message = error instanceof Error && error.message.startsWith('Quantidade inválida')
+          ? `Carga cancelada: ${error.message}`
+          : 'Não foi possível ler o Excel. Verifique se o arquivo está no formato .xlsx, .xls ou .csv.'
+        window.alert(message)
+      }
       event.target.value = ''
     }
     reader.readAsArrayBuffer(file)
@@ -1093,7 +1176,7 @@ function App() {
         'CÓDIGO': entry.codigo || '',
         'DESCRIÇÃO': entry.descricao || '',
         UM: entry.um || '',
-        QTD: entry.qtd === '' || entry.qtd === null || entry.qtd === undefined ? '' : Number(entry.qtd),
+        QTD: parseMaterialQuantity(entry.qtd),
         FORNECEDOR: entry.fornecedor || '',
         'Nº NOTA': entry.nota || ''
       }))
@@ -1115,7 +1198,7 @@ function App() {
         'CÓDIGO': entry.codigo || '',
         'DESCRIÇÃO': entry.descricao || '',
         UM: entry.um || '',
-        QTD: entry.qtd === '' || entry.qtd === null || entry.qtd === undefined ? '' : Number(entry.qtd),
+        QTD: parseMaterialQuantity(entry.qtd),
         TURNO: entry.turno || '',
         DESTINO: entry.destino || '',
         SOLICITANTE: entry.solicitante || ''
@@ -2102,7 +2185,7 @@ function App() {
                                 <td className="max-w-[420px] px-2 py-2.5 font-medium text-slate-800">{item.descricao || 'Descrição não informada'}</td>
                                 <td className="px-2 py-2.5 text-slate-600">{item.codigo}</td>
                                 <td className="px-2 py-2.5 text-right text-slate-600">{formatIntegerThousands(item.apontamentos)}</td>
-                                <td className="px-2 py-2.5 text-right font-semibold text-rose-700">{formatIntegerThousands(item.quantidade)}</td>
+                                <td className="px-2 py-2.5 text-right font-semibold text-rose-700">{formatMaterialQuantity(item.quantidade)}</td>
                               </tr>
                             ))}
                           </tbody>
@@ -2131,7 +2214,7 @@ function App() {
                         {showMaterialNewRow ? <tr className="border-b-2 border-brand-200 bg-brand-50/40"><td className="px-2 py-1 text-center text-slate-400">Novo</td>
                           {[['data', 'date', 'min-w-[130px]'], ['codigo', 'text', 'min-w-[120px]'], ['descricao', 'text', 'min-w-[280px]'], ['um', 'text', 'min-w-[70px]'], ['qtd', 'number', 'min-w-[70px]'], ['fornecedor', 'text', 'min-w-[220px]'], ['nota', 'text', 'min-w-[120px]']].map(([name, type, width]) => <td key={name} className="p-1"><input type={type} name={name} value={materialForm[name]} onChange={event => setMaterialForm(previous => ({ ...previous, [name]: event.target.value }))} placeholder={name === 'descricao' ? 'Descrição*' : name === 'data' ? 'Data*' : name.toUpperCase()} className={`w-full ${width} rounded border border-slate-200 bg-white px-2 py-1 text-[11px] outline-none focus:border-brand-500`} /></td>)}
                         </tr> : null}
-                        {filteredMaterialEntries.length === 0 ? <tr><td colSpan="8" className="px-3 py-5 text-center text-sm text-slate-500">{materialEntrySearch ? 'Nenhum resultado encontrado para a pesquisa.' : 'Nenhuma entrada cadastrada.'}</td></tr> : filteredMaterialEntries.map(entry => <tr key={entry._syncId} className={`border-t border-slate-200/70 hover:bg-slate-50 ${selectedMaterialEntryIds.includes(entry._syncId) ? 'bg-brand-50' : ''}`}><td className="px-2 py-1 text-center"><input type="checkbox" checked={selectedMaterialEntryIds.includes(entry._syncId)} onChange={() => toggleMaterialEntrySelection(entry._syncId)} aria-label={`Selecionar ${entry.descricao || entry.codigo || 'registro'}`} /></td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'data', event.currentTarget.textContent)} className="min-w-[130px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{formatShortDate(entry.data) || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'codigo', event.currentTarget.textContent)} className="min-w-[120px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.codigo || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'descricao', event.currentTarget.textContent)} className="min-w-[280px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.descricao || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'um', event.currentTarget.textContent)} className="cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.um || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'qtd', event.currentTarget.textContent)} className="cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.qtd || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'fornecedor', event.currentTarget.textContent)} className="min-w-[220px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.fornecedor || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'nota', event.currentTarget.textContent)} className="min-w-[120px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.nota || '—'}</td></tr>)}
+                        {filteredMaterialEntries.length === 0 ? <tr><td colSpan="8" className="px-3 py-5 text-center text-sm text-slate-500">{materialEntrySearch ? 'Nenhum resultado encontrado para a pesquisa.' : 'Nenhuma entrada cadastrada.'}</td></tr> : filteredMaterialEntries.map(entry => <tr key={entry._syncId} className={`border-t border-slate-200/70 hover:bg-slate-50 ${selectedMaterialEntryIds.includes(entry._syncId) ? 'bg-brand-50' : ''}`}><td className="px-2 py-1 text-center"><input type="checkbox" checked={selectedMaterialEntryIds.includes(entry._syncId)} onChange={() => toggleMaterialEntrySelection(entry._syncId)} aria-label={`Selecionar ${entry.descricao || entry.codigo || 'registro'}`} /></td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'data', event.currentTarget.textContent)} className="min-w-[130px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{formatShortDate(entry.data) || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'codigo', event.currentTarget.textContent)} className="min-w-[120px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.codigo || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'descricao', event.currentTarget.textContent)} className="min-w-[280px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.descricao || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'um', event.currentTarget.textContent)} className="cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.um || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'qtd', event.currentTarget.textContent)} className="cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.qtd === '' ? '—' : formatMaterialQuantity(entry.qtd)}</td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'fornecedor', event.currentTarget.textContent)} className="min-w-[220px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.fornecedor || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => handleMaterialCellChange(entry, 'nota', event.currentTarget.textContent)} className="min-w-[120px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.nota || '—'}</td></tr>)}
                       </tbody>
                     </table>
                   </div>
@@ -2154,15 +2237,15 @@ function App() {
                     <table className="min-w-[1320px] w-full border-collapse text-left text-[11px]"><thead className="sticky top-0 z-20 bg-slate-100 text-slate-500"><tr><th className="w-10 px-2 py-1 font-medium">Sel.</th>{['Data', 'Código', 'Descrição', 'UM', 'QTD', 'Turno', 'Destino', 'Solicitante'].map(label => <th key={label} className="px-2 py-1 font-medium">{label}</th>)}</tr></thead>
                       <tbody>
                         {showMaterialExitNewRow ? <tr className="border-b-2 border-brand-200 bg-brand-50/40"><td className="px-2 py-1 text-center text-slate-400">Novo</td>{[['data', 'date', 'min-w-[130px]'], ['codigo', 'text', 'min-w-[140px]'], ['descricao', 'text', 'min-w-[360px]'], ['um', 'text', 'min-w-[90px]'], ['qtd', 'number', 'min-w-[90px]'], ['turno', 'text', 'min-w-[90px]'], ['destino', 'text', 'min-w-[180px]'], ['solicitante', 'text', 'min-w-[200px]']].map(([name, type, width]) => <td key={name} className="p-1"><input type={type} value={materialExitForm[name]} onChange={event => setMaterialExitForm(previous => ({ ...previous, [name]: event.target.value }))} placeholder={name === 'descricao' ? 'Descrição*' : name === 'data' ? 'Data*' : name.toUpperCase()} className={`w-full ${width} rounded border border-slate-200 bg-white px-2 py-1 text-[11px] outline-none focus:border-brand-500`} /></td>)}</tr> : null}
-                        {filteredMaterialExits.length === 0 ? <tr><td colSpan="9" className="px-3 py-5 text-center text-sm text-slate-500">{materialExitSearch ? 'Nenhum resultado encontrado para a pesquisa.' : 'Nenhuma saída cadastrada.'}</td></tr> : filteredMaterialExits.map(entry => <tr key={entry._syncId} className={`border-t border-slate-200/70 hover:bg-slate-50 ${selectedMaterialExitIds.includes(entry._syncId) ? 'bg-brand-50' : ''}`}><td className="px-2 py-1 text-center"><input type="checkbox" checked={selectedMaterialExitIds.includes(entry._syncId)} onChange={() => toggleMaterialExitSelection(entry._syncId)} aria-label={`Selecionar ${entry.descricao || entry.codigo || 'registro'}`} /></td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'data', event.currentTarget.textContent)} className="min-w-[130px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{formatShortDate(entry.data) || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'codigo', event.currentTarget.textContent)} className="min-w-[140px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.codigo || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'descricao', event.currentTarget.textContent)} className="min-w-[360px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.descricao || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'um', event.currentTarget.textContent)} className="min-w-[90px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.um || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'qtd', event.currentTarget.textContent)} className="min-w-[90px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.qtd || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'turno', event.currentTarget.textContent)} className="min-w-[90px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.turno || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'destino', event.currentTarget.textContent)} className="min-w-[180px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.destino || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'solicitante', event.currentTarget.textContent)} className="min-w-[200px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.solicitante || '—'}</td></tr>)}
+                        {filteredMaterialExits.length === 0 ? <tr><td colSpan="9" className="px-3 py-5 text-center text-sm text-slate-500">{materialExitSearch ? 'Nenhum resultado encontrado para a pesquisa.' : 'Nenhuma saída cadastrada.'}</td></tr> : filteredMaterialExits.map(entry => <tr key={entry._syncId} className={`border-t border-slate-200/70 hover:bg-slate-50 ${selectedMaterialExitIds.includes(entry._syncId) ? 'bg-brand-50' : ''}`}><td className="px-2 py-1 text-center"><input type="checkbox" checked={selectedMaterialExitIds.includes(entry._syncId)} onChange={() => toggleMaterialExitSelection(entry._syncId)} aria-label={`Selecionar ${entry.descricao || entry.codigo || 'registro'}`} /></td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'data', event.currentTarget.textContent)} className="min-w-[130px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{formatShortDate(entry.data) || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'codigo', event.currentTarget.textContent)} className="min-w-[140px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.codigo || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'descricao', event.currentTarget.textContent)} className="min-w-[360px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.descricao || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'um', event.currentTarget.textContent)} className="min-w-[90px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.um || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'qtd', event.currentTarget.textContent)} className="min-w-[90px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.qtd === '' ? '—' : formatMaterialQuantity(entry.qtd)}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'turno', event.currentTarget.textContent)} className="min-w-[90px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.turno || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'destino', event.currentTarget.textContent)} className="min-w-[180px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.destino || '—'}</td><td contentEditable suppressContentEditableWarning onBlur={event => updateMaterialExitCell(entry, 'solicitante', event.currentTarget.textContent)} className="min-w-[200px] cursor-text px-2 py-1 outline-none focus:bg-brand-50">{entry.solicitante || '—'}</td></tr>)}
                       </tbody>
                     </table>
                   </div>
                 </div>
               ) : selectedSection === 'resumomateriais' ? (
                 <section className="mt-2 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
-                  <div className="mb-3 flex flex-wrap items-center justify-between gap-3"><label className="text-[11px] text-slate-600">Pesquisar <input value={materialSummarySearch} onChange={event => setMaterialSummarySearch(event.target.value)} className="ml-2 rounded border border-slate-300 px-2 py-1 text-[11px] outline-none focus:border-brand-500" /></label><div className="flex gap-6 text-right text-[11px]"><span>ENTRADAS<br /><b className="text-emerald-700">{formatIntegerThousands(materialSummary.reduce((sum, item) => sum + item.entradas, 0))}</b></span><span>SAÍDAS<br /><b className="text-red-700">{formatIntegerThousands(materialSummary.reduce((sum, item) => sum + item.saidas, 0))}</b></span><span>SALDO<br /><b className="text-brand-700">{formatIntegerThousands(materialSummary.reduce((sum, item) => sum + item.saldo, 0))}</b></span></div></div>
-                  <div className="max-h-[calc(100vh-210px)] overflow-auto rounded border border-slate-300"><table className="w-full min-w-[1440px] text-left text-[11px]"><thead className="sticky top-0 bg-slate-100 text-slate-600"><tr>{['Código', 'Descrição', 'Entradas', 'Saídas', 'Saldo', 'Lead Time', 'Consumo dia', 'Est. Segurança', 'Est. Min', 'Est. Max', 'Ressuprimento'].map(label => <th key={label} className="px-2 py-1">{label}</th>)}</tr></thead><tbody>{materialSummary.length === 0 ? <tr><td colSpan="11" className="px-2 py-4 text-center text-slate-500">Nenhum material encontrado.</td></tr> : materialSummary.map(item => { const planning = materialPlanning[item.codigo] || {}; const endOfStock = calculateStockDate(item.saldo, planning.consumoDia); const resupplyDate = calculateStockDate(item.saldo, planning.consumoDia, planning.leadTime); return <tr key={item.codigo} className={`border-t ${item.saldo < 0 ? 'bg-red-50' : ''}`}><td className="px-2 py-1">{item.codigo}</td><td className="px-2 py-1">{item.descricao}</td><td className="px-2 py-1">{formatIntegerThousands(item.entradas)}</td><td className="px-2 py-1">{formatIntegerThousands(item.saidas)}</td><td className={`px-2 py-1 font-semibold ${item.saldo < 0 ? 'text-red-700' : 'text-brand-700'}`}>{item.saldo >= 0 ? '+' : '−'}{formatIntegerThousands(Math.abs(item.saldo))}</td>{[['leadTime', 'Lead Time'], ['consumoDia', 'Consumo dia'], ['estSeguranca', 'Est. Segurança'], ['estMin', 'Est. Min'], ['estMax', 'Est. Max']].map(([field, label]) => <td key={field} className="px-1 py-1"><input aria-label={`${label} - ${item.codigo}`} type="number" min="0" value={planning[field] || ''} onChange={event => updateMaterialPlanning(item.codigo, field, event.target.value)} className="w-20 rounded border border-slate-200 px-1 py-0.5 text-[11px] outline-none focus:border-brand-500" /></td>)}<td className="px-2 py-1"><span className="block text-brand-700">{resupplyDate}</span><span className="text-[9px] text-slate-500">Fim: {endOfStock}</span></td></tr>})}</tbody></table></div>
+                  <div className="mb-3 flex flex-wrap items-center justify-between gap-3"><label className="text-[11px] text-slate-600">Pesquisar <input value={materialSummarySearch} onChange={event => setMaterialSummarySearch(event.target.value)} className="ml-2 rounded border border-slate-300 px-2 py-1 text-[11px] outline-none focus:border-brand-500" /></label><div className="flex gap-6 text-right text-[11px]"><span className="text-slate-500">TOTAIS GERAIS</span><span>ENTRADAS<br /><b className="text-emerald-700">+{formatMaterialQuantity(materialSummary.reduce((sum, item) => sum + item.entradas, 0))}</b></span><span>SAÍDAS<br /><b className="text-red-700">+{formatMaterialQuantity(materialSummary.reduce((sum, item) => sum + item.saidas, 0))}</b></span><span>SALDO<br /><b className="text-brand-700">{materialSummary.reduce((sum, item) => sum + item.saldo, 0) >= 0 ? '+' : '−'}{formatMaterialQuantity(Math.abs(materialSummary.reduce((sum, item) => sum + item.saldo, 0)))}</b></span></div></div>
+                  <div className="max-h-[calc(100vh-210px)] overflow-auto rounded border border-slate-300"><table className="w-full min-w-[1440px] text-left text-[11px]"><thead className="sticky top-0 bg-slate-100 text-slate-600"><tr>{['Código', 'Descrição', 'Entradas', 'Saídas', 'Saldo', 'Lead Time', 'Consumo dia', 'Est. Segurança', 'Est. Min', 'Est. Max', 'Ressuprimento'].map(label => <th key={label} className="px-2 py-1">{label}</th>)}</tr></thead><tbody>{filteredMaterialSummary.length === 0 ? <tr><td colSpan="11" className="px-2 py-4 text-center text-slate-500">Nenhum material encontrado.</td></tr> : filteredMaterialSummary.map(item => { const planning = materialPlanning[item.codigo] || {}; const endOfStock = calculateStockDate(item.saldo, planning.consumoDia); const resupplyDate = calculateStockDate(item.saldo, planning.consumoDia, planning.leadTime); return <tr key={item.codigo} className={`border-t ${item.saldo < 0 ? 'bg-red-50' : ''}`}><td className="px-2 py-1">{item.codigo}</td><td className="px-2 py-1">{item.descricao}</td><td className="px-2 py-1">{formatMaterialQuantity(item.entradas)}</td><td className="px-2 py-1">{formatMaterialQuantity(item.saidas)}</td><td className={`px-2 py-1 font-semibold ${item.saldo < 0 ? 'text-red-700' : 'text-brand-700'}`}>{item.saldo >= 0 ? '+' : '−'}{formatMaterialQuantity(Math.abs(item.saldo))}</td>{[['leadTime', 'Lead Time'], ['consumoDia', 'Consumo dia'], ['estSeguranca', 'Est. Segurança'], ['estMin', 'Est. Min'], ['estMax', 'Est. Max']].map(([field, label]) => <td key={field} className="px-1 py-1"><input aria-label={`${label} - ${item.codigo}`} type="number" min="0" value={planning[field] || ''} onChange={event => updateMaterialPlanning(item.codigo, field, event.target.value)} className="w-20 rounded border border-slate-200 px-1 py-0.5 text-[11px] outline-none focus:border-brand-500" /></td>)}<td className="px-2 py-1"><span className="block text-brand-700">{resupplyDate}</span><span className="text-[9px] text-slate-500">Fim: {endOfStock}</span></td></tr>})}</tbody></table></div>
                 </section>
               ) : selectedSection === 'catalogo' ? (
                 <div className="catalog-print-surface mt-2 grid gap-5">
