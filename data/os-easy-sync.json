@@ -158549,5 +158549,10 @@
     "12470310004": {
       "leadTime": ""
     }
+  },
+  "equipmentStatusHistory": {
+    "2026-11-09": {
+      "ER001": "FUNCIONANDO"
+    }
   }
 }

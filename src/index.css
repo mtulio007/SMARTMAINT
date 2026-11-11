@@ -12,12 +12,32 @@ body {
 }
 
 @media print {
+  @page {
+    size: A4 landscape;
+    margin: 8mm;
+  }
+
+  body:has(.equipment-status-print-surface) > #root > div,
+  body:has(.equipment-status-print-surface) > #root > div > div,
+  body:has(.equipment-status-print-surface) > #root > div > div > main,
+  body:has(.equipment-status-print-surface) > #root > div > div > main > div:nth-child(2),
+  body:has(.equipment-status-print-surface) > #root > div > div > main > div:nth-child(2) > section {
+    display: contents !important;
+  }
+
+  body:has(.equipment-status-print-surface) > #root > div > div > aside,
+  body:has(.equipment-status-print-surface) > #root > div > div > main > div:first-child {
+    display: none !important;
+  }
+
   body * {
     visibility: hidden;
   }
 
   .catalog-print-surface,
-  .catalog-print-surface * {
+  .catalog-print-surface *,
+  .equipment-status-print-surface,
+  .equipment-status-print-surface * {
     visibility: visible;
   }
 
@@ -30,9 +50,51 @@ body {
     background: white;
   }
 
+  .equipment-status-print-surface {
+    position: static;
+    display: block !important;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
   .catalog-print-surface .no-print,
-  .catalog-print-surface .catalog-print-grid > .no-print {
+  .catalog-print-surface .catalog-print-grid > .no-print,
+  .equipment-status-print-surface .no-print {
     display: none !important;
+  }
+
+  .equipment-status-print-table {
+    min-width: 0 !important;
+    width: 100%;
+    font-size: 7px;
+  }
+
+  .equipment-status-print-table th,
+  .equipment-status-print-table td {
+    padding: 2px 4px !important;
+    border: 1px solid #cbd5e1;
+    line-height: 1.15;
+  }
+
+  .equipment-status-print-table thead {
+    background: #1e3a8a !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .equipment-status-select {
+    display: none;
+  }
+
+  .equipment-status-print-value {
+    display: inline !important;
+  }
+
+  .equipment-status-print-table tr {
+    break-inside: avoid;
   }
 
   .catalog-print-grid {

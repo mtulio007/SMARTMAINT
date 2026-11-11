@@ -35,10 +35,11 @@ const emptyData = {
   orders: [],
   extraEntries: [],
   purchases: [],
-  catalogItems: []
-  ,materialEntries: [],
+  catalogItems: [],
+  materialEntries: [],
   materialExits: [],
-  materialPlanning: {}
+  materialPlanning: {},
+  equipmentStatusHistory: {}
 }
 
 function sharedDataApi() {
@@ -68,7 +69,8 @@ function sharedDataApi() {
     catalogItems: Array.isArray(saved?.catalogItems) ? saved.catalogItems : [],
     materialEntries: Array.isArray(saved?.materialEntries) ? saved.materialEntries : [],
     materialExits: Array.isArray(saved?.materialExits) ? saved.materialExits : [],
-    materialPlanning: saved?.materialPlanning && typeof saved.materialPlanning === 'object' ? saved.materialPlanning : {}
+    materialPlanning: saved?.materialPlanning && typeof saved.materialPlanning === 'object' ? saved.materialPlanning : {},
+    equipmentStatusHistory: saved?.equipmentStatusHistory && typeof saved.equipmentStatusHistory === 'object' ? saved.equipmentStatusHistory : {}
   })
 
   const readData = async () => {
@@ -151,21 +153,22 @@ function sharedDataApi() {
       return
     }
 
-    let body = ''
-    request.on('data', chunk => { body += chunk })
+    const bodyChunks = []
+    request.on('data', chunk => { bodyChunks.push(chunk) })
     request.on('end', async () => {
       try {
-        const payload = JSON.parse(body)
+        const payload = JSON.parse(Buffer.concat(bodyChunks).toString('utf8'))
         const data = request.method === 'POST'
           ? await enqueueWrite(() => applyOperations(payload))
           : await enqueueWrite(() => saveData({
               orders: Array.isArray(payload.orders) ? payload.orders : [],
               extraEntries: Array.isArray(payload.extraEntries) ? payload.extraEntries : [],
               purchases: Array.isArray(payload.purchases) ? payload.purchases : [],
-              catalogItems: Array.isArray(payload.catalogItems) ? payload.catalogItems : []
-              ,materialEntries: Array.isArray(payload.materialEntries) ? payload.materialEntries : [],
+              catalogItems: Array.isArray(payload.catalogItems) ? payload.catalogItems : [],
+              materialEntries: Array.isArray(payload.materialEntries) ? payload.materialEntries : [],
               materialExits: Array.isArray(payload.materialExits) ? payload.materialExits : [],
-              materialPlanning: payload.materialPlanning && typeof payload.materialPlanning === 'object' ? payload.materialPlanning : {}
+              materialPlanning: payload.materialPlanning && typeof payload.materialPlanning === 'object' ? payload.materialPlanning : {},
+              equipmentStatusHistory: payload.equipmentStatusHistory && typeof payload.equipmentStatusHistory === 'object' ? payload.equipmentStatusHistory : {}
             }))
         response.setHeader('Content-Type', 'application/json')
         response.end(JSON.stringify({ initialized: true, data }))
@@ -299,10 +302,7 @@ export default defineConfig({
   plugins: [react(), sharedDataApi(), materialExitSqliteApi()],
   server: {
     host: '0.0.0.0',
-    port: 5174,
-    hmr: {
-      host: '0.0.0.0'
-    }
+    port: 5174
   },
   preview: {
     host: '0.0.0.0',

@@ -5,10 +5,11 @@ const path = require('node:path')
 
 const emptyData = {
   orders: [], extraEntries: [], purchases: [], catalogItems: [],
-  materialEntries: [], materialExits: [], materialPlanning: {}
+  materialEntries: [], materialExits: [], materialPlanning: {}, equipmentStatusHistory: {}
 }
 
 let server
+let writeQueue = Promise.resolve()
 
 function normalizeData(saved) {
   return {
@@ -18,7 +19,8 @@ function normalizeData(saved) {
     catalogItems: Array.isArray(saved?.catalogItems) ? saved.catalogItems : [],
     materialEntries: Array.isArray(saved?.materialEntries) ? saved.materialEntries : [],
     materialExits: Array.isArray(saved?.materialExits) ? saved.materialExits : [],
-    materialPlanning: saved?.materialPlanning && typeof saved.materialPlanning === 'object' ? saved.materialPlanning : {}
+    materialPlanning: saved?.materialPlanning && typeof saved.materialPlanning === 'object' ? saved.materialPlanning : {},
+    equipmentStatusHistory: saved?.equipmentStatusHistory && typeof saved.equipmentStatusHistory === 'object' ? saved.equipmentStatusHistory : {}
   }
 }
 
@@ -38,6 +40,7 @@ async function createServer() {
     : path.join(__dirname, 'data', 'os-easy-sync.json')
 
   async function readStore() {
+    await writeQueue
     try { return { initialized: true, data: normalizeData(JSON.parse(await fs.readFile(dataFile, 'utf8'))) } }
     catch (error) {
       if (error.code !== 'ENOENT') return { initialized: false, data: emptyData }
@@ -49,10 +52,15 @@ async function createServer() {
     }
   }
 
-  async function saveStore(data) {
-    await fs.mkdir(dataDirectory, { recursive: true })
-    await fs.writeFile(dataFile, JSON.stringify(normalizeData(data), null, 2), 'utf8')
-    return normalizeData(data)
+  function saveStore(data) {
+    const normalized = normalizeData(data)
+    const save = writeQueue.then(async () => {
+      await fs.mkdir(dataDirectory, { recursive: true })
+      await fs.writeFile(dataFile, JSON.stringify(normalized, null, 2), 'utf8')
+      return normalized
+    })
+    writeQueue = save.catch(() => {})
+    return save
   }
 
   async function api(request, response) {
@@ -61,8 +69,9 @@ async function createServer() {
       response.end(JSON.stringify(await readStore()))
       return
     }
-    let body = ''
-    for await (const part of request) body += part
+    const bodyChunks = []
+    for await (const part of request) bodyChunks.push(part)
+    const body = Buffer.concat(bodyChunks).toString('utf8')
     try {
       const input = JSON.parse(body)
       let data

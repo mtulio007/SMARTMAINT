@@ -35,9 +35,7 @@ const colaboradorDetails = {
   'RAIMUNDO ALFAIA FERREIRA': { turnoHE: 'ESPECIAL', funcao: 'SERRALHEIRO' },
   'FRANCINEI DOS REIS OLIVEIRA': { turnoHE: 'ESPECIAL', funcao: 'ARTÍFICE' },
   'FRANCISCO CASTRO RODRIGUES': { turnoHE: 'A', funcao: 'SERRALHEIRO' },
-  'JOVERLEY BATALHA VASQUES': { turnoHE: 'B', funcao: 'ELETROTÉCNICO PL' },
   'ANDRÉ RICARDO DE CARVALHO AMORIM': { turnoHE: 'B', funcao: 'MECÂNICO SR' },
-  'RONÉLIO DA SILVA MARINHO': { turnoHE: 'B', funcao: 'ENC. MANUTENÇÃO' },
   'PAULO ANDRÉ CORREA VALE': { turnoHE: 'C', funcao: 'MECÂNICO SR' },
   'JOÃO VICTOR CARDOSO LIMA': { turnoHE: 'C', funcao: 'MECÂNICO PL' },
   'MARLISSON ALVES DA SILVA': { turnoHE: 'C', funcao: 'MECÂNICO ESPECIALISTA' },
@@ -192,6 +190,7 @@ const tecnicoOptions = [
 const menuItems = [
   { label: 'Manutenção', icon: '🔧', key: 'pesquisa', heading: true },
   { label: 'Status OS', icon: '🔎', key: 'pesquisa' },
+  { label: 'Status de equipamentos', icon: '🏭', key: 'statusmaquinas' },
   { label: 'Registro OS', icon: '🖥️', key: 'cadastro' },
   { label: 'Pedidos', icon: '🛒', key: 'compras' },
   { label: 'Status de pedidos', icon: '↳', key: 'statuspedidos', submenu: true, menuGroup: 'manutencao' },
@@ -250,7 +249,55 @@ const getPurchaseItems = purchase => {
   }]
 }
 const syncEndpoint = '/api/data'
-const emptySharedData = { orders: [], extraEntries: [], purchases: [], catalogItems: [], materialEntries: [], materialExits: [], materialPlanning: {} }
+const emptySharedData = { orders: [], extraEntries: [], purchases: [], catalogItems: [], materialEntries: [], materialExits: [], materialPlanning: {}, equipmentStatusHistory: {} }
+const equipmentStatusOptions = ['FUNCIONANDO', 'EM MANUTENÇÃO', 'PARADA - OPERACIONAL']
+const equipmentStatusMachines = [
+  ['ER001', 'EXTRUSORA DE RAFIA LOREX 120'],
+  ['EM001', 'EXTRUSÃO LOFIL 80'],
+  ['EL001', 'EXTRUSÃO DE REVESTIMENTO'],
+  ['EL002', 'EXTRUSÃO DE REVESTIMENTO YAOMING'],
+  ['EC001', 'EXTRUSORA COMPOSTO'],
+  ...Array.from({ length: 15 }, (_, index) => [`TL${String(index + 1).padStart(3, '0')}`, 'TEAR NOVA 6']),
+  ...Array.from({ length: 4 }, (_, index) => [`TP${String(index + 1).padStart(3, '0')}`, 'TEAR NOVA 82']),
+  ['TP005', 'TEAR NOVA 10'],
+  ...Array.from({ length: 5 }, (_, index) => [`TA${String(index + 1).padStart(3, '0')}`, 'TEAR DE AGULHA ALÇAS']),
+  ...Array.from({ length: 2 }, (_, index) => [`TC${String(index + 1).padStart(3, '0')}`, 'TEAR DE AGULHA']),
+  ...Array.from({ length: 2 }, (_, index) => [`TT${String(index + 1).padStart(3, '0')}`, 'TRAVA']),
+  ...Array.from({ length: 4 }, (_, index) => [`CC${String(index + 1).padStart(3, '0')}`, 'BCS 850/45'])
+]
+const getLocalDateString = (date = new Date()) => {
+  const year = date.getFullYear()
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  const day = String(date.getDate()).padStart(2, '0')
+  return `${year}-${month}-${day}`
+}
+const formatEquipmentStatusDate = dateString => {
+  const [year, month, day] = dateString.split('-').map(Number)
+  return new Date(year, month - 1, day).toLocaleDateString('pt-BR')
+}
+const formatEquipmentStatusDay = dateString => {
+  const [year, month, day] = dateString.split('-').map(Number)
+  const weekday = new Date(year, month - 1, day).toLocaleDateString('pt-BR', { weekday: 'short' }).toLocaleUpperCase('pt-BR')
+  return `${weekday} ${formatEquipmentStatusDate(dateString)}`
+}
+const getEquipmentStatusClasses = status => {
+  if (status === 'FUNCIONANDO') return 'text-green-700'
+  if (status === 'EM MANUTENÇÃO') return 'text-red-600'
+  if (status === 'PARADA - OPERACIONAL') return 'text-amber-700'
+  return 'text-slate-400'
+}
+const mergeEquipmentStatusHistory = (localHistory, sharedHistory) => {
+  const merged = sharedHistory && typeof sharedHistory === 'object' && !Array.isArray(sharedHistory)
+    ? { ...sharedHistory }
+    : {}
+  if (!localHistory || typeof localHistory !== 'object' || Array.isArray(localHistory)) return merged
+
+  Object.entries(localHistory).forEach(([date, statuses]) => {
+    if (!statuses || typeof statuses !== 'object' || Array.isArray(statuses)) return
+    merged[date] = { ...(merged[date] || {}), ...statuses }
+  })
+  return merged
+}
 const createSyncId = () => globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`
 const padDatePart = value => String(value).padStart(2, '0')
 
@@ -429,6 +476,9 @@ function App() {
   const [materialPlanning, setMaterialPlanning] = useState(() => {
     try { return JSON.parse(localStorage.getItem('os_easy_material_planning') || '{}') } catch { return {} }
   })
+  const [equipmentStatusHistory, setEquipmentStatusHistory] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('os_easy_equipment_status_history') || '{}') } catch { return {} }
+  })
   const [materialEntrySearch, setMaterialEntrySearch] = useState('')
   const [materialExitSearch, setMaterialExitSearch] = useState('')
   const [showMaterialEntrySearch, setShowMaterialEntrySearch] = useState(false)
@@ -441,8 +491,26 @@ function App() {
   const [invalidFields, setInvalidFields] = useState([])
   const [purchaseInvalidFields, setPurchaseInvalidFields] = useState([])
   const [syncStatus, setSyncStatus] = useState('Conectando base compartilhada...')
+  const [equipmentStatusWeekOffset, setEquipmentStatusWeekOffset] = useState(0)
+  const equipmentStatusWeekStart = new Date()
+  equipmentStatusWeekStart.setDate(
+    equipmentStatusWeekStart.getDate() - ((equipmentStatusWeekStart.getDay() + 6) % 7) + equipmentStatusWeekOffset * 7
+  )
+  const equipmentStatusDates = Array.from({ length: 6 }, (_, index) => {
+    const date = new Date(equipmentStatusWeekStart)
+    date.setDate(equipmentStatusWeekStart.getDate() + index)
+    return getLocalDateString(date)
+  })
+  const todaysEquipmentStatuses = equipmentStatusHistory[getLocalDateString()] || {}
+  const equipmentStatusCounts = equipmentStatusOptions.reduce((counts, status) => {
+    counts[status] = equipmentStatusMachines.filter(([code]) => todaysEquipmentStatuses[code] === status).length
+    return counts
+  }, {})
   const formRefs = useRef({})
   const purchaseFormRefs = useRef({})
+  const syncWriteQueueRef = useRef(Promise.resolve())
+  const pendingSyncWritesRef = useRef(0)
+  const syncRequestIdRef = useRef(0)
   const sharedDataRef = useRef({
     orders,
     extraEntries: extraEntries.map(entry => ({ ...entry, _syncId: entry._syncId || createSyncId() })),
@@ -450,7 +518,8 @@ function App() {
     catalogItems: catalogItems.map(item => ({ ...item, _syncId: item._syncId || createSyncId() })),
     materialEntries: materialEntries.map(item => ({ ...item, _syncId: item._syncId || createSyncId() })),
     materialExits: materialExits.map(item => ({ ...item, _syncId: item._syncId || createSyncId() })),
-    materialPlanning
+    materialPlanning,
+    equipmentStatusHistory
   })
 
   const requiredFields = [
@@ -675,6 +744,7 @@ function App() {
     localStorage.setItem('os_easy_material_entries', JSON.stringify(data.materialEntries))
     localStorage.setItem('os_easy_material_exits', JSON.stringify(data.materialExits))
     localStorage.setItem('os_easy_material_planning', JSON.stringify(data.materialPlanning))
+    localStorage.setItem('os_easy_equipment_status_history', JSON.stringify(data.equipmentStatusHistory))
   }
 
   const applySharedData = data => {
@@ -685,7 +755,11 @@ function App() {
       catalogItems: Array.isArray(data.catalogItems) ? data.catalogItems : [],
       materialEntries: Array.isArray(data.materialEntries) ? data.materialEntries.map(entry => ({ ...entry, qtd: normalizeMaterialQuantity(entry.qtd), _syncId: entry._syncId || createSyncId(), codigo: !entry.codigo || String(entry.codigo).startsWith('MAT-') ? 'SEM CÓDIGO' : entry.codigo })) : [],
       materialExits: Array.isArray(data.materialExits) ? data.materialExits.map(entry => ({ ...entry, qtd: normalizeMaterialQuantity(entry.qtd), _syncId: entry._syncId || createSyncId() })) : [],
-      materialPlanning: data.materialPlanning && typeof data.materialPlanning === 'object' ? data.materialPlanning : {}
+      materialPlanning: data.materialPlanning && typeof data.materialPlanning === 'object' ? data.materialPlanning : {},
+      equipmentStatusHistory: mergeEquipmentStatusHistory(
+        sharedDataRef.current.equipmentStatusHistory,
+        data.equipmentStatusHistory
+      )
     }
 
     sharedDataRef.current = normalized
@@ -696,7 +770,24 @@ function App() {
     setMaterialEntries(normalized.materialEntries)
     setMaterialExits(normalized.materialExits)
     setMaterialPlanning(normalized.materialPlanning)
+    setEquipmentStatusHistory(normalized.equipmentStatusHistory)
     saveLocalData(normalized)
+  }
+
+  const saveEquipmentStatus = (date, machineCode, status) => {
+    const currentHistory = sharedDataRef.current.equipmentStatusHistory || equipmentStatusHistory
+    const nextHistory = {
+      ...currentHistory,
+      [date]: {
+        ...(currentHistory[date] || {}),
+        [machineCode]: status
+      }
+    }
+    const data = { ...sharedDataRef.current, equipmentStatusHistory: nextHistory }
+    sharedDataRef.current = data
+    setEquipmentStatusHistory(nextHistory)
+    saveLocalData(data)
+    void sendSharedData(data)
   }
 
   const getRecordId = (collection, record) => {
@@ -720,34 +811,44 @@ function App() {
   }
 
   const sendSharedData = async (data, changes) => {
-    setSyncStatus('Sincronizando dados...')
-    try {
-      const response = await fetch(syncEndpoint, {
-        method: changes ? 'POST' : 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(changes || data)
-      })
+    const requestId = ++syncRequestIdRef.current
+    pendingSyncWritesRef.current += 1
+    const request = syncWriteQueueRef.current.catch(() => false).then(async () => {
+      setSyncStatus('Sincronizando dados...')
+      try {
+        const response = await fetch(syncEndpoint, {
+          method: changes ? 'POST' : 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(changes || data)
+        })
 
-      if (!response.ok) throw new Error('Falha ao salvar')
-      const store = await response.json()
-      if (store.data) applySharedData(store.data)
-      setSyncStatus('Dados sincronizados')
-      return true
-    } catch {
-      setSyncStatus('Sem conexão com a base compartilhada')
-      return false
-    }
+        if (!response.ok) throw new Error('Falha ao salvar')
+        const store = await response.json()
+        if (store.data && requestId === syncRequestIdRef.current) applySharedData(store.data)
+        if (requestId === syncRequestIdRef.current) setSyncStatus('Dados sincronizados')
+        return true
+      } catch {
+        if (requestId === syncRequestIdRef.current) setSyncStatus('Sem conexão com a base compartilhada')
+        return false
+      } finally {
+        pendingSyncWritesRef.current -= 1
+      }
+    })
+    syncWriteQueueRef.current = request
+    return request
   }
 
   useEffect(() => {
     let active = true
 
     const synchronize = async (initial = false) => {
+      if (pendingSyncWritesRef.current > 0) return
       try {
         const response = await fetch(syncEndpoint)
         if (!response.ok) throw new Error('Falha ao carregar')
         const store = await response.json()
         if (!active) return
+        if (pendingSyncWritesRef.current > 0) return
 
         if (initial && !store.initialized) {
           await sendSharedData(sharedDataRef.current)
@@ -755,9 +856,20 @@ function App() {
         }
 
         const remoteData = store.data || emptySharedData
+        const mergedStatusHistory = mergeEquipmentStatusHistory(
+          sharedDataRef.current.equipmentStatusHistory,
+          remoteData.equipmentStatusHistory
+        )
+        if (JSON.stringify(mergedStatusHistory) !== JSON.stringify(remoteData.equipmentStatusHistory || {})) {
+          const mergedData = { ...remoteData, equipmentStatusHistory: mergedStatusHistory }
+          applySharedData(mergedData)
+          await sendSharedData(mergedData)
+          return
+        }
         const hasMeaningfulRemoteData = Object.values(remoteData).some(value => Array.isArray(value) ? value.length > 0 : value && typeof value === 'object' ? Object.keys(value).length > 0 : false)
         const hasMeaningfulLocalData = Object.values(sharedDataRef.current).some(value => Array.isArray(value) ? value.length > 0 : value && typeof value === 'object' ? Object.keys(value).length > 0 : false)
         if (initial && !hasMeaningfulRemoteData && hasMeaningfulLocalData) {
+          await sendSharedData(sharedDataRef.current)
           return
         }
         if (JSON.stringify(remoteData) !== JSON.stringify(sharedDataRef.current)) {
@@ -1798,6 +1910,8 @@ function App() {
                   ? 'Formulário de HE Manut.'
                   : selectedSection === 'pesquisa'
                     ? 'Status OS'
+                    : selectedSection === 'statusmaquinas'
+                      ? 'Status diário de equipamentos'
                     : selectedSection === 'compras'
                       ? 'Formulário de Pedidos'
                       : selectedSection === 'statuspedidos'
@@ -2481,6 +2595,78 @@ function App() {
                     </div>
                   </div>
                 </form>
+              ) : selectedSection === 'statusmaquinas' ? (
+                <div className="equipment-status-print-surface mt-2 space-y-4">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold text-slate-950">Status diário de equipamentos</h3>
+                      <p className="mt-1 text-sm text-slate-500">Atualize o status das máquinas. Os dados são salvos e sincronizados automaticamente.</p>
+                      <p className="mt-2 text-sm font-bold text-brand-700">
+                        Semana: {formatEquipmentStatusDate(equipmentStatusDates[0])} a {formatEquipmentStatusDate(equipmentStatusDates[5])}
+                      </p>
+                    </div>
+                    <div className="no-print flex flex-wrap items-center gap-2">
+                      <button type="button" onClick={() => setEquipmentStatusWeekOffset(offset => offset - 1)} className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100">
+                        ‹ Semana anterior
+                      </button>
+                      <button type="button" onClick={() => setEquipmentStatusWeekOffset(offset => offset + 1)} className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100">
+                        Próxima semana ›
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="no-print flex flex-wrap gap-2">
+                    {equipmentStatusOptions.map(status => (
+                      <span key={status} className={`rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold ${getEquipmentStatusClasses(status)}`}>
+                        Hoje — {status}: {equipmentStatusCounts[status]}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="no-print flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-brand-200 bg-brand-50 p-3">
+                    <p className="text-sm font-medium text-brand-900">Relatório semanal pronto para impressão ou envio em PDF.</p>
+                    <button type="button" onClick={() => window.print()} className="rounded-xl bg-brand-700 px-5 py-3 text-base font-bold text-white shadow-lg ring-4 ring-brand-100 transition hover:bg-brand-800 focus:outline-none focus:ring-brand-300">
+                      📄 Gerar PDF / Imprimir
+                    </button>
+                  </div>
+                  <p className="no-print text-xs text-slate-500">No diálogo de impressão, escolha “Salvar como PDF” para gerar o relatório.</p>
+
+                  <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+                    <table className="equipment-status-print-table min-w-[980px] w-full border-collapse text-left text-xs">
+                      <thead className="bg-brand-700 text-white">
+                        <tr>
+                          <th className="px-3 py-2 font-semibold">EQUIPAMENTOS</th>
+                          {equipmentStatusDates.map(date => (
+                            <th key={date} className="px-2 py-2 text-center font-semibold">{formatEquipmentStatusDay(date)}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {equipmentStatusMachines.map(([code, name]) => (
+                          <tr key={code} className="border-t border-slate-100">
+                            <th scope="row" className="whitespace-nowrap px-3 py-1.5 text-left font-medium text-slate-700">{code} - {name}</th>
+                            {equipmentStatusDates.map(date => {
+                              const status = equipmentStatusHistory[date]?.[code] || ''
+                              return (
+                                <td key={date} className={`px-2 py-1 text-center font-semibold ${getEquipmentStatusClasses(status)}`}>
+                                  <select
+                                    aria-label={`Status ${code} - ${name} - ${formatEquipmentStatusDate(date)}`}
+                                    value={status}
+                                    onChange={event => saveEquipmentStatus(date, code, event.target.value)}
+                                    className={`equipment-status-select w-full min-w-[135px] rounded-lg border border-slate-200 bg-white px-2 py-1 text-[11px] font-semibold outline-none focus:border-brand-500 ${getEquipmentStatusClasses(status)}`}
+                                  >
+                                    <option value="">Selecione</option>
+                                    {equipmentStatusOptions.map(option => <option key={option} value={option}>{option}</option>)}
+                                  </select>
+                                  <span className="equipment-status-print-value hidden">{status || '—'}</span>
+                                </td>
+                              )
+                            })}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               ) : selectedSection === 'pesquisa' ? (
                 <div className="mt-2 space-y-3">
                   <div className="flex flex-col items-center gap-3 rounded-2xl border border-slate-200 bg-white/80 px-4 py-2.5 shadow-sm sm:flex-row sm:justify-center sm:gap-4">
