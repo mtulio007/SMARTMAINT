@@ -38,8 +38,7 @@ const emptyData = {
   catalogItems: [],
   materialEntries: [],
   materialExits: [],
-  materialPlanning: {},
-  equipmentStatusHistory: {}
+  materialPlanning: {}
 }
 
 function sharedDataApi() {
@@ -69,8 +68,7 @@ function sharedDataApi() {
     catalogItems: Array.isArray(saved?.catalogItems) ? saved.catalogItems : [],
     materialEntries: Array.isArray(saved?.materialEntries) ? saved.materialEntries : [],
     materialExits: Array.isArray(saved?.materialExits) ? saved.materialExits : [],
-    materialPlanning: saved?.materialPlanning && typeof saved.materialPlanning === 'object' ? saved.materialPlanning : {},
-    equipmentStatusHistory: saved?.equipmentStatusHistory && typeof saved.equipmentStatusHistory === 'object' ? saved.equipmentStatusHistory : {}
+    materialPlanning: saved?.materialPlanning && typeof saved.materialPlanning === 'object' ? saved.materialPlanning : {}
   })
 
   const readData = async () => {
@@ -167,8 +165,7 @@ function sharedDataApi() {
               catalogItems: Array.isArray(payload.catalogItems) ? payload.catalogItems : [],
               materialEntries: Array.isArray(payload.materialEntries) ? payload.materialEntries : [],
               materialExits: Array.isArray(payload.materialExits) ? payload.materialExits : [],
-              materialPlanning: payload.materialPlanning && typeof payload.materialPlanning === 'object' ? payload.materialPlanning : {},
-              equipmentStatusHistory: payload.equipmentStatusHistory && typeof payload.equipmentStatusHistory === 'object' ? payload.equipmentStatusHistory : {}
+            materialPlanning: payload.materialPlanning && typeof payload.materialPlanning === 'object' ? payload.materialPlanning : {}
             }))
         response.setHeader('Content-Type', 'application/json')
         response.end(JSON.stringify({ initialized: true, data }))

@@ -5,7 +5,7 @@ const path = require('node:path')
 
 const emptyData = {
   orders: [], extraEntries: [], purchases: [], catalogItems: [],
-  materialEntries: [], materialExits: [], materialPlanning: {}, equipmentStatusHistory: {}
+  materialEntries: [], materialExits: [], materialPlanning: {}
 }
 
 let server
@@ -19,8 +19,7 @@ function normalizeData(saved) {
     catalogItems: Array.isArray(saved?.catalogItems) ? saved.catalogItems : [],
     materialEntries: Array.isArray(saved?.materialEntries) ? saved.materialEntries : [],
     materialExits: Array.isArray(saved?.materialExits) ? saved.materialExits : [],
-    materialPlanning: saved?.materialPlanning && typeof saved.materialPlanning === 'object' ? saved.materialPlanning : {},
-    equipmentStatusHistory: saved?.equipmentStatusHistory && typeof saved.equipmentStatusHistory === 'object' ? saved.equipmentStatusHistory : {}
+    materialPlanning: saved?.materialPlanning && typeof saved.materialPlanning === 'object' ? saved.materialPlanning : {}
   }
 }
 
